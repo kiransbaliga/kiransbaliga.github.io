@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- responsive -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="parallax.js"></script>
     <style>
         html{
             scroll-behavior: smooth;
@@ -34,6 +35,10 @@
         }
         .centering{
             padding-left: 40%;
+        }
+        .para{
+            padding-left:30%;
+            position: absolute;
         }
     </style>
 </head>
@@ -86,6 +91,7 @@
         </div>
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-7">
                     <div class="header-inner">
                         <h1 class="title wow fadeInDown">Moosik | The Ultimate Music App</h1>
@@ -96,6 +102,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="para">
+                <div class="container" >
+			
+                    <ul id="scene">	
+                        
+                        <li class="layer" data-depth="0.4"><img src="./phone.png"></li>
+                        <li class="layer" data-depth="1"><img src="./headphone.png"></li>
+                        <li class="layer" data-depth="0.7"><img src="./pause.png"></li>
+                        <li class="layer" data-depth="0.5"><img src="rocket.png"></li>
+                    </ul>
+                    
+                </div>
+            </div>
+                
+                
+                
             </div>
         </div>
     </header>
@@ -479,6 +501,11 @@
     <script src="assets/js/jquery.counterup.min.js"></script>
     <!-- main -->
     <script src="assets/js/main.js"></script>
+    
+    <script>
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    </script>
 </body>
 
 
