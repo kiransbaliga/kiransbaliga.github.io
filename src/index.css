@@ -12,4 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --colour-primary: #051090;
+  --text-primary: #333;
+  --text-secondary: #666;
+
 }

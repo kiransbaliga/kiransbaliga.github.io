@@ -1,10 +1,12 @@
+import Hero from "../components/hero/Hero";
 import NavBar from "../components/navbar/NavBar";
 
 const HomePage = () => {
   return (
     <>
+      <NavBar/>
       <section id="Home">
-        <NavBar></NavBar>
+        <Hero/>
       </section>
       <section id="Articles"></section>
       <section id="Projects"></section>
