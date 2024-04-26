@@ -1,16 +1,10 @@
-import NavBar from "../components/navbar/NavBar";
+import RecordPlayer from "../components/recordPlayer/RecordPlayer";
 
 const HomePage = () => {
   return (
-    <>
-      <section id="Home">
-        <NavBar></NavBar>
-      </section>
-      <section id="Articles"></section>
-      <section id="Projects"></section>
-      <section id="Capabilities"></section>
-    </>
+    <div className="home-layout">
+      <RecordPlayer />
+    </div>
   );
 };
-
 export default HomePage;
