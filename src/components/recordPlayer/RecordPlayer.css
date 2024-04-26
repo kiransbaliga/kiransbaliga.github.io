@@ -1,0 +1,49 @@
+.RecordPlayer{  
+    height: 238px;
+    width: 238px;
+    /* stack items on top of each other */
+    position: relative;
+    --spin-duration:30s;
+
+}
+.RecordImage{
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease-out;
+}
+
+.RecordImage:hover{
+    transform: scale(0.9);   
+}
+
+.RecordImage:active{
+    transform: scale(0.85);
+}
+
+.wrapper-text{
+    position: absolute;
+    top: -12.5px;
+    left: -12.5px;
+    z-index: 1;
+    transform: scale(0.8);
+    /* animation: spin var(--spin-duration) linear infinite;  */
+}
+
+.record-playing{
+    transform: rotate(0deg) 0.5s ease-out;
+    animation: spin 10s linear infinite;
+}
+.record-paused{
+    transform: rotate(0deg) 0.5s ease-out;
+    animation: spin 45s linear infinite;
+}
+
+/* ANIMATION THAT LOOPS ROTATION  */
+@keyframes spin {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
