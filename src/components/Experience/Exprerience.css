@@ -1,0 +1,143 @@
+.exp-data{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+
+.exp-item{
+    position: relative;
+    display: grid;
+    font-size: 12px;
+    padding: 1rem;
+    text-align: end;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    width: 70%;
+    place-content: end;
+    right: 0;
+}
+
+.exp-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    z-index: -1;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-out;
+}
+
+.exp-item:hover{
+    right:20px;
+    scale: 1.1;
+    box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, 0.075);
+    
+}
+
+.exp-item:hover::before{
+    border: 1px solid #f5f5f5;
+    width: 80%;
+}
+
+.exp-data{
+    padding: 1rem 1.5rem;
+}
+.year {
+    color: #757474;
+    font-weight: 700;
+}
+.title {
+    font-size: 14px;
+    font-weight: 700;
+}
+.position {
+    font-size: 12px;
+    color: #a19e9e;
+    font-weight: 700;
+}
+.tags{
+    color: #757474;
+}
+
+.cursor-follower{
+    
+
+    position: absolute;
+    top:0;
+    left:0;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(192, 185, 185);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+
+.skills{
+    margin-top: 1rem;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.skills > span{
+    color: #757474;
+    font-weight: 700;
+}
+
+.skill-tags{
+    width: 80%;
+    text-align: justify;
+}
+
+.skills-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+.resume-link:hover > .cursor-follower{
+
+    transition: all 0.5s ease-out;
+}
+
+.resume-link{
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+.resume-link:hover{
+    color: white;
+    
+    transition: all 0.5s ease-out;
+    box-shadow: 5px 5px 5px 0 rgba(255, 255, 255, 0.329);
+    position: relative;
+}
+
+.resume-link:hover::after{
+    content: "";
+    position: absolute;
+    top:-2px;
+    left: -2px;
+    bottom:-2px;
+    right: -2px;
+    background: linear-gradient(45deg,rgb(70, 42, 226),rgb(233, 42, 42));
+    z-index: -1;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+
+}
+
+
