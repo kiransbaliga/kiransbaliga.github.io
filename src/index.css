@@ -15,3 +15,8 @@
 
   --colour-primary: #051090;
 }
+
+html,body{
+  padding: 0;
+  margin: 0;
+}

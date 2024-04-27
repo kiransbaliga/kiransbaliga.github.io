@@ -16,9 +16,9 @@ const RecordPlayer = () => {
     
   }
   useEffect(() => {
-    if(isRecordPlaying){
+    if(audioRef.current && isRecordPlaying){
       audioRef.current.play();
-    }else{
+    }else if(audioRef.current && !isRecordPlaying){
       audioRef.current.pause();
     }
   },[isRecordPlaying])

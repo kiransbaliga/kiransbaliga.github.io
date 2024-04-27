@@ -1,0 +1,40 @@
+.home-layout {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.hero-section{
+    border: 1px solid red;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    gap:23%;
+}   
+
+.details {
+
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap:45%;
+  justify-content:flex-start;
+  border: 1px solid red;
+}
+.vinyl {
+  /* fit content */
+  position: relative;
+  height: 238px;
+  width: 238px;
+  border: 1px solid red;
+  transform: scale(0.9);
+  left: 25%;
+}
+
+.experience{
+    border: 1px solid red;
+    height: 100%;
+    width: 40%;
+
+}
