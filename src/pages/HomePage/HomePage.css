@@ -3,7 +3,9 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  overflow-x: hidden;
+  position: relative;
+  z-index: 25;
+  background-attachment: fixed;
 }
 .hero-section{
     width: 64.5%;
@@ -11,6 +13,7 @@
     flex-direction: column;
     justify-content:flex-start;
     gap:23%;
+    overflow-x: hidden;
 }   
 
 .details {
@@ -23,13 +26,14 @@
 }
 .vinyl {
   /* fit content */
-  position: relative;
-  z-index: 101;
+  position: fixed;
+  z-index: 201;
+  top:33%;
   height: 238px;
   width: 238px;
   transform: scale(1);
-  left: 27%;
-  top:-7%;
+  
+  transition: all 0.5s ease-out;
 }
 
 .experience{
@@ -117,4 +121,11 @@ ul{
     overflow: hidden;
     cursor: default;
     pointer-events: none;
+}
+.about-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 24;
 }

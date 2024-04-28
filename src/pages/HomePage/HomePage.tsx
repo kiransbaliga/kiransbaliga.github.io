@@ -2,14 +2,15 @@ import { useEffect, useRef } from "react";
 import Experience from "../../components/Experience/Experience";
 import RecordPlayer from "../../components/recordPlayer/RecordPlayer";
 import "./HomePage.css";
+import Scrollable from "../../components/scrollable/Scrollable";
 const HomePage = () => {
-  const vinylRef = useRef(null);
+  const vinylRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleScroll = () => {
       if (vinylRef.current) {
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
         console.log("🚀 ~ handleScroll ~ scrollPosition:", scrollPosition)
-        vinylRef.current.style.left = scrollPosition > 0 ? "20px" : "27%";
+        vinylRef.current.style.left = scrollPosition > 0 ? "-10%" : "17%";
       }
     };
 
@@ -20,6 +21,9 @@ const HomePage = () => {
     };
   }, []);
   return (
+    <>
+  
+    {/* home section */}
     <div className="home-layout">
       <div className="hero-section">
         <div className="details">
@@ -76,6 +80,28 @@ const HomePage = () => {
         <Experience />
       </div>
     </div>
+    <div className="about-section">
+      <Scrollable heading="About" >
+        <img src="https://picsum.photos/200/400" alt="" />
+        <img src="https://picsum.photos/200/400" alt="" />
+        <img src="https://picsum.photos/200/400" alt="" />
+        <img src="https://picsum.photos/200/400" alt="" />
+        <img src="https://picsum.photos/200/400" alt="" />
+      </Scrollable>
+      <Scrollable heading="Work" >
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      </Scrollable>
+      <Scrollable heading="Projects" >
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      <img src="https://picsum.photos/200/400" alt="" />
+      </Scrollable>
+    </div>
+      </>
   );
 };
 export default HomePage;

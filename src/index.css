@@ -19,53 +19,10 @@
 html,body{
   padding: 0;
   margin: 0;
+  color: white;
+  scroll-behavior: smooth;
 }
 
-.modal::-webkit-scrollbar {
-    width: 5px;
+*::-webkit-scrollbar {
+    width: 0px;
   }
-
-.modal::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-
-.modal::-webkit-scrollbar-thumb {
-    background: rgb(90, 89, 89);
-    border-radius: 5px;
-  }
-
-.modal::-webkit-scrollbar-thumb:hover {
-    background: rgb(100, 100, 100);
-    border-radius: 5px;
-  }
-
-.modal::-webkit-scrollbar-thumb:active {
-    background: rgb(68, 68, 68);
-    border-radius: 5px;
-  }
-html::-webkit-scrollbar {
-    width: 5px;
-  }
-
-html::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: rgb(136, 136, 136);
-    border-radius: 5px;
-  }
-
-html::-webkit-scrollbar-thumb:hover {
-    background: rgb(100, 100, 100);
-    border-radius: 5px;
-  }
-
-html::-webkit-scrollbar-thumb:active {
-    background: rgb(68, 68, 68);
-    border-radius: 5px;
-  }
-
-
