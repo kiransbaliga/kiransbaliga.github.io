@@ -129,3 +129,64 @@ ul{
     position: relative;
     z-index: 24;
 }
+
+.showcase{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 2%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    text-align: justify;
+    line-height: 1.5rem;
+    font-size: 12px;
+    
+}
+
+.showcase-media>img{
+    /* image width should be maximum available width and adjust heigh accordingly */
+   width: 100%;
+   height: auto;
+    object-fit: cover;
+}
+
+.showcase-media > video{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about-content{
+    font-size: 12px;
+    line-height: 1.5rem;
+    text-align: justify;
+    padding: 10px }
+
+
+.myself:hover,.events:hover{
+    cursor: url('next.ico'),pointer;
+}
+
+.volunteering{
+    margin: 5% 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: start;
+}
+.volunteer-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.volunteer-item > div{
+    width: 100%;
+}
+.volunteer-year{
+    text-align: end;
+    color: #505050;
+}
+.volunteer-title{
+    color:#757474;
+}

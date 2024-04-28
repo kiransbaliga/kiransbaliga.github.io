@@ -27,8 +27,9 @@ const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [cursorXY, setCursorXY] = useState({ x: 0, y: 0 });
-  const expDataRef = useRef(null);
-  const handleMouseMove = (event) => {
+  const expDataRef = useRef<HTMLDivElement>(null);
+  const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
+    if (!expDataRef.current) return;
     const rect = expDataRef.current.getBoundingClientRect();
     setCursorXY({ x: event.clientX - rect.left, y: event.clientY - rect.top });
   };

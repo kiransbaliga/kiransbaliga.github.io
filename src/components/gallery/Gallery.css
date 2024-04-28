@@ -1,0 +1,15 @@
+.gallery-cursor {
+    padding: 1px 5px;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 12px;
+    width:fit-content;
+    border-radius: 10px;
+    position: absolute;
+    display: none;
+}
+.gallery{
+    overflow: none;
+    cursor: url('../../assets/next.png'),pointer;
+}
+

@@ -10,9 +10,3 @@
     opacity: 1;
     color: white;
 }
-
-.scrollable-contents{
-    height: 1000vh;
-    /* background-color is a gradient */
-    /* background: linear-gradient(180deg, #051090 0%, #fd0000 100%); */
-}
