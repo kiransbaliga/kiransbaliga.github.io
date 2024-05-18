@@ -3,12 +3,16 @@ export const data = [
     year: "2023+",
     title: "KeyValue Software Systems",
     position: "Associate Software Engineer",
+    description:
+      "Contributed to a diverse array of projects within the company, garnering invaluable experience across multiple technologies and frameworks. Adhered to Agile methodologies, collaborating effectively within cross-functional teams to ensure timely project delivery. Engaged in a spectrum of endeavors encompassing web development  initiatives. Cultivated proficiency in client interaction, adeptly discerning and meeting their unique requirements. Spearheaded projects leveraging an expansive tech stack, including FastAPI, Django, React, Node.js, PostgreSQL, MongoDB, AWS, and beyond. This multifaceted experience underscores adaptability, technical prowess, and a commitment to delivering innovative solutions",
     tags: ["Next.js", "React", "Node.js", "Python", "PostgreSQL"],
   },
   {
     year: "2022",
     title: "TGH Tech",
     position: "Full Stack Developer",
+    description:
+      " developed a comprehensive full-stack application catering to client needs. This dynamic platform boasts a range of functionalities, including content sharing, an anonymous chat room facilitating discussions between users and expert therapists, and a scheduling system for appointments. Leveraging cutting-edge technologies such as Flutter for the frontend, Django for backend operations, and MongoDB for data management, the application ensures robust performance and scalability. Deployment on AWS further enhances accessibility and reliability. This project showcases adept proficiency in software development and integration, delivering a seamless user experience while addressing complex requirements",
     tags: ["Flutter", "Django", "AI", "MongoDB", "AWS"],
   },
   {
@@ -20,18 +24,20 @@ export const data = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     type: "video",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace ",
+      "Contributed to the development of airpmo, a Software-as-a-Service (SaaS) product tailored for the construction industry. This innovative platform is designed to streamline project management by bridging connections among disparate entities within manufacturing projects. By centralizing resources crucial to construction—such as personnel, materials, equipment, and subcontractors—airpmo transforms the complexity and variability inherent in each project into a cohesive digital marketplace. Through this solution, the construction industry gains efficiency, transparency, and enhanced collaboration, facilitating smoother project execution and delivery.",
   },
   {
     year: "2020",
     title: "Nhorah",
     position: "Application Developer",
+    description:"Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
     tags: ["Flutter", "Figma", "UI/UX"],
   },
   {
     year: "2020-21",
     title: "IEEE CS SBC MACE",
     position: "Chairperson",
+    description:"Led a team of 20+ members to organize events, workshops and hackathons. Conducted weekly sessions on various technologies and programming languages. Organized a 24-hour hackathon .hack(), which saw participation from 100+ students across the state. Conducted a series of workshops on web development, app development, and machine learning. Led the team to become the largest IEEE CS Branch in the world in the same year",
     tags: ["Event Management", "Public Speaking", "Leadership"],
   },
 ];
