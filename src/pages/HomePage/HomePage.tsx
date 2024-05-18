@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Experience from "../../components/Experience/Experience";
 import RecordPlayer from "../../components/recordPlayer/RecordPlayer";
 import "./HomePage.css";
@@ -8,7 +8,31 @@ import AOS from 'aos';
 import Gallery from "../../components/gallery/Gallery";
 const HomePage = () => {
   const vinylRef = useRef<HTMLDivElement>(null);
-  
+  const [cursorText, setCursorText] = useState('Next');
+  const [isCursorVisible, setIsCursorVisible] = useState(false);
+  const cursorRef = useRef<HTMLDivElement>(null);
+
+  const onMouseEnterGallery=() =>{
+    setCursorText('Next')
+    setIsCursorVisible(true);
+    if (cursorRef.current)
+    cursorRef.current.style.opacity = '1';
+  }
+  const onMouseLeave=() =>{
+    setIsCursorVisible(false);
+    setCursorText('')
+    if (cursorRef.current)
+    cursorRef.current.style.opacity = '0';
+  }
+
+  const onMouseEnterShowcase=() =>{
+    setCursorText('Open')
+    setIsCursorVisible(true);
+    if (cursorRef.current)
+    cursorRef.current.style.opacity = '1';
+  }
+
+
   useEffect(() => {
     AOS.init(
       {
@@ -21,7 +45,7 @@ const HomePage = () => {
       if (vinylRef.current) {
         const scrollPosition =
           window.scrollY || document.documentElement.scrollTop;
-        console.log("🚀 ~ handleScroll ~ scrollPosition:", scrollPosition);
+        // console.log("🚀 ~ handleScroll ~ scrollPosition:", scrollPosition);
         vinylRef.current.style.left = scrollPosition > 0 ? "-10%" : "17%";
       }
     };
@@ -32,9 +56,25 @@ const HomePage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(()=>{
+    const handleMouseMove = (e: MouseEvent) => {
+      if(cursorRef.current){
+        cursorRef.current.style.left = e.clientX+ 10 + 'px';
+        cursorRef.current.style.top = e.clientY + 10 + 'px';
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return ()=>{
+      window.removeEventListener('mousemove', handleMouseMove);
+    }
+
+  },[])
+
+
   return (
     <>
       {/* home section */}
+         
       <div className="home-layout">
         <div className="hero-section">
           <div className="details">
@@ -80,9 +120,7 @@ const HomePage = () => {
               <span className="place">Kakkanad, Kochi</span>
             </div>
           </div>
-          <div ref={vinylRef} className="vinyl">
-            <RecordPlayer />
-          </div>
+          
         </div>
         <div className="divider-text">
           RADIO KILLED THE VIDEO STAR. RADIO KILLED THE VIDEO STAR RADIO KILLED
@@ -97,14 +135,14 @@ const HomePage = () => {
       <div className="about-section">
         <Scrollable heading="About">
           <div className="myself">
-            <Gallery links={about.me} />
+            <Gallery onMouseEnter={onMouseEnterGallery} onMouseLeave={onMouseLeave} links={about.me} />
             </div>
             {about.description.map((item, index) => (
               <div className="about-content" key={index}>{item}
             </div>
             ))}
             <div className="events">
-              <Gallery links={about.pics}/>
+              <Gallery onMouseEnter={onMouseEnterGallery} onMouseLeave={onMouseLeave} links={about.pics}/>
             </div>
             <div className="volunteering">
               {about.volunteering.map((item, index) => (
@@ -117,14 +155,14 @@ const HomePage = () => {
             </div>
 
             <div className="other-pics">
-              <Gallery links={about.images}/>
+              <Gallery onMouseEnter={onMouseEnterGallery} onMouseLeave={onMouseLeave} links={about.images}/>
             </div>
 
         </Scrollable>
         <Scrollable heading="Work">
           {work.map((item, index) => (
-            <div className="showcase" data-aos="fade" key={index}>
-              <div className="showcase-media">
+            <div className="showcase" data-aos="fade" key={index} >
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (
@@ -138,8 +176,8 @@ const HomePage = () => {
 
         <Scrollable heading="Projects">
           {projects.map((item, index) => (
-            <div className="showcase" data-aos="fade"key={index}>
-              <div className="showcase-media">
+            <div className="showcase" data-aos="fade"key={index} >
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (
@@ -151,6 +189,10 @@ const HomePage = () => {
           ))}
         </Scrollable>
       </div>
+      <div ref={cursorRef} style={isCursorVisible?{display:"block"}: {display:"none"}} className="cursor-gallery">{cursorText}</div>
+      <div ref={vinylRef} className="vinyl">
+            <RecordPlayer />
+          </div>
     </>
   );
 };
