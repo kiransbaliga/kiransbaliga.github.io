@@ -11,7 +11,7 @@ interface ModalProps {
 const Modal = ({ dataId, isOpen = true, setIsOpen }: ModalProps) => {
   const item = data[dataId] ?? data[2];
   return (
-    <>
+    <div className={`modal-entire ${isOpen ? "open" : "hide"}`}>
       <a
         href="#"
         className={`close ${isOpen ? "open" : "hide"}`}
@@ -42,7 +42,7 @@ const Modal = ({ dataId, isOpen = true, setIsOpen }: ModalProps) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

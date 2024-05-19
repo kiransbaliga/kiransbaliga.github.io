@@ -1,12 +1,25 @@
-.scrollable{
-    width: 100%;
-    opacity: 0.5;
-    color: #757474;
-    transition: all 0.5s ease-out;
-    overflow: visible;
-    }
+.scrollable {
+  width: 100%;
+  opacity: 0.5;
+  color: #757474;
+  transition: all 0.5s ease-out;
+  overflow: visible;
+}
 
-.scrollable:hover{
+.scrollable:hover {
+  opacity: 1;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .scrollable {
+    width: 100%;
     opacity: 1;
     color: white;
+    transition: all 0.5s ease-out;
+    overflow: visible;
+  }
+  .scrollable-contents {
+    padding: 0.5rem 1rem;
+  }
 }
