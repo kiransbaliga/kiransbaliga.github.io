@@ -7,6 +7,17 @@ import { about, projects, work } from "../../constants/data";
 import AOS from 'aos';
 import Gallery from "../../components/gallery/Gallery";
 const HomePage = () => {
+  const [isFromMobile, setIsFromMobile] = useState(false);
+  useEffect(() => {
+  setIsFromMobile( window.innerWidth < 768);
+  },[]);
+
+  const alertRef = useRef<HTMLParagraphElement>(null);
+  setTimeout(() => {
+    if(alertRef.current)
+    alertRef.current.style.display = 'none';
+  },10000);
+
   const vinylRef = useRef<HTMLDivElement>(null);
   const [cursorText, setCursorText] = useState('Next');
   const [isCursorVisible, setIsCursorVisible] = useState(false);
@@ -31,6 +42,11 @@ const HomePage = () => {
     if (cursorRef.current)
     cursorRef.current.style.opacity = '1';
   }
+
+  const openNewTabToLink = (link: string) => {
+    if(link)
+    window.open(link, '_blank');
+  };
 
 
   useEffect(() => {
@@ -74,8 +90,8 @@ const HomePage = () => {
   return (
     <>
       {/* home section */}
-         
-      <div className="home-layout">
+      {isFromMobile && <p ref={alertRef} className="mobile-alert">Please view in desktop for enhanced experience!</p>}
+        <div className="home-layout"  >
         <div className="hero-section">
           <div className="details">
             <div className="name">
@@ -122,14 +138,14 @@ const HomePage = () => {
           </div>
           
         </div>
-        <div className="divider-text">
+        {!isFromMobile && <div className="divider-text">
           RADIO KILLED THE VIDEO STAR. RADIO KILLED THE VIDEO STAR RADIO KILLED
           THE VIDEO STAR. RADIO KILLED THE VIDEO STAR RADIO KILLED THE VIDEO
           STAR. RADIO KILLED THE VIDEO STAR RADIO KILLED THE VIDEO STAR. RADIO
           KILLED THE VIDEO STAR
-        </div>
+        </div>}
         <div className="experience">
-          <Experience />
+          <Experience isFromMobile={isFromMobile} />
         </div>
       </div>
       <div className="about-section">
@@ -162,7 +178,7 @@ const HomePage = () => {
         <Scrollable heading="Work">
           {work.map((item, index) => (
             <div className="showcase" data-aos="fade" key={index} >
-              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave}>
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=> openNewTabToLink(item.link)}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (
@@ -177,7 +193,7 @@ const HomePage = () => {
         <Scrollable heading="Projects">
           {projects.map((item, index) => (
             <div className="showcase" data-aos="fade"key={index} >
-              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave}>
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=>openNewTabToLink(item.link)}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (
@@ -190,9 +206,9 @@ const HomePage = () => {
         </Scrollable>
       </div>
       <div ref={cursorRef} style={isCursorVisible?{display:"block"}: {display:"none"}} className="cursor-gallery">{cursorText}</div>
-      <div ref={vinylRef} className="vinyl">
+      {!isFromMobile&&<div ref={vinylRef} className="vinyl">
             <RecordPlayer />
-          </div>
+          </div>}
     </>
   );
 };

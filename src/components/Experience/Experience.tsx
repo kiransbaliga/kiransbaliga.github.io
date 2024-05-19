@@ -3,7 +3,6 @@ import "./Exprerience.css";
 import { data } from "../../constants/data";
 import Modal from "../Modal/Modal";
 
-
 const skillTags = [
   "React",
   "Flutter",
@@ -23,12 +22,12 @@ const skillTags = [
   "Premiere Pro",
 ];
 
-const Experience = () => {
+const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [cursorXY, setCursorXY] = useState({ x: 0, y: 0 });
   const expDataRef = useRef<HTMLDivElement>(null);
-  const handleMouseMove = (event: { clientX: number; clientY: number; }) => {
+  const handleMouseMove = (event: { clientX: number; clientY: number }) => {
     if (!expDataRef.current) return;
     const rect = expDataRef.current.getBoundingClientRect();
     setCursorXY({ x: event.clientX - rect.left, y: event.clientY - rect.top });
@@ -43,10 +42,21 @@ const Experience = () => {
 
   return (
     <>
-    <Modal isOpen={isOpen} dataId={selectedIndex} setIsOpen={setIsOpen}></Modal>
+      <Modal
+        isOpen={isOpen}
+        dataId={selectedIndex}
+        setIsOpen={setIsOpen}
+      ></Modal>
       <div ref={expDataRef} className="exp-data">
         {data.map((item, index) => (
-          <div className="exp-item" key={index} onClick={()=> {setSelectedIndex(index); setIsOpen(true)}}>
+          <div
+            className="exp-item"
+            key={index}
+            onClick={() => {
+              setSelectedIndex(index);
+              setIsOpen(true);
+            }}
+          >
             <div className="year">{item.year}</div>
             <div className="title">{item.title}</div>
             <div className="position">{item.position}</div>
@@ -69,10 +79,12 @@ const Experience = () => {
             className="resume-link"
           >
             Resume ↗
-            <div
-              className="cursor-follower"
-              style={{ left: cursorXY.x, top: cursorXY.y }}
-            ></div>
+            {!isFromMobile && (
+              <div
+                className="cursor-follower"
+                style={{ left: cursorXY.x, top: cursorXY.y }}
+              ></div>
+            )}
           </a>
         </div>
       </div>

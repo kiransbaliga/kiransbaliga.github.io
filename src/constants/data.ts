@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const data = [
   {
     year: "2023+",
@@ -30,24 +32,28 @@ export const data = [
     year: "2020",
     title: "Nhorah",
     position: "Application Developer",
-    description:"Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
+    description:
+      "Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
     tags: ["Flutter", "Figma", "UI/UX"],
   },
   {
     year: "2020-21",
     title: "IEEE CS SBC MACE",
+    media:
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/ieee.jpeg",
+    type: "image",
     position: "Chairperson",
-    description:"Led a team of 20+ members to organize events, workshops and hackathons. Conducted weekly sessions on various technologies and programming languages. Organized a 24-hour hackathon .hack(), which saw participation from 100+ students across the state. Conducted a series of workshops on web development, app development, and machine learning. Led the team to become the largest IEEE CS Branch in the world in the same year",
+    description:
+      "Led a team of 20+ members to organize events, workshops and hackathons. Conducted weekly sessions on various technologies and programming languages. Organized a 24-hour hackathon .hack(), which saw participation from 100+ students across the state. Conducted a series of workshops on web development, app development, and machine learning. Led the team to become the largest IEEE CS Branch in the world in the same year",
     tags: ["Event Management", "Public Speaking", "Leadership"],
   },
 ];
 
 export const about = {
   me: [
-    "https://picsum.photos/500",
-    "https://picsum.photos/600",
-    "https://picsum.photos/700",
-    "https://picsum.photos/800",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/personal3.jpeg",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/personal1.jpeg",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/personal2.jpg",
   ],
   description: [
     "Born and raised in the vibrant cultural tapestry of Kerala, India, I bring a diverse perspective to my work in the realm of technology. Currently stationed in Kakkanad, Cochin Infopark, I find myself immersed in the dynamic world of web development, app creation, and the ever-evolving landscape of artificial intelligence.",
@@ -59,10 +65,8 @@ export const about = {
     "In a world where technology serves as both a tool and a challenge, I remain steadfast in my commitment to crafting solutions that empower and inspire, driven by the belief that each innovation has the power to shape our collective future.",
   ],
   pics: [
-    "https://picsum.photos/500/600",
-    "https://picsum.photos/500/400",
-    "https://picsum.photos/500/300",
-    "https://picsum.photos/500/400",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/session1.JPG",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/session2.jpg",
   ],
   volunteering: [
     {
@@ -82,10 +86,9 @@ export const about = {
     },
   ],
   images: [
-    "https://picsum.photos/500/600",
-    "https://picsum.photos/500/700",
-    "https://picsum.photos/500",
-    "https://picsum.photos/500/400",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/team3.jpg",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/team1.jpg",
+    "https://github.com/kiransbaliga/kiransbaliga/raw/main/team2.jpg",
   ],
   contact: [
     {
@@ -117,103 +120,86 @@ export const about = {
 
 export const work = [
   {
-    media: "https://picsum.photos/300/200",
+    media:
+      "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/Glome.png",
     type: "image",
+    link: "https://tghtech.com",
+    description:
+      " developed a comprehensive full-stack application catering to client needs. This dynamic platform boasts a range of functionalities, including content sharing, an anonymous chat room facilitating discussions between users and expert therapists, and a scheduling system for appointments. Leveraging cutting-edge technologies such as Flutter for the frontend, Django for backend operations, and MongoDB for data management, the application ensures robust performance and scalability. Deployment on AWS further enhances accessibility and reliability. This project showcases adept proficiency in software development and integration, delivering a seamless user experience while addressing complex requirements",
+  },
+  {
+    media:
+      "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/shopq.png",
+    type: "image",
+    Link: "https://github.com/kiransbaliga/Markus",
+    description:
+      "An AI enabled shopping assistant, that helps you by automatically orders your daily groceries fro you based on your purchase patterns.",
+  },
+  {
+    media:
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/airpmo.png",
+    type: "image",
+    link: "https://airpmo.co/",
     description:
       "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
   },
   {
-    media: "https://picsum.photos/500",
+    media:
+      "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/nhorah.jpg",
     type: "image",
+    link: "https://www.linkedin.com/company/nhoarh/?originalSubdomain=in",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
   },
 ];
 
 export const projects = [
   {
     media:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    type: "video",
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/fl.png",
+    type: "image",
+    link: "https://github.com/kiransbaliga/Multi_Task_Federated_Learning",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "The project showcases a multitask federated learning system that enables collaborative model training across multiple devices while preserving data privacy. This system simultaneously tackles diverse tasks by leveraging shared representations and local training, enhancing efficiency and performance without centralizing data, thus maintaining confidentiality and security for all participants.",
   },
   {
-    media: "https://picsum.photos/500",
+    media:
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/showcase.png",
     type: "image",
+    link: "https://github.com/kiransbaliga/css-animations",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "ShowCase of curated CSS animations made in react from scratch",
   },
   {
-    media: "https://picsum.photos/500",
+    media: "https://img.itch.zone/aW1nLzY4NTkzNTAucG5n/315x250%23c/vc540F.png",
     type: "image",
+    link: "https://noobiedev.itch.io/trapped-in-chaos",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "Designed a platform game for Brackey's Game Jam 2021 submission. The game features a unique blend of platforming challenges, puzzles, and engaging gameplay mechanics, all set against a captivating backdrop of pixel art visuals and an immersive soundtrack. The project showcases adept proficiency in game design, development, and storytelling, delivering an engaging and memorable player experience.",
+  },
+
+  {
+    media:
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/lost.png",
+    type: "image",
+    Link: "https://github.com/kiransbaliga/lost",
+    description:
+      "Designed a maze game for itch.io Included complex maze generating algorithms and an engaging puzzle adventure",
   },
   {
-    media: "https://picsum.photos/500",
+    media:
+      "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/Typer.png",
     type: "image",
+    link: "https://typer.kiransbaliga.engineer",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "A 1v1 typing competition game, where you can challenge your friends to a typing competition",
   },
   {
-    media: "https://picsum.photos/500",
+    media:
+      "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/Where%20is%20my%20mouse.png",
+    link: "https://kiransbaliga.github.io/where-is-my-mouse",
     type: "image",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
-  },
-  {
-    media: "https://picsum.photos/500",
-    type: "image",
-    description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "A fun plain html,css,Javascript game where you have to find the mouse pointer in a sea of similar pointers",
   },
 ];
