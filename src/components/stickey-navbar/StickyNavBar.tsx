@@ -1,4 +1,3 @@
-import React from "react";
 import "./StickyNavBar.css";
 
 interface StickyNavBarProps {

@@ -43,7 +43,7 @@ const HomePage = () => {
     cursorRef.current.style.opacity = '1';
   }
 
-  const openNewTabToLink = (link: string) => {
+  const openNewTabToLink = (link: string| undefined) => {
     if(link)
     window.open(link, '_blank');
   };
@@ -178,7 +178,7 @@ const HomePage = () => {
         <Scrollable heading="Work">
           {work.map((item, index) => (
             <div className="showcase" data-aos="fade" key={index} >
-              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=> openNewTabToLink(item.link)}>
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=> openNewTabToLink(item?.link)}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (
@@ -193,7 +193,7 @@ const HomePage = () => {
         <Scrollable heading="Projects">
           {projects.map((item, index) => (
             <div className="showcase" data-aos="fade"key={index} >
-              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=>openNewTabToLink(item.link)}>
+              <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={()=>openNewTabToLink(item?.link)}>
                 {item.type === "image" ? (
                   <img src={item.media} alt="" />
                 ) : (

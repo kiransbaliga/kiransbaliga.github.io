@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import Record from "../../assets/record.png";
 import RecordText from "../../assets/record-text.png";
 import './RecordPlayer.css';
@@ -9,18 +9,18 @@ const RecordPlayer = () => {
 
 
   const [isRecordPlaying, setIsRecordPlaying] = useState(false);
-  const audioRef = useRef(null);
-  const wrapperRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const wrapperRef = useRef<HTMLImageElement>(null);
   const handleRecordClick = () => {
     setIsRecordPlaying(!isRecordPlaying);
     // play music from a link
     
   }
   useEffect(() => {
-    if(audioRef.current && isRecordPlaying){
+    if(audioRef.current && wrapperRef.current && isRecordPlaying){
       audioRef.current.play();
       wrapperRef.current.style.animation = 'spin 10s linear infinite';
-    }else if(audioRef.current && !isRecordPlaying){
+    }else if(audioRef.current && wrapperRef.current && !isRecordPlaying){
       audioRef.current.pause();
       wrapperRef.current.style.animation = 'spin 45s linear infinite ';
     }
