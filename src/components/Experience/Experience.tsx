@@ -48,7 +48,12 @@ const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
         setIsOpen={setIsOpen}
       ></Modal>
       <div ref={expDataRef} className="exp-data">
-        {data.map((item, index) => (
+        {data.map((item, index) =>{ 
+          
+          if(isFromMobile && index==4) 
+            return         
+          
+          return(
           <div
             className="exp-item"
             key={index}
@@ -66,7 +71,7 @@ const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
               </div>
             </div>
           </div>
-        ))}
+        )})}
         <div className="skills-wrapper">
           <div className="skills">
             <span>skills</span>

@@ -196,7 +196,7 @@ export const projects = [
   {
     media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/Where%20is%20my%20mouse.png",
-    link: "https://kiransbaliga.github.io/where-is-my-mouse",
+    link: "https://kiransbaliga.github.io/Where-is-my-mouse",
     type: "image",
     description:
       "A fun plain html,css,Javascript game where you have to find the mouse pointer in a sea of similar pointers",
