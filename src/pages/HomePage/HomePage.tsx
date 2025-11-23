@@ -110,6 +110,11 @@ const HomePage = () => {
         scrollPosRef.current = 0;
       }
 
+      // Keep scrollPos within one cycle range for easy exit
+      if (scrollPosRef.current >= CYCLE_HEIGHT) {
+        scrollPosRef.current %= CYCLE_HEIGHT;
+      }
+
       const progress = (scrollPosRef.current % CYCLE_HEIGHT) / CYCLE_HEIGHT;
 
       scrollable1Ref.current?.setScrollProgress(progress);

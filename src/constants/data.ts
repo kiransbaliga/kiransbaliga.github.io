@@ -5,7 +5,32 @@ export const data = [
     title: "KeyValue Software Systems",
     position: "Associate Software Engineer",
     description:
-      "Contributed to a diverse array of projects within the company, garnering invaluable experience across multiple technologies and frameworks. Adhered to Agile methodologies, collaborating effectively within cross-functional teams to ensure timely project delivery. Engaged in a spectrum of endeavors encompassing web development  initiatives. Cultivated proficiency in client interaction, adeptly discerning and meeting their unique requirements. Spearheaded projects leveraging an expansive tech stack, including FastAPI, Django, React, Node.js, PostgreSQL, MongoDB, AWS, and beyond. This multifaceted experience underscores adaptability, technical prowess, and a commitment to delivering innovative solutions",
+      `*AI B2B Ads Platform**
+
+* Enhanced large-scale data processing modules following **event-driven architecture**, significantly increasing platform reliability and scalability across distributed systems.
+* Developed a multi-tenant customizable data schema, enabling tenants to define custom fields with configurable types and values via a **metadata and lookup-table architecture**.
+* Improved export performance by **65% accuracy** and reduced load times by **30–40%** by migrating PDF generation from client-side to server-side.
+* Developed custom **ORM for Google Spanner** in TypeScript and Python.
+* Supported platform refactors that optimized **global latency** and system throughput.
+
+**Communication Rails for AI Agents**
+
+* Built core modules enabling **multi-agent communication and orchestration**, improving overall AI agent response time.
+* Developed an **SDK**, MCP server, and multi-framework integrations (e.g., OpenAI, CrewAI), standardizing AI development across teams.
+* Published SDKs to NPM and PyPI (reaching 160+ peak downloads); automated multi-environment **CI/CD pipelines**.
+
+**AI Powered CSM Platform**
+
+* Increased query efficiency by up to **70%** through backend refactoring and optimized ORM queries.
+* Integrated Salesforce and other external systems, strengthening **data reliability and sync consistency** across services.
+
+**E-Commerce Platform**
+
+* Reduced latency by **12%** through optimized APIs and caching layers for inventory and order management.
+
+**HRTech Platform**
+
+* Built a **dynamic survey engine** for employee analytics, improving efficiency for teams by **40%**.`,
     tags: ["Next.js", "React", "Node.js", "Python", "PostgreSQL"],
   },
   {
@@ -22,8 +47,8 @@ export const data = [
     position: "Application Developer",
     tags: ["Flutter", "Figma", "UI/UX"],
     media:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    type: "video",
+      "https://www.youtube.com/embed/QMG86VMc_FU",
+    type: "youtube",
     description:
       "Contributed to the development of airpmo, a Software-as-a-Service (SaaS) product tailored for the construction industry. This innovative platform is designed to streamline project management by bridging connections among disparate entities within manufacturing projects. By centralizing resources crucial to construction—such as personnel, materials, equipment, and subcontractors—airpmo transforms the complexity and variability inherent in each project into a cohesive digital marketplace. Through this solution, the construction industry gains efficiency, transparency, and enhanced collaboration, facilitating smoother project execution and delivery.",
   },

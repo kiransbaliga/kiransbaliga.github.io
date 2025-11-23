@@ -1,5 +1,6 @@
 import "./Modal.css";
 import { data } from "../../constants/data";
+import ReactMarkdown from "react-markdown";
 
 interface ModalProps {
   dataId: number;
@@ -29,6 +30,16 @@ const Modal = ({ dataId, isOpen = true, setIsOpen }: ModalProps) => {
           {item.type === "image" && (
             <img className="modal-media" src={item.media} alt={item.title} />
           )}
+          {item.type === "youtube" && (
+            <iframe
+              className="modal-media"
+              src={item.media}
+              title={item.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
 
           <div className="modal-details">
             <h2>{item.title}</h2>
@@ -36,7 +47,7 @@ const Modal = ({ dataId, isOpen = true, setIsOpen }: ModalProps) => {
               <p>{item.position}</p>
               <p>{item.year}</p>
             </div>
-            <p>{item.description}</p>
+            <ReactMarkdown>{item.description}</ReactMarkdown>
             <span>#{item.tags.join(", #")}</span>
           </div>
         </div>
