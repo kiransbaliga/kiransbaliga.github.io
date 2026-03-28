@@ -53,6 +53,17 @@
     font-weight: 700;
 }
 
+/* h1 used for SEO heading hierarchy — reset to match previous <span> appearance */
+.name h1 {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
 a {
     text-decoration: none;
     color: #757474;
