@@ -14,7 +14,7 @@
 .exp-item{
     position: relative;
     display: grid;
-    font-size: 12px;
+    font-size: 14px;
     padding: 1rem;
     text-align: end;
     cursor: pointer;
@@ -55,11 +55,11 @@
     font-weight: 700;
 }
 .title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
 }
 .position {
-    font-size: 12px;
+    font-size: 14px;
     color: #a19e9e;
     font-weight: 700;
 }
@@ -86,7 +86,7 @@
 
 .skills{
     margin-top: 1rem;
-    font-size: 12px;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
