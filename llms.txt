@@ -1,0 +1,60 @@
+# Kiran S Baliga – Portfolio
+
+> Backend Engineer & Full Stack Developer based in Bengaluru, India.
+> Working on health technology and developer tooling.
+
+## About
+
+Kiran S Baliga is a Backend Engineer and Full Stack Developer with experience in backend systems, AI platforms, wearables, and SaaS products. Currently working at Ultrahuman on the Ultrahuman Ring and Ultrahuman Performance Labs — a high-tech medical diagnostics and recovery centre in Bengaluru.
+
+## Current Role
+
+- **Company:** Ultrahuman
+- **Position:** Backend Engineer
+- **Since:** 2026
+- **Tech:** Ruby, Rails
+
+## Previous Experience
+
+- **KeyValue Software Systems** (2023–2026) — Associate Software Engineer
+  - AI B2B Ads Platform (event-driven architecture, Google Spanner ORM, PDF generation, global latency)
+  - Communication Rails for AI Agents (multi-agent SDK, MCP server, NPM/PyPI SDKs, CI/CD)
+  - AI Powered CSM Platform (Salesforce integration, ORM optimizations)
+  - E-Commerce Platform (latency optimization, caching)
+  - HRTech Platform (dynamic survey engine)
+
+- **TGH Tech** (2022) — Full Stack Developer
+  - Flutter, Django, MongoDB, AWS
+
+- **airPMO** (2020–2021) — Application Developer
+  - SaaS for the construction industry, Flutter
+
+- **IEEE CS SBC MACE** (2020–2021) — Chairperson
+  - Led 20+ members, organized .hack() 24-hour hackathon (100+ participants)
+  - Led chapter to become the largest IEEE CS Branch globally that year
+
+## Skills
+
+Backend: Ruby, Rails, Go, Python, Node.js, TypeScript
+Frontend: React, Next.js, Flutter
+Databases: PostgreSQL, MongoDB, Google Spanner
+Cloud: AWS, GitHub Actions
+Other: AI/ML, Federated Learning, MCP, OpenAI, CrewAI
+
+## Projects
+
+- Multi-Task Federated Learning system (privacy-preserving collaborative ML)
+- CSS Animations Showcase (curated React animations)
+- Trapped in Chaos (Brackey's Game Jam 2021 entry)
+- Lost (maze generation puzzle game)
+- Typer (1v1 typing competition)
+- Where is my Mouse (HTML/CSS/JS browser game)
+
+## Contact & Links
+
+- Website: https://kiransbaliga.github.io
+- Email: kiransbaliga@gmail.com
+- GitHub: https://github.com/kiransbaliga
+- LinkedIn: https://www.linkedin.com/in/kiransbaliga/
+- Twitter/X: https://twitter.com/kiransbaliga
+- Instagram: https://www.instagram.com/kiransbaliga/

@@ -1,0 +1,21 @@
+{
+  "name": "Kiran S Baliga",
+  "short_name": "KSB",
+  "description": "Backend Engineer & Full Stack Developer – Kiran S Baliga's portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#051090",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
