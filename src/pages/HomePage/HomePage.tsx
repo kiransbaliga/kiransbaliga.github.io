@@ -142,7 +142,7 @@ const HomePage = () => {
         <div className="hero-section">
           <div className="details">
             <div className="name">
-              <span>kiransbaliga</span>
+              <h1>kiransbaliga</h1>
               <div className="socials">
                 @kiransbaliga
                 <span className="plusicon">+</span>
@@ -150,15 +150,15 @@ const HomePage = () => {
               <div className="menu-socials">
                 <ul>
                   <li>
-                    <a href="mailto:kiransbaliga@gmail.com" target="_blank">
+                    <a href="mailto:kiransbaliga@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Send email to Kiran S Baliga">
                       Email
                     </a>
                   </li>
                   <li>
-                    <a href="">Resume</a>
+                    <a href="https://kiransbaliga.engineer/resume" target="_blank" rel="noopener noreferrer" aria-label="View Kiran S Baliga's resume">Resume</a>
                   </li>
                   <li>
-                    <a href="https://github.com/kiransbaliga" target="_blank">
+                    <a href="https://github.com/kiransbaliga" target="_blank" rel="noopener noreferrer" aria-label="Kiran S Baliga on GitHub">
                       {" "}
                       github
                     </a>
@@ -167,13 +167,15 @@ const HomePage = () => {
                     <a
                       href="https://instagram.com/kiransbaliga"
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Kiran S Baliga on Instagram"
                     >
                       {" "}
                       Instagram
                     </a>
                   </li>
                   <li>
-                    <a href="https://linkedin.com/in/kiransbaliga">linkedin</a>
+                    <a href="https://linkedin.com/in/kiransbaliga" target="_blank" rel="noopener noreferrer" aria-label="Kiran S Baliga on LinkedIn">linkedin</a>
                   </li>
                 </ul>
               </div>
@@ -227,9 +229,9 @@ const HomePage = () => {
             <div className="showcase" data-aos="fade" key={index} >
               <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={() => openNewTabToLink(item?.link)}>
                 {item.type === "image" ? (
-                  <img src={item.media} alt="" />
+                  <img src={item.media} alt={item.description ? item.description.slice(0, 80) : "Work showcase"} />
                 ) : (
-                  <video src={item.media} autoPlay muted></video>
+                  <video src={item.media} autoPlay muted aria-label="Work showcase video"></video>
                 )}
               </div>
               <div className="showcase-description">{item.description}</div>
@@ -242,9 +244,9 @@ const HomePage = () => {
             <div className="showcase" data-aos="fade" key={index} >
               <div className="showcase-media" onMouseEnter={onMouseEnterShowcase} onMouseLeave={onMouseLeave} onClick={() => openNewTabToLink(item?.link)}>
                 {item.type === "image" ? (
-                  <img src={item.media} alt="" />
+                  <img src={item.media} alt={item.description ? item.description.slice(0, 80) : "Project showcase"} />
                 ) : (
-                  <video src={item.media} autoPlay muted></video>
+                  <video src={item.media} autoPlay muted aria-label="Project showcase video"></video>
                 )}
               </div>
               <div className="showcase-description">{item.description}</div>

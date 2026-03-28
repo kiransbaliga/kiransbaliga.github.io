@@ -1,7 +1,20 @@
 
 export const data = [
   {
-    year: "2023+",
+    year: "2026+",
+    title: "Ultrahuman",
+    position: "Backend Engineer",
+    description: `**Ultrahuman Ring**
+
+* Working on the backend systems powering the **Ultrahuman Ring**, a continuous health-monitoring wearable that tracks biometrics such as sleep, HRV, glucose trends, and recovery scores.
+
+**Ultrahuman Performance Labs**
+
+* Contributing to the backend infrastructure for **Ultrahuman Performance Labs**, a high-tech medical diagnostics and recovery facility in Bengaluru focused on delivering deep health insights through advanced diagnostics and personalized recovery protocols.`,
+    tags: ["ruby","rails"],
+  },
+  {
+    year: "2023-26",
     title: "KeyValue Software Systems",
     position: "Associate Software Engineer",
     description:
@@ -51,14 +64,6 @@ export const data = [
     type: "youtube",
     description:
       "Contributed to the development of airpmo, a Software-as-a-Service (SaaS) product tailored for the construction industry. This innovative platform is designed to streamline project management by bridging connections among disparate entities within manufacturing projects. By centralizing resources crucial to construction—such as personnel, materials, equipment, and subcontractors—airpmo transforms the complexity and variability inherent in each project into a cohesive digital marketplace. Through this solution, the construction industry gains efficiency, transparency, and enhanced collaboration, facilitating smoother project execution and delivery.",
-  },
-  {
-    year: "2020",
-    title: "Nhorah",
-    position: "Application Developer",
-    description:
-      "Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
-    tags: ["Flutter", "Figma", "UI/UX"],
   },
   {
     year: "2020-21",
