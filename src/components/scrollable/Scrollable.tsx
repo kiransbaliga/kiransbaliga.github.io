@@ -16,6 +16,14 @@ const Scrollable = forwardRef<ScrollableHandle, ScrollableProps>(
     const scrollRef = useRef<HTMLDivElement>(null);
     const set1Ref = useRef<HTMLDivElement>(null);
     const set2Ref = useRef<HTMLDivElement>(null);
+    const [isFromMobile, setIsFromMobile] = React.useState(false);
+
+    React.useEffect(() => {
+      const handleResize = () => setIsFromMobile(window.innerWidth < 768);
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useImperativeHandle(ref, () => ({
       setScrollProgress: (progress: number) => {
@@ -41,7 +49,7 @@ const Scrollable = forwardRef<ScrollableHandle, ScrollableProps>(
         <StickyNavBar heading={heading}></StickyNavBar>
         <div className="scrollable-contents">
           <div ref={set1Ref}>{children}</div>
-          <div ref={set2Ref}>{children}</div>
+          {!isFromMobile && <div ref={set2Ref}>{children}</div>}
         </div>
       </div>
     );
