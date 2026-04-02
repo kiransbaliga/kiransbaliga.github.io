@@ -166,7 +166,7 @@ ul {
     box-sizing: border-box;
     text-align: justify;
     line-height: 1.5rem;
-    font-size: 14px;
+    font-size: 16px;
 
 }
 
@@ -186,7 +186,7 @@ ul {
 }
 
 .about-content {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5rem;
     text-align: justify;
     padding: 10px
@@ -300,7 +300,7 @@ ul {
     }
 
     .about-content {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .volunteering {

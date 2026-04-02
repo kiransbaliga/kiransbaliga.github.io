@@ -155,7 +155,10 @@ const HomePage = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://kiransbaliga.engineer/resume" target="_blank" rel="noopener noreferrer" aria-label="View Kiran S Baliga's resume">Resume</a>
+                    <a href="https://baliga.dev/resume" target="_blank" rel="noopener noreferrer" aria-label="View Kiran S Baliga's resume">Resume</a>
+                  </li>
+                  <li>
+                    <a href="https://blog.baliga.dev" target="_blank" rel="noopener noreferrer" aria-label="Read Kiran S Baliga's Blog">Blog</a>
                   </li>
                   <li>
                     <a href="https://github.com/kiransbaliga" target="_blank" rel="noopener noreferrer" aria-label="Kiran S Baliga on GitHub">
