@@ -1,79 +1,96 @@
+export type MediaType = "image" | "video" | "youtube";
 
-export const data = [
+type WithMedia =
+  | { media: string; type: MediaType }
+  | { media?: undefined; type?: undefined };
+
+export type Experience = {
+  year: string;
+  title: string;
+  position: string;
+  description: string;
+  tags: string[];
+} & WithMedia;
+
+export interface Showcase {
+  media: string;
+  type: "image" | "video";
+  link?: string;
+  description: string;
+}
+
+export const data: Experience[] = [
   {
-    year: "2026+",
+    year: "Mar 2026 — Present",
     title: "Ultrahuman",
-    position: "Backend Engineer",
-    description: `**Ultrahuman Ring**
+    position: "Backend Engineer (Ruby on Rails)",
+    description: `**AI Health Reporting & Growth Platform**
 
-* Working on the backend systems powering the **Ultrahuman Ring**, a continuous health-monitoring wearable that tracks biometrics such as sleep, HRV, glucose trends, and recovery scores.
+* Architected and scaled **AI-powered health reporting and growth platforms serving 5M+ users**, delivering personalized reports and promotions through LLM workflows, experimentation frameworks, and automated quality-control systems.
+* Reduced AI-localization translation failures by **~67%** with automated quality checks and error-recovery workflows.
+* Built a dynamic cross-product upsell system driven by user behaviour and cohort processing, achieving **~8k+ conversions in two months**.
 
-**Ultrahuman Performance Labs**
+**Ultrahuman Ring & Performance Labs**
 
-* Contributing to the backend infrastructure for **Ultrahuman Performance Labs**, a high-tech medical diagnostics and recovery facility in Bengaluru focused on delivering deep health insights through advanced diagnostics and personalized recovery protocols.`,
-    tags: ["ruby","rails"],
+* Contributing to the backend systems powering the **Ultrahuman Ring** — continuous biometrics such as sleep, HRV, glucose trends, and recovery scores — and **Performance Labs**, Ultrahuman's advanced diagnostics and recovery facility in Bengaluru.`,
+    tags: ["Ruby", "Rails", "LLM", "PostgreSQL"],
   },
   {
-    year: "2023-26",
+    year: "Sep 2023 — Feb 2026",
     title: "KeyValue Software Systems",
     position: "Associate Software Engineer",
-    description:
-      `*AI B2B Ads Platform**
+    description: `**Pencil — B2B AI Ads Platform**
 
-* Enhanced large-scale data processing modules following **event-driven architecture**, significantly increasing platform reliability and scalability across distributed systems.
-* Developed a multi-tenant customizable data schema, enabling tenants to define custom fields with configurable types and values via a **metadata and lookup-table architecture**.
-* Improved export performance by **65% accuracy** and reduced load times by **30–40%** by migrating PDF generation from client-side to server-side.
-* Developed custom **ORM for Google Spanner** in TypeScript and Python.
-* Supported platform refactors that optimized **global latency** and system throughput.
+* Refactored microservices and implemented **event-driven processing** during a platform overhaul, building a custom **ORM** and utility library to improve scalability and reduce infrastructure cost.
+* Built a **metadata-driven multi-tenant schema** letting tenants define configurable fields, types, and lookup values.
+* Migrated document rendering to server-side infrastructure, cutting export load times by **30–40%** and improving **PDF generation speed by 65%**.
 
-**Communication Rails for AI Agents**
+**Siren — Communication Rails for AI Agents**
 
-* Built core modules enabling **multi-agent communication and orchestration**, improving overall AI agent response time.
-* Developed an **SDK**, MCP server, and multi-framework integrations (e.g., OpenAI, CrewAI), standardizing AI development across teams.
-* Published SDKs to NPM and PyPI (reaching 160+ peak downloads); automated multi-environment **CI/CD pipelines**.
+* Built **core communication modules** enabling efficient multi-agent orchestration and workflows.
+* Cut AI feature development time by **~80%** by shipping JavaScript & Python **SDKs**, an **MCP server**, and integrations for OpenAI and CrewAI — standardising AI development across teams.
+* Published SDKs to **NPM and PyPI** (160+ peak downloads) with automated multi-environment **CI/CD**.
 
-**AI Powered CSM Platform**
+**Other Client Projects**
 
-* Increased query efficiency by up to **70%** through backend refactoring and optimized ORM queries.
-* Integrated Salesforce and other external systems, strengthening **data reliability and sync consistency** across services.
-
-**E-Commerce Platform**
-
-* Reduced latency by **12%** through optimized APIs and caching layers for inventory and order management.
-
-**HRTech Platform**
-
-* Built a **dynamic survey engine** for employee analytics, improving efficiency for teams by **40%**.`,
-    tags: ["Next.js", "React", "Node.js", "Python", "PostgreSQL"],
+* Architected scalable pipelines integrating **Salesforce**, improving API performance by **12%** via backend caching and database optimisation.
+* Built an **LLM-powered parsing pipeline** in **Python / FastAPI** to automate data extraction from unstructured content.
+* Streamlined inventory and order processing with robust service architectures for e-commerce workflows.`,
+    tags: ["Node.js", "Python", "FastAPI", "TypeScript", "PostgreSQL", "MCP"],
   },
   {
-    year: "2022",
+    year: "May 2022 — Oct 2022",
     title: "TGH Tech",
-    position: "Full Stack Developer",
-    description:
-      " developed a comprehensive full-stack application catering to client needs. This dynamic platform boasts a range of functionalities, including content sharing, an anonymous chat room facilitating discussions between users and expert therapists, and a scheduling system for appointments. Leveraging cutting-edge technologies such as Flutter for the frontend, Django for backend operations, and MongoDB for data management, the application ensures robust performance and scalability. Deployment on AWS further enhances accessibility and reliability. This project showcases adept proficiency in software development and integration, delivering a seamless user experience while addressing complex requirements",
-    tags: ["Flutter", "Django", "AI", "MongoDB", "AWS"],
+    position: "Full Stack Engineer",
+    description: `**Mental Health Platform**
+
+* Built a full-stack mental-health platform with **Django**, implementing content sharing, anonymous therapist messaging, and appointment-scheduling workflows.
+* Deployed scalable backend services on **AWS**, ensuring reliable performance and secure user experiences.`,
+    tags: ["Django", "Flutter", "MongoDB", "AWS"],
   },
   {
-    year: "2020-21",
+    year: "Jun 2021 — Dec 2021",
     title: "airPMO",
-    position: "Application Developer",
-    tags: ["Flutter", "Figma", "UI/UX"],
-    media:
-      "https://www.youtube.com/embed/QMG86VMc_FU",
+    position: "Flutter Developer (Part-time)",
+    media: "https://www.youtube.com/embed/QMG86VMc_FU",
     type: "youtube",
-    description:
-      "Contributed to the development of airpmo, a Software-as-a-Service (SaaS) product tailored for the construction industry. This innovative platform is designed to streamline project management by bridging connections among disparate entities within manufacturing projects. By centralizing resources crucial to construction—such as personnel, materials, equipment, and subcontractors—airpmo transforms the complexity and variability inherent in each project into a cohesive digital marketplace. Through this solution, the construction industry gains efficiency, transparency, and enhanced collaboration, facilitating smoother project execution and delivery.",
+    description: `**Construction SaaS Platform**
+
+* Built key **Flutter** features for a construction SaaS platform that streamlined personnel, materials, equipment, and subcontractor operations.
+* Improved project collaboration and data synchronisation by **~20%** by connecting stakeholders across **10+ active** construction and manufacturing projects.`,
+    tags: ["Flutter", "Figma", "UI/UX"],
   },
   {
-    year: "2020-21",
+    year: "2020 — 2021",
     title: "IEEE CS SBC MACE",
     media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/ieee.jpeg",
     type: "image",
     position: "Chairperson",
-    description:
-      "Led a team of 20+ members to organize events, workshops and hackathons. Conducted weekly sessions on various technologies and programming languages. Organized a 24-hour hackathon .hack(), which saw participation from 100+ students across the state. Conducted a series of workshops on web development, app development, and machine learning. Led the team to become the largest IEEE CS Branch in the world in the same year",
+    description: `**Student Branch Chapter Lead**
+
+* Led a team of **20+ members** to organise events, workshops, and hackathons, including **.hack()** — a 24-hour hackathon with **100+ participants** across the state.
+* Grew the chapter into the **largest IEEE CS Branch in the world** that year.`,
     tags: ["Event Management", "Public Speaking", "Leadership"],
   },
 ];
@@ -85,13 +102,13 @@ export const about = {
     "https://github.com/kiransbaliga/kiransbaliga/raw/main/personal2.jpg",
   ],
   description: [
-    "Born and raised in the vibrant cultural tapestry of Kerala, India, I bring a diverse perspective to my work in the realm of technology. Currently stationed in Kakkanad, Cochin Infopark, I find myself immersed in the dynamic world of web development, app creation, and the ever-evolving landscape of artificial intelligence.",
+    "I'm Kiran — a backend engineer from Kerala. I build the systems that sit quietly underneath the products people use every day. At Ultrahuman that means AI-powered health platforms serving millions of users, where everything has to be fast, reliable, and invisible when it works.",
 
-    "Drawing inspiration from both my roots and the global tech community, I approach projects with a blend of cultural insight and innovative thinking. It's in the midst of everyday conversations, like those with family and friends, that unexpected sparks of creativity ignite within me. These moments of connection and reflection often lead to breakthrough ideas that infuse my work with a unique touch.",
+    "I'm drawn to problems at the seam of scale and craft — event-driven pipelines, multi-tenant data models, and the SDKs and agent tooling other engineers build on top of. To me, good engineering is less about clever code and more about systems that age well and quietly do their job.",
 
-    "With a penchant for exploration and a thirst for knowledge, I embrace the role of a perpetual learner. In my quest to be a jack of all trades, I eagerly absorb insights from a multitude of sources, allowing diverse experiences to shape my creative vision and propel my work forward.",
+    "Away from the backend, I'm a perpetual generalist. I'll pick up a camera, a design tool, or a game engine depending on what an idea needs — and some of my favourite work started as an offhand conversation and ended as something shipped.",
 
-    "In a world where technology serves as both a tool and a challenge, I remain steadfast in my commitment to crafting solutions that empower and inspire, driven by the belief that each innovation has the power to shape our collective future.",
+    "I build to empower people, and I try to leave every codebase a little better than I found it.",
   ],
   pics: [
     "https://github.com/kiransbaliga/kiransbaliga/raw/main/session1.JPG",
@@ -142,27 +159,27 @@ export const about = {
     },
     {
       title: "resume",
-      value: "https://kiransbaliga.engineer/resume",
+      value: "https://baliga.dev/resume",
     },
   ],
 };
 
-export const work = [
+export const work: Showcase[] = [
   {
     media:
       "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/Glome.png",
     type: "image",
     link: "https://tghtech.com",
     description:
-      " developed a comprehensive full-stack application catering to client needs. This dynamic platform boasts a range of functionalities, including content sharing, an anonymous chat room facilitating discussions between users and expert therapists, and a scheduling system for appointments. Leveraging cutting-edge technologies such as Flutter for the frontend, Django for backend operations, and MongoDB for data management, the application ensures robust performance and scalability. Deployment on AWS further enhances accessibility and reliability. This project showcases adept proficiency in software development and integration, delivering a seamless user experience while addressing complex requirements",
+      "Developed a comprehensive full-stack mental-health platform: content sharing, an anonymous chat room connecting users with expert therapists, and appointment scheduling. Built with Flutter on the frontend, Django on the backend, and MongoDB for data, deployed on AWS for reliable, scalable performance.",
   },
   {
     media:
       "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/shopq.png",
     type: "image",
-    Link: "https://github.com/kiransbaliga/Markus",
+    link: "https://github.com/kiransbaliga/Markus",
     description:
-      "An AI enabled shopping assistant, that helps you by automatically orders your daily groceries fro you based on your purchase patterns.",
+      "An AI-enabled shopping assistant that automatically orders your daily groceries for you based on your purchase patterns.",
   },
   {
     media:
@@ -170,7 +187,7 @@ export const work = [
     type: "image",
     link: "https://airpmo.co/",
     description:
-      "Worked on a SaaS product for the construction industry.airpmo aims at connecting the loosely related solos of a manufacturing project, and brings down the vagaries and uniqueness of each project by tying all resources required for construction - people, material , equipment and sub - contractors into an e-marketplace",
+      "Worked on a SaaS product for the construction industry. airPMO connects the loosely related silos of a manufacturing project, tying every resource required for construction — people, material, equipment, and sub-contractors — into a single e-marketplace.",
   },
   {
     media:
@@ -178,18 +195,18 @@ export const work = [
     type: "image",
     link: "https://www.linkedin.com/company/nhoarh/?originalSubdomain=in",
     description:
-      "Contributed to development of mobile application. Provided marketing solutions for offline retailer to better serve the customers",
+      "Contributed to development of a mobile application. Provided marketing solutions for offline retailers to better serve their customers.",
   },
 ];
 
-export const projects = [
+export const projects: Showcase[] = [
   {
     media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/fl.png",
     type: "image",
     link: "https://github.com/kiransbaliga/Multi_Task_Federated_Learning",
     description:
-      "The project showcases a multitask federated learning system that enables collaborative model training across multiple devices while preserving data privacy. This system simultaneously tackles diverse tasks by leveraging shared representations and local training, enhancing efficiency and performance without centralizing data, thus maintaining confidentiality and security for all participants.",
+      "A multi-task federated learning system that enables collaborative model training across multiple devices while preserving data privacy. It tackles diverse tasks simultaneously by leveraging shared representations and local training — enhancing efficiency without centralising data.",
   },
   {
     media:
@@ -197,23 +214,22 @@ export const projects = [
     type: "image",
     link: "https://github.com/kiransbaliga/css-animations",
     description:
-      "ShowCase of curated CSS animations made in react from scratch",
+      "A showcase of curated CSS animations built in React from scratch.",
   },
   {
     media: "https://img.itch.zone/aW1nLzY4NTkzNTAucG5n/315x250%23c/vc540F.png",
     type: "image",
     link: "https://noobiedev.itch.io/trapped-in-chaos",
     description:
-      "Designed a platform game for Brackey's Game Jam 2021 submission. The game features a unique blend of platforming challenges, puzzles, and engaging gameplay mechanics, all set against a captivating backdrop of pixel art visuals and an immersive soundtrack. The project showcases adept proficiency in game design, development, and storytelling, delivering an engaging and memorable player experience.",
+      "A platformer designed for Brackeys Game Jam 2021 — a blend of platforming challenges, puzzles, and engaging mechanics set against pixel-art visuals and an immersive soundtrack.",
   },
-
   {
     media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/lost.png",
     type: "image",
-    Link: "https://github.com/kiransbaliga/lost",
+    link: "https://github.com/kiransbaliga/lost",
     description:
-      "Designed a maze game for itch.io Included complex maze generating algorithms and an engaging puzzle adventure",
+      "A maze game for itch.io featuring complex maze-generation algorithms and an engaging puzzle adventure.",
   },
   {
     media:
@@ -221,7 +237,7 @@ export const projects = [
     type: "image",
     link: "https://typer.kiransbaliga.engineer",
     description:
-      "A 1v1 typing competition game, where you can challenge your friends to a typing competition",
+      "A 1v1 typing competition game where you can challenge your friends to a typing race.",
   },
   {
     media:
@@ -229,6 +245,6 @@ export const projects = [
     link: "https://kiransbaliga.github.io/Where-is-my-mouse",
     type: "image",
     description:
-      "A fun plain html,css,Javascript game where you have to find the mouse pointer in a sea of similar pointers",
+      "A fun plain HTML/CSS/JavaScript game where you have to find the mouse pointer in a sea of similar pointers.",
   },
 ];

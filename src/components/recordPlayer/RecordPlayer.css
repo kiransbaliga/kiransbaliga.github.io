@@ -1,54 +1,43 @@
-.RecordPlayer{  
-    height: 238px;
-    width: 238px;
-    /* stack items on top of each other */
-    position: relative;
-    --spin-duration:30s;
-    z-index: 101;
-    
-    
-
-}
-.RecordImage{
-    position: absolute;
-    top: 0;
-    left:0;
-    z-index:101;
-    height: 100%;
-    width: 100%;
-    transition: all 0.3s ease-out;
+.RecordPlayer {
+  height: clamp(205px, 18vw, 280px);
+  width: clamp(205px, 18vw, 280px);
+  /* stack items on top of each other */
+  position: relative;
+  z-index: 101;
+  cursor: pointer;
+  /* rest at the old hover size; shrink further on hover */
+  transform: scale(0.9);
+  transition: transform 0.35s var(--ease-out);
 }
 
-.RecordImage:hover{
-    transform: scale(0.9);   
+.RecordPlayer:hover {
+  transform: scale(0.8);
 }
 
-.RecordImage:active{
-    transform: scale(0.85);
+.RecordPlayer:active {
+  transform: scale(0.76);
 }
 
-.wrapper-text{
-    position: absolute;
-    top: -12.5px;
-    left: -12.5px;
-    z-index: 101;
-    transform: scale(0.8);
-    /* animation: spin var(--spin-duration) linear infinite;  */
+.RecordImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  /* disc is intentionally smaller than the orbiting text ring */
+  height: 80%;
+  width: 80%;
+  transform: translate(-50%, -50%);
 }
 
-.record-playing{
-    transform: rotate(0deg) 0.5s ease-out;
-    transition: transform 10s linear;
-    animation: spin 10s linear infinite;
-}
-.record-paused{
-    transform: rotate(0deg) 0.5s ease-out;
-    transition: transform 45s linear;
-    animation: spin 45s linear infinite;
-}
-
-/* ANIMATION THAT LOOPS ROTATION  */
-@keyframes spin {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
+.wrapper-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  z-index: 101;
+  /* rotation is driven by requestAnimationFrame in RecordPlayer.tsx so the
+     spin speed can ease smoothly between idle and playing */
+  transform: translate(-50%, -50%);
+  will-change: transform;
 }
