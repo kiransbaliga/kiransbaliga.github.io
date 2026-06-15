@@ -17,4 +17,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://kiransbaliga.github.io/sitemap.xml
+Sitemap: https://baliga.dev/sitemap.xml

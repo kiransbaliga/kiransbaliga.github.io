@@ -1,28 +1,170 @@
 :root {
-  font-family: "Source Code Pro",Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* ---------- Type ---------- */
+  font-family: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+  line-height: 1.6;
   font-weight: 400;
-
-  padding: 0;
-  margin: 0;
- 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  background: #000;
 
-  --colour-primary: #051090;
+  /* fluid modular scale (~1.3 ratio) */
+  --fs-display: clamp(3.25rem, 8vw, 7rem);
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.4rem, 2.4vw, 1.9rem);
+  --fs-lead: clamp(1.125rem, 1rem + 0.6vw, 1.35rem);
+  --fs-body: clamp(1rem, 0.95rem + 0.3vw, 1.0625rem); /* ~16–17px */
+  --fs-small: 0.875rem; /* 14px — metadata only */
+  --fs-micro: 0.75rem; /* 12px — tiny labels */
+
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.18em;
+  --measure: 64ch;
+
+  /* ---------- Colour ---------- */
+  --bg: #000000;
+  --ink-100: #f5f5f5; /* primary text */
+  --ink-200: #d0d0d0;
+  --ink-300: #a8a8a8; /* secondary text */
+  --ink-400: #8a8a8a; /* muted text — passes 4.5:1 on black */
+  --ink-500: #6e6e6e; /* decorative / large text only */
+  --ink-700: #2a2a2a; /* hairlines & borders */
+  --accent: #ff5e3a; /* retro amber-red */
+
+  /* ---------- Space (8px base) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* overshoot / springy */
+  --dur-fast: 0.25s;
+  --dur: 0.35s;
+  --dur-slow: 0.6s;
+
+  color: var(--ink-100);
+  background: var(--bg);
 }
 
-html,body{
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* single source of scroll truth for the hero -> content transition */
+  scroll-snap-type: y mandatory;
+}
+
+/* Mobile uses native vertical flow (the .hero-snap target isn't rendered there,
+   so mandatory snap would force-skip the hero). */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+}
+
+html,
+body {
   padding: 0;
   margin: 0;
-  color: white;
-  scroll-behavior: smooth;
+  color: var(--ink-100);
+  background: var(--bg);
+}
+
+body {
+  line-height: 1.6;
+}
+
+/* keyboard focus ring — visible, on-theme, never on mouse clicks */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 *::-webkit-scrollbar {
-    width: 0px;
+  width: 0px;
+}
+
+/* Vignette + faint scanlines — deepens the CRT/VHS feel (pairs with the grain). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 62%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+/* Film-grain overlay — subtle VHS texture, on-theme with the "video star" motif.
+   Animated via a composited transform (cheap); frozen under reduced-motion. */
+body::after {
+  content: "";
+  position: fixed;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.7s steps(5) infinite;
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0, 0);
   }
+  20% {
+    transform: translate(-8%, 5%);
+  }
+  40% {
+    transform: translate(6%, -9%);
+  }
+  60% {
+    transform: translate(-5%, 7%);
+  }
+  80% {
+    transform: translate(9%, -4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    /* keep snapping (it prevents the half-scrolled limbo) but make it instant */
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

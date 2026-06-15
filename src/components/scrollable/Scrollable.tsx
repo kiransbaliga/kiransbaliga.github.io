@@ -1,10 +1,13 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
+import type { ReactNode } from "react";
 import "./Scrollable.css";
 import StickyNavBar from "../stickey-navbar/StickyNavBar";
+import { useIsMobile } from "../../hooks/useMedia";
 
 interface ScrollableProps {
   heading: string;
-  children?: React.ReactNode;
+  index?: string;
+  children?: ReactNode;
 }
 
 export interface ScrollableHandle {
@@ -12,46 +15,35 @@ export interface ScrollableHandle {
 }
 
 const Scrollable = forwardRef<ScrollableHandle, ScrollableProps>(
-  ({ heading, children }, ref) => {
+  ({ heading, index, children }, ref) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const set1Ref = useRef<HTMLDivElement>(null);
     const set2Ref = useRef<HTMLDivElement>(null);
-    const [isFromMobile, setIsFromMobile] = React.useState(false);
-
-    React.useEffect(() => {
-      const handleResize = () => setIsFromMobile(window.innerWidth < 768);
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const isFromMobile = useIsMobile();
 
     useImperativeHandle(ref, () => ({
       setScrollProgress: (progress: number) => {
         if (scrollRef.current && set1Ref.current && set2Ref.current) {
-          const set1Top = set1Ref.current.offsetTop;
-          const set2Top = set2Ref.current.offsetTop;
-          const singleSetHeight = set2Top - set1Top;
-
-          // progress is 0 to 1, representing one full cycle of the content
-          // We use modulo 1 to ensure it stays within bounds if passed > 1
+          const singleSetHeight =
+            set2Ref.current.offsetTop - set1Ref.current.offsetTop;
           const safeProgress = progress % 1;
-          const targetScrollTop = safeProgress * singleSetHeight;
-
-          scrollRef.current.scrollTop = targetScrollTop;
-        } else {
-          console.warn("Scrollable refs missing", heading);
+          scrollRef.current.scrollTop = safeProgress * singleSetHeight;
         }
       },
     }));
 
     return (
-      <div ref={scrollRef} className="scrollable">
-        <StickyNavBar heading={heading}></StickyNavBar>
+      <section
+        ref={scrollRef}
+        className="scrollable"
+        aria-label={heading}
+      >
+        <StickyNavBar heading={heading} index={index} />
         <div className="scrollable-contents">
           <div ref={set1Ref}>{children}</div>
           {!isFromMobile && <div ref={set2Ref}>{children}</div>}
         </div>
-      </div>
+      </section>
     );
   }
 );

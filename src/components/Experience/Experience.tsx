@@ -2,16 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import "./Exprerience.css";
 import { data } from "../../constants/data";
 import Modal from "../Modal/Modal";
+import { usePrefersReducedMotion } from "../../hooks/useMedia";
+import { useMagnetic } from "../../hooks/useMagnetic";
 
 const skillTags = [
-  "React",
-  "Flutter",
+  "Ruby On Rails",
   "NodeJS",
-  "Python",
-  "AI",
-  "Figma",
   "fastAPI",
   "Django",
+  "React",
+  "Flutter",
+  "Python",
+  "Ruby",
+  "AI",
+  "Figma",
   "PostgreSQL",
   "MongoDB",
   "AWS",
@@ -27,51 +31,51 @@ const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [cursorXY, setCursorXY] = useState({ x: 0, y: 0 });
   const expDataRef = useRef<HTMLDivElement>(null);
-  const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-    if (!expDataRef.current) return;
-    const rect = expDataRef.current.getBoundingClientRect();
-    setCursorXY({ x: event.clientX - rect.left, y: event.clientY - rect.top });
-  };
+  const resumeRef = useMagnetic<HTMLAnchorElement>(0.3, 80);
+  const reducedMotion = usePrefersReducedMotion();
+  const showFollower = !isFromMobile && !reducedMotion;
 
   useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+    if (!showFollower) return;
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!expDataRef.current) return;
+      const rect = expDataRef.current.getBoundingClientRect();
+      setCursorXY({ x: event.clientX - rect.left, y: event.clientY - rect.top });
     };
-  }, []);
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, [showFollower]);
+
+  const openEntry = (index: number) => {
+    setSelectedIndex(index);
+    setIsOpen(true);
+  };
 
   return (
     <>
-      <Modal
-        isOpen={isOpen}
-        dataId={selectedIndex}
-        setIsOpen={setIsOpen}
-      ></Modal>
+      <Modal isOpen={isOpen} dataId={selectedIndex} setIsOpen={setIsOpen} />
       <div ref={expDataRef} className="exp-data">
-        {data.map((item, index) =>{ 
-          
-          if(isFromMobile && index==4) 
-            return         
-          
-          return(
-          <div
+        {showFollower && (
+          <span
+            className="cursor-follower"
+            aria-hidden="true"
+            style={{ left: cursorXY.x, top: cursorXY.y }}
+          ></span>
+        )}
+        {data.map((item, index) => (
+          <button
+            type="button"
             className="exp-item"
-            key={index}
-            onClick={() => {
-              setSelectedIndex(index);
-              setIsOpen(true);
-            }}
+            key={item.title}
+            aria-haspopup="dialog"
+            onClick={() => openEntry(index)}
           >
-            <div className="year">{item.year}</div>
-            <div className="title">{item.title}</div>
-            <div className="position">{item.position}</div>
-            <div className="exp-details">
-              <div className="tags">
-                <span className="tag">{item.tags.join(", ")}</span>
-              </div>
-            </div>
-          </div>
-        )})}
+            <span className="year">{item.year}</span>
+            <span className="title">{item.title}</span>
+            <span className="position">{item.position}</span>
+            <span className="tags">{item.tags.join(", ")}</span>
+          </button>
+        ))}
         <div className="skills-wrapper">
           <div className="skills">
             <span>skills</span>
@@ -79,17 +83,13 @@ const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
           </div>
 
           <a
-            href="https://kiransbaliga.engineer/resume"
-            target="blank"
+            ref={resumeRef}
+            href="https://baliga.dev/resume"
+            target="_blank"
+            rel="noopener noreferrer"
             className="resume-link"
           >
             Resume ↗
-            {!isFromMobile && (
-              <div
-                className="cursor-follower"
-                style={{ left: cursorXY.x, top: cursorXY.y }}
-              ></div>
-            )}
           </a>
         </div>
       </div>

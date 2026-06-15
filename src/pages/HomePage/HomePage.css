@@ -1,347 +1,460 @@
+/* ---------- Scroll-snap architecture ----------
+   html owns the snap (see index.css). The hero is position:fixed, so an
+   in-flow .hero-snap spacer holds its 100vh of scroll and acts as snap target 1.
+   .about-section is the in-flow snap target 2 and slides up over the fixed hero. */
+.hero-snap {
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 .home-layout {
-
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 26;
-    background-color: black;
-    /* background-attachment: fixed; */
-}
-
-.hero-section {
-    width: 64.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 23%;
-    overflow-x: hidden;
-}
-
-.details {
-
-    padding: 0.7rem 1.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 45%;
-    justify-content: flex-start;
-}
-
-.vinyl {
-    /* fit content */
-    position: fixed;
-    z-index: 35;
-    top: 33%;
-    left: 17%;
-    height: 238px;
-    width: 238px;
-    transform: scale(1);
-    transition: all 0.5s ease-out;
-}
-
-.experience {
-    height: 100%;
-    width: 34.5%;
-
-}
-
-.socials {
-    font-size: 14px;
-    color: #757474;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-/* h1 used for SEO heading hierarchy — reset to match previous <span> appearance */
-.name h1 {
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    color: inherit;
-}
-
-a {
-    text-decoration: none;
-    color: #757474;
-    font-weight: 400;
-    transition: all 0.5s ease-out;
-}
-
-a:hover {
-    color: #dfdede;
-}
-
-
-li {
-    list-style-type: none;
-    /* remove the padding too */
-}
-
-ul {
-    padding: 0;
-    margin: 1px;
-}
-
-.menu-socials {
-    position: absolute;
-    z-index: 3;
-    top: 3.6rem;
-    font-size: 16px;
-    transition: all 0.5s ease-out;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.socials:hover>.plusicon {
-    transform: rotate(90deg);
-}
-
-.socials:hover+.menu-socials {
-    visibility: visible;
-    opacity: 1;
-}
-
-.menu-socials:hover {
-    visibility: visible;
-    opacity: 1;
-}
-
-.socials {
-    display: flex;
-    justify-content: flex-start;
-    gap: 5px;
-    align-items: center;
-}
-
-.plusicon {
-    font-size: 16px;
-    transition: all 0.5s ease-out;
-
-}
-
-.place {
-    color: #757474;
-    font-size: 16px;
-}
-
-.designation {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.divider-text {
-    font-size: 14px;
-    font-weight: 700;
-    color: #505050;
-    writing-mode: vertical-lr;
-    width: 1%;
-    overflow: hidden;
-    cursor: default;
-    pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  inset: 0;
+  z-index: 26;
+  background-color: var(--bg);
 }
 
 .about-section {
-    margin-top: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    position: absolute;
-    z-index: 30;
-    background: #000;
-    width: 100vw;
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100vw;
+  background: var(--bg);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
+/* ---------- Hero ---------- */
+.hero-section {
+  width: 64.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  padding-bottom: var(--space-6);
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-5) var(--gutter);
+}
+
+.name {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name h1 {
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-100);
+}
+
+.name-title .char {
+  display: inline-block;
+}
+
+.socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: var(--space-1);
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--ink-400);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+
+.socials:hover {
+  color: var(--ink-200);
+}
+
+.plusicon {
+  font-size: var(--fs-body);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.socials[aria-expanded="true"] .plusicon {
+  transform: rotate(45deg);
+}
+
+.menu-socials {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 8px);
+  left: 0;
+  font-size: var(--fs-body);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    visibility var(--dur-fast) var(--ease-out);
+}
+
+.socials:hover ~ .menu-socials,
+.menu-socials:hover,
+.menu-socials:focus-within,
+.menu-socials.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-socials ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-socials li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--ink-400);
+  font-weight: 400;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--ink-100);
+}
+
+.designation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  text-align: right;
+}
+
+.designation > span:first-child {
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink-100);
+}
+
+.place {
+  color: var(--ink-500);
+  font-size: var(--fs-body);
+  line-height: 1.2;
+}
+
+.scroll-hint {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-left: var(--gutter);
+  color: var(--ink-500);
+  font-size: var(--fs-small);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.scroll-hint[data-hidden="true"] {
+  opacity: 0;
+}
+
+.scroll-hint span {
+  animation: nudge 1.6s var(--ease-out) infinite;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.divider-text {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-500);
+  writing-mode: vertical-lr;
+  width: 1%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: default;
+  pointer-events: none;
+}
+
+.divider-track {
+  display: block;
+  white-space: nowrap;
+  animation: marquee-y 80s linear infinite;
+}
+
+@keyframes marquee-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.experience {
+  height: 100%;
+  width: 34.5%;
+}
+
+/* ---------- Vinyl ---------- */
+.vinyl {
+  position: fixed;
+  z-index: 35;
+  top: 32%;
+  left: 14%;
+  height: clamp(205px, 18vw, 280px);
+  width: clamp(205px, 18vw, 280px);
+  transition: left var(--dur-slow) var(--ease-out),
+    transform 0.25s var(--ease-out);
+}
+
+/* ---------- About / Work / Projects content ---------- */
 .showcase {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 2%;
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-    text-align: justify;
-    line-height: 1.5rem;
-    font-size: 16px;
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  padding: 0 var(--space-4);
+  margin-bottom: var(--space-6);
+  box-sizing: border-box;
 }
 
-.showcase-media>img {
-    /* image width should be maximum available width and adjust heigh accordingly */
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
+.showcase-media {
+  display: block;
+  overflow: hidden;
 }
 
-.showcase-media>video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
+.showcase-media > img,
+.showcase-media > video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.showcase-media:hover > img,
+.showcase-media:hover > video,
+.showcase-media:focus-visible > img {
+  transform: scale(1.03);
+}
+
+.showcase-description {
+  margin: 0;
+  max-width: var(--measure);
+  text-align: left;
+  line-height: 1.7;
+  font-size: var(--fs-body);
+  color: inherit;
 }
 
 .about-content {
-    font-size: 16px;
-    line-height: 1.5rem;
-    text-align: justify;
-    padding: 10px
+  margin: 0;
+  max-width: var(--measure);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  color: inherit;
 }
-
 
 .myself:hover,
 .events:hover {
-    cursor: url('next.ico'), pointer;
+  cursor: pointer;
 }
 
 .volunteering {
-    margin: 5% 2%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: start;
+  margin: var(--space-6) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: start;
 }
 
 .volunteer-item {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
 }
 
-.volunteer-item>div {
-    width: 100%;
+.volunteer-item > div {
+  width: 100%;
 }
 
-.volunteer-year {
-    text-align: end;
-    color: #505050;
+.volunteer-position {
+  color: var(--ink-200);
 }
 
 .volunteer-title {
-    color: #757474;
+  color: var(--ink-400);
 }
 
+.volunteer-year {
+  text-align: end;
+  color: var(--ink-500);
+}
+
+/* ---------- Custom cursor ---------- */
 .cursor-gallery {
-    position: fixed;
-    z-index: 1000;
-    width: fit-content;
-    height: auto;
-    padding: 2px 10px;
-    border-radius: 50px;
-    background-color: #dad9d9;
-    color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: fit-content;
+  height: auto;
+  padding: 2px 12px;
+  border-radius: 50px;
+  background-color: var(--ink-100);
+  color: var(--bg);
+  font-size: var(--fs-small);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+  will-change: left, top;
+}
+
+.cursor-gallery[data-visible="true"] {
+  opacity: 1;
+}
+
+/* ---------- Hero entrance ---------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hidden until the intro completes (.revealed is added after the preloader). */
+.home-layout .name-title .char {
+  transform: translateY(110%);
+}
+.home-layout .socials,
+.home-layout .designation,
+.home-layout .exp-data {
+  opacity: 0;
+}
+
+.home-layout.revealed .name-title .char {
+  animation: char-rise 0.6s var(--ease-out) forwards;
+}
+.home-layout.revealed .socials {
+  animation: fade-in 0.6s var(--ease-out) 0.55s forwards;
+}
+.home-layout.revealed .designation {
+  animation: rise 0.7s var(--ease-out) 0.6s both;
+}
+.home-layout.revealed .exp-data {
+  animation: fade-in 0.9s var(--ease-out) 0.45s forwards;
+}
+
+@keyframes char-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .home-layout {
+    overflow-x: hidden;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+  }
 
-    .home-layout {
-        overflow-x: hidden;
-        flex-direction: column;
-        position: relative;
-    }
+  .hero-section {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: var(--space-4);
+  }
 
-    .hero-section {
-        width: 100%;
-        height: fit-content;
-        gap: 0;
-    }
+  .details {
+    gap: var(--space-5);
+    padding: var(--space-4);
+  }
 
-    .experience {
-        overflow: hidden;
-        width: 100%;
-    }
+  .experience {
+    overflow: hidden;
+    width: 100%;
+  }
 
-    .exp-data {
-        overflow: hidden;
-    }
+  .exp-data {
+    overflow: hidden;
+    height: auto;
+  }
 
-    .vinyl {
-        top: 10%;
-        left: 50%;
-        transform: scale(0.5);
-    }
+  .showcase {
+    padding: 0;
+  }
 
-    .details {
-        gap: 25px;
-    }
+  .about-section {
+    flex-direction: column;
+    margin-top: 0;
+    z-index: 25;
+  }
 
-    .socials {
-        font-size: 12px;
-    }
-
-    .menu-socials {
-        top: 3.5rem;
-    }
-
-    .place {
-        font-size: 12px;
-    }
-
-    .divider-text {
-        font-size: 12px;
-    }
-
-    .showcase {
-        padding: 0;
-    }
-
-    .showcase-media>img {
-        width: 100%;
-        height: auto;
-    }
-
-    .showcase-media>video {
-        width: 100%;
-        height: auto;
-    }
-
-    .about-content {
-        font-size: 14px;
-    }
-
-    .volunteering {
-        margin: 5% 2%;
-    }
-
-    .volunteer-item {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .volunteer-year {
-        text-align: start;
-    }
-
-    .volunteer-title {
-        text-align: start;
-    }
-
-    .cursor-gallery {
-        padding: 2px 5px;
-    }
-
-    .about-section {
-        flex-direction: column;
-        display: flex;
-        margin-top: 0;
-        position: relative;
-        z-index: 25;
-    }
-
-    .mobile-alert {
-        width: 100%;
-        position: sticky;
-        text-align: left;
-        font-size: small;
-        top: 0;
-        padding: 0.25rem 0.5rem;
-        margin: 0;
-        z-index: 10000;
-        color: black;
-        background-color: #ffffff;
-    }
+  .mobile-alert {
+    width: 100%;
+    position: sticky;
+    text-align: left;
+    font-size: var(--fs-small);
+    top: 0;
+    padding: var(--space-1) var(--space-2);
+    margin: 0;
+    z-index: 10000;
+    color: var(--bg);
+    background-color: var(--ink-100);
+  }
 }

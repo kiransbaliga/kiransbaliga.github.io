@@ -1,33 +1,32 @@
 # Kiran S Baliga – Portfolio
 
-> Backend Engineer & Full Stack Developer based in Bengaluru, India.
-> Working on health technology and developer tooling.
+> Backend Engineer & Full Stack Developer based in Bangalore, India.
+> Working on AI-powered health platforms and developer tooling.
 
 ## About
 
-Kiran S Baliga is a Backend Engineer and Full Stack Developer with experience in backend systems, AI platforms, wearables, and SaaS products. Currently working at Ultrahuman on the Ultrahuman Ring and Ultrahuman Performance Labs — a high-tech medical diagnostics and recovery centre in Bengaluru.
+Kiran S Baliga is a Backend Engineer and Full Stack Developer with experience in backend systems, AI platforms, wearables, and SaaS products. Currently a Backend Engineer at Ultrahuman, building AI-powered health reporting and growth platforms serving 5M+ users.
 
 ## Current Role
 
 - **Company:** Ultrahuman
-- **Position:** Backend Engineer
-- **Since:** 2026
-- **Tech:** Ruby, Rails
+- **Position:** Backend Engineer (Ruby on Rails)
+- **Since:** March 2026
+- **Tech:** Ruby, Rails, LLM workflows
+- **Highlights:** AI health-reporting platform (5M+ users); ~67% reduction in AI-localization failures; cross-product upsell system (~8k+ conversions in two months)
 
 ## Previous Experience
 
-- **KeyValue Software Systems** (2023–2026) — Associate Software Engineer
-  - AI B2B Ads Platform (event-driven architecture, Google Spanner ORM, PDF generation, global latency)
-  - Communication Rails for AI Agents (multi-agent SDK, MCP server, NPM/PyPI SDKs, CI/CD)
-  - AI Powered CSM Platform (Salesforce integration, ORM optimizations)
-  - E-Commerce Platform (latency optimization, caching)
-  - HRTech Platform (dynamic survey engine)
+- **KeyValue Software Systems** (Sep 2023 – Feb 2026) — Associate Software Engineer
+  - Pencil — B2B AI Ads Platform (event-driven microservices, custom ORM, metadata-driven multi-tenant schema, server-side PDF generation +65% speed)
+  - Siren — Communication Rails for AI Agents (multi-agent SDKs, MCP server, OpenAI/CrewAI integrations, ~80% faster AI dev, 160+ NPM/PyPI downloads)
+  - Other client projects (Salesforce pipelines +12% API perf, LLM parsing pipeline in Python/FastAPI, e-commerce service architecture)
 
-- **TGH Tech** (2022) — Full Stack Developer
-  - Flutter, Django, MongoDB, AWS
+- **TGH Tech** (May 2022 – Oct 2022) — Full Stack Engineer
+  - Mental-health platform: content sharing, anonymous therapist messaging, scheduling (Django, MongoDB, AWS)
 
-- **airPMO** (2020–2021) — Application Developer
-  - SaaS for the construction industry, Flutter
+- **airPMO** (Jun 2021 – Dec 2021) — Flutter Developer (Part-time)
+  - Construction SaaS; +~20% collaboration across 10+ active projects (Flutter)
 
 - **IEEE CS SBC MACE** (2020–2021) — Chairperson
   - Led 20+ members, organized .hack() 24-hour hackathon (100+ participants)
@@ -52,7 +51,7 @@ Other: AI/ML, Federated Learning, MCP, OpenAI, CrewAI
 
 ## Contact & Links
 
-- Website: https://kiransbaliga.github.io
+- Website: https://baliga.dev
 - Email: kiransbaliga@gmail.com
 - GitHub: https://github.com/kiransbaliga
 - LinkedIn: https://www.linkedin.com/in/kiransbaliga/
