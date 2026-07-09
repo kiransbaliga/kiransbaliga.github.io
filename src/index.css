@@ -59,6 +59,7 @@ html {
   scroll-behavior: smooth;
   /* single source of scroll truth for the hero -> content transition */
   scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
 /* Mobile uses native vertical flow (the .hero-snap target isn't rendered there,
