@@ -189,7 +189,7 @@ const HomePage = () => {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => {
-        const snapped = entry.intersectionRatio >= 0.99;
+        const snapped = entry.intersectionRatio >= 0.95;
         if (snapped && !isAboutSnappedRef.current) {
           // Always (re)start the loop from the top, never mid-cycle.
           scrollPosRef.current = 0;
@@ -200,7 +200,7 @@ const HomePage = () => {
         isAboutSnappedRef.current = snapped;
         setAboutInView(snapped);
       },
-      { threshold: [0, 0.5, 0.99, 1] }
+      { threshold: [0, 0.5, 0.95, 1] }
     );
     obs.observe(el);
     return () => obs.disconnect();
