@@ -175,14 +175,6 @@ export const work: Showcase[] = [
   },
   {
     media:
-      "https://github.com/kiransbaliga/kiransbaliga.github.io/raw/master/img/shopq.png",
-    type: "image",
-    link: "https://github.com/kiransbaliga/Markus",
-    description:
-      "An AI-enabled shopping assistant that automatically orders your daily groceries for you based on your purchase patterns.",
-  },
-  {
-    media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/airpmo.png",
     type: "image",
     link: "https://airpmo.co/",
@@ -200,6 +192,20 @@ export const work: Showcase[] = [
 ];
 
 export const projects: Showcase[] = [
+  {
+    media: "/img/poor-decisions.png",
+    type: "image",
+    link: "https://baliga.dev/poor-decisions/",
+    description:
+      "An expense tracking iOS shortcut with Google Sheets integration — log your expenses in 5 seconds straight into your Google Sheet with zero subscriptions or apps required.",
+  },
+  {
+    media: "/img/readfaster.png",
+    type: "image",
+    link: "https://baliga.dev/readfaster/",
+    description:
+      "An RSVP speed reader for faster, more focused reading.",
+  },
   {
     media:
       "https://raw.githubusercontent.com/kiransbaliga/kiransbaliga.github.io/master/img/fl.png",

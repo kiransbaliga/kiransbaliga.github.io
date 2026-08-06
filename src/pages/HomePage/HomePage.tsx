@@ -116,7 +116,7 @@ const HomePage = () => {
       ticking = false;
       if (!vinylRef.current) return;
       const scrolled = (window.scrollY || document.documentElement.scrollTop) > 0;
-      const left = scrolled ? "-24%" : "14%";
+      const left = scrolled ? "calc(-0.5 * clamp(205px, 18vw, 280px))" : "14%";
       if (left !== lastLeft) {
         vinylRef.current.style.left = left;
         lastLeft = left;
