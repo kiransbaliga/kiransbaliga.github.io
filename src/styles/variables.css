@@ -1,0 +1,41 @@
+:root {
+  /* Color Palette - Hero (Image 1) */
+  --hero-bg: #d64c1b;
+  --hero-bg-deep: #bf3f14;
+  --hero-text: #ffffff;
+  --hero-text-muted: rgba(255, 255, 255, 0.82);
+  --hero-text-dim: rgba(255, 255, 255, 0.45);
+  --hero-grid-line: rgba(255, 255, 255, 0.18);
+  --hero-crosshair: rgba(255, 255, 255, 0.6);
+  --hero-bg-lettering: rgba(160, 42, 12, 0.45);
+
+  /* Color Palette - Projects & Canvas (Image 2) */
+  --canvas-bg: #f6f6f3;
+  --canvas-card-bg: #ffffff;
+  --canvas-subtle-bg: #f2f3f0;
+  --canvas-border: #dfe1e6;
+  --canvas-border-subtle: #eaecee;
+  --canvas-dot: rgba(0, 0, 0, 0.08);
+
+  /* Typography Colors */
+  --text-main: #11141a;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
+  --text-white: #ffffff;
+
+  /* Accent Colors */
+  --accent-primary: #d64c1b;
+  --accent-primary-soft: #fef3ef;
+  --accent-green: #10b981;
+  --accent-green-soft: #ecfdf5;
+
+  /* Typography Stacks */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Source Code Pro', ui-monospace, Menlo, monospace;
+
+  /* Layout & Spacing */
+  --content-max-width: 1200px;
+  --project-card-max-width: 1060px;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}

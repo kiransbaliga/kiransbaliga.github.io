@@ -1,0 +1,490 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  max-height: 1120px;
+  background-color: var(--hero-bg);
+  color: var(--hero-text);
+  overflow: hidden;
+}
+
+/* ─── Grid Overlay with Coordinate Crosshairs ─── */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-entered .hero-grid-overlay {
+  opacity: 1;
+}
+
+.grid-h-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--hero-grid-line);
+}
+
+.grid-h-top { top: 80px; }
+.grid-h-mid { top: 52%; }
+.grid-h-bot { bottom: 70px; }
+
+.grid-v-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--hero-grid-line);
+}
+
+.grid-v-left { left: 48px; }
+.grid-v-c1 { left: 36%; }
+.grid-v-c2 { left: 68%; }
+.grid-v-right { right: 48px; }
+
+.grid-h-line .marker-plus {
+  position: absolute;
+  top: -7px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 300;
+  user-select: none;
+}
+
+.pos-left { left: 48px; transform: translateX(-50%); }
+.pos-c1 { left: 36%; transform: translateX(-50%); }
+.pos-c2 { left: 68%; transform: translateX(-50%); }
+.pos-right { right: 48px; transform: translateX(50%); }
+
+/* ─── PARALLAX LAYER 1: Giant Tonal Background Typography (slowest) ─── */
+.hero-bg-typography {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translate3d(-50%, 0, 0) scale(0.96);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-entered .hero-bg-typography {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0) scale(1);
+}
+
+.bg-name-text {
+  font-family: var(--font-sans);
+  font-size: clamp(9rem, 26vw, 26rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: rgba(160, 42, 12, 0.42);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* ─── PARALLAX LAYER 2: Portrait Cutout Scaled MUCH MORE ─── */
+.hero-portrait-container {
+  position: absolute;
+  bottom: 0;
+  left: 53%;
+  z-index: 5;
+  pointer-events: none;
+  will-change: transform, opacity;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translate3d(-50%, 60px, 0);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.hero-entered .hero-portrait-container {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.hero-portrait-img {
+  width: auto;
+  max-width: min(1060px, 80vw);
+  max-height: 94vh;
+  height: 94vh;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.35));
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 99%);
+  mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 99%);
+}
+
+/* ─── Left Mission Statement ─── */
+.hero-statement-wrapper {
+  position: absolute;
+  top: 38%;
+  left: 48px;
+  max-width: 280px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+.hero-entered .hero-statement-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statement-crosshair .marker-plus {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.hero-statement-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+/* ─── Right Floating Cards ─── */
+.hero-cards-wrapper {
+  position: absolute;
+  top: 20%;
+  right: 48px;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 28px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+.hero-entered .hero-cards-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-floating-card {
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring);
+  cursor: pointer;
+}
+
+.hero-floating-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Top Card: Ultrahuman Featured Work */
+.uh-featured-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 10px 8px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+  width: 165px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uh-card-thumb {
+  width: 100%;
+  height: 135px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f1ebd8;
+}
+
+.uh-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.uh-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #11141a;
+  padding: 0 2px 2px;
+}
+
+.uh-title {
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.uh-category {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+/* Bottom Card: Let's Talk */
+.talk-contact-card {
+  background: #0d0f12;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 245px;
+}
+
+.talk-avatar-col {
+  flex-shrink: 0;
+}
+
+.talk-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.talk-content-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.talk-tag {
+  font-size: 10px;
+  color: #9ca3af;
+  letter-spacing: 0.04em;
+}
+
+.talk-fullname {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 1px 0;
+  line-height: 1.2;
+}
+
+.talk-jobrole {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.talk-action-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.talk-icon-asterisk {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+.talk-icon-arrow {
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.talk-contact-card:hover .talk-icon-arrow {
+  transform: translate(2px, -2px);
+  background: var(--hero-bg);
+}
+
+.talk-contact-card:hover .talk-icon-arrow path {
+  stroke: #ffffff;
+}
+
+/* ─── PARALLAX LAYER 3: Foreground Solid White Headline (fastest) ─── */
+.hero-foreground-headline {
+  position: absolute;
+  bottom: 24px;
+  left: 48px;
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.hero-entered .hero-foreground-headline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.headline-copyright {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: -6px;
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.headline-firstname {
+  font-family: var(--font-sans);
+  font-size: clamp(6rem, 18vw, 15rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+  user-select: none;
+  margin: 0;
+}
+
+/* ─── Responsive Breakpoints ─── */
+@media (max-width: 1024px) {
+  .hero-portrait-container {
+    left: 54%;
+  }
+
+  .hero-portrait-img {
+    max-width: min(780px, 85vw);
+    max-height: 85vh;
+    height: 85vh;
+  }
+
+  .hero-cards-wrapper {
+    top: 16%;
+    right: 32px;
+    gap: 18px;
+  }
+
+  .hero-statement-wrapper {
+    left: 32px;
+    max-width: 240px;
+  }
+
+  .hero-foreground-headline {
+    left: 32px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .grid-v-c1, .grid-v-c2 { display: none; }
+  .grid-v-left { left: 20px; }
+  .grid-v-right { right: 20px; }
+
+  .hero-bg-typography {
+    top: 14%;
+  }
+
+  .bg-name-text {
+    font-size: 28vw;
+  }
+
+  .hero-portrait-container {
+    left: 50%;
+    bottom: 0;
+  }
+
+  .hero-portrait-img {
+    max-width: 100vw;
+    max-height: 72vh;
+    height: 72vh;
+  }
+
+  .hero-statement-wrapper {
+    top: 90px;
+    left: 20px;
+    max-width: 190px;
+  }
+
+  .hero-statement-text {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .hero-cards-wrapper {
+    top: 90px;
+    right: 20px;
+    left: auto;
+    bottom: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .uh-featured-card {
+    display: none;
+  }
+
+  .talk-contact-card {
+    width: auto;
+    padding: 8px 12px;
+    gap: 8px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .talk-avatar-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .talk-fullname {
+    font-size: 12px;
+  }
+
+  .talk-tag,
+  .talk-jobrole {
+    display: none;
+  }
+
+  .talk-action-col {
+    height: 34px;
+  }
+
+  .talk-icon-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero-foreground-headline {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .headline-firstname {
+    font-size: clamp(4.5rem, 24vw, 7.5rem);
+  }
+}

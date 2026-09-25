@@ -1,0 +1,478 @@
+{
+  "site": {
+    "name": "Kiran S Baliga",
+    "shortName": "KIRAN",
+    "role": "Freelance Full-Stack Developer & AI Systems Consultant",
+    "location": "Kerala & Bangalore, India",
+    "availability": "Available for Freelance & Consulting",
+    "email": "kiransbaliga@gmail.com",
+    "phone": "+91 9544737577",
+    "website": "https://baliga.dev",
+    "blog": "https://blog.baliga.dev",
+    "linkedin": "https://linkedin.com/in/kiransbaliga",
+    "github": "https://github.com/kiransbaliga",
+    "twitter": "https://twitter.com/kiransbaliga",
+    "portrait": "/portfolio/subject.png",
+    "copyright": "© Kiran S Baliga 2026"
+  },
+  "home": {
+    "headline": "I build systems that power the products people use every day.",
+    "outlineWord": "systems",
+    "intro": "I'm Kiran — a freelance software engineer and technical consultant. I partner with founders and engineering teams to turn complex ideas into refined, production-ready web platforms, AI agent workflows, and scalable architectures.",
+    "primaryAction": "Work with me",
+    "secondaryAction": "About me"
+  },
+  "about": {
+    "label": "About",
+    "headline": "Freelance full-stack developer & systems consultant",
+    "subline": "I design and build the systems, interfaces, and AI tools that power high-growth products.",
+    "paragraphs": [
+      "I'm Kiran — a freelance software engineer and technical consultant based in India, collaborating with forward-thinking teams globally. Having built AI-powered health platforms serving 5M+ users at Ultrahuman and platform tooling at KeyValue, I now partner with startups and scaling companies to architect and ship production-grade products.",
+      "I'm drawn to problems at the seam of scale and craft — Model Context Protocol (MCP) servers, autonomous agent workflows, event-driven pipelines, multi-tenant databases, and elegant frontend interfaces.",
+      "Whether scoping an MVP from 0 to 1, integrating AI agent workflows, or untangling complex backend bottlenecks, I bring end-to-end technical direction and hands-on execution."
+    ]
+  },
+  "skills": {
+    "languages": "Typescript, Ruby, Go, Python",
+    "technologies": "Ruby on Rails, Node.js, React, Docker, PostgreSQL, Kubernetes, MongoDB, GraphQL, AWS, MCP"
+  },
+  "services": [
+    {
+      "title": "Digital design",
+      "items": [
+        "Web Design",
+        "UI Design",
+        "UX Design",
+        "Digital Product Design",
+        "Design Systems",
+        "Prototyping & Wireframing",
+        "Responsive, Mobile-First",
+        "Accessibility"
+      ]
+    },
+    {
+      "title": "Web development",
+      "items": [
+        "Front-End (HTML, CSS, JS)",
+        "React & Modern Web Apps",
+        "Node.js & TypeScript",
+        "Python & FastAPI",
+        "APIs & Integrations",
+        "Performance, Accessibility & SEO",
+        "Hosting, SSL, Migrations & DNS",
+        "AI Integration & Automation"
+      ]
+    },
+    {
+      "title": "App development",
+      "items": [
+        "Flutter Applications",
+        "Cross-Platform Mobile Apps",
+        "Offline-First Experiences",
+        "App Performance & Reliability"
+      ]
+    },
+    {
+      "title": "Consultancy",
+      "items": [
+        "Technical Consultation & Strategy",
+        "Project Scoping & Budgets",
+        "Architecture & API Design",
+        "AI Systems & MCP Integration",
+        "Database & Performance Optimisation",
+        "Cloud Infrastructure & Deployment",
+        "Project Management & Technical Direction",
+        "Developer Tooling & Team Enablement"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "slug": "ultrahuman",
+      "company": "Ultrahuman",
+      "role": "Backend Engineer",
+      "location": "Remote",
+      "period": "Mar 2026 – June 2026",
+      "link": "https://www.ultrahuman.com",
+      "image": "/portfolio/w_1920.png",
+      "banner": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+      "video": "/portfolio/vision-browser.webm",
+      "videoFallback": "/portfolio/vision-browser.mp4",
+      "accent": "#2a2a2a",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/w_1920.png",
+          "caption": "Ultrahuman Ring AIR — Offline-first health & sleep computation engine built with Kotlin Multiplatform"
+        },
+        {
+          "type": "video",
+          "src": "/portfolio/vision-browser.webm",
+          "fallback": "/portfolio/vision-browser.mp4",
+          "caption": "Blood Vision & Performance Lab — AI-powered biomarker reporting platform serving 5M+ users"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Behavioral Recommendation Engine — Automated LLM localization and growth workflows driving 8k+ conversions"
+        }
+      ],
+      "summary": "AI-powered health reporting and growth platforms serving 5M+ users.",
+      "headline": "Architecting offline-first biomarker intelligence and AI health reporting for 5M+ global users.",
+      "chapters": [
+        {
+          "title": "The Product & Scale",
+          "link": "https://www.ultrahuman.com/ring/",
+          "linkLabel": "Ultrahuman Ring AIR ↗",
+          "body": "Ultrahuman builds metabolic and longevity hardware—including the Ring AIR and Blood Vision—trusted by over five million users worldwide. As the user base scaled rapidly across regions, the platform needed sub-second vital computations that worked reliably even without network connectivity, alongside AI-interpreted biomarker reports that felt personal and clinically grounded."
+        },
+        {
+          "title": "Offline-First Kotlin Multiplatform Engine",
+          "link": "https://www.ultrahuman.com",
+          "linkLabel": "ultrahuman.com ↗",
+          "body": "We migrated core sleep, recovery, and vital-sign computation pipelines from cloud-dependent services into a shared Kotlin Multiplatform (KMP) engine running natively on device. This cut vital computation latency by 80% and unlocked 100% offline execution, so users wake up to instant sleep and recovery scores anywhere in the world."
+        },
+        {
+          "title": "AI Health Reporting & Growth Systems",
+          "link": "https://www.ultrahuman.com/blood-vision/",
+          "linkLabel": "Blood Vision ↗",
+          "body": "For Blood Vision and multilingual health insights, we built resilient LLM orchestration workflows paired with automated validation, quality assurance, and fallback recovery—reducing AI localization failures by 67%. Alongside the reporting stack, we shipped a behavioral recommendation engine that turned real-time biometric signals into contextual nudges, generating over 8,000 conversions within its first sixty days."
+        }
+      ],
+      "bullets": [
+        "Engineered AI-powered backend systems serving 5M+ users with LLM workflows, experimentation frameworks, and automated quality control.",
+        "Reduced vital computation latency by 80% and enabled 100% offline execution by migrating health and sleep computations to Kotlin Multiplatform.",
+        "Reduced AI localization failures by ~67% with automated validation, quality assurance, and recovery workflows.",
+        "Built a behavioral recommendation engine that generated 8k+ conversions within two months."
+      ]
+    },
+    {
+      "slug": "keyvalue",
+      "company": "KeyValue Software Systems",
+      "role": "Associate Software Engineer",
+      "location": "Kerala",
+      "period": "Sep 2023 – Feb 2026",
+      "link": "https://www.keyvalue.systems",
+      "image": "/portfolio/case-pencil.webp",
+      "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
+      "accent": "#1a1b26",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/case-pencil.webp",
+          "caption": "Pencil — B2B AI ads SaaS platform with metadata-driven multi-tenant architecture and server-side rendering"
+        },
+        {
+          "type": "image",
+          "src": "/portfolio/siren-image.png",
+          "caption": "Siren — Communication rails, JS/Python SDKs, and MCP server for autonomous AI agent workflows"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Enterprise Client Systems — High-throughput Salesforce synchronization, FastAPI LLM parsers, and e-commerce pipelines"
+        }
+      ],
+      "summary": "Backend, platform, and AI tooling across Pencil, Siren, and client projects.",
+      "headline": "Building multi-tenant SaaS architectures, AI agent communication rails, and developer SDKs from zero to production.",
+      "chapters": [
+        {
+          "title": "Pencil — B2B Generative AI Ads Platform",
+          "link": "https://www.trypencil.com",
+          "linkLabel": "trypencil.com ↗",
+          "body": "Pencil is a B2B generative AI platform used by global brands to create, predict, and scale high-performing ad creatives. During a ground-up platform overhaul, we refactored core microservices into an event-driven architecture with a custom ORM and metadata-driven multi-tenant schema—allowing enterprise tenants to define custom fields, types, and workflows on the fly. Moving document and creative rendering to server-side infrastructure cut export times by 40% and boosted PDF generation speed by 65%."
+        },
+        {
+          "title": "Siren — Communication Rails for AI Agents",
+          "link": "https://www.trysiren.io",
+          "linkLabel": "trysiren.io ↗",
+          "body": "Siren provides unified notification and communication infrastructure for engineering teams and autonomous AI agents. I architected the core orchestration modules and shipped official JavaScript and Python SDKs (published to NPM and PyPI), a Model Context Protocol (MCP) server, and native connectors for OpenAI and CrewAI—cutting AI agent integration time for developers by nearly 80%."
+        },
+        {
+          "title": "Enterprise Data & E-Commerce Systems",
+          "link": "https://www.keyvalue.systems",
+          "linkLabel": "keyvalue.systems ↗",
+          "body": "Across high-growth client engagements, we built scalable ingestion pipelines synchronizing live CRM data with Salesforce (improving API latency by 12% through strategic caching and query optimization), FastAPI + LLM parsing services that turn unstructured documents into structured schemas, and fault-tolerant inventory and order-processing engines."
+        }
+      ],
+      "bullets": [
+        "Designed metadata-driven multi-tenant architecture supporting configurable schemas and tenant-specific business logic.",
+        "Migrated document rendering to server-side infrastructure, reducing export latency by 30–40% and improving PDF generation by 65%.",
+        "Built JavaScript and Python SDKs, an MCP server, and integrations for OpenAI and CrewAI, reducing AI feature development effort by ~75%.",
+        "Delivered Salesforce synchronization, ingestion APIs, webhooks, and service architectures for e-commerce workflows."
+      ]
+    },
+    {
+      "slug": "tgh-tech",
+      "company": "TGH Tech",
+      "role": "Full Stack Engineer",
+      "location": "Kerala",
+      "period": "May 2022 – Oct 2022",
+      "link": "https://tghtech.com",
+      "image": "/portfolio/Glome.png",
+      "banner": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
+      "accent": "#b7c3b0",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/Glome.png",
+          "caption": "Glome — Full-stack mental health & wellness platform built with Flutter and Django"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Anonymous Therapist Messaging — Secure real-time counseling and appointment scheduling on AWS"
+        }
+      ],
+      "summary": "Full-stack mental health platform using Django, Flutter, MongoDB, and AWS.",
+      "headline": "Designing a privacy-first digital sanctuary connecting patients with licensed mental health professionals.",
+      "chapters": [
+        {
+          "title": "The Vision — Accessible Mental Healthcare",
+          "link": "https://tghtech.com",
+          "linkLabel": "tghtech.com ↗",
+          "body": "Glome was conceived to lower the barrier to mental health support by giving users a safe, stigma-free mobile space to share experiences, book therapy sessions, and communicate with licensed counselors without exposing their identity."
+        },
+        {
+          "title": "What Was Built — Flutter, Django & AWS",
+          "link": "https://tghtech.com",
+          "linkLabel": "Platform Overview ↗",
+          "body": "We delivered the end-to-end mobile and backend experience using Flutter for a calm, responsive cross-platform interface and Django + MongoDB on AWS for the backend. Key modules included encrypted anonymous therapist messaging, real-time calendar availability and appointment booking, and community content feeds."
+        }
+      ],
+      "bullets": [
+        "Built content sharing, anonymous therapist messaging, appointment scheduling, and scalable AWS services."
+      ]
+    },
+    {
+      "slug": "airpmo",
+      "company": "airPMO",
+      "role": "Flutter Developer, Part-time",
+      "location": "Remote",
+      "period": "Jun 2021 – Dec 2021",
+      "link": "https://www.airpmo.com",
+      "image": "/portfolio/airpmo.png",
+      "banner": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+      "accent": "#d7c4ab",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/airpmo.png",
+          "caption": "airPMO — Construction SaaS platform connecting field teams, equipment, and subcontractors"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1541888946425-d09bb18086f6?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Real-Time Site Sync — Cross-platform Flutter modules synchronizing 10+ active construction sites"
+        }
+      ],
+      "summary": "Construction SaaS platform connecting people, material, equipment, and subcontractors.",
+      "headline": "Unifying field engineers, heavy equipment, and subcontractor workflows across active construction sites.",
+      "chapters": [
+        {
+          "title": "The Challenge — Field-to-Office Coordination",
+          "link": "https://www.airpmo.com",
+          "linkLabel": "airpmo.com ↗",
+          "body": "Large-scale infrastructure and construction projects suffer from fragmented communication between on-site engineers, material suppliers, and project management offices. airPMO set out to replace paper logs and scattered spreadsheets with a unified mobile command center."
+        },
+        {
+          "title": "What Was Built — Cross-Site Flutter Sync",
+          "link": "https://www.airpmo.com",
+          "linkLabel": "Explore airPMO ↗",
+          "body": "We built cross-platform Flutter modules tailored for field conditions—enabling real-time progress tracking, equipment allocation, and subcontractor sign-offs that synchronized seamlessly across more than ten concurrent construction projects."
+        }
+      ],
+      "bullets": [
+        "Built Flutter features that improved collaboration and synchronization across 10+ active projects."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "valkyrie",
+      "title": "Valkyrie",
+      "category": "macOS App · Desktop Tool",
+      "description": "An artisan wallpaper companion for macOS. Point to any folder and glide through artwork with fluid gestures, spatial depth, and zero system overhead.",
+      "headline": "A tactile, zero-overhead macOS companion that turns local artwork folders into a living spatial gallery.",
+      "image": "/portfolio/valkyrie.png",
+      "banner": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+      "link": "https://valkyrie.baliga.dev",
+      "accent": "#2a2a2a",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/valkyrie.png",
+          "caption": "Valkyrie — Spatial 3D wallpaper gallery for macOS with hardware-accelerated fluid gestures"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Zero-Overhead Native Engine — Instant folder indexing and live desktop transitions"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "Why Valkyrie Exists",
+          "link": "https://valkyrie.baliga.dev",
+          "linkLabel": "valkyrie.baliga.dev ↗",
+          "body": "Default wallpaper pickers treat curated photography and digital art like static file lists. Valkyrie was designed for collectors and designers who want to point to any local folder on their Mac and glide through high-resolution artwork with physical inertia and spatial depth."
+        },
+        {
+          "title": "Native Craft & Zero Daemon Overhead",
+          "link": "https://github.com/kiransbaliga",
+          "linkLabel": "View on GitHub ↗",
+          "body": "Built natively for Apple Silicon with hardware-accelerated Metal rendering, Valkyrie indexes thousands of 5K wallpapers instantaneously without background CPU drain, applying smooth cross-fade transitions directly to the macOS desktop space."
+        }
+      ]
+    },
+    {
+      "slug": "lyrix",
+      "title": "Lyrix",
+      "category": "macOS App · Audio Tool",
+      "description": "A featherlight, floating lyrics overlay for macOS. Passively streams system audio events with sub-second ProMotion sync and zero audio recording.",
+      "headline": "Sub-second time-synced lyrics floating effortlessly over your macOS workspace.",
+      "image": "/portfolio/lyrix.png",
+      "banner": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80",
+      "link": "https://lyrix.baliga.dev",
+      "accent": "#1a1b26",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/lyrix.png",
+          "caption": "Lyrix — Floating glassmorphic lyrics HUD for macOS with 120Hz ProMotion synchronization"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+          "caption": "Passive Media Stream — Zero-recording system audio event listener for Spotify & Apple Music"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "The Experience",
+          "link": "https://lyrix.baliga.dev",
+          "linkLabel": "lyrix.baliga.dev ↗",
+          "body": "Lyrix brings an unobtrusive, click-through glassmorphic HUD to macOS that displays real-time word-by-word lyrics while you code or design—staying out of your way and adapting automatically to underlying window contrast."
+        },
+        {
+          "title": "Event-Driven ProMotion Sync",
+          "link": "https://lyrix.baliga.dev",
+          "linkLabel": "Download for macOS ↗",
+          "body": "Instead of polling or recording microphone audio, Lyrix hooks into native macOS Now Playing media events and renders syllable transitions at 120Hz ProMotion frame rates with near-zero memory footprint."
+        }
+      ]
+    },
+    {
+      "slug": "poor-decisions",
+      "title": "Poor Decisions",
+      "category": "Side Project",
+      "description": "An expense tracking iOS shortcut with Google Sheets integration. Log expenses in five seconds with zero subscriptions or dedicated apps.",
+      "headline": "Five-second expense logging from your iPhone lock screen straight into Google Sheets.",
+      "image": "/img/poor-decisions.png",
+      "banner": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+      "link": "https://baliga.dev/poor-decisions/",
+      "accent": "#d7c4ab",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/img/poor-decisions.png",
+          "caption": "Poor Decisions — 5-second iOS Back Tap expense logging directly into Google Sheets"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "Zero-App Personal Finance",
+          "link": "https://baliga.dev/poor-decisions/",
+          "linkLabel": "Try Poor Decisions ↗",
+          "body": "Most expense trackers fail because opening a bloated app, waiting for sync, and navigating menus takes too much friction. Poor Decisions uses iOS Back Tap and Shortcuts to prompt for amount and category in under five seconds, appending directly to your own Google Sheet via Apps Script."
+        }
+      ]
+    },
+    {
+      "slug": "readfaster",
+      "title": "Read Faster",
+      "category": "Side Project",
+      "description": "An RSVP speed reader for faster, more focused reading.",
+      "headline": "Eliminating eye saccades with Rapid Serial Visual Presentation for deep, high-velocity reading.",
+      "image": "/img/readfaster.png",
+      "banner": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1600&q=80",
+      "link": "https://baliga.dev/readfaster/",
+      "accent": "#c9d9e4",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/img/readfaster.png",
+          "caption": "Read Faster — Rapid Serial Visual Presentation (RSVP) reader for high-retention speed reading"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "Focused Optical Recognition",
+          "link": "https://baliga.dev/readfaster/",
+          "linkLabel": "Launch Read Faster ↗",
+          "body": "Read Faster streams articles and long-form text one word at a time aligned around the Optimal Recognition Point (ORP), allowing readers to comfortably double their reading speed from 250 WPM to 600+ WPM without losing comprehension."
+        }
+      ]
+    },
+    {
+      "slug": "federated-learning",
+      "title": "Multi-Task Federated Learning",
+      "category": "Machine Learning",
+      "description": "A privacy-preserving multi-task federated learning system for collaborative model training across devices.",
+      "headline": "Training collaborative neural networks across decentralized edge nodes without sharing raw user data.",
+      "image": "/img/fl.png",
+      "banner": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1600&q=80",
+      "link": "https://github.com/kiransbaliga/Multi_Task_Federated_Learning",
+      "accent": "#d7d7d2",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/img/fl.png",
+          "caption": "Multi-Task Federated Learning — Decentralized model aggregation preserving local client privacy"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "Decentralized Privacy-Preserving ML",
+          "link": "https://github.com/kiransbaliga/Multi_Task_Federated_Learning",
+          "linkLabel": "GitHub Repository ↗",
+          "body": "Designed a multi-task federated learning architecture where edge clients train task-specific heads locally while aggregating shared representation layers centrally—preserving strict data locality across heterogeneous datasets."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "Do you both design and build websites?",
+      "Yes. I handle the whole thing, design and development, with one set of hands. My experience spans full-stack products, backend platforms, and the interfaces that connect people to them."
+    ],
+    [
+      "Where are you based, and do you work remotely?",
+      "I'm based in Kerala, India and work remotely with teams across the world. I'm also open to relocating for the right opportunity."
+    ],
+    [
+      "What technologies do you build with?",
+      "I work mostly with Ruby on Rails, TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+    ],
+    [
+      "Can you build an online store or e-commerce site?",
+      "Yes. I've built service architectures and inventory and order-processing workflows for e-commerce products, with a focus on reliable backend systems and integrations."
+    ],
+    [
+      "How much does a website cost?",
+      "It depends entirely on what you need. I work across a wide range of budgets, from smaller sites through to large, complex builds. Tell me what you have in mind and I'll scope it and give you a clear, fixed quote."
+    ],
+    [
+      "How long does a project take?",
+      "Most sites take from a few weeks to a couple of months, depending on scope, content readiness and how many rounds of feedback we go through. I'll give you a realistic timeline up front."
+    ],
+    [
+      "Can you redesign or rebuild my existing website?",
+      "Yes. A lot of my work is refreshing tired sites that no longer reflect the quality of the business, including migrations from older WordPress builds, with care taken to keep your SEO and rankings intact."
+    ],
+    [
+      "Do you offer ongoing support after launch?",
+      "Yes. I offer ongoing support and retainer agreements to keep your site updated, secure and performing after launch and as your business scales."
+    ]
+  ]
+}
