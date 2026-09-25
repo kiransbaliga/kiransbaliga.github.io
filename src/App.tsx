@@ -515,7 +515,7 @@ const Home = () => {
                 accentColor="#151514"
                 align="left"
                 sweepOffset={2.4}
-                speed={1.05}
+                speed={0.4}
                 dashLength={4}
                 dashGap={2}
                 specks={14}
@@ -532,7 +532,7 @@ const Home = () => {
                 accentColor="#151514"
                 align="left"
                 sweepOffset={4.8}
-                speed={0.9}
+                speed={0.3}
                 dashLength={4}
                 dashGap={2}
                 specks={14}
