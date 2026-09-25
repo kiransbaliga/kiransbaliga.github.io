@@ -1,59 +1,44 @@
-# Kiran S Baliga – Portfolio
+# Kiran S Baliga — Freelance Full-Stack Developer & AI Systems Consultant
 
-> Backend Engineer & Full Stack Developer based in Bangalore, India.
-> Working on AI-powered health platforms and developer tooling.
+> Kiran S Baliga is a freelance software engineer and technical consultant specializing in end-to-end web applications, AI agent infrastructure (MCP servers, LLM pipelines), high-scale backend architectures, and cross-platform mobile apps. Available globally for freelance contracts, MVP builds, and fractional technical leadership.
 
-## About
+- **Location:** Kerala / Bangalore, India (Working remotely worldwide)
+- **Email:** kiransbaliga@gmail.com
+- **Website:** https://baliga.dev
+- **Blog:** https://blog.baliga.dev
+- **GitHub:** https://github.com/kiransbaliga
+- **LinkedIn:** https://linkedin.com/in/kiransbaliga
+- **Twitter/X:** https://twitter.com/kiransbaliga
+- **Availability:** Open for Q3/Q4 2026 client projects, technical retainers, and consulting engagements.
 
-Kiran S Baliga is a Backend Engineer and Full Stack Developer with experience in backend systems, AI platforms, wearables, and SaaS products. Currently a Backend Engineer at Ultrahuman, building AI-powered health reporting and growth platforms serving 5M+ users.
+## Core Services
 
-## Current Role
+- **Web Product Engineering:** Full-stack development with React, TypeScript, Node.js, Ruby on Rails, and Python (FastAPI). High-performance, accessible, and SEO-optimized web apps.
+- **AI Systems & Agent Tooling:** Model Context Protocol (MCP) servers, multi-agent frameworks (CrewAI, LangChain, OpenAI API), custom AI SDKs, and automated LLM workflows.
+- **Backend & Cloud Architecture:** Multi-tenant schemas, event-driven microservices, PostgreSQL query optimization, serverless workflows, Docker, and AWS deployments.
+- **Mobile Development:** Flutter applications, offline-first mobile sync, and cross-platform UX.
+- **Technical Consulting:** Architecture audits, performance tuning, MVP scoping, and team enablement.
 
-- **Company:** Ultrahuman
-- **Position:** Backend Engineer (Ruby on Rails)
-- **Since:** March 2026
-- **Tech:** Ruby, Rails, LLM workflows
-- **Highlights:** AI health-reporting platform (5M+ users); ~67% reduction in AI-localization failures; cross-product upsell system (~8k+ conversions in two months)
+## Shipped Work & Career Highlights
 
-## Previous Experience
+- **Ultrahuman (Health Tech, 5M+ Users):** Engineered AI health reporting systems, migrated vital computations to Kotlin Multiplatform (cutting latency by 80%), reduced AI localization failures by 67%, and built an upsell engine generating 8k+ conversions in 2 months.
+- **Pencil (B2B AI Ads Platform):** Architected metadata-driven multi-tenant schemas, event-driven microservices, and server-side document rendering (+65% PDF export speed).
+- **Siren (AI Agent Communications):** Built core communication rails, published NPM and PyPI SDKs, and delivered production MCP servers reducing AI development cycle times by 80%.
+- **Client Projects:** Salesforce synchronization pipelines (+12% API throughput), automated unstructured document extraction with FastAPI, and resilient e-commerce architectures.
 
-- **KeyValue Software Systems** (Sep 2023 – Feb 2026) — Associate Software Engineer
-  - Pencil — B2B AI Ads Platform (event-driven microservices, custom ORM, metadata-driven multi-tenant schema, server-side PDF generation +65% speed)
-  - Siren — Communication Rails for AI Agents (multi-agent SDKs, MCP server, OpenAI/CrewAI integrations, ~80% faster AI dev, 160+ NPM/PyPI downloads)
-  - Other client projects (Salesforce pipelines +12% API perf, LLM parsing pipeline in Python/FastAPI, e-commerce service architecture)
+## Independent Projects
 
-- **TGH Tech** (May 2022 – Oct 2022) — Full Stack Engineer
-  - Mental-health platform: content sharing, anonymous therapist messaging, scheduling (Django, MongoDB, AWS)
+- [Valkyrie](https://valkyrie.baliga.dev): Artisan wallpaper companion for macOS with spatial depth and zero system overhead.
+- [Lyrix](https://lyrix.baliga.dev): Featherlight floating lyrics overlay for macOS with sub-second ProMotion sync and system audio event stream.
+- [Poor Decisions](https://baliga.dev/work/poor-decisions): Zero-subscription iOS Shortcut and Google Sheets financial expense tracker.
+- [Read Faster](https://baliga.dev/work/readfaster): RSVP speed-reading tool for distraction-free reading.
+- [Multi-Task Federated Learning](https://github.com/kiransbaliga/Multi_Task_Federated_Learning): Privacy-preserving collaborative machine learning.
+- [CSS Animations Showcase](https://github.com/kiransbaliga/css-animations): Curated interactive React animation experiments.
 
-- **airPMO** (Jun 2021 – Dec 2021) — Flutter Developer (Part-time)
-  - Construction SaaS; +~20% collaboration across 10+ active projects (Flutter)
+## Technical Skills
 
-- **IEEE CS SBC MACE** (2020–2021) — Chairperson
-  - Led 20+ members, organized .hack() 24-hour hackathon (100+ participants)
-  - Led chapter to become the largest IEEE CS Branch globally that year
-
-## Skills
-
-Backend: Ruby, Rails, Go, Python, Node.js, TypeScript
-Frontend: React, Next.js, Flutter
-Databases: PostgreSQL, MongoDB, Google Spanner
-Cloud: AWS, GitHub Actions
-Other: AI/ML, Federated Learning, MCP, OpenAI, CrewAI
-
-## Projects
-
-- Multi-Task Federated Learning system (privacy-preserving collaborative ML)
-- CSS Animations Showcase (curated React animations)
-- Trapped in Chaos (Brackey's Game Jam 2021 entry)
-- Lost (maze generation puzzle game)
-- Typer (1v1 typing competition)
-- Where is my Mouse (HTML/CSS/JS browser game)
-
-## Contact & Links
-
-- Website: https://baliga.dev
-- Email: kiransbaliga@gmail.com
-- GitHub: https://github.com/kiransbaliga
-- LinkedIn: https://www.linkedin.com/in/kiransbaliga/
-- Twitter/X: https://twitter.com/kiransbaliga
-- Instagram: https://www.instagram.com/kiransbaliga/
+- **Languages:** TypeScript, JavaScript, Ruby, Python, Go, Dart (Flutter), SQL
+- **Frameworks & Libs:** React, Next.js, Ruby on Rails, FastAPI, Node.js, Express, Tailwind CSS, SASS
+- **Databases & Cache:** PostgreSQL, MongoDB, Google Cloud Spanner, Redis
+- **DevOps & Cloud:** AWS, Docker, Kubernetes, GitHub Actions, CI/CD, Cloudflare
+- **AI & Integrations:** Model Context Protocol (MCP), OpenAI API, Anthropic Claude API, CrewAI, Vector Embeddings
