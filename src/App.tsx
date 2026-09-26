@@ -3,8 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import content from "./data/siteContent.json";
-import TechText from "./components/TechText";
-import MaskedHeading from "./components/MaskedHeading";
 import scrollSnapConfig from "./config/scrollSnapConfig";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -465,88 +463,8 @@ const Home = () => {
     <main className="home-page">
       <section className="hero">
         <div className="hero-copy">
-          <h1 className="hero-heading-tech" aria-label={content.home.headline}>
-            <div className="hero-tech-line hero-tech-line-1">
-              <div className="hero-tech-part-ibuild">
-                <TechText
-                  text="I BUILD"
-                  fontFamily="'Barlow Condensed', sans-serif"
-                  fontWeight={700}
-                  letterSpacing={-0.045}
-                  color="#151514"
-                  accentColor="#151514"
-                  align="left"
-                  sweepOffset={0}
-                  speed={0.95}
-                  dashLength={4}
-                  dashGap={2}
-                  specks={12}
-                  scaleToFit={false}
-                />
-              </div>
-              <div className="hero-tech-part-systems">
-                <MaskedHeading
-                  text="SYSTEMS"
-                  tag="span"
-                  mediaType="image"
-                  src="/portfolio/systems-image.jpg"
-                  fillScale={1.35}
-                  parallax={28}
-                  drift={0}
-                  brightness={1.15}
-                  saturation={1.35}
-                  reveal="none"
-                  trigger="mount"
-                  duration={0}
-                  fontSize="inherit"
-                  textScale={0}
-                  weight={700}
-                  tracking={-0.045}
-                  lineHeight={1}
-                  outline={true}
-                  outlineColor="#151514"
-                  outlineWidth={1.5}
-                  className="hero-masked-systems"
-                  style={{
-                    fontFamily: "'Barlow Condensed', sans-serif"
-                  }}
-                />
-              </div>
-            </div>
-            <div className="hero-tech-line hero-tech-line-2">
-              <TechText
-                text="THAT POWER THE PRODUCTS"
-                fontFamily="'Barlow Condensed', sans-serif"
-                fontWeight={700}
-                letterSpacing={-0.045}
-                color="#151514"
-                accentColor="#151514"
-                align="left"
-                sweepOffset={2.4}
-                speed={0.4}
-                dashLength={4}
-                dashGap={2}
-                specks={14}
-                scaleToFit={false}
-              />
-            </div>
-            <div className="hero-tech-line hero-tech-line-3">
-              <TechText
-                text="PEOPLE USE EVERY DAY."
-                fontFamily="'Barlow Condensed', sans-serif"
-                fontWeight={700}
-                letterSpacing={-0.045}
-                color="#151514"
-                accentColor="#151514"
-                align="left"
-                sweepOffset={4.8}
-                speed={0.3}
-                dashLength={4}
-                dashGap={2}
-                specks={14}
-                scaleToFit={false}
-              />
-            </div>
+          <h1>
+            I build <span className="hero-word-systems">systems</span> that power the products people use every day.
           </h1>
           <div className="hero-meta">
             <p>{content.home.intro}</p>
