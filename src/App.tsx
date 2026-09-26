@@ -110,6 +110,14 @@ const useWorkSnap = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!scrollSnapConfig.enabled) return;
+
+    // Disable scroll snapping on mobile / phones (touch screens or viewports < minWidth)
+    if (scrollSnapConfig.disableOnMobile) {
+      const isNarrow = window.innerWidth < scrollSnapConfig.minWidth;
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      if (isNarrow || isTouch) return;
+    }
+
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 

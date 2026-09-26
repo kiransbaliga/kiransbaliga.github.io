@@ -59,6 +59,18 @@ export interface ScrollSnapConfig {
    * Default is 124 (aligns card header just under the sticky section title).
    */
   cardOffsetTop: number;
+
+  /**
+   * Whether to disable scroll snapping on mobile / phones (touch screens or small viewports).
+   * Set to true (recommended) so mobile users get natural, uninterrupted touch scrolling.
+   */
+  disableOnMobile: boolean;
+
+  /**
+   * Minimum viewport width in pixels required for scroll snapping to activate.
+   * Viewports below this width will use standard native scrolling. Default: 768.
+   */
+  minWidth: number;
 }
 
 export const scrollSnapConfig: ScrollSnapConfig = {
@@ -68,6 +80,8 @@ export const scrollSnapConfig: ScrollSnapConfig = {
   threshold: 0.18,          // 18% scroll progress triggers the next snap target
   debounceMs: 140,          // Wait 140ms after scroll settles before gliding
   cardOffsetTop: 124,       // 124px header offset for work cards
+  disableOnMobile: true,    // Disabled on mobile/phone screens for natural touch scrolling
+  minWidth: 768,            // Only snap on viewports 768px or wider
 };
 
 export default scrollSnapConfig;
