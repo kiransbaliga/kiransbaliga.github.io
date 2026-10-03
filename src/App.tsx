@@ -307,21 +307,33 @@ const Header = () => {
           <Link to="/">
             Home <span>01</span>
           </Link>
+          <a href="/#work">
+            Work & Case Studies <span>02</span>
+          </a>
           <Link to="/work">
-            Work <span>02</span>
+            Work & Archive <span>03</span>
           </Link>
           <Link to="/info">
-            About <span>03</span>
+            About <span>04</span>
           </Link>
+          <a
+            href="/resume.pdf"
+            download="Kiran_S_Baliga_Resume.pdf"
+          >
+            Resume <span>05 ↓</span>
+          </a>
           <a
             href={content.site.blog}
             target="_blank"
             rel="noreferrer noopener"
           >
-            Blog <span>04</span>
+            Blog <span>06</span>
           </a>
+          <Link to="/services">
+            Services <span>07</span>
+          </Link>
           <a href="#contact">
-            Contact <span>05</span>
+            Contact <span>08</span>
           </a>
         </nav>
         <p>
@@ -346,10 +358,10 @@ const Footer = () => {
       <div className="footer-heading">
         Let's build
         <br />
-        <em>something useful.</em>
+        <em>something at scale.</em>
       </div>
       <p className="footer-subtext">
-        Available for freelance product engineering, MVPs, and AI systems consulting.
+        Backend & AI Engineer. Open to full-time engineering roles, remote positions, and relocation.
       </p>
       <div className="footer-contact">
         <a href={`mailto:${content.site.email}`} className="footer-email-link">
@@ -362,9 +374,22 @@ const Footer = () => {
         >
           {copied ? "✓ Copied!" : "Copy email"}
         </button>
+        <a
+          href="/resume.pdf"
+          download="Kiran_S_Baliga_Resume.pdf"
+          className="btn-primary"
+          style={{ minHeight: "44px", padding: "10px 22px" }}
+          data-cursor="RESUME"
+        >
+          Download Resume <span>↓</span>
+        </a>
       </div>
+      <p className="footer-services-note">
+        Looking for client web design, WordPress migration, or custom MVP scoping?{" "}
+        <Link to="/services">View Client Services & Web Consulting ↗</Link>
+      </p>
       <div className="footer-bottom">
-        <span>{content.site.copyright}</span>
+        <span>{content.site.copyright} · {content.site.location}</span>
         <span>
           <a
             href={content.site.linkedin}
@@ -379,6 +404,20 @@ const Footer = () => {
             rel="noreferrer noopener"
           >
             GitHub
+          </a>
+          <a
+            href={content.site.npm}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            NPM
+          </a>
+          <a
+            href={content.site.pypi}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            PyPI
           </a>
           {content.site.twitter && (
             <a
@@ -395,35 +434,69 @@ const Footer = () => {
   );
 };
 
-const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => (
-  <Link
-    data-reveal
-    className={`work-card experience-card experience-${job.slug}`}
-    to={`/work/experience/${job.slug}`}
-  >
-    <div className="gallery-meta">
-      <div>
-        <h3>{job.company}</h3>
-        <span>{job.role}</span>
-      </div>
-      <span className="gallery-number">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-    </div>
-    <div className="work-image">
-      <img src={job.image} alt={`${job.company} project`} loading="lazy" />
-    </div>
-    <div className="work-card-copy">
-      <div>
-        <span>
-          {job.period} · {job.location}
+const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => {
+  const isCaseStudy = "isCaseStudy" in job && Boolean(job.isCaseStudy);
+  const subCompany = "subCompany" in job ? (job.subCompany as string | undefined) : undefined;
+  const metricSummary = "metricSummary" in job ? (job.metricSummary as string | undefined) : undefined;
+  const toolingLinks = "toolingLinks" in job ? (job.toolingLinks as { label: string; url: string }[] | undefined) : undefined;
+
+  return (
+    <Link
+      data-reveal
+      className={`work-card experience-card experience-${job.slug} ${isCaseStudy ? "is-case-study" : ""}`}
+      to={`/work/experience/${job.slug}`}
+    >
+      <div className="gallery-meta">
+        <div>
+          {isCaseStudy && <span className="case-study-badge-tag">Case Study</span>}
+          <div className="card-title-group">
+            <h3>{job.company}</h3>
+            {subCompany && <span className="card-subcompany">({subCompany})</span>}
+          </div>
+          <span className="card-role">{job.role}</span>
+        </div>
+        <span className="gallery-number">
+          {String(index + 1).padStart(2, "0")}
         </span>
       </div>
-      <span className="arrow">View experience ↗</span>
-    </div>
-    <p>{job.summary}</p>
-  </Link>
-);
+      <div className="work-image">
+        <img src={job.image} alt={`${job.company} project`} loading="lazy" />
+      </div>
+      <div className="work-card-copy">
+        <div>
+          <span>
+            {job.period} · {job.location}
+          </span>
+        </div>
+        <span className="arrow view-case-study-callout">
+          {isCaseStudy ? "View case study ↗" : "View experience ↗"}
+        </span>
+      </div>
+      {metricSummary && (
+        <div className="work-card-metrics">
+          <span>{metricSummary}</span>
+        </div>
+      )}
+      <p className="card-summary">{job.summary}</p>
+      {toolingLinks && toolingLinks.length > 0 && (
+        <div className="card-tooling-pills" onClick={(e) => e.stopPropagation()}>
+          {toolingLinks.map((tl) => (
+            <a
+              key={tl.label}
+              href={tl.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="tooling-pill"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {tl.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </Link>
+  );
+};
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <Link
@@ -463,32 +536,63 @@ const Home = () => {
     <main className="home-page">
       <section className="hero">
         <div className="hero-copy">
+          <div className="hero-status-pill" data-reveal>
+            <span className="hero-status-beacon" aria-hidden="true" />
+            <span>{content.home.statusLine}</span>
+          </div>
           <h1>
-            I build <span className="hero-word-systems">systems</span> that power the products people use every day.
+            I build <span className="hero-word-systems">{content.home.outlineWord}</span> that power products at scale.
           </h1>
           <div className="hero-meta">
             <p>{content.home.intro}</p>
             <div className="hero-links">
-              <a href={`mailto:${content.site.email}`} className="btn-primary">
-                {content.home.primaryAction} <span>→</span>
+              <a
+                href="/resume.pdf"
+                download="Kiran_S_Baliga_Resume.pdf"
+                className="btn-primary"
+                data-cursor="RESUME"
+              >
+                <svg
+                  className="btn-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                {content.home.primaryAction} <span>↓</span>
+              </a>
+              <a href="#work" className="btn-secondary">
+                Selected Work & Case Studies <span>↓</span>
               </a>
               <Link to="/info" className="btn-secondary">
                 {content.home.secondaryAction} <span>→</span>
               </Link>
+              <a href={`mailto:${content.site.email}`} className="btn-secondary">
+                Contact <span>↗</span>
+              </a>
             </div>
           </div>
         </div>
         <div className="hero-footer">
           <span>{content.site.location}</span>
           <a href="#work" className="hero-scroll-btn">
-            Scroll <span>↓</span>
+            Work & Case Studies <span>↓</span>
           </a>
         </div>
       </section>
 
       <section id="work" className="work-section home-work-section">
         <div className="section-intro">
-          <span className="eyebrow">Selected scale & client work</span>
+          <span className="eyebrow">01 / Selected Case Studies & Systems Work</span>
         </div>
         <div className="home-work-grid experience-work-grid">
           <div className="home-featured">
@@ -607,31 +711,45 @@ const Info = () => {
       </section>
       <section className="info-overview">
         <div className="info-overview-services">
-          <h2>Services</h2>
-          {content.services.map((service) => (
-            <InfoService
-              key={service.title}
-              title={service.title}
-              items={service.items}
-            />
-          ))}
+          <h2>Engineering Capabilities</h2>
+          <div className="capabilities-grid">
+            {content.engineeringCapabilities.map((cap) => (
+              <div key={cap.title} className="capability-box">
+                <h3>{cap.title}</h3>
+                <ul>
+                  {cap.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="info-overview-facts">
-          <h2>Experience</h2>
+          <h2>Experience & Education</h2>
           {content.experience.map((job) => (
             <ExperienceRow key={job.company} job={job} />
           ))}
+          <article className="experience-row">
+            <div>
+              <h3>APJ Abdul Kalam Technological University</h3>
+              <span>B.Tech in Computer Science & Engineering (Minor ECE) · GPA 8.43</span>
+            </div>
+            <time>2023</time>
+          </article>
         </div>
         <div className="info-overview-contact">
-          <h2>Contact & Connect</h2>
-          <a className="info-email" href={`mailto:${content.site.email}`}>
-            {content.site.email}
-          </a>
+          <h2>Contact & Links</h2>
           <a
             className="info-cv"
-            href={`mailto:${content.site.email}?subject=Project%20Inquiry%20/%20Resume%20Request`}
+            href="/resume.pdf"
+            download="Kiran_S_Baliga_Resume.pdf"
+            style={{ fontWeight: 600, color: "var(--text)" }}
           >
-            Resume / Inquiry ↗
+            Download Resume ↓
+          </a>
+          <a className="info-email" href={`mailto:${content.site.email}`}>
+            {content.site.email}
           </a>
           <a
             className="info-cv"
@@ -649,12 +767,61 @@ const Info = () => {
           >
             GitHub ↗
           </a>
+          <a
+            className="info-cv"
+            href={content.site.npm}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            NPM Registry ↗
+          </a>
+          <a
+            className="info-cv"
+            href={content.site.pypi}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            PyPI Registry ↗
+          </a>
         </div>
       </section>
-      <section className="info-faq">
+      <section style={{ padding: "0 3.8vw 4vw" }}>
+        <p className="footer-services-note">
+          Looking for client web design, WordPress migration, or custom MVP scoping?{" "}
+          <Link to="/services">View Client Services & Web Consulting ↗</Link>
+        </p>
+      </section>
+      <Footer />
+    </main>
+  );
+};
+
+const ServicesPage = () => {
+  useReveal();
+  return (
+    <main className="services-page">
+      <section className="services-hero">
+        <span className="eyebrow">Client Services & Web Consulting</span>
+        <h1>Web Design, Development & Client Consulting</h1>
+        <p>
+          For founders, agencies, and businesses looking for custom web design, WordPress migrations, digital product architecture, and project scoping.
+        </p>
+      </section>
+
+      <section className="services-grid-wrap">
+        {content.freelance.services.map((service) => (
+          <InfoService
+            key={service.title}
+            title={service.title}
+            items={service.items}
+          />
+        ))}
+      </section>
+
+      <section className="info-faq" style={{ padding: "0 0 6vw" }}>
         <h2>Frequently Asked Questions</h2>
         <div className="faq-grid">
-          {content.faqs.map(([question, answer]) => (
+          {content.freelance.faqs.map(([question, answer]) => (
             <article data-reveal key={question}>
               <h3>{question}</h3>
               <p>{answer}</p>
@@ -662,6 +829,22 @@ const Info = () => {
           ))}
         </div>
       </section>
+
+      <section className="services-cta-banner" data-reveal>
+        <div>
+          <h2>Have a project in mind?</h2>
+          <p>
+            Tell me about your product requirements, timeline, or redesign goals and I'll provide a clear project scope.
+          </p>
+        </div>
+        <a
+          href={`mailto:${content.site.email}?subject=Project%20Inquiry%20/%20Scoping`}
+          className="btn-banner"
+        >
+          Inquire for Project Scoping <span>↗</span>
+        </a>
+      </section>
+
       <Footer />
     </main>
   );
@@ -752,6 +935,8 @@ type CaseStudyProps = {
     link?: string;
     linkLabel?: string;
   }[];
+  metrics?: { value: string; label: string }[];
+  toolingLinks?: { label: string; url: string }[];
 };
 
 const CaseStudyPage = ({
@@ -764,7 +949,9 @@ const CaseStudyPage = ({
   banner,
   link,
   gallery,
-  chapters
+  chapters,
+  metrics,
+  toolingLinks
 }: CaseStudyProps) => {
   useReveal();
   const domain = link.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
@@ -793,6 +980,36 @@ const CaseStudyPage = ({
           </a>
         </h1>
         <p>{summary}</p>
+
+        {metrics && metrics.length > 0 && (
+          <div className="case-study-hero-metrics" data-reveal>
+            {metrics.map((m, idx) => (
+              <div key={idx} className="metric-box">
+                <span className="metric-value">{m.value}</span>
+                <span className="metric-label">{m.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {toolingLinks && toolingLinks.length > 0 && (
+          <div className="case-study-hero-tooling" data-reveal>
+            <span className="tooling-heading">Tools & Registries:</span>
+            <div className="tooling-links-wrap">
+              {toolingLinks.map((tl) => (
+                <a
+                  key={tl.label}
+                  href={tl.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="tooling-pill"
+                >
+                  {tl.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
       <AutoScrollGallery items={gallery} />
       <section className="project-story">
@@ -876,20 +1093,28 @@ const ProjectPage = ({ project }: { project: Project }) => (
   />
 );
 
-const ExperiencePage = ({ job }: { job: Experience }) => (
-  <CaseStudyPage
-    title={job.company}
-    kicker={`${job.role} · ${job.location} · ${job.period}`}
-    eyebrow={`${job.role} · ${job.period}`}
-    summary={job.summary}
-    headline={job.headline}
-    accent={job.accent}
-    banner={job.banner || job.image}
-    link={job.link}
-    gallery={job.gallery}
-    chapters={job.chapters}
-  />
-);
+const ExperiencePage = ({ job }: { job: Experience }) => {
+  const metrics = "metrics" in job ? (job.metrics as { value: string; label: string }[]) : undefined;
+  const toolingLinks = "toolingLinks" in job ? (job.toolingLinks as { label: string; url: string }[]) : undefined;
+  const subCompany = "subCompany" in job ? (job.subCompany as string | undefined) : undefined;
+
+  return (
+    <CaseStudyPage
+      title={job.company}
+      kicker={`${job.role}${subCompany ? ` · ${subCompany}` : ""} · ${job.location} · ${job.period}`}
+      eyebrow={`${job.role}${subCompany ? ` (${subCompany})` : ""} · ${job.period}`}
+      summary={job.summary}
+      headline={job.headline}
+      accent={job.accent}
+      banner={job.banner || job.image}
+      link={job.link}
+      gallery={job.gallery}
+      chapters={job.chapters}
+      metrics={metrics}
+      toolingLinks={toolingLinks}
+    />
+  );
+};
 
 export default function App() {
   const location = useLocation();
@@ -951,7 +1176,9 @@ export default function App() {
       <div className="noise-overlay" aria-hidden="true" />
       <Header />
       <div key={location.pathname} className="page-transition">
-        {path === "/info" ? (
+        {path === "/services" ? (
+          <ServicesPage />
+        ) : path === "/info" ? (
           <Info />
         ) : path === "/work" ? (
           <WorkIndex />

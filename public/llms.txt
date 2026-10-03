@@ -1,15 +1,17 @@
-# Kiran S Baliga — Freelance Full-Stack Developer & AI Systems Consultant
+# Kiran S Baliga — Backend & AI Engineer
 
-> Kiran S Baliga is a freelance software engineer and technical consultant specializing in end-to-end web applications, AI agent infrastructure (MCP servers, LLM pipelines), high-scale backend architectures, and cross-platform mobile apps. Available globally for freelance contracts, MVP builds, and fractional technical leadership.
+> Kiran S Baliga is a backend and AI engineer specializing in distributed systems, Model Context Protocol (MCP) tooling, high-scale backend architectures, and AI agent workflows. Proven scale across 5M+ users at Ultrahuman, multi-tenant B2B architectures at Pencil, and developer SDKs at KeyValue. Open to full-time engineering roles, remote teams, and relocation.
 
-- **Location:** Kerala / Bangalore, India (Working remotely worldwide)
+- **Location:** Bangalore, India (Open to relocate)
+- **Role:** Backend & AI Engineer
+- **Resume:** https://baliga.dev/resume.pdf
 - **Email:** kiransbaliga@gmail.com
 - **Website:** https://baliga.dev
 - **Blog:** https://blog.baliga.dev
 - **GitHub:** https://github.com/kiransbaliga
 - **LinkedIn:** https://linkedin.com/in/kiransbaliga
 - **Twitter/X:** https://twitter.com/kiransbaliga
-- **Availability:** Open for Q3/Q4 2026 client projects, technical retainers, and consulting engagements.
+- **Availability:** Open for full-time backend and AI engineering positions (Remote or Relocation OK).
 
 ## Core Services
 

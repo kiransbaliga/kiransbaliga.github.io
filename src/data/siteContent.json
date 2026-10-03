@@ -2,9 +2,9 @@
   "site": {
     "name": "Kiran S Baliga",
     "shortName": "KIRAN",
-    "role": "Freelance Full-Stack Developer & AI Systems Consultant",
-    "location": "Kerala & Bangalore, India",
-    "availability": "Available for Freelance & Consulting",
+    "role": "Backend & AI Engineer",
+    "location": "Bangalore, India (Open to relocate)",
+    "availability": "Open to Full-Time / Remote \u00b7 Relocation OK",
     "email": "kiransbaliga@gmail.com",
     "phone": "+91 9544737577",
     "website": "https://baliga.dev",
@@ -13,28 +13,32 @@
     "github": "https://github.com/kiransbaliga",
     "twitter": "https://twitter.com/kiransbaliga",
     "portrait": "/portfolio/subject.png",
-    "copyright": "© Kiran S Baliga 2026"
+    "copyright": "\u00a9 Kiran S Baliga 2026",
+    "resume": "/resume.pdf",
+    "npm": "https://www.npmjs.com/search?q=trysiren",
+    "pypi": "https://pypi.org/search/?q=trysiren"
   },
   "home": {
-    "headline": "I build systems that power the products people use every day.",
+    "headline": "I build systems that power products at scale.",
     "outlineWord": "systems",
-    "intro": "I'm Kiran — a freelance software engineer and technical consultant. I partner with founders and engineering teams to turn complex ideas into refined, production-ready web platforms, AI agent workflows, and scalable architectures.",
-    "primaryAction": "Work with me",
-    "secondaryAction": "About me"
+    "intro": "I'm Kiran \u2014 a backend and AI engineer specializing in high-throughput distributed systems, LLM orchestration pipelines, and Model Context Protocol (MCP) tooling. Previously engineered systems serving 5M+ users at Ultrahuman, B2B AI ad infrastructure at Pencil, and developer SDKs at KeyValue.",
+    "primaryAction": "Download Resume",
+    "secondaryAction": "About & Background",
+    "statusLine": "Backend & AI Engineer \u00b7 Open to full-time / remote \u00b7 Relocation OK"
   },
   "about": {
     "label": "About",
-    "headline": "Freelance full-stack developer & systems consultant",
-    "subline": "I design and build the systems, interfaces, and AI tools that power high-growth products.",
+    "headline": "Backend & AI Engineer building scalable systems and agentic infrastructure",
+    "subline": "Focused on distributed architectures, Model Context Protocol (MCP) servers, event-driven pipelines, and developer tooling.",
     "paragraphs": [
-      "I'm Kiran — a freelance software engineer and technical consultant based in India, collaborating with forward-thinking teams globally. Having built AI-powered health platforms serving 5M+ users at Ultrahuman and platform tooling at KeyValue, I now partner with startups and scaling companies to architect and ship production-grade products.",
-      "I'm drawn to problems at the seam of scale and craft — Model Context Protocol (MCP) servers, autonomous agent workflows, event-driven pipelines, multi-tenant databases, and elegant frontend interfaces.",
-      "Whether scoping an MVP from 0 to 1, integrating AI agent workflows, or untangling complex backend bottlenecks, I bring end-to-end technical direction and hands-on execution."
+      "I'm Kiran \u2014 a backend and AI engineer based in Bangalore, India (open to relocate and remote). I engineer the systems that sit quietly underneath products, handling scale, concurrency, and reliability.",
+      "Having built AI-powered health platforms serving 5M+ users at Ultrahuman, multi-tenant B2B architectures at Pencil, and developer tooling at KeyValue, I focus on the seam of scale, performance, and craft.",
+      "My work centers on Model Context Protocol (MCP) servers, autonomous agent workflows, event-driven microservices, high-throughput database schemas, and developer SDKs. I'm actively seeking full-time and remote backend / AI engineering opportunities."
     ]
   },
   "skills": {
-    "languages": "Typescript, Ruby, Go, Python",
-    "technologies": "Ruby on Rails, Node.js, React, Docker, PostgreSQL, Kubernetes, MongoDB, GraphQL, AWS, MCP"
+    "languages": "TypeScript, Python, Ruby, Go, SQL, Dart, C++",
+    "technologies": "Ruby on Rails, Node.js, FastAPI, PostgreSQL, Redis, Docker, Kubernetes, AWS, Model Context Protocol (MCP), LLM Orchestration, GraphQL"
   },
   "services": [
     {
@@ -92,7 +96,7 @@
       "company": "Ultrahuman",
       "role": "Backend Engineer",
       "location": "Remote",
-      "period": "Mar 2026 – June 2026",
+      "period": "Mar 2026 \u2013 June 2026",
       "link": "https://www.ultrahuman.com",
       "image": "/portfolio/w_1920.png",
       "banner": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
@@ -103,18 +107,18 @@
         {
           "type": "image",
           "src": "/portfolio/w_1920.png",
-          "caption": "Ultrahuman Ring AIR — Offline-first health & sleep computation engine built with Kotlin Multiplatform"
+          "caption": "Ultrahuman Ring AIR \u2014 Offline-first health & sleep computation engine built with Kotlin Multiplatform"
         },
         {
           "type": "video",
           "src": "/portfolio/vision-browser.webm",
           "fallback": "/portfolio/vision-browser.mp4",
-          "caption": "Blood Vision & Performance Lab — AI-powered biomarker reporting platform serving 5M+ users"
+          "caption": "Blood Vision & Performance Lab \u2014 AI-powered biomarker reporting platform serving 5M+ users"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Behavioral Recommendation Engine — Automated LLM localization and growth workflows driving 8k+ conversions"
+          "caption": "Behavioral Recommendation Engine \u2014 Automated LLM localization and growth workflows driving 8k+ conversions"
         }
       ],
       "summary": "AI-powered health reporting and growth platforms serving 5M+ users.",
@@ -123,20 +127,20 @@
         {
           "title": "The Product & Scale",
           "link": "https://www.ultrahuman.com/ring/",
-          "linkLabel": "Ultrahuman Ring AIR ↗",
-          "body": "Ultrahuman builds metabolic and longevity hardware—including the Ring AIR and Blood Vision—trusted by over five million users worldwide. As the user base scaled rapidly across regions, the platform needed sub-second vital computations that worked reliably even without network connectivity, alongside AI-interpreted biomarker reports that felt personal and clinically grounded."
+          "linkLabel": "Ultrahuman Ring AIR \u2197",
+          "body": "Ultrahuman builds metabolic and longevity hardware\u2014including the Ring AIR and Blood Vision\u2014trusted by over five million users worldwide. As the user base scaled rapidly across regions, the platform needed sub-second vital computations that worked reliably even without network connectivity, alongside AI-interpreted biomarker reports that felt personal and clinically grounded."
         },
         {
           "title": "Offline-First Kotlin Multiplatform Engine",
           "link": "https://www.ultrahuman.com",
-          "linkLabel": "ultrahuman.com ↗",
+          "linkLabel": "ultrahuman.com \u2197",
           "body": "We migrated core sleep, recovery, and vital-sign computation pipelines from cloud-dependent services into a shared Kotlin Multiplatform (KMP) engine running natively on device. This cut vital computation latency by 80% and unlocked 100% offline execution, so users wake up to instant sleep and recovery scores anywhere in the world."
         },
         {
           "title": "AI Health Reporting & Growth Systems",
           "link": "https://www.ultrahuman.com/blood-vision/",
-          "linkLabel": "Blood Vision ↗",
-          "body": "For Blood Vision and multilingual health insights, we built resilient LLM orchestration workflows paired with automated validation, quality assurance, and fallback recovery—reducing AI localization failures by 67%. Alongside the reporting stack, we shipped a behavioral recommendation engine that turned real-time biometric signals into contextual nudges, generating over 8,000 conversions within its first sixty days."
+          "linkLabel": "Blood Vision \u2197",
+          "body": "For Blood Vision and multilingual health insights, we built resilient LLM orchestration workflows paired with automated validation, quality assurance, and fallback recovery\u2014reducing AI localization failures by 67%. Alongside the reporting stack, we shipped a behavioral recommendation engine that turned real-time biometric signals into contextual nudges, generating over 8,000 conversions within its first sixty days."
         }
       ],
       "bullets": [
@@ -144,62 +148,250 @@
         "Reduced vital computation latency by 80% and enabled 100% offline execution by migrating health and sleep computations to Kotlin Multiplatform.",
         "Reduced AI localization failures by ~67% with automated validation, quality assurance, and recovery workflows.",
         "Built a behavioral recommendation engine that generated 8k+ conversions within two months."
+      ],
+      "isCaseStudy": true,
+      "metrics": [
+        {
+          "value": "5M+",
+          "label": "Active Users"
+        },
+        {
+          "value": "-80%",
+          "label": "Vital Latency"
+        },
+        {
+          "value": "100%",
+          "label": "Offline KMP"
+        },
+        {
+          "value": "8k+",
+          "label": "Conversions"
+        }
+      ],
+      "metricSummary": "5M+ Users \u00b7 -80% Vital Latency \u00b7 100% Offline KMP \u00b7 8k+ Conversions",
+      "toolingLinks": [
+        {
+          "label": "Ultrahuman Ring \u2197",
+          "url": "https://www.ultrahuman.com/ring/"
+        },
+        {
+          "label": "Blood Vision \u2197",
+          "url": "https://www.ultrahuman.com/blood-vision/"
+        },
+        {
+          "label": "GitHub \u2197",
+          "url": "https://github.com/kiransbaliga"
+        }
+      ]
+    },
+    {
+      "slug": "pencil",
+      "company": "Pencil",
+      "subCompany": "KeyValue Software Systems",
+      "role": "Backend & Systems Engineer",
+      "location": "Kerala",
+      "period": "Sep 2023 \u2013 Feb 2026",
+      "link": "https://www.trypencil.com",
+      "image": "/portfolio/case-pencil.webp",
+      "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
+      "accent": "#1a1b26",
+      "isCaseStudy": true,
+      "metrics": [
+        {
+          "value": "+65%",
+          "label": "PDF Speed"
+        },
+        {
+          "value": "-35%",
+          "label": "Export Latency"
+        },
+        {
+          "value": "14.2k",
+          "label": "Peak req/s"
+        },
+        {
+          "value": "Multi-Tenant",
+          "label": "Dynamic Schema"
+        }
+      ],
+      "metricSummary": "+65% PDF Speed \u00b7 -35% Export Load Time \u00b7 14.2k req/s \u00b7 Multi-Tenant Schema",
+      "toolingLinks": [
+        {
+          "label": "trypencil.com \u2197",
+          "url": "https://www.trypencil.com"
+        },
+        {
+          "label": "GitHub \u2197",
+          "url": "https://github.com/kiransbaliga"
+        }
+      ],
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/case-pencil.webp",
+          "caption": "Pencil \u2014 B2B AI ads SaaS platform with metadata-driven multi-tenant architecture and server-side rendering"
+        }
+      ],
+      "summary": "B2B generative AI ads platform: event-driven microservices, metadata-driven multi-tenant schemas, and server-side PDF rendering.",
+      "headline": "Overhauling microservices into event-driven architecture and metadata-driven multi-tenant schemas.",
+      "chapters": [
+        {
+          "title": "Platform Overhaul & Event-Driven Architecture",
+          "link": "https://www.trypencil.com",
+          "linkLabel": "trypencil.com \u2197",
+          "body": "Pencil is a B2B generative AI platform used by global brands to create, predict, and scale high-performing ad creatives. During a ground-up platform overhaul, we refactored core microservices into an event-driven architecture with a custom ORM and message queues to decouple ingestion from heavy asset rendering."
+        },
+        {
+          "title": "Metadata-Driven Multi-Tenant Schemas",
+          "body": "Built an extensible metadata-driven multi-tenant database layer that allows enterprises to define custom typed fields, types, and lookup values dynamically on the fly, eliminating brittle hardcoded database migrations."
+        },
+        {
+          "title": "Headless Server-Side Vector Rendering (+65% Speed)",
+          "body": "Migrated document and creative rendering from browser processes to sandboxed server-side worker fleets, cutting asset export times by 35% and boosting high-resolution PDF generation speed by 65%."
+        }
+      ],
+      "bullets": [
+        "Refactored distributed microservices and implemented event-driven processing, improving scalability and reducing infrastructure costs.",
+        "Built metadata-driven multi-tenant schema that supported configurable fields, types, and lookup values for enterprise tenants.",
+        "Migrated document rendering to server-side infrastructure, reducing export load times by 30\u201340% and improving PDF generation speed by 65%."
+      ]
+    },
+    {
+      "slug": "siren",
+      "company": "Siren",
+      "subCompany": "KeyValue Software Systems",
+      "role": "Lead Systems Engineer",
+      "location": "Kerala",
+      "period": "Sep 2023 \u2013 Feb 2026",
+      "link": "https://www.trysiren.io",
+      "image": "/portfolio/siren-image.png",
+      "banner": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+      "accent": "#2a1b18",
+      "isCaseStudy": true,
+      "metrics": [
+        {
+          "value": "-80%",
+          "label": "Dev Time"
+        },
+        {
+          "value": "< 1ms",
+          "label": "Protocol Latency"
+        },
+        {
+          "value": "160+",
+          "label": "Downloads"
+        },
+        {
+          "value": "MCP",
+          "label": "Protocol Server"
+        }
+      ],
+      "metricSummary": "-80% Dev Time \u00b7 < 1ms Latency \u00b7 MCP Server \u00b7 NPM & PyPI Distributed",
+      "toolingLinks": [
+        {
+          "label": "NPM Package \u2197",
+          "url": "https://www.npmjs.com/search?q=trysiren"
+        },
+        {
+          "label": "PyPI Package \u2197",
+          "url": "https://pypi.org/search/?q=trysiren"
+        },
+        {
+          "label": "MCP Server \u2197",
+          "url": "https://github.com/kiransbaliga"
+        },
+        {
+          "label": "GitHub \u2197",
+          "url": "https://github.com/kiransbaliga"
+        }
+      ],
+      "gallery": [
+        {
+          "type": "image",
+          "src": "/portfolio/siren-image.png",
+          "caption": "Siren \u2014 Communication rails, JS/Python SDKs, and MCP server for autonomous AI agent workflows"
+        }
+      ],
+      "summary": "Communication rails, official TypeScript & Python SDKs, and Model Context Protocol (MCP) server for autonomous AI agents.",
+      "headline": "Engineering universal communication rails, published client SDKs, and MCP servers for autonomous AI agents.",
+      "chapters": [
+        {
+          "title": "Universal Communication Backbone for Agentic AI",
+          "link": "https://www.trysiren.io",
+          "linkLabel": "trysiren.io \u2197",
+          "body": "Siren provides unified notification and communication infrastructure for engineering teams and autonomous AI agents. As AI products shift from single prompts to multi-agent teams, inter-agent messaging and tool protocol compliance become the primary architectural bottleneck."
+        },
+        {
+          "title": "Model Context Protocol (MCP) Server & Connectors",
+          "link": "https://github.com/kiransbaliga",
+          "linkLabel": "View on GitHub \u2197",
+          "body": "Architected a high-performance Model Context Protocol (MCP) server enabling Claude desktop and external server agents to seamlessly interface with tools and data resources. Standardized integration connectors for OpenAI Function Calling and CrewAI agent swarms, cutting developer integration time by ~80%."
+        },
+        {
+          "title": "Official SDKs Published to NPM & PyPI",
+          "link": "https://www.npmjs.com/search?q=trysiren",
+          "linkLabel": "NPM Registry \u2197",
+          "body": "Engineered idiomatic TypeScript/JavaScript and Python async client SDKs with zero-overhead message serialization (< 1ms). Shipped automated GitHub Actions CI/CD matrix testing and published official packages to NPM and PyPI, reaching 160+ peak downloads."
+        }
+      ],
+      "bullets": [
+        "Accelerated AI agent orchestration by building core communication modules enabling efficient multi-agent workflows.",
+        "Reduced AI feature development time by ~80% by building JavaScript and Python SDKs, an MCP server, and integrations for OpenAI and CrewAI.",
+        "Published SDKs to NPM and PyPI (160+ peak downloads), improving developer adoption and release reliability."
       ]
     },
     {
       "slug": "keyvalue",
       "company": "KeyValue Software Systems",
+      "subCompany": "Client Engineering",
       "role": "Associate Software Engineer",
       "location": "Kerala",
-      "period": "Sep 2023 – Feb 2026",
+      "period": "Sep 2023 \u2013 Feb 2026",
       "link": "https://www.keyvalue.systems",
-      "image": "/portfolio/case-pencil.webp",
-      "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
+      "image": "/portfolio/systems-image.jpg",
+      "banner": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
       "accent": "#1a1b26",
+      "isCaseStudy": false,
+      "metricSummary": "+12% API Latency \u00b7 FastAPI LLM Parsers \u00b7 E-Commerce Architectures",
+      "toolingLinks": [
+        {
+          "label": "keyvalue.systems \u2197",
+          "url": "https://www.keyvalue.systems"
+        },
+        {
+          "label": "GitHub \u2197",
+          "url": "https://github.com/kiransbaliga"
+        }
+      ],
       "gallery": [
         {
           "type": "image",
-          "src": "/portfolio/case-pencil.webp",
-          "caption": "Pencil — B2B AI ads SaaS platform with metadata-driven multi-tenant architecture and server-side rendering"
-        },
-        {
-          "type": "image",
-          "src": "/portfolio/siren-image.png",
-          "caption": "Siren — Communication rails, JS/Python SDKs, and MCP server for autonomous AI agent workflows"
-        },
-        {
-          "type": "image",
-          "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Enterprise Client Systems — High-throughput Salesforce synchronization, FastAPI LLM parsers, and e-commerce pipelines"
+          "src": "/portfolio/systems-image.jpg",
+          "caption": "Enterprise Client Systems \u2014 High-throughput Salesforce synchronization, FastAPI LLM parsers, and e-commerce pipelines"
         }
       ],
-      "summary": "Backend, platform, and AI tooling across Pencil, Siren, and client projects.",
-      "headline": "Building multi-tenant SaaS architectures, AI agent communication rails, and developer SDKs from zero to production.",
+      "summary": "Enterprise client systems: high-throughput Salesforce synchronization (+12% API throughput), FastAPI LLM parsers, and e-commerce pipelines.",
+      "headline": "Engineering high-throughput CRM synchronization, LLM document parsing services, and fault-tolerant e-commerce pipelines.",
       "chapters": [
         {
-          "title": "Pencil — B2B Generative AI Ads Platform",
-          "link": "https://www.trypencil.com",
-          "linkLabel": "trypencil.com ↗",
-          "body": "Pencil is a B2B generative AI platform used by global brands to create, predict, and scale high-performing ad creatives. During a ground-up platform overhaul, we refactored core microservices into an event-driven architecture with a custom ORM and metadata-driven multi-tenant schema—allowing enterprise tenants to define custom fields, types, and workflows on the fly. Moving document and creative rendering to server-side infrastructure cut export times by 40% and boosted PDF generation speed by 65%."
-        },
-        {
-          "title": "Siren — Communication Rails for AI Agents",
-          "link": "https://www.trysiren.io",
-          "linkLabel": "trysiren.io ↗",
-          "body": "Siren provides unified notification and communication infrastructure for engineering teams and autonomous AI agents. I architected the core orchestration modules and shipped official JavaScript and Python SDKs (published to NPM and PyPI), a Model Context Protocol (MCP) server, and native connectors for OpenAI and CrewAI—cutting AI agent integration time for developers by nearly 80%."
-        },
-        {
-          "title": "Enterprise Data & E-Commerce Systems",
+          "title": "Salesforce Data Ingestion & Caching (+12% Throughput)",
           "link": "https://www.keyvalue.systems",
-          "linkLabel": "keyvalue.systems ↗",
-          "body": "Across high-growth client engagements, we built scalable ingestion pipelines synchronizing live CRM data with Salesforce (improving API latency by 12% through strategic caching and query optimization), FastAPI + LLM parsing services that turn unstructured documents into structured schemas, and fault-tolerant inventory and order-processing engines."
+          "linkLabel": "keyvalue.systems \u2197",
+          "body": "Architected scalable ingestion pipelines synchronizing live CRM data with Salesforce, optimizing database indexing and multi-layer Redis caching to improve API throughput by 12% under heavy concurrency."
+        },
+        {
+          "title": "FastAPI & LLM Unstructured Document Parsers",
+          "body": "Developed high-concurrency parsing pipelines using Python and FastAPI to extract, validate, and convert messy unstructured documents into standardized JSON schemas for downstream AI models."
+        },
+        {
+          "title": "Resilient E-Commerce Service Architectures",
+          "body": "Streamlined inventory tracking, webhooks, and order processing architectures, significantly eliminating bottlenecks for high-volume commerce workflows."
         }
       ],
       "bullets": [
-        "Designed metadata-driven multi-tenant architecture supporting configurable schemas and tenant-specific business logic.",
-        "Migrated document rendering to server-side infrastructure, reducing export latency by 30–40% and improving PDF generation by 65%.",
-        "Built JavaScript and Python SDKs, an MCP server, and integrations for OpenAI and CrewAI, reducing AI feature development effort by ~75%.",
-        "Delivered Salesforce synchronization, ingestion APIs, webhooks, and service architectures for e-commerce workflows."
+        "Architected scalable pipelines integrating Salesforce, improving API performance by 12% through backend caching & database optimizations.",
+        "Developed an LLM-powered parsing pipeline using Python and FastAPI to automate data extraction from unstructured content.",
+        "Streamlined inventory and order processing by implementing robust service architectures for e-commerce workflows."
       ]
     },
     {
@@ -207,7 +399,7 @@
       "company": "TGH Tech",
       "role": "Full Stack Engineer",
       "location": "Kerala",
-      "period": "May 2022 – Oct 2022",
+      "period": "May 2022 \u2013 Oct 2022",
       "link": "https://tghtech.com",
       "image": "/portfolio/Glome.png",
       "banner": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
@@ -216,27 +408,27 @@
         {
           "type": "image",
           "src": "/portfolio/Glome.png",
-          "caption": "Glome — Full-stack mental health & wellness platform built with Flutter and Django"
+          "caption": "Glome \u2014 Full-stack mental health & wellness platform built with Flutter and Django"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Anonymous Therapist Messaging — Secure real-time counseling and appointment scheduling on AWS"
+          "caption": "Anonymous Therapist Messaging \u2014 Secure real-time counseling and appointment scheduling on AWS"
         }
       ],
       "summary": "Full-stack mental health platform using Django, Flutter, MongoDB, and AWS.",
       "headline": "Designing a privacy-first digital sanctuary connecting patients with licensed mental health professionals.",
       "chapters": [
         {
-          "title": "The Vision — Accessible Mental Healthcare",
+          "title": "The Vision \u2014 Accessible Mental Healthcare",
           "link": "https://tghtech.com",
-          "linkLabel": "tghtech.com ↗",
+          "linkLabel": "tghtech.com \u2197",
           "body": "Glome was conceived to lower the barrier to mental health support by giving users a safe, stigma-free mobile space to share experiences, book therapy sessions, and communicate with licensed counselors without exposing their identity."
         },
         {
-          "title": "What Was Built — Flutter, Django & AWS",
+          "title": "What Was Built \u2014 Flutter, Django & AWS",
           "link": "https://tghtech.com",
-          "linkLabel": "Platform Overview ↗",
+          "linkLabel": "Platform Overview \u2197",
           "body": "We delivered the end-to-end mobile and backend experience using Flutter for a calm, responsive cross-platform interface and Django + MongoDB on AWS for the backend. Key modules included encrypted anonymous therapist messaging, real-time calendar availability and appointment booking, and community content feeds."
         }
       ],
@@ -249,7 +441,7 @@
       "company": "airPMO",
       "role": "Flutter Developer, Part-time",
       "location": "Remote",
-      "period": "Jun 2021 – Dec 2021",
+      "period": "Jun 2021 \u2013 Dec 2021",
       "link": "https://www.airpmo.com",
       "image": "/portfolio/airpmo.png",
       "banner": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
@@ -258,28 +450,28 @@
         {
           "type": "image",
           "src": "/portfolio/airpmo.png",
-          "caption": "airPMO — Construction SaaS platform connecting field teams, equipment, and subcontractors"
+          "caption": "airPMO \u2014 Construction SaaS platform connecting field teams, equipment, and subcontractors"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1541888946425-d09bb18086f6?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Real-Time Site Sync — Cross-platform Flutter modules synchronizing 10+ active construction sites"
+          "caption": "Real-Time Site Sync \u2014 Cross-platform Flutter modules synchronizing 10+ active construction sites"
         }
       ],
       "summary": "Construction SaaS platform connecting people, material, equipment, and subcontractors.",
       "headline": "Unifying field engineers, heavy equipment, and subcontractor workflows across active construction sites.",
       "chapters": [
         {
-          "title": "The Challenge — Field-to-Office Coordination",
+          "title": "The Challenge \u2014 Field-to-Office Coordination",
           "link": "https://www.airpmo.com",
-          "linkLabel": "airpmo.com ↗",
+          "linkLabel": "airpmo.com \u2197",
           "body": "Large-scale infrastructure and construction projects suffer from fragmented communication between on-site engineers, material suppliers, and project management offices. airPMO set out to replace paper logs and scattered spreadsheets with a unified mobile command center."
         },
         {
-          "title": "What Was Built — Cross-Site Flutter Sync",
+          "title": "What Was Built \u2014 Cross-Site Flutter Sync",
           "link": "https://www.airpmo.com",
-          "linkLabel": "Explore airPMO ↗",
-          "body": "We built cross-platform Flutter modules tailored for field conditions—enabling real-time progress tracking, equipment allocation, and subcontractor sign-offs that synchronized seamlessly across more than ten concurrent construction projects."
+          "linkLabel": "Explore airPMO \u2197",
+          "body": "We built cross-platform Flutter modules tailored for field conditions\u2014enabling real-time progress tracking, equipment allocation, and subcontractor sign-offs that synchronized seamlessly across more than ten concurrent construction projects."
         }
       ],
       "bullets": [
@@ -291,7 +483,7 @@
     {
       "slug": "valkyrie",
       "title": "Valkyrie",
-      "category": "macOS App · Desktop Tool",
+      "category": "macOS App \u00b7 Desktop Tool",
       "description": "An artisan wallpaper companion for macOS. Point to any folder and glide through artwork with fluid gestures, spatial depth, and zero system overhead.",
       "headline": "A tactile, zero-overhead macOS companion that turns local artwork folders into a living spatial gallery.",
       "image": "/portfolio/valkyrie.png",
@@ -302,25 +494,25 @@
         {
           "type": "image",
           "src": "/portfolio/valkyrie.png",
-          "caption": "Valkyrie — Spatial 3D wallpaper gallery for macOS with hardware-accelerated fluid gestures"
+          "caption": "Valkyrie \u2014 Spatial 3D wallpaper gallery for macOS with hardware-accelerated fluid gestures"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Zero-Overhead Native Engine — Instant folder indexing and live desktop transitions"
+          "caption": "Zero-Overhead Native Engine \u2014 Instant folder indexing and live desktop transitions"
         }
       ],
       "chapters": [
         {
           "title": "Why Valkyrie Exists",
           "link": "https://valkyrie.baliga.dev",
-          "linkLabel": "valkyrie.baliga.dev ↗",
+          "linkLabel": "valkyrie.baliga.dev \u2197",
           "body": "Default wallpaper pickers treat curated photography and digital art like static file lists. Valkyrie was designed for collectors and designers who want to point to any local folder on their Mac and glide through high-resolution artwork with physical inertia and spatial depth."
         },
         {
           "title": "Native Craft & Zero Daemon Overhead",
           "link": "https://github.com/kiransbaliga",
-          "linkLabel": "View on GitHub ↗",
+          "linkLabel": "View on GitHub \u2197",
           "body": "Built natively for Apple Silicon with hardware-accelerated Metal rendering, Valkyrie indexes thousands of 5K wallpapers instantaneously without background CPU drain, applying smooth cross-fade transitions directly to the macOS desktop space."
         }
       ]
@@ -328,7 +520,7 @@
     {
       "slug": "lyrix",
       "title": "Lyrix",
-      "category": "macOS App · Audio Tool",
+      "category": "macOS App \u00b7 Audio Tool",
       "description": "A featherlight, floating lyrics overlay for macOS. Passively streams system audio events with sub-second ProMotion sync and zero audio recording.",
       "headline": "Sub-second time-synced lyrics floating effortlessly over your macOS workspace.",
       "image": "/portfolio/lyrix.png",
@@ -339,25 +531,25 @@
         {
           "type": "image",
           "src": "/portfolio/lyrix.png",
-          "caption": "Lyrix — Floating glassmorphic lyrics HUD for macOS with 120Hz ProMotion synchronization"
+          "caption": "Lyrix \u2014 Floating glassmorphic lyrics HUD for macOS with 120Hz ProMotion synchronization"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Passive Media Stream — Zero-recording system audio event listener for Spotify & Apple Music"
+          "caption": "Passive Media Stream \u2014 Zero-recording system audio event listener for Spotify & Apple Music"
         }
       ],
       "chapters": [
         {
           "title": "The Experience",
           "link": "https://lyrix.baliga.dev",
-          "linkLabel": "lyrix.baliga.dev ↗",
-          "body": "Lyrix brings an unobtrusive, click-through glassmorphic HUD to macOS that displays real-time word-by-word lyrics while you code or design—staying out of your way and adapting automatically to underlying window contrast."
+          "linkLabel": "lyrix.baliga.dev \u2197",
+          "body": "Lyrix brings an unobtrusive, click-through glassmorphic HUD to macOS that displays real-time word-by-word lyrics while you code or design\u2014staying out of your way and adapting automatically to underlying window contrast."
         },
         {
           "title": "Event-Driven ProMotion Sync",
           "link": "https://lyrix.baliga.dev",
-          "linkLabel": "Download for macOS ↗",
+          "linkLabel": "Download for macOS \u2197",
           "body": "Instead of polling or recording microphone audio, Lyrix hooks into native macOS Now Playing media events and renders syllable transitions at 120Hz ProMotion frame rates with near-zero memory footprint."
         }
       ]
@@ -376,14 +568,14 @@
         {
           "type": "image",
           "src": "/img/poor-decisions.png",
-          "caption": "Poor Decisions — 5-second iOS Back Tap expense logging directly into Google Sheets"
+          "caption": "Poor Decisions \u2014 5-second iOS Back Tap expense logging directly into Google Sheets"
         }
       ],
       "chapters": [
         {
           "title": "Zero-App Personal Finance",
           "link": "https://baliga.dev/poor-decisions/",
-          "linkLabel": "Try Poor Decisions ↗",
+          "linkLabel": "Try Poor Decisions \u2197",
           "body": "Most expense trackers fail because opening a bloated app, waiting for sync, and navigating menus takes too much friction. Poor Decisions uses iOS Back Tap and Shortcuts to prompt for amount and category in under five seconds, appending directly to your own Google Sheet via Apps Script."
         }
       ]
@@ -402,14 +594,14 @@
         {
           "type": "image",
           "src": "/img/readfaster.png",
-          "caption": "Read Faster — Rapid Serial Visual Presentation (RSVP) reader for high-retention speed reading"
+          "caption": "Read Faster \u2014 Rapid Serial Visual Presentation (RSVP) reader for high-retention speed reading"
         }
       ],
       "chapters": [
         {
           "title": "Focused Optical Recognition",
           "link": "https://baliga.dev/readfaster/",
-          "linkLabel": "Launch Read Faster ↗",
+          "linkLabel": "Launch Read Faster \u2197",
           "body": "Read Faster streams articles and long-form text one word at a time aligned around the Optimal Recognition Point (ORP), allowing readers to comfortably double their reading speed from 250 WPM to 600+ WPM without losing comprehension."
         }
       ]
@@ -428,15 +620,15 @@
         {
           "type": "image",
           "src": "/img/fl.png",
-          "caption": "Multi-Task Federated Learning — Decentralized model aggregation preserving local client privacy"
+          "caption": "Multi-Task Federated Learning \u2014 Decentralized model aggregation preserving local client privacy"
         }
       ],
       "chapters": [
         {
           "title": "Decentralized Privacy-Preserving ML",
           "link": "https://github.com/kiransbaliga/Multi_Task_Federated_Learning",
-          "linkLabel": "GitHub Repository ↗",
-          "body": "Designed a multi-task federated learning architecture where edge clients train task-specific heads locally while aggregating shared representation layers centrally—preserving strict data locality across heterogeneous datasets."
+          "linkLabel": "GitHub Repository \u2197",
+          "body": "Designed a multi-task federated learning architecture where edge clients train task-specific heads locally while aggregating shared representation layers centrally\u2014preserving strict data locality across heterogeneous datasets."
         }
       ]
     }
@@ -448,7 +640,7 @@
     ],
     [
       "Where are you based, and do you work remotely?",
-      "I'm based in Kerala, India and work remotely with teams across the world. I'm also open to relocating for the right opportunity."
+      "I'm based in Bangalore, India (open to relocate and remote) and work with teams across the world."
     ],
     [
       "What technologies do you build with?",
@@ -474,5 +666,357 @@
       "Do you offer ongoing support after launch?",
       "Yes. I offer ongoing support and retainer agreements to keep your site updated, secure and performing after launch and as your business scales."
     ]
-  ]
+  ],
+  "engineeringCapabilities": [
+    {
+      "title": "Distributed Systems & Backends",
+      "items": [
+        "Node.js, TypeScript & Python (FastAPI)",
+        "Ruby on Rails & Go",
+        "PostgreSQL (Partitioning, Index Tuning, JSONB)",
+        "Redis (Distributed Caching & Queues)",
+        "Event-Driven Microservices & Sidekiq",
+        "Docker, Kubernetes & AWS Infrastructure"
+      ]
+    },
+    {
+      "title": "AI Systems & Agent Infrastructure",
+      "items": [
+        "Model Context Protocol (MCP) Servers",
+        "Autonomous Multi-Agent Workflows (CrewAI)",
+        "LLM Orchestration & Prompt Pipelines (OpenAI, Anthropic)",
+        "Automated LLM Evaluation, QA & Error Recovery",
+        "Dynamic Cohort Recommendation Engines",
+        "Vector Search & Schema Extraction"
+      ]
+    },
+    {
+      "title": "Developer Tooling & SDKs",
+      "items": [
+        "Client SDKs on NPM and PyPI",
+        "RESTful & GraphQL API Architecture",
+        "CI/CD Release Automation (GitHub Actions)",
+        "Metadata-Driven Multi-Tenant Schemas",
+        "Server-Side Headless Document Rendering",
+        "High-Coverage Test Harnesses"
+      ]
+    },
+    {
+      "title": "Performance & Systems Craft",
+      "items": [
+        "Kotlin Multiplatform (100% Offline Edge Sync)",
+        "Sub-Second Latency Optimization (-80%)",
+        "Native macOS Engineering (Metal, Swift)",
+        "Memory & Concurrency Profiling",
+        "Zero-Downtime Database Migrations",
+        "Privacy-Preserving Edge ML (Federated Learning)"
+      ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "siren",
+      "badge": "AI INFRASTRUCTURE",
+      "title": "Siren",
+      "role": "Lead Systems Engineer",
+      "subtitle": "Communication Rails & MCP Server for AI Agents",
+      "metrics": [
+        {
+          "value": "-80%",
+          "label": "Dev Time Reduction"
+        },
+        {
+          "value": "< 1ms",
+          "label": "Protocol Latency"
+        },
+        {
+          "value": "160+",
+          "label": "Registry Downloads"
+        },
+        {
+          "value": "MCP",
+          "label": "Protocol Server"
+        }
+      ],
+      "summary": "Core communication rails, official TypeScript and Python client SDKs, and a Model Context Protocol (MCP) server for autonomous multi-agent workflows with native OpenAI and CrewAI connectors.",
+      "highlights": [
+        "Architected low-latency communication layer bridging Python ML runtimes, TypeScript services, and MCP.",
+        "Published idiomatic TypeScript and Python client SDKs directly to NPM and PyPI.",
+        "Engineered production Model Context Protocol (MCP) server enabling Claude and external agents to query tools.",
+        "Standardized integration wrappers for OpenAI Function Calling and CrewAI agent swarms."
+      ],
+      "stack": [
+        "TypeScript",
+        "Python",
+        "MCP",
+        "FastAPI",
+        "OpenAI",
+        "CrewAI",
+        "CI/CD"
+      ],
+      "links": [
+        {
+          "label": "NPM Package",
+          "url": "https://www.npmjs.com/search?q=trysiren",
+          "type": "npm"
+        },
+        {
+          "label": "PyPI Package",
+          "url": "https://pypi.org/search/?q=trysiren",
+          "type": "pypi"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kiransbaliga",
+          "type": "github"
+        },
+        {
+          "label": "trysiren.io \u2197",
+          "url": "https://www.trysiren.io",
+          "type": "external"
+        }
+      ],
+      "caseStudyPath": "/work/experience/keyvalue"
+    },
+    {
+      "id": "ultrahuman",
+      "badge": "HEALTH PLATFORM \u00b7 5M+ USERS",
+      "title": "Ultrahuman",
+      "role": "Backend Engineer",
+      "subtitle": "AI Health Reporting & Offline Computation Engine",
+      "metrics": [
+        {
+          "value": "5M+",
+          "label": "Daily Active Users"
+        },
+        {
+          "value": "-80%",
+          "label": "Vital Latency Cut"
+        },
+        {
+          "value": "100%",
+          "label": "Offline KMP Execution"
+        },
+        {
+          "value": "8k+",
+          "label": "Cohort Conversions"
+        }
+      ],
+      "summary": "High-scale backend architecture for wearable telemetry streams, offline-first Kotlin Multiplatform vital computation engine, and automated LLM health insights with 67% fewer localization errors.",
+      "highlights": [
+        "Scaled background ingestion pipelines with Ruby on Rails and Redis processing telemetry for 5M+ global users.",
+        "Migrated core sleep and vital calculation pipelines to Kotlin Multiplatform (KMP), unlocking 100% offline edge execution.",
+        "Built asynchronous LLM summarization pipeline with automated QA checks, cutting translation failures by ~67%.",
+        "Architected dynamic cohort behavioral engine that generated 8,000+ conversions within 60 days."
+      ],
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Kotlin Multiplatform",
+        "LLM Workflows",
+        "Redis",
+        "AWS"
+      ],
+      "links": [
+        {
+          "label": "Ultrahuman Ring \u2197",
+          "url": "https://www.ultrahuman.com/ring/",
+          "type": "external"
+        },
+        {
+          "label": "Blood Vision \u2197",
+          "url": "https://www.ultrahuman.com/blood-vision/",
+          "type": "external"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kiransbaliga",
+          "type": "github"
+        },
+        {
+          "label": "Read Deep-Dive \u2192",
+          "url": "/work/experience/ultrahuman",
+          "type": "internal"
+        }
+      ],
+      "caseStudyPath": "/work/experience/ultrahuman"
+    },
+    {
+      "id": "pencil",
+      "badge": "B2B AD PLATFORM",
+      "title": "Pencil",
+      "role": "Backend & Systems Engineer",
+      "subtitle": "Event-Driven Microservices & Multi-Tenant Ad Engine",
+      "metrics": [
+        {
+          "value": "+65%",
+          "label": "PDF Export Speed"
+        },
+        {
+          "value": "-35%",
+          "label": "Export Load Times"
+        },
+        {
+          "value": "14.2k",
+          "label": "Peak req/s"
+        },
+        {
+          "value": "Dynamic",
+          "label": "Multi-Tenant Schema"
+        }
+      ],
+      "summary": "Platform overhaul transitioning to event-driven microservices, metadata-driven multi-tenant schemas supporting dynamic customer fields, and server-side headless vector rendering for enterprise brands.",
+      "highlights": [
+        "Refactored monolithic microservices into event-driven architecture using Node.js, Redis, and message queues.",
+        "Built metadata-driven multi-tenant database layer that allows enterprises to define custom typed fields dynamically.",
+        "Migrated document and creative rendering to headless server workers, speeding up PDF generation by 65%.",
+        "Designed high-concurrency caching layers achieving 14.2k requests/second peak throughput."
+      ],
+      "stack": [
+        "Node.js",
+        "PostgreSQL",
+        "Microservices",
+        "Docker",
+        "Redis",
+        "RabbitMQ"
+      ],
+      "links": [
+        {
+          "label": "trypencil.com \u2197",
+          "url": "https://www.trypencil.com",
+          "type": "external"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/kiransbaliga",
+          "type": "github"
+        },
+        {
+          "label": "Read Deep-Dive \u2192",
+          "url": "/work/experience/keyvalue",
+          "type": "internal"
+        }
+      ],
+      "caseStudyPath": "/work/experience/keyvalue"
+    }
+  ],
+  "packageLinks": [
+    {
+      "name": "NPM Registry",
+      "desc": "Published client SDKs & MCP server packages for AI agent communication",
+      "url": "https://www.npmjs.com/search?q=trysiren",
+      "tag": "npm",
+      "badge": "NPM Package"
+    },
+    {
+      "name": "PyPI Registry",
+      "desc": "Python async client SDKs for agent orchestration & ML pipelines",
+      "url": "https://pypi.org/search/?q=trysiren",
+      "tag": "pypi",
+      "badge": "PyPI Package"
+    },
+    {
+      "name": "Model Context Protocol",
+      "desc": "MCP server implementation connecting LLM agents to tool and resource backends",
+      "url": "https://github.com/kiransbaliga",
+      "tag": "mcp",
+      "badge": "MCP Server"
+    },
+    {
+      "name": "GitHub Repositories",
+      "desc": "Systems code, ML architectures, and open-source contributions",
+      "url": "https://github.com/kiransbaliga",
+      "tag": "github",
+      "badge": "Open Source"
+    }
+  ],
+  "freelance": {
+    "title": "Client Services & Web Consulting",
+    "headline": "Web Design, Development & Client Consulting",
+    "subline": "For founders, agencies, and businesses looking for custom web design, WordPress migrations, digital product architecture, and project scoping.",
+    "services": [
+      {
+        "title": "Digital design",
+        "items": [
+          "Web Design",
+          "UI Design",
+          "UX Design",
+          "Digital Product Design",
+          "Design Systems",
+          "Prototyping & Wireframing",
+          "Responsive, Mobile-First",
+          "Accessibility"
+        ]
+      },
+      {
+        "title": "Web development",
+        "items": [
+          "Front-End (HTML, CSS, JS)",
+          "React & Modern Web Apps",
+          "Node.js & TypeScript",
+          "Python & FastAPI",
+          "APIs & Integrations",
+          "Performance, Accessibility & SEO",
+          "Hosting, SSL, Migrations & DNS",
+          "AI Integration & Automation"
+        ]
+      },
+      {
+        "title": "App development",
+        "items": [
+          "Flutter Applications",
+          "Cross-Platform Mobile Apps",
+          "Offline-First Experiences",
+          "App Performance & Reliability"
+        ]
+      },
+      {
+        "title": "Consultancy",
+        "items": [
+          "Technical Consultation & Strategy",
+          "Project Scoping & Budgets",
+          "Architecture & API Design",
+          "AI Systems & MCP Integration",
+          "Database & Performance Optimisation",
+          "Cloud Infrastructure & Deployment",
+          "Project Management & Technical Direction",
+          "Developer Tooling & Team Enablement"
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Do you both design and build websites?",
+        "Yes. I handle the whole thing, design and development, with one set of hands. My experience spans full-stack products, backend platforms, and the interfaces that connect people to them."
+      ],
+      [
+        "Where are you based, and do you work remotely?",
+        "I'm based in Bangalore, India (open to relocate and remote) and work with teams across the world."
+      ],
+      [
+        "What technologies do you build with?",
+        "I work mostly with Ruby on Rails, TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+      ],
+      [
+        "Can you build an online store or e-commerce site?",
+        "Yes. I've built service architectures and inventory and order-processing workflows for e-commerce products, with a focus on reliable backend systems and integrations."
+      ],
+      [
+        "How much does a website cost?",
+        "It depends entirely on what you need. I work across a wide range of budgets, from smaller sites through to large, complex builds. Tell me what you have in mind and I'll scope it and give you a clear, fixed quote."
+      ],
+      [
+        "How long does a project take?",
+        "Most sites take from a few weeks to a couple of months, depending on scope, content readiness and how many rounds of feedback we go through. I'll give you a realistic timeline up front."
+      ],
+      [
+        "Can you redesign or rebuild my existing website?",
+        "Yes. A lot of my work is refreshing tired sites that no longer reflect the quality of the business, including migrations from older WordPress builds, with care taken to keep your SEO and rankings intact."
+      ],
+      [
+        "Do you offer ongoing support after launch?",
+        "Yes. I offer ongoing support and retainer agreements to keep your site updated, secure and performing after launch and as your business scales."
+      ]
+    ]
+  }
 }

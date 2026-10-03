@@ -140,8 +140,11 @@ const TextLoop: React.FC<TextLoopProps> = ({
     };
 
     measure();
-    if (typeof document !== 'undefined' && (document as any).fonts?.ready) {
-      (document as any).fonts.ready.then(measure).catch(() => {});
+    if (typeof document !== 'undefined') {
+      const docWithFonts = document as unknown as { fonts?: { ready?: Promise<void> } };
+      if (docWithFonts.fonts?.ready) {
+        docWithFonts.fonts.ready.then(measure).catch(() => {});
+      }
     }
 
     return () => {
