@@ -926,8 +926,10 @@ type CaseStudyChapter = {
   body?: string;
   link?: string;
   linkLabel?: string;
+  workflowTitle?: string;
   workflow?: string[];
   workflowComparison?: {
+    title?: string;
     beforeTitle?: string;
     before: string[];
     afterTitle?: string;
@@ -1102,7 +1104,9 @@ const CaseStudyPage = ({
 
                 {chapter.workflow && chapter.workflow.length > 0 && (
                   <div className="chapter-workflow-box">
-                    <span className="chapter-box-label">End-to-End Pipeline Workflow</span>
+                    <span className="chapter-box-label">
+                      {chapter.workflowTitle || "End-to-End Pipeline Workflow"}
+                    </span>
                     <div className="chapter-workflow-rail">
                       {chapter.workflow.map((step, sIdx) => (
                         <div key={sIdx} className="workflow-step-item">
@@ -1118,7 +1122,9 @@ const CaseStudyPage = ({
 
                 {chapter.workflowComparison && (
                   <div className="chapter-comparison-box">
-                    <span className="chapter-box-label">Computation Architecture Migration</span>
+                    <span className="chapter-box-label">
+                      {chapter.workflowComparison.title || "Computation Architecture Migration"}
+                    </span>
                     <div className="comparison-cols-wrap">
                       <div className="comparison-col">
                         <span className="comparison-badge before">

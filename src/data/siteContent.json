@@ -375,9 +375,9 @@
       "slug": "pencil",
       "company": "Pencil",
       "subCompany": "KeyValue Software Systems",
-      "role": "Backend & Systems Engineer",
+      "role": "Associate Software Engineer",
       "location": "Kerala",
-      "period": "Sep 2023 \u2013 Feb 2026",
+      "period": "Sep 2023 – Feb 2026",
       "link": "https://www.trypencil.com",
       "image": "/portfolio/case-pencil.webp",
       "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
@@ -385,30 +385,30 @@
       "isCaseStudy": true,
       "metrics": [
         {
-          "value": "+65%",
-          "label": "PDF Speed"
+          "value": "~30%",
+          "label": "Faster APIs"
         },
         {
-          "value": "-35%",
-          "label": "Export Latency"
+          "value": "~65%",
+          "label": "Faster PDF Rendering"
         },
         {
-          "value": "14.2k",
-          "label": "Peak req/s"
+          "value": "~1.5s",
+          "label": "User-Facing PDF"
         },
         {
           "value": "Multi-Tenant",
-          "label": "Dynamic Schema"
+          "label": "Custom Metadata"
         }
       ],
-      "metricSummary": "+65% PDF Speed \u00b7 -35% Export Load Time \u00b7 14.2k req/s \u00b7 Multi-Tenant Schema",
+      "metricSummary": "~30% Faster APIs · ~65% Faster PDF Rendering · ~1.5s PDF Exports · Multi-Tenant Architecture",
       "toolingLinks": [
         {
-          "label": "trypencil.com \u2197",
+          "label": "trypencil.com ↗",
           "url": "https://www.trypencil.com"
         },
         {
-          "label": "GitHub \u2197",
+          "label": "GitHub ↗",
           "url": "https://github.com/kiransbaliga"
         }
       ],
@@ -416,31 +416,230 @@
         {
           "type": "image",
           "src": "/portfolio/case-pencil.webp",
-          "caption": "Pencil \u2014 B2B AI ads SaaS platform with metadata-driven multi-tenant architecture and server-side rendering"
+          "caption": "Pencil — B2B AI advertising platform: metadata-driven multi-tenant schemas, custom query-builder ORM, and server-side PDF rendering"
         }
       ],
-      "summary": "B2B generative AI ads platform: event-driven microservices, metadata-driven multi-tenant schemas, and server-side PDF rendering.",
-      "headline": "Overhauling microservices into event-driven architecture and metadata-driven multi-tenant schemas.",
+      "summary": "Modernizing database access, multi-tenant infrastructure, and document rendering for a growing B2B advertising platform.",
+      "headline": "Scaling Pencil's platform for large-scale advertising workflows: modernizing database access, multi-tenant infrastructure and document rendering for a growing B2B advertising platform.",
       "chapters": [
         {
-          "title": "Platform Overhaul & Event-Driven Architecture",
-          "link": "https://www.trypencil.com",
-          "linkLabel": "trypencil.com \u2197",
-          "body": "Pencil is a B2B generative AI platform used by global brands to create, predict, and scale high-performing ad creatives. During a ground-up platform overhaul, we refactored core microservices into an event-driven architecture with a custom ORM and message queues to decouple ingestion from heavy asset rendering."
+          "title": "Case",
+          "kicker": "01 / Context & Role",
+          "summary": "Associate Software Engineer on the platform engineering team executing platform modernization, custom ORM development, and performance architecture.",
+          "body": "Pencil is a B2B AI advertising platform used by large media agencies to manage advertising campaigns across Google Ads, Instagram, Facebook, TikTok, and LinkedIn. The platform allowed agencies to create advertisements, manage campaign workflows, and generate creative content variations—combining a Canva-like creative experience with AI-powered advertising workflows. As the platform grew, the volume of data stored and processed increased significantly. I worked as part of the platform engineering team on a coordinated platform modernization and performance initiative to evolve legacy patterns into an architecture that could scale with exponential business growth.",
+          "points": [
+            "Team & Structure: Platform engineering team executing across development sprints, with engineers owning distinct functional domains.",
+            "My Primary Ownership: Custom ORM development, query-builder and data-access layer, schema/read optimizations, tenant metadata infrastructure, RBAC/permissions, and server-side Puppeteer PDF rendering.",
+            "Collaborative Delivery: Database migrations and planned downtime windows were coordinated by the lead engineer; changes were rolled out in controlled batches using feature flags.",
+            "Core Platform Objective: Evolve the architecture for data scale and throughput—replacing legacy patterns with Google Cloud SQL, custom ORM abstractions, multi-tenant metadata, and server-side rendering."
+          ]
         },
         {
-          "title": "Metadata-Driven Multi-Tenant Schemas",
-          "body": "Built an extensible metadata-driven multi-tenant database layer that allows enterprises to define custom typed fields, types, and lookup values dynamically on the fly, eliminating brittle hardcoded database migrations."
+          "title": "Problem",
+          "kicker": "02 / Three Core Problem Statements",
+          "summary": "Growing datasets bottlenecking database performance, rigid single schemas failing agency multi-tenancy, and client-side PDF rendering breaking layouts.",
+          "subsections": [
+            {
+              "tag": "Problem 01 · Database Scalability",
+              "title": "Growing Datasets, TypeORM Incompatibility & Join-Heavy Queries",
+              "body": "Pencil's volume of campaign and creative data grew rapidly beyond the capacity of its original database design. The existing TypeORM-based access layer struggled with managed Google Cloud SQL requirements and lacked necessary low-level query capabilities. Furthermore, heavily normalized relational models forced application paths to execute expensive multi-table joins to assemble commonly accessed data, causing API response times to degrade under peak load.",
+              "points": [
+                "Database strain: Rapidly expanding datasets degraded query performance across core campaign workflows.",
+                "ORM limitations: TypeORM wasn't working reliably with Cloud SQL and lacked required platform features.",
+                "Excessive joins: Strict normalization created expensive multi-join queries on hot read paths."
+              ]
+            },
+            {
+              "tag": "Problem 02 · Multi-Tenancy",
+              "title": "Rigid Global Schemas vs. Agency-Specific Workflow Requirements",
+              "body": "Pencil served diverse advertising agencies, each with bespoke organizational structures, billing models, and workflow processes. A single monolithic database schema could not accommodate differing tenant requirements without constant hardcoded migrations or branching codebases. The platform needed a clean abstraction to let tenants define custom fields and business logic without code changes or database alterations.",
+              "points": [
+                "Tenant variability: Agencies required custom fields and bespoke campaign attributes that differed wildly.",
+                "Schema friction: Adding columns globally for individual agency needs polluted schemas and slowed migrations.",
+                "Codebase sprawl: Risk of creating one-off code forks or brittle conditional logic per customer."
+              ]
+            },
+            {
+              "tag": "Problem 03 · Document Rendering",
+              "title": "Client-Side react-to-pdf Inconsistencies & Font Latency",
+              "body": "Pencil featured a rich-text copywriting editor where users created branded ad copy with custom fonts, colors, and styling. PDF exports were rendered in the client browser using react-to-pdf. This frequently broke: custom brand fonts had to be downloaded into the browser runtime prior to rendering, introducing severe export latency and causing layout mismatches, broken fonts, and discrepancies between editor and final output.",
+              "points": [
+                "Visual fidelity degradation: react-to-pdf failed to consistently match the editor's styling and layout.",
+                "Font-loading penalties: Custom brand fonts had to be fetched and loaded client-side, stalling exports.",
+                "Unpredictable exports: Browser environment variations caused inconsistent document appearance."
+              ]
+            }
+          ]
         },
         {
-          "title": "Headless Server-Side Vector Rendering (+65% Speed)",
-          "body": "Migrated document and creative rendering from browser processes to sandboxed server-side worker fleets, cutting asset export times by 35% and boosting high-resolution PDF generation speed by 65%."
+          "title": "Goal",
+          "kicker": "03 / Three Mapped Objectives",
+          "summary": "Modernize database infrastructure with custom ORM tooling, enable metadata-driven tenant customization, and move document rendering to the server.",
+          "subsections": [
+            {
+              "tag": "Goal 01 · Data Architecture",
+              "title": "Google Cloud SQL Infrastructure & Custom ORM Layer",
+              "body": "Transition database layer to Google Cloud SQL to unlock managed partitioning, regional data distribution, and replication. Replace TypeORM with a custom query builder and ORM abstraction that natively enforces tenant isolation, handles data lifecycle rules (preventing hard deletes), and optimizes hot read paths over rigid normalization.",
+              "points": [
+                "Managed infrastructure: Leverage Cloud SQL partitioning and replication instead of application-managed scaling.",
+                "Custom ORM abstraction: Build an expressive query builder supporting query chaining, tenant boundaries, and soft deletes across Node.js and Python.",
+                "Read-optimized schema: Restructure frequently queried tables to store related data together, cutting unnecessary joins."
+              ]
+            },
+            {
+              "tag": "Goal 02 · Platform Flexibility",
+              "title": "Metadata-Driven Customization & Tenant Isolation",
+              "body": "Architect a shared platform infrastructure where individual agency tenants configure bespoke fields, attributes, and workflows via dynamic metadata rather than schema alterations or code changes, accompanied by robust role-based access control (RBAC).",
+              "points": [
+                "Metadata engine: Enable tenants to define custom fields and business logic on a unified core platform.",
+                "Clean tenant isolation: Guarantee strict data separation at the ORM and query level automatically.",
+                "Unified codebase: Maintain a single scalable deployment serving all enterprise agencies seamlessly."
+              ]
+            },
+            {
+              "tag": "Goal 03 · Document Performance",
+              "title": "Headless Server-Side PDF Pipeline with 100% Layout Parity",
+              "body": "Replace client-side rendering with a server-side headless Puppeteer pipeline. Centralize font loading and layout calculation on the backend to achieve exact visual parity with the copywriting editor and bring user-facing export times down to ~1.5 seconds.",
+              "points": [
+                "Pixel-perfect parity: Eliminate font popping and layout mismatches by rendering in controlled server containers.",
+                "Server-side font caching: Preload and cache agency brand fonts to strip font-download latency from exports.",
+                "Sub-2s download speed: Target ~65% faster rendering time and ~1.5s total user-facing download speed."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Approach",
+          "kicker": "04 / Architecture & Implementation",
+          "summary": "Custom ORM layer on Google Cloud SQL, dynamic metadata-driven tenant modeling, headless Puppeteer PDF workers, and phased feature flag rollouts.",
+          "workflowTitle": "End-to-End Multi-Tenant Data & Export Flow",
+          "workflow": [
+            "Shared Platform",
+            "Tenant-Specific Metadata Engine",
+            "Custom Fields & RBAC",
+            "Custom ORM Query Builder",
+            "Google Cloud SQL",
+            "Server-Side Puppeteer",
+            "1.5s PDF Export"
+          ],
+          "workflowComparison": {
+            "title": "Platform Architecture Modernization",
+            "beforeTitle": "Legacy Architecture · Client Rendering & Relational Joins",
+            "before": ["Browser react-to-pdf", "Late Font Network Fetch", "TypeORM Relational Joins", "Degraded Latency"],
+            "afterTitle": "Modernized Architecture · Server Puppeteer & Custom ORM",
+            "after": ["Tenant Metadata Engine", "Custom Query-Builder ORM", "Cloud SQL Partitioning", "Puppeteer (1.5s PDF)"]
+          },
+          "subsections": [
+            {
+              "tag": "Track 01 · ORM & Data Layer",
+              "title": "Engineering a Custom Query Builder and Data-Access Layer",
+              "body": "Designed and implemented a custom ORM abstraction supporting query building, fluent query chaining, and standard ORM operations across Node.js and Python. Embedded platform guardrails directly into the query abstraction: automatic tenant scoping, soft-delete enforcement, and optimized data serialization, freeing application developers from reinventing data access safety on every endpoint.",
+              "points": [
+                "Fluent query chaining: Provided an intuitive, developer-friendly interface without TypeORM overhead.",
+                "Automated tenant filtering: Injected tenant boundary conditions into every query execution path.",
+                "Soft-delete lifecycle: Systematically safeguarded agency campaign records against destructive deletes."
+              ]
+            },
+            {
+              "tag": "Track 02 · Multi-Tenancy & Schema",
+              "title": "Metadata-Driven Custom Fields, RBAC & Read Optimization",
+              "body": "Engineered the platform-side metadata engine allowing agencies to define custom fields and attributes dynamically. Overhauled relational schemas to store frequently accessed campaign and creative metadata together—deliberately trading strict normalization for significant join reduction on high-traffic read paths. Implemented fine-grained RBAC across tenant operations.",
+              "points": [
+                "Metadata-driven fields: Agencies configure custom fields without modifying underlying relational schemas.",
+                "Read-optimized schema: Reduced multi-table joins on hot queries, delivering ~30% faster API responses.",
+                "Enterprise RBAC: Unified permissions and access control directly into the data-access layer."
+              ]
+            },
+            {
+              "tag": "Track 03 · Server-Side Rendering",
+              "title": "Puppeteer-Based Server-Side PDF Rendering Pipeline",
+              "body": "Replaced browser-side react-to-pdf with headless Chromium via Puppeteer running on the server. Managed font lifecycles explicitly: preloading and caching custom agency brand fonts, standardizing CSS print media rules, and isolating document formatting in sandboxed workers. Delivered pixel-perfect fidelity with the editor while accelerating exports by 65%.",
+              "points": [
+                "Deterministic output: Achieved 100% fidelity with the copywriting editor, resolving font discrepancies.",
+                "Server-side font lifecycle: Eliminated client font loading delays through server caching.",
+                "Blazing download speeds: Slashed export latency by 30–40% and reached ~1.5s end-user download times."
+              ]
+            },
+            {
+              "tag": "Track 04 · Cloud & Service Evolution",
+              "title": "Phased Feature-Flag Rollouts & Fastify Service Evolution",
+              "body": "Modernized legacy Python-based API gateway patterns into a high-performance Node.js / Fastify service architecture. Collaborated across development sprints on schema migrations, coordinating planned downtime windows with the lead engineer and rolling out database and rendering changes progressively using tenant-level feature flags.",
+              "points": [
+                "Service modernization: Shifted legacy gateway components to Node.js/Fastify microservices.",
+                "Zero unexpected downtime: Participated in coordinated database migrations with batch rollouts.",
+                "Controlled feature flags: Progressively enabled new ORM and rendering paths per agency cohort."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Outcome",
+          "kicker": "05 / Quantified Impact",
+          "summary": "~30% faster API responses, ~65% faster PDF rendering, ~1.5s exports, and scalable multi-tenant infrastructure.",
+          "table": [
+            {
+              "area": "API performance",
+              "impact": "~30% improvement in response times across core endpoints"
+            },
+            {
+              "area": "PDF rendering speed",
+              "impact": "~65% reduction in rendering processing time"
+            },
+            {
+              "area": "User-facing PDF export",
+              "impact": "~1.5s download time from click to file completion"
+            },
+            {
+              "area": "Document export latency",
+              "impact": "30–40% reduction in overall pipeline latency"
+            },
+            {
+              "area": "Database architecture",
+              "impact": "Google Cloud SQL with partitioning & managed replication"
+            },
+            {
+              "area": "Multi-tenant extensibility",
+              "impact": "Tenant-specific custom fields and metadata-driven logic"
+            },
+            {
+              "area": "Data access reliability",
+              "impact": "Custom ORM with automatic tenant isolation & soft deletes"
+            },
+            {
+              "area": "Service modernization",
+              "impact": "Phased migration from legacy gateway to Node.js / Fastify"
+            }
+          ]
+        },
+        {
+          "title": "Learning",
+          "kicker": "06 / Engineering Takeaways",
+          "summary": "Key architectural principles on database modeling, abstraction boundaries, server-side control, and incremental modernization.",
+          "takeaways": [
+            {
+              "title": "Optimize for the workload, not theoretical purity",
+              "body": "The database redesign wasn't about textbook normalization. For frequently accessed campaign data, reducing expensive joins provided a significantly better real-world performance profile. The architecture was optimized around how Pencil actually accessed its data."
+            },
+            {
+              "title": "Put infrastructure concerns behind abstractions",
+              "body": "Tenant isolation, soft-delete lifecycles, and database access shouldn't require every developer to remember a manual checklist of rules. By embedding platform-specific behaviors into the custom ORM, the platform guaranteed safer and more consistent access patterns by default."
+            },
+            {
+              "title": "Server-side rendering provides deterministic control",
+              "body": "The PDF challenges demonstrated the hard limits of relying on client browsers for complex, branded documents. Moving rendering to server-side Puppeteer provided absolute control over fonts, layouts, and output consistency while dramatically improving speed."
+            },
+            {
+              "title": "Modernization is incremental",
+              "body": "Large platforms cannot be replaced overnight. Modernization succeeded through domain-level sprints, schema refactoring, feature flags, and controlled batch migrations while the live product continued serving high-volume enterprise advertising campaigns."
+            }
+          ]
         }
       ],
       "bullets": [
-        "Refactored distributed microservices and implemented event-driven processing, improving scalability and reducing infrastructure costs.",
-        "Built metadata-driven multi-tenant schema that supported configurable fields, types, and lookup values for enterprise tenants.",
-        "Migrated document rendering to server-side infrastructure, reducing export load times by 30\u201340% and improving PDF generation speed by 65%."
+        "Architected custom query-builder and ORM abstraction with built-in tenant isolation and soft deletes, improving API response times by ~30%.",
+        "Engineered metadata-driven multi-tenant architecture allowing enterprise agencies to configure bespoke fields and workflows without schema alterations.",
+        "Replaced client-side rendering with server-side Puppeteer pipeline, reducing PDF rendering time by ~65% and delivering ~1.5s user-facing exports.",
+        "Collaborated on phased Google Cloud SQL migration and Fastify service evolution, leveraging tenant feature flags for zero-risk rollouts."
       ]
     },
     {
