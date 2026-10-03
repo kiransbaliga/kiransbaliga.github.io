@@ -472,11 +472,20 @@ const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => {
           {isCaseStudy ? "View case study ↗" : "View experience ↗"}
         </span>
       </div>
-      {metricSummary && (
+      {job.metrics && job.metrics.length > 0 ? (
+        <div className="work-card-metrics-rail">
+          {job.metrics.map((m) => (
+            <span key={m.label} className="work-card-metric-pill">
+              <strong className="metric-pill-val">{m.value}</strong>
+              <span className="metric-pill-lbl">{m.label}</span>
+            </span>
+          ))}
+        </div>
+      ) : metricSummary ? (
         <div className="work-card-metrics">
           <span>{metricSummary}</span>
         </div>
-      )}
+      ) : null}
       <p className="card-summary">{job.summary}</p>
       {toolingLinks && toolingLinks.length > 0 && (
         <div className="card-tooling-pills" onClick={(e) => e.stopPropagation()}>
