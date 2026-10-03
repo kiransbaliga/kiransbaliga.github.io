@@ -121,65 +121,252 @@
           "caption": "Behavioral Recommendation Engine \u2014 Automated LLM localization and growth workflows driving 8k+ conversions"
         }
       ],
-      "summary": "AI-powered health reporting and growth platforms serving 5M+ users.",
-      "headline": "Architecting offline-first biomarker intelligence and AI health reporting for 5M+ global users.",
+      "summary": "AI health reporting pipeline, on-device Kotlin Multiplatform vital computation, global app & website localization, and personalized recommendation systems serving 5M+ users.",
+      "headline": "Architecting asynchronous AI health report generation, on-device KMP execution, and platform-wide app/website localization for 5M+ users.",
       "chapters": [
         {
-          "title": "The Product & Scale",
-          "link": "https://www.ultrahuman.com/ring/",
-          "linkLabel": "Ultrahuman Ring AIR \u2197",
-          "body": "Ultrahuman builds metabolic and longevity hardware\u2014including the Ring AIR and Blood Vision\u2014trusted by over five million users worldwide. As the user base scaled rapidly across regions, the platform needed sub-second vital computations that worked reliably even without network connectivity, alongside AI-interpreted biomarker reports that felt personal and clinically grounded."
+          "title": "Case",
+          "kicker": "01 / Context & Role",
+          "summary": "Backend Engineer on a 16-person engineering team; 3-person health reporting group owning the report generation pipeline.",
+          "body": "Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person team, I worked in a 3-person health reporting group (a lead and two engineers) owning the AI report-generation pipeline, alongside contributing to on-device Kotlin Multiplatform vital computation, a separate platform-wide app and website localization system, and behavioral cross-product recommendations.",
+          "points": [
+            "Team & Scope: 16-person core engineering team; 3-person health reporting group (lead + 2 engineers) owning the end-to-end report generation pipeline.",
+            "Scale: Backend and on-device systems serving a global platform of 5M+ active users.",
+            "Core Systems: AI health report-generation pipeline, on-device KMP vital computation, separate platform-wide app & website localization system, and cross-product recommendation engine."
+          ]
         },
         {
-          "title": "Offline-First Kotlin Multiplatform Engine",
-          "link": "https://www.ultrahuman.com",
-          "linkLabel": "ultrahuman.com \u2197",
-          "body": "We migrated core sleep, recovery, and vital-sign computation pipelines from cloud-dependent services into a shared Kotlin Multiplatform (KMP) engine running natively on device. This cut vital computation latency by 80% and unlocked 100% offline execution, so users wake up to instant sleep and recovery scores anywhere in the world."
+          "title": "Problem",
+          "kicker": "02 / Three Core Problem Statements",
+          "summary": "Three distinct architectural bottlenecks spanning clinical reporting, cloud vital latency, and global app/website localization.",
+          "subsections": [
+            {
+              "tag": "Problem 01 · Clinical Health Reporting",
+              "title": "Fragmented Asynchronous Diagnostics & Doctor-in-the-Loop Validation",
+              "body": "Health assessments span 10–15 disparate testing stations (DEXA, VO₂ max, blood biomarkers, gut microbiome). Results arrive asynchronously via APIs, PDFs, or delayed lab feeds arriving days later. Autonomous LLMs cannot be treated as final medical authority without qualified clinician review and granular section-level regeneration.",
+              "points": [
+                "Heterogeneous inputs: REST APIs, PDF extracts, and asynchronous external laboratory feeds arriving days apart.",
+                "Clinical accuracy & safety: LLM recommendations require doctor review and validation before reaching users.",
+                "Regeneration cost: Editing a single recommendation previously required manually re-running the entire 15–20 page document."
+              ]
+            },
+            {
+              "tag": "Problem 02 · Edge Vital Computation",
+              "title": "Cloud Batch Queue Latency & Network Dependency for Vital Scores",
+              "body": "Core sleep, recovery, and vital sign calculations were processed centrally on backend Ruby servers in scheduled batch jobs across users, introducing multi-second delays and failing when wearers lacked internet access.",
+              "points": [
+                "High latency: Ring wearers woke up to delayed scores waiting for backend queue execution.",
+                "Network vulnerability: 0% offline execution; vitals could not be computed without cloud roundtrips.",
+                "Parity risk: Migrating vital calculations to device risked mathematical divergence from historical server baselines."
+              ]
+            },
+            {
+              "tag": "Problem 03 · Platform-Wide Localization",
+              "title": "CJK Translation Nuance & Terminology Drift Across Global Apps & Web",
+              "body": "A separate standalone translation workflow powered user-facing localization across the entire Ultrahuman mobile apps and website. Standard LLM translation failed on Chinese, Japanese, and Korean (CJK) due to context nuances, terminology drift, and trademark transliteration.",
+              "points": [
+                "Context-dependent phrasing: CJK grammar requires deep domain context rather than verbatim literal translation.",
+                "Brand integrity: Lack of glossary constraints caused inconsistent transliteration of proprietary terms.",
+                "Repetitive overhead: Lack of prompt caching resulted in high token costs and latency on recurring system context."
+              ]
+            }
+          ]
         },
         {
-          "title": "AI Health Reporting & Growth Systems",
-          "link": "https://www.ultrahuman.com/blood-vision/",
-          "linkLabel": "Blood Vision \u2197",
-          "body": "For Blood Vision and multilingual health insights, we built resilient LLM orchestration workflows paired with automated validation, quality assurance, and fallback recovery\u2014reducing AI localization failures by 67%. Alongside the reporting stack, we shipped a behavioral recommendation engine that turned real-time biometric signals into contextual nudges, generating over 8,000 conversions within its first sixty days."
+          "title": "Goal",
+          "kicker": "03 / Three Mapped Objectives",
+          "summary": "Target engineering objectives mapped directly to each of the three problem statements.",
+          "subsections": [
+            {
+              "tag": "Goal 01 · Reporting",
+              "title": "Dynamic Asynchronous Pipeline & Granular Clinician Regeneration",
+              "body": "Build an asynchronous pipeline that dynamically triggers as prerequisite lab results arrive, producing 15–20 page reports with a doctor review loop allowing single-section regeneration.",
+              "points": [
+                "Dynamic station DAG: Handle asynchronous data arrival without blocking or stalling reporting flows.",
+                "Human-in-the-loop: Generate → Review → Comment → Regenerate → Approve workflow for doctors.",
+                "Scoped section diffing: Regenerate only commented sections (e.g., diet plan) in seconds."
+              ]
+            },
+            {
+              "tag": "Goal 02 · Computation",
+              "title": "100% On-Device Vital Computation with Strict Parity",
+              "body": "Port sleep and recovery algorithms to Kotlin Multiplatform (KMP) running locally on-device, cutting latency by ~80% while proving 99–100% parity against server baselines.",
+              "points": [
+                "Immediate local computation: Remove cloud batch processing dependency entirely.",
+                "100% offline execution: Enable users to compute recovery and vitals anywhere without connectivity.",
+                "Empirical validation: Prove parity across diverse device architectures with real ring wearer datasets."
+              ]
+            },
+            {
+              "tag": "Goal 03 · Localization",
+              "title": "High-Fidelity CJK App & Website Localization with Prompt Caching",
+              "body": "Upgrade the platform-wide translation pipeline for CJK languages using curated domain glossaries, split contextual passes, and prompt caching to exceed 90% quality.",
+              "points": [
+                "Glossary enforcement: Maintain exact trademark transliterations and medical terminology.",
+                "Split-translation architecture: Contextual analysis followed by nuanced script generation.",
+                "Prompt caching: Minimize latency and token cost on recurring app and website translation prompts."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Approach",
+          "kicker": "04 / Architecture & Implementation",
+          "summary": "Three dedicated architectural implementations addressing reporting, on-device execution, and global platform localization.",
+          "workflow": [
+            "10-15 Lab Stations",
+            "Extraction & Normalization",
+            "LLM Analysis",
+            "Health Insights",
+            "Structured Report",
+            "Doctor Review & Edit",
+            "Targeted Regeneration",
+            "Final 15-20p PDF"
+          ],
+          "workflowComparison": {
+            "beforeTitle": "Track 02 · Before (Server Batch Processing)",
+            "before": ["Device", "Server", "Batch Queue", "Background Job", "Result"],
+            "afterTitle": "Track 02 · After (On-Device KMP Execution)",
+            "after": ["Device", "Local KMP Computation", "Immediate Result"]
+          },
+          "subsections": [
+            {
+              "tag": "Track 01 · Systems & AI",
+              "title": "Dynamic Report Generation Pipeline & Clinician-in-the-Loop Loop",
+              "body": "Owned the end-to-end report generation pipeline within the 3-person reporting group. Built dynamic DAG compilation that triggers as prerequisite stations arrive, coupled with a clinician feedback loop that regenerates specific sections based on doctor comments without re-running the full document.",
+              "points": [
+                "Dynamic Ingestion DAG: Reconciles REST APIs and extracted lab PDFs into a unified biomarker schema.",
+                "Predefined Guidance Rules: Bound LLM reasoning to research-backed clinical rules and prompt constraints.",
+                "Targeted Section Regeneration: Doctors annotate specific blocks, triggering focused prompt regeneration that leaves the rest of the 15–20 page report intact."
+              ]
+            },
+            {
+              "tag": "Track 02 · Edge & Systems",
+              "title": "Kotlin Multiplatform (KMP) On-Device Computation Port",
+              "body": "Contributed to shifting health computation from server background queues to on-device execution. Ported vital algorithms from Ruby to Kotlin Multiplatform and validated parity against real ring wearers.",
+              "points": [
+                "Ruby to KMP Migration: Rewrote computation pipelines in shared Kotlin Multiplatform running natively on device.",
+                "Parity Test Suite: Built validation harness comparing server and device outputs against real ring wearer biometrics, proving 99–100% mathematical parity.",
+                "Latency Elimination: Reduced computation latency by ~80% and unlocked instant offline vital computation."
+              ]
+            },
+            {
+              "tag": "Track 03 · Platform Infrastructure",
+              "title": "Separate Platform-Wide App & Website Localization Pipeline",
+              "body": "Independent of health reporting, engineered a dedicated LLM translation flow powering user-facing localization across the entire Ultrahuman mobile applications and marketing web platform.",
+              "points": [
+                "Curated Glossary Injection: Injected strict domain glossaries and trademark preservation rules for CJK scripts.",
+                "Split-Translation Passes: Divided translation into context analysis and localized generation for nuanced grammar.",
+                "Prompt Caching: Cached repetitive system instructions and contextual glossaries, dramatically slashing latency and token costs."
+              ]
+            },
+            {
+              "tag": "Track 04 · Growth & Personalization",
+              "title": "Behavioral Cohort Cross-Product Recommendation Engine",
+              "body": "Constructed an automated behavioral recommendation engine evaluating real-time user signals into cohorts (e.g., UltrahumanX, cycle/ovulation tracking, cardio capabilities) for contextual discovery.",
+              "points": [
+                "Behavioral Cohorting: Segmented users by activity patterns rather than broadcasting static promotional banners.",
+                "Proven Conversion: Generated 8,000+ cross-product conversions within two months of deployment."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Outcome",
+          "kicker": "05 / Quantified Impact",
+          "summary": "80% latency reduction, 99–100% parity, 8,000+ conversions in 60 days, and 93% Chinese translation quality across 5M+ users.",
+          "table": [
+            {
+              "area": "Health computation latency",
+              "impact": "~80% reduction (instant on-device execution)"
+            },
+            {
+              "area": "On-device computation parity",
+              "impact": "99–100% parity validated with real ring wearers"
+            },
+            {
+              "area": "Personalized health reports",
+              "impact": "15–20 page structured, doctor-approved documents"
+            },
+            {
+              "area": "Product recommendations",
+              "impact": "8,000+ conversions within 2 months"
+            },
+            {
+              "area": "App & website Chinese localization",
+              "impact": "93% agency-reviewed quality score"
+            },
+            {
+              "area": "App & website overall CJK localization",
+              "impact": "82% → 87% overall quality improvement across platform"
+            },
+            {
+              "area": "Production platform scale",
+              "impact": "Backend & edge systems serving 5M+ users"
+            }
+          ]
+        },
+        {
+          "title": "Learning",
+          "kicker": "06 / Engineering Takeaways",
+          "summary": "Key technical takeaways on production LLM architecture, clinician-in-the-loop workflows, and edge computing.",
+          "takeaways": [
+            {
+              "title": "AI systems need structured workflows, not just prompts",
+              "body": "Production LLM applications are 90% ingestion, normalization, deterministic validation, and scoped regeneration rails. The model is merely one execution step in a resilient pipeline."
+            },
+            {
+              "title": "Human review as a core product primitive",
+              "body": "In high-stakes health domains, total autonomy is an antipattern. Designing granular review, diffing, and single-section regeneration gives clinicians leverage without compromising medical accuracy."
+            },
+            {
+              "title": "Architect for real-world asynchronous data",
+              "body": "Real-world medical data never arrives cleanly synchronized. Decoupling station dependencies prevents whole-system stalls when external lab feeds lag by days."
+            },
+            {
+              "title": "Edge vs. cloud changes the interaction paradigm",
+              "body": "Migrating computation from background batch queues to on-device KMP isn't just an optimization; it transforms user experience from waiting for background jobs to instantaneous feedback."
+            }
+          ]
         }
       ],
       "bullets": [
-        "Engineered AI-powered backend systems serving 5M+ users with LLM workflows, experimentation frameworks, and automated quality control.",
-        "Reduced vital computation latency by 80% and enabled 100% offline execution by migrating health and sleep computations to Kotlin Multiplatform.",
-        "Reduced AI localization failures by ~67% with automated validation, quality assurance, and recovery workflows.",
-        "Built a behavioral recommendation engine that generated 8k+ conversions within two months."
+        "Engineered asynchronous AI health report-generation pipeline producing 15–20 page personalized biomarker reports with doctor-in-the-loop section regeneration.",
+        "Reduced vital computation latency by ~80% with 99–100% parity by migrating core health computations from Ruby to Kotlin Multiplatform (KMP).",
+        "Engineered a separate platform-wide LLM translation pipeline for the entire mobile app and web platform, elevating agency-reviewed CJK quality to 87% overall and 93% for Chinese via glossary injection and prompt caching.",
+        "Built a behavioral cohort recommendation engine that drove 8,000+ cross-product conversions in 60 days."
       ],
       "isCaseStudy": true,
       "metrics": [
         {
-          "value": "5M+",
-          "label": "Active Users"
-        },
-        {
-          "value": "-80%",
+          "value": "~80%",
           "label": "Vital Latency"
         },
         {
-          "value": "100%",
-          "label": "Offline KMP"
+          "value": "99–100%",
+          "label": "Server Parity"
         },
         {
-          "value": "8k+",
+          "value": "8,000+",
           "label": "Conversions"
+        },
+        {
+          "value": "5M+",
+          "label": "Active Users"
         }
       ],
-      "metricSummary": "5M+ Users \u00b7 -80% Vital Latency \u00b7 100% Offline KMP \u00b7 8k+ Conversions",
+      "metricSummary": "~80% Vital Latency · 99-100% KMP Parity · 15-20p Reports · 8k+ Conversions",
       "toolingLinks": [
         {
-          "label": "Ultrahuman Ring \u2197",
+          "label": "Ultrahuman Ring ↗",
           "url": "https://www.ultrahuman.com/ring/"
         },
         {
-          "label": "Blood Vision \u2197",
+          "label": "Blood Vision ↗",
           "url": "https://www.ultrahuman.com/blood-vision/"
         },
         {
-          "label": "GitHub \u2197",
+          "label": "GitHub ↗",
           "url": "https://github.com/kiransbaliga"
         }
       ]

@@ -919,6 +919,34 @@ const AutoScrollGallery = ({ items }: { items: GalleryItem[] }) => {
   );
 };
 
+type CaseStudyChapter = {
+  title: string;
+  kicker?: string;
+  summary?: string;
+  body?: string;
+  link?: string;
+  linkLabel?: string;
+  workflow?: string[];
+  workflowComparison?: {
+    beforeTitle?: string;
+    before: string[];
+    afterTitle?: string;
+    after: string[];
+  };
+  points?: string[];
+  subsections?: {
+    tag?: string;
+    title: string;
+    body: string;
+    points?: string[];
+  }[];
+  table?: { area: string; impact: string }[];
+  takeaways?: {
+    title: string;
+    body: string;
+  }[];
+};
+
 type CaseStudyProps = {
   title: string;
   kicker: string;
@@ -929,12 +957,7 @@ type CaseStudyProps = {
   banner: string;
   link: string;
   gallery: Project["gallery"];
-  chapters: {
-    title: string;
-    body: string;
-    link?: string;
-    linkLabel?: string;
-  }[];
+  chapters: CaseStudyChapter[];
   metrics?: { value: string; label: string }[];
   toolingLinks?: { label: string; url: string }[];
 };
@@ -1041,7 +1064,7 @@ const CaseStudyPage = ({
             <article className="story-chapter" data-reveal key={chapter.title}>
               <div className="story-chapter-header">
                 <span className="story-chapter-index">
-                  0{idx + 1}
+                  {chapter.kicker || `0${idx + 1}`}
                 </span>
                 <h3>
                   {chapter.link ? (
@@ -1057,6 +1080,9 @@ const CaseStudyPage = ({
                     chapter.title
                   )}
                 </h3>
+                {chapter.summary && (
+                  <p className="story-chapter-summary">{chapter.summary}</p>
+                )}
                 {chapter.link && (
                   <a
                     href={chapter.link}
@@ -1068,7 +1094,125 @@ const CaseStudyPage = ({
                   </a>
                 )}
               </div>
-              <p className="story-chapter-body">{chapter.body}</p>
+
+              <div className="story-chapter-content">
+                {chapter.body && (
+                  <p className="story-chapter-body">{chapter.body}</p>
+                )}
+
+                {chapter.workflow && chapter.workflow.length > 0 && (
+                  <div className="chapter-workflow-box">
+                    <span className="chapter-box-label">End-to-End Pipeline Workflow</span>
+                    <div className="chapter-workflow-rail">
+                      {chapter.workflow.map((step, sIdx) => (
+                        <div key={sIdx} className="workflow-step-item">
+                          <span className="workflow-step-pill">{step}</span>
+                          {sIdx < chapter.workflow!.length - 1 && (
+                            <span className="workflow-arrow" aria-hidden="true">→</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {chapter.workflowComparison && (
+                  <div className="chapter-comparison-box">
+                    <span className="chapter-box-label">Computation Architecture Migration</span>
+                    <div className="comparison-cols-wrap">
+                      <div className="comparison-col">
+                        <span className="comparison-badge before">
+                          {chapter.workflowComparison.beforeTitle || "Before · Server Batch Queue"}
+                        </span>
+                        <div className="comparison-rail">
+                          {chapter.workflowComparison.before.map((step, sIdx) => (
+                            <div key={sIdx} className="workflow-step-item">
+                              <span className="workflow-step-pill">{step}</span>
+                              {sIdx < chapter.workflowComparison!.before.length - 1 && (
+                                <span className="workflow-arrow" aria-hidden="true">→</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="comparison-col">
+                        <span className="comparison-badge after">
+                          {chapter.workflowComparison.afterTitle || "After · On-Device KMP (Immediate)"}
+                        </span>
+                        <div className="comparison-rail">
+                          {chapter.workflowComparison.after.map((step, sIdx) => (
+                            <div key={sIdx} className="workflow-step-item">
+                              <span className="workflow-step-pill active">{step}</span>
+                              {sIdx < chapter.workflowComparison!.after.length - 1 && (
+                                <span className="workflow-arrow" aria-hidden="true">→</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {chapter.points && chapter.points.length > 0 && (
+                  <ul className="chapter-points-list">
+                    {chapter.points.map((pt, pIdx) => (
+                      <li key={pIdx}>{pt}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {chapter.subsections && chapter.subsections.length > 0 && (
+                  <div className="chapter-subsections-grid">
+                    {chapter.subsections.map((sub, sIdx) => (
+                      <div key={sIdx} className="chapter-subsection-card">
+                        {sub.tag && <span className="subsection-tag">{sub.tag}</span>}
+                        <h4>{sub.title}</h4>
+                        <p>{sub.body}</p>
+                        {sub.points && (
+                          <ul className="subsection-points">
+                            {sub.points.map((p, pi) => (
+                              <li key={pi}>{p}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {chapter.table && chapter.table.length > 0 && (
+                  <div className="chapter-table-wrap">
+                    <table className="chapter-impact-table">
+                      <thead>
+                        <tr>
+                          <th>Measurement / Area</th>
+                          <th>Quantified Impact</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {chapter.table.map((row, rIdx) => (
+                          <tr key={rIdx}>
+                            <td className="table-area">{row.area}</td>
+                            <td className="table-impact">{row.impact}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {chapter.takeaways && chapter.takeaways.length > 0 && (
+                  <div className="chapter-takeaways-grid">
+                    {chapter.takeaways.map((t, tIdx) => (
+                      <div key={tIdx} className="chapter-takeaway-card">
+                        <h4>{t.title}</h4>
+                        <p>{t.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </article>
           ))}
         </div>
