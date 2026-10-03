@@ -74,7 +74,7 @@ export interface ScrollSnapConfig {
 }
 
 export const scrollSnapConfig: ScrollSnapConfig = {
-  enabled: true,
+  enabled: false,
   ease: "sine.inOut",       // Experiment: "power2.inOut", "sine.inOut", "power1.inOut", "power3.out"
   duration: 1.25,           // Duration in seconds (increase for slower, decrease for faster)
   threshold: 0.18,          // 18% scroll progress triggers the next snap target

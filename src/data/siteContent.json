@@ -447,9 +447,9 @@
       "slug": "siren",
       "company": "Siren",
       "subCompany": "KeyValue Software Systems",
-      "role": "Lead Systems Engineer",
+      "role": "Backend Engineer",
       "location": "Kerala",
-      "period": "Sep 2023 \u2013 Feb 2026",
+      "period": "Sep 2023 – Feb 2026",
       "link": "https://www.trysiren.io",
       "image": "/portfolio/siren-image.png",
       "banner": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
@@ -457,74 +457,266 @@
       "isCaseStudy": true,
       "metrics": [
         {
-          "value": "-80%",
-          "label": "Dev Time"
+          "value": "~75%",
+          "label": "Dev Effort"
         },
         {
-          "value": "< 1ms",
-          "label": "Protocol Latency"
-        },
-        {
-          "value": "160+",
-          "label": "Downloads"
+          "value": "3+",
+          "label": "Agent Frameworks"
         },
         {
           "value": "MCP",
           "label": "Protocol Server"
+        },
+        {
+          "value": "npm + PyPI",
+          "label": "Dual Registries"
         }
       ],
-      "metricSummary": "-80% Dev Time \u00b7 < 1ms Latency \u00b7 MCP Server \u00b7 NPM & PyPI Distributed",
+      "metricSummary": "~75% Less Dev Effort · OpenAI / LangChain / CrewAI · MCP · npm + PyPI",
       "toolingLinks": [
         {
-          "label": "NPM Package \u2197",
-          "url": "https://www.npmjs.com/search?q=trysiren"
+          "label": "@trysiren/agent-toolkit ↗",
+          "url": "https://www.npmjs.com/package/@trysiren/agent-toolkit"
         },
         {
-          "label": "PyPI Package \u2197",
-          "url": "https://pypi.org/search/?q=trysiren"
+          "label": "siren-agent-toolkit ↗",
+          "url": "https://pypi.org/project/siren-agent-toolkit/"
         },
         {
-          "label": "MCP Server \u2197",
-          "url": "https://github.com/kiransbaliga"
+          "label": "@trysiren/mcp ↗",
+          "url": "https://www.npmjs.com/package/@trysiren/mcp"
         },
         {
-          "label": "GitHub \u2197",
-          "url": "https://github.com/kiransbaliga"
+          "label": "Agent Toolkit Docs ↗",
+          "url": "https://docs.trysiren.io/docs/AI-Agent-Toolkit/AI%20Agent%20Toolkit"
+        },
+        {
+          "label": "MCP Docs ↗",
+          "url": "https://docs.trysiren.io/docs/AI-Agent-Toolkit/MCP/Overview"
+        },
+        {
+          "label": "Technical Article ↗",
+          "url": "https://www.keyvalue.systems/blog/how-to-make-your-product-ai-native/"
         }
       ],
       "gallery": [
         {
           "type": "image",
           "src": "/portfolio/siren-image.png",
-          "caption": "Siren \u2014 Communication rails, JS/Python SDKs, and MCP server for autonomous AI agent workflows"
+          "caption": "Siren — Communication rails, JS/Python Agent Toolkit, and Model Context Protocol (MCP) server for autonomous AI agents"
         }
       ],
-      "summary": "Communication rails, official TypeScript & Python SDKs, and Model Context Protocol (MCP) server for autonomous AI agents.",
-      "headline": "Engineering universal communication rails, published client SDKs, and MCP servers for autonomous AI agents.",
+      "summary": "Turning a notification platform into an agent-accessible communication layer with an Agent Toolkit and MCP server.",
+      "headline": "Making Siren AI-native: agent-accessible communication rails and MCP server reducing developer integration effort by ~75%.",
       "chapters": [
         {
-          "title": "Universal Communication Backbone for Agentic AI",
-          "link": "https://www.trysiren.io",
-          "linkLabel": "trysiren.io \u2197",
-          "body": "Siren provides unified notification and communication infrastructure for engineering teams and autonomous AI agents. As AI products shift from single prompts to multi-agent teams, inter-agent messaging and tool protocol compliance become the primary architectural bottleneck."
+          "title": "Case",
+          "kicker": "01 / Context & Role",
+          "summary": "Backend Engineer in a 4-person engineering team with a technical lead at KeyValue Software Systems building Siren's AI-native layer.",
+          "body": "Siren is a developer communication platform that helps engineering teams design and deliver notifications across email, SMS, push notifications, and chat. Working as part of a four-person engineering group with a technical lead, my focus was making Siren AI-native by exposing its communication capabilities to AI agents through a reusable Agent Toolkit and a standardized Model Context Protocol (MCP) server.",
+          "points": [
+            "Team & Scope: 4-person engineering group with a technical lead owning the AI-agent integration layer.",
+            "Primary Ownership: Framework adoption, tool schema conversion, OpenAI/LangChain/CrewAI compatible tools, MCP tool implementations, agent integrations, documentation, and examples.",
+            "Collaborative Delivery: Automated packaging and CI/CD publishing workflows were established by another team engineer.",
+            "Core Objective: Let developers instruct AI agents on what they want to communicate via natural language intent, rather than writing boilerplate integration code for every notification channel."
+          ]
         },
         {
-          "title": "Model Context Protocol (MCP) Server & Connectors",
-          "link": "https://github.com/kiransbaliga",
-          "linkLabel": "View on GitHub \u2197",
-          "body": "Architected a high-performance Model Context Protocol (MCP) server enabling Claude desktop and external server agents to seamlessly interface with tools and data resources. Standardized integration connectors for OpenAI Function Calling and CrewAI agent swarms, cutting developer integration time by ~80%."
+          "title": "Problem",
+          "kicker": "02 / Three Core Problem Statements",
+          "summary": "Three distinct engineering challenges: rigid imperative SDK wiring, fragmented agent framework interfaces, and rapidly shifting ecosystem specifications.",
+          "subsections": [
+            {
+              "tag": "Problem 01 · Developer Experience",
+              "title": "Rigid API/SDK Wiring vs. Intent-Driven Communication",
+              "body": "Traditional notification integrations forced developers to write imperative boilerplate (Application → SDK → Notification API → Email/SMS/Push), manually selecting operations, constructing request payloads, and writing routing logic. As AI agents emerged, developers needed an intent-based model where an agent could execute high-level instructions ('Send an email to the new user welcoming them') without bespoke code for each trigger.",
+              "points": [
+                "Imperative integration friction: Developers spent hours writing plumbing code for standard notification triggers.",
+                "Lack of semantic understanding: APIs could not interpret natural language instructions directly.",
+                "High barrier for AI agents: Existing endpoints lacked schemas that LLMs could reason about or call safely."
+              ]
+            },
+            {
+              "tag": "Problem 02 · Framework Fragmentation",
+              "title": "Incompatible Tool Conventions Across Agent Ecosystems",
+              "body": "Different agent frameworks (OpenAI Function Calling, LangChain, CrewAI) expected tools and schemas to be defined, validated, and executed with completely different signatures and parameter structures. Forcing developers to hand-roll custom adapters for every Siren operation in each framework created severe integration fragmentation.",
+              "points": [
+                "Schema incompatibility: OpenAI JSON schemas, LangChain StructuredTools, and CrewAI tools require divergent formats.",
+                "Dual-language barrier: Enterprise stacks required idiomatic tooling across both TypeScript/Node.js and Python ecosystems.",
+                "Maintenance overhead: Supporting multiple frameworks without a shared core layer led to duplicated logic and brittle glue code."
+              ]
+            },
+            {
+              "tag": "Problem 03 · Ecosystem Volatility",
+              "title": "Building Against Rapidly Evolving Specifications & Standards",
+              "body": "AI agent tooling and the Model Context Protocol (MCP) were in their earliest releases when development began. Upstream specifications, client conventions, and library APIs were shifting continuously without established industry best practices, making stability and future-proof design a strict engineering constraint.",
+              "points": [
+                "Unstable upstream APIs: Framework tool interfaces and protocol drafts underwent frequent breaking changes.",
+                "Absence of battle-tested patterns: Integration conventions had to be architected from scratch through empirical testing against agent workflows.",
+                "Compatibility pressure: Integrations had to remain reliable for developers while the underlying standards were actively maturing."
+              ]
+            }
+          ]
         },
         {
-          "title": "Official SDKs Published to NPM & PyPI",
-          "link": "https://www.npmjs.com/search?q=trysiren",
-          "linkLabel": "NPM Registry \u2197",
-          "body": "Engineered idiomatic TypeScript/JavaScript and Python async client SDKs with zero-overhead message serialization (< 1ms). Shipped automated GitHub Actions CI/CD matrix testing and published official packages to NPM and PyPI, reaching 160+ peak downloads."
+          "title": "Goal",
+          "kicker": "03 / Three Mapped Objectives",
+          "summary": "Target engineering objectives mapped directly to developer experience, cross-framework compatibility, and resilient MCP standardization.",
+          "subsections": [
+            {
+              "tag": "Goal 01 · Integration",
+              "title": "Natural Language Intent as the Integration Layer",
+              "body": "Shift Siren's primary interaction model from purely API-oriented to intent-oriented, enabling agents to parse natural-language instructions, determine the correct notification operation, and construct payloads while preserving developer control over explicit templates.",
+              "points": [
+                "Intent resolution: Enable agents to trigger complex notifications from simple prompt instructions.",
+                "Preserve developer control: Allow explicit templates, content overrides, and parameter constraints when needed.",
+                "Effort reduction: Cut developer integration overhead by ~75% for AI-driven communication workflows."
+              ]
+            },
+            {
+              "tag": "Goal 02 · Standardization",
+              "title": "Unified Agent Toolkit & Native Model Context Protocol (MCP) Server",
+              "body": "Build a single reusable abstraction layer over Siren's capabilities and expose it via both a cross-framework Agent Toolkit (TypeScript & Python) and a standalone MCP server executable via npx.",
+              "points": [
+                "Framework agnostic: Native compatibility with OpenAI, LangChain, CrewAI, and custom agent swarms.",
+                "Standard protocol: Support standardized tool discovery and invocation via the Model Context Protocol (MCP).",
+                "Dual-language SDKs: Provide idiomatic @trysiren/agent-toolkit (npm) and siren-agent-toolkit (PyPI) packages."
+              ]
+            },
+            {
+              "tag": "Goal 03 · Architecture",
+              "title": "Resilient Adapter Architecture for Rapidly Shifting Specs",
+              "body": "Design clean decoupled boundaries between internal Siren operations and external agent frameworks, insulating application developers from upstream protocol churn and specification updates.",
+              "points": [
+                "Decoupled tool schemas: Isolate core platform capabilities from framework-specific serialization formats.",
+                "Continuous compatibility: Maintain stable developer DX across iterative agent framework releases.",
+                "Self-documenting interfaces: Provide comprehensive documentation, quickstarts, and sample agent workflows."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Approach",
+          "kicker": "04 / Architecture & Implementation",
+          "summary": "Architecture bridging existing Siren platform capabilities with agent frameworks and MCP servers through reusable tool schemas.",
+          "workflow": [
+            "Natural Language Intent",
+            "AI Agent Reasoning",
+            "Siren Agent Toolkit / MCP",
+            "Schema & Parameter Validation",
+            "Siren Core Platform",
+            "Multi-Channel Delivery (Email, SMS, Push, Chat)"
+          ],
+          "workflowComparison": {
+            "beforeTitle": "Traditional Approach · Imperative SDK Integration",
+            "before": ["Developer", "Read API Docs", "Write SDK Wiring", "Construct Payload", "Notification Trigger"],
+            "afterTitle": "AI-Native Approach · Intent-Driven Execution",
+            "after": ["Natural Language Intent", "AI Agent", "Agent Toolkit / MCP", "Dynamic Siren Execution"]
+          },
+          "subsections": [
+            {
+              "tag": "Track 01 · Agent Abstractions",
+              "title": "Tool Schema Conversion & Multi-Framework Agent Toolkit",
+              "body": "Mapped Siren's existing platform operations (messaging, templates, users, workflows) into structured agent-callable tools. Built a unified core abstraction that dynamically converts schemas into framework-specific signatures for OpenAI Function Calling, LangChain StructuredTools, and CrewAI across TypeScript (@trysiren/agent-toolkit) and Python (siren-agent-toolkit).",
+              "points": [
+                "Semantic tool definitions: Authored descriptive schemas and parameters so LLMs understand tool purpose reliably.",
+                "Multi-framework adapters: Provided drop-in compatibility across OpenAI, LangChain, and CrewAI without vendor lock-in.",
+                "Dual-stack distribution: Maintained parity across TypeScript/Node.js and Python implementations."
+              ]
+            },
+            {
+              "tag": "Track 02 · Protocol Standardization",
+              "title": "Model Context Protocol (MCP) Server Implementation",
+              "body": "Architected a dedicated MCP server package (@trysiren/mcp) implementing the standardized Model Context Protocol over JSON-RPC. Allows Claude desktop, cursor agents, and external agent runtimes to dynamically discover and invoke Siren tools directly via npx (@trysiren/mcp) without custom integration code.",
+              "points": [
+                "Standard tool discovery: Exposed Siren communication tools through the universal MCP specification.",
+                "Zero-install execution: Supported direct execution via npx -y @trysiren/mcp for frictionless local and server workflows.",
+                "Granular capability exposure: Enabled agents to inspect available templates and send single or batch dispatches safely."
+              ]
+            },
+            {
+              "tag": "Track 03 · Engineering for Evolution",
+              "title": "Decoupled Adapter Boundaries Under Changing Standards",
+              "body": "Treated rapid ecosystem evolution as a core engineering constraint. Designed clear abstraction barriers between raw Siren REST endpoints and external agent schemas, allowing our team to absorb upstream specification changes (such as MCP draft updates and framework method renames) without breaking end-developer applications.",
+              "points": [
+                "Defensive abstraction layers: Shielded application developers from frequent upstream API and spec shifts.",
+                "Empirical agent validation: Tested tool invocations against live agent runs to detect prompt regression early.",
+                "Ecosystem adaptability: Kept public integration patterns stable even as underlying packages evolved."
+              ]
+            },
+            {
+              "tag": "Track 04 · Developer Experience & Content",
+              "title": "Public Documentation, Examples & Technical Strategy",
+              "body": "Co-authored public technical documentation, implementation quickstarts, and architectural guides on how to make existing B2B products AI-native. Documented integration patterns for multi-agent swarms (CrewAI) and autonomous workflows.",
+              "points": [
+                "Official documentation: Authored comprehensive setup guides for Agent Toolkit and MCP server.",
+                "Real-world examples: Built end-to-end agent workflow demos for welcome emails and transactional alerts.",
+                "Technical strategy publication: Published technical article on KeyValue's engineering blog regarding AI-native product transitions."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Outcome",
+          "kicker": "05 / Quantified Impact",
+          "summary": "~75% reduction in integration effort, native support for major agent frameworks, and public distribution on npm and PyPI.",
+          "table": [
+            {
+              "area": "Developer integration effort",
+              "impact": "~75% reduction for relevant AI-driven notification use cases"
+            },
+            {
+              "area": "Agent framework compatibility",
+              "impact": "Native support for OpenAI, LangChain, CrewAI & MCP"
+            },
+            {
+              "area": "Integration interfaces",
+              "impact": "Reusable Agent Toolkit + Standalone MCP Server"
+            },
+            {
+              "area": "Language distribution",
+              "impact": "Dual-stack TypeScript/Node.js (npm) & Python (PyPI)"
+            },
+            {
+              "area": "MCP server distribution",
+              "impact": "Global npm package executable via npx (@trysiren/mcp)"
+            },
+            {
+              "area": "Community adoption",
+              "impact": "Low hundreds peak downloads with continued registry usage"
+            },
+            {
+              "area": "Developer interaction model",
+              "impact": "Transitioned from imperative API wiring to natural-language intent"
+            }
+          ]
+        },
+        {
+          "title": "Learning",
+          "kicker": "06 / Engineering Takeaways",
+          "summary": "Key technical lessons on making existing platforms AI-native, tool schema engineering, and early-ecosystem adaptability.",
+          "takeaways": [
+            {
+              "title": "AI-native doesn't mean rebuilding the product",
+              "body": "Siren already had robust notification delivery capabilities. The challenge was building an agent-facing discovery and execution layer over existing capabilities rather than duplicating underlying infrastructure."
+            },
+            {
+              "title": "Tool design matters as much as model quality",
+              "body": "An AI agent can only reliably use a capability if the tool interface is understandable. Designing explicit schemas, clear parameter constraints, and intuitive descriptions is critical for reliable agent execution."
+            },
+            {
+              "title": "Early ecosystems require adaptability as an architecture feature",
+              "body": "Working with rapidly evolving agent frameworks and MCP specifications meant engineering wasn't simply following established documentation. Decoupled adapter layers allowed us to maintain a stable developer experience while the underlying ecosystem matured."
+            }
+          ]
         }
       ],
       "bullets": [
-        "Accelerated AI agent orchestration by building core communication modules enabling efficient multi-agent workflows.",
-        "Reduced AI feature development time by ~80% by building JavaScript and Python SDKs, an MCP server, and integrations for OpenAI and CrewAI.",
-        "Published SDKs to NPM and PyPI (160+ peak downloads), improving developer adoption and release reliability."
+        "Architected reusable Agent Toolkit and Model Context Protocol (MCP) server for Siren, reducing AI notification integration effort by ~75%.",
+        "Engineered framework-compatible tool implementations across OpenAI Function Calling, LangChain, and CrewAI in TypeScript and Python.",
+        "Published @trysiren/agent-toolkit, siren-agent-toolkit, and @trysiren/mcp packages to npm and PyPI with continued community usage.",
+        "Co-authored official public documentation, code examples, and technical article on transitioning products to AI-native."
       ]
     },
     {
