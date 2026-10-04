@@ -84,7 +84,7 @@ const Experience = ({ isFromMobile }: { isFromMobile: boolean }) => {
 
           <a
             ref={resumeRef}
-            href="https://baliga.dev/resume"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-link"

@@ -302,7 +302,7 @@ const HomePage = () => {
                   </li>
                   <li>
                     <a
-                      href="https://baliga.dev/resume"
+                      href="/resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="View Kiran S Baliga's resume"

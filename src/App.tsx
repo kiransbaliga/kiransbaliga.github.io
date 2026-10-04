@@ -318,7 +318,8 @@ const Header = () => {
           </Link>
           <a
             href="/resume.pdf"
-            download="Kiran_S_Baliga_Resume.pdf"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             Resume <span>05 ↓</span>
           </a>
@@ -376,7 +377,8 @@ const Footer = () => {
         </button>
         <a
           href="/resume.pdf"
-          download="Kiran_S_Baliga_Resume.pdf"
+          target="_blank"
+          rel="noreferrer noopener"
           className="btn-primary"
           style={{ minHeight: "44px", padding: "10px 22px" }}
           data-cursor="RESUME"
@@ -557,7 +559,8 @@ const Home = () => {
             <div className="hero-links">
               <a
                 href="/resume.pdf"
-                download="Kiran_S_Baliga_Resume.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="btn-primary"
                 data-cursor="RESUME"
               >
@@ -752,7 +755,8 @@ const Info = () => {
           <a
             className="info-cv"
             href="/resume.pdf"
-            download="Kiran_S_Baliga_Resume.pdf"
+            target="_blank"
+            rel="noreferrer noopener"
             style={{ fontWeight: 600, color: "var(--text)" }}
           >
             Download Resume ↓
@@ -1315,9 +1319,37 @@ export default function App() {
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
-      const anchor = (event.target as HTMLElement).closest("a");
+      // Don't intercept if modifier keys were pressed
       if (
-        anchor?.pathname &&
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        event.defaultPrevented
+      ) {
+        return;
+      }
+
+      const anchor = (event.target as HTMLElement).closest("a");
+      if (!anchor) return;
+
+      // Don't intercept if target is _blank
+      if (anchor.target && anchor.target !== "_self") return;
+
+      // Don't intercept if download attribute is present
+      if (anchor.hasAttribute("download")) return;
+
+      // Don't intercept static assets or files (.pdf, images, etc.)
+      if (
+        /\.(pdf|zip|png|jpe?g|svg|webp|webm|mp4|xml|txt|webmanifest)$/i.test(
+          anchor.pathname
+        )
+      ) {
+        return;
+      }
+
+      if (
+        anchor.pathname &&
         !anchor.hash &&
         anchor.origin === window.location.origin
       ) {
