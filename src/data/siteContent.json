@@ -118,15 +118,15 @@
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Behavioral Recommendation Engine — Dynamic cohort processing on core app (5M+ platform users) driving 8k+ conversions"
+          "caption": "Dynamic Upsell Engine — Nightly biometric cohort evaluation (heart rate, sleep scores) across distributed batch queues for Powerplug extensions"
         }
       ],
-      "summary": "AI clinical reporting pipeline across 10+ lab stations, on-device KMP vital computation (~80% estimated latency cut), and modular CJK localization boosting quality to 91%.",
+      "summary": "AI clinical reporting pipeline across 10+ lab stations, on-device KMP vital computation (~80% estimated latency cut), modular CJK localization boosting quality to 91%, and dynamic upsell engine for subscription Powerplugs.",
       "headline": "Architecting asynchronous AI health report generation across 10+ lab stations, on-device KMP execution, and platform-wide CJK localization.",
       "quickSummary": {
-        "label": "Executive Summary",
-        "what": "AI-powered clinical health reporting pipeline synthesizing asynchronous multi-station lab diagnostics into 15-page doctor-reviewed health plans, paired with on-device vital computation and global platform localization.",
-        "role": "Backend Engineer in a 3-person health reporting group (lead + 2 engineers) on a 16-person team; owned the report-generation pipeline, Kotlin Multiplatform SpO₂ port, and platform-wide CJK translation workflows.",
+        "label": "Work Summary",
+        "what": "AI-powered clinical health reporting pipeline synthesizing asynchronous multi-station lab diagnostics into 15-page doctor-reviewed health plans, paired with on-device vital computation, global platform localization, and a dynamic upsell engine for subscription Powerplugs.",
+        "role": "Backend Engineer in a 3-person health reporting group (lead + 2 engineers) on a 16-person team; owned the report-generation pipeline, Kotlin Multiplatform SpO₂ port, platform-wide CJK translation workflows, and subscription upsell engine revamp.",
         "metrics": [
           {
             "value": "86% → 91%",
@@ -140,8 +140,8 @@
           },
           {
             "value": "8,000+",
-            "label": "Cohort Conversions",
-            "detail": "8,000+ cross-product conversions in 60 days via behavioral segmentation (baseline: static promotional banner broadcasts across 5M+ platform users)."
+            "label": "Powerplug Conversions",
+            "detail": "8,000+ subscription conversions in 60 days via nightly biometric cohort evaluation (heart rate, sleep scores) across distributed daily batch queues (baseline: static promotional broadcast banners across 5M+ platform users)."
           }
         ],
         "lesson": "High-stakes clinical AI cannot rely on pure autonomy; production reliability requires structured ingestion DAGs, deterministic medical rules, and doctor-in-the-loop section regeneration over unconstrained LLM generation."
@@ -151,11 +151,11 @@
           "title": "Case",
           "kicker": "01 / Context & Role",
           "summary": "Backend Engineer on a 16-person engineering team; 3-person health reporting group owning the report generation pipeline.",
-          "body": "Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person core engineering team, I worked in a 3-person health reporting group (a lead and two engineers) owning the AI report-generation pipeline for performance lab clients, alongside contributing to on-device Kotlin Multiplatform vital computation, a separate platform-wide app and website localization system, and behavioral cross-product recommendations.",
+          "body": "Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person core engineering team, I worked in a 3-person health reporting group (a lead and two engineers) owning the AI report-generation pipeline for performance lab clients, alongside contributing to on-device Kotlin Multiplatform vital computation, a separate platform-wide app and website localization system, and a dynamic upsell engine evaluating user biometric cohorts for subscription extensions (Powerplugs).",
           "points": [
             "Team & Scope: 16-person core engineering team; 3-person health reporting group (lead + 2 engineers) owning the end-to-end report generation pipeline.",
             "Scale: Core platform serving 5M+ active users; clinical reporting pipeline processing multi-station diagnostics for performance lab clients.",
-            "Core Systems: AI health report-generation pipeline across 10+ stations, on-device KMP vital computation, separate platform-wide app & website localization system, and cross-product recommendation engine."
+            "Core Systems: AI health report-generation pipeline across 10+ stations, on-device KMP vital computation, separate platform-wide app & website localization system, and dynamic biometric upsell engine for subscription extensions (Powerplugs)."
           ]
         },
         {
@@ -284,12 +284,13 @@
               ]
             },
             {
-              "tag": "Track 04 · Growth & Personalization",
-              "title": "Behavioral Cohort Cross-Product Recommendation Engine",
-              "body": "Constructed an automated behavioral recommendation engine evaluating real-time user signals into cohorts (e.g., UltrahumanX, cycle/ovulation tracking, cardio capabilities) for contextual discovery.",
+              "tag": "Track 04 · Growth & Monetization",
+              "title": "Biometric Upsell Engine Revamp for Subscription Extensions (Powerplugs)",
+              "body": "Revamped the dynamic upsell engine recommending paid monthly subscription extensions ('Powerplugs' — e.g. cardio adaptability, deep health integrations). Evaluated biometric cohorts nightly (resting heart rate, sleep scores, recovery trends), spreading user evaluation across distributed worker queues throughout the day in throttled batches to prevent API or database spikes across 5M+ platform users.",
               "points": [
-                "Behavioral Cohorting: Segmented users by activity patterns rather than broadcasting static promotional banners.",
-                "Proven Conversion: Generated 8,000+ cross-product conversions within two months of deployment."
+                "Biometric Condition Cohorting: Evaluated users nightly based on physiological thresholds (heart rate, sleep quality, recovery metrics) to recommend relevant Powerplugs.",
+                "Distributed Batch Queuing: Spread evaluation jobs across daily worker queues, processing users in throttled batches to eliminate load spikes.",
+                "High-Velocity Monetization: Drove 8,000+ Powerplug subscription conversions within two months of deployment."
               ]
             }
           ]
@@ -312,8 +313,8 @@
               "impact": "15-page structured, doctor-approved documents across 10+ lab stations"
             },
             {
-              "area": "Product recommendations",
-              "impact": "8,000+ conversions within 2 months (vs. static banners)"
+              "area": "Subscription upsell engine (Powerplugs)",
+              "impact": "8,000+ conversions within 2 months via nightly biometric cohort evaluation & distributed batch queues"
             },
             {
               "area": "App & website CJK localization quality",
@@ -354,10 +355,10 @@
         }
       ],
       "bullets": [
+        "Revamped dynamic upsell system for subscription extensions (Powerplugs); evaluated biometric cohorts (heart rate, sleep scores) nightly across distributed daily batch queues (5M+ users), driving 8k+ conversions in 2 months.",
         "Architected and owned the end-to-end LLM health-reporting pipeline for Ultrahuman's performance lab, ingesting multi-modal diagnostics across 10+ stations (DEXA, VO₂ max, APIs, PDFs) to synthesize 15-page clinical plans for doctor review.",
         "Ported SpO₂ algorithm to Kotlin Multiplatform for on-device execution, achieving 99%+ numerical parity on ring wearer data; pre-release benchmarks by engineering leads projected an ~80% latency reduction.",
-        "Enhanced modular LLM translation pipeline for CJK languages via trademark glossaries and context injection, boosting quality from 86% to 91% and cutting token costs by ~67% through prompt caching and request batching.",
-        "Developed dynamic cross-product recommendation engine using behavioral segmentation on core app (5M+ users), driving 8k+ conversions within two months."
+        "Enhanced modular LLM translation pipeline for CJK languages via trademark glossaries and context injection, boosting quality from 86% to 91% and cutting token costs by ~67% through prompt caching and request batching."
       ],
       "isCaseStudy": true,
       "metrics": [
@@ -375,10 +376,10 @@
         },
         {
           "value": "8,000+",
-          "label": "Conversions"
+          "label": "Powerplug Conversions"
         }
       ],
-      "metricSummary": "~80% Latency (Est.) · 99%+ SpO₂ Parity · 86% → 91% CJK · 8k+ Conversions",
+      "metricSummary": "~80% Latency (Est.) · 99%+ SpO₂ Parity · 86% → 91% CJK · 8k+ Powerplug Conversions",
       "toolingLinks": [
         {
           "label": "Ultrahuman Ring ↗",
@@ -445,7 +446,7 @@
       "summary": "Modernizing database access, multi-tenant infrastructure, and document rendering for a growing B2B advertising platform.",
       "headline": "Scaling Pencil's platform for large-scale advertising workflows: modernizing database access, multi-tenant infrastructure and document rendering for a growing B2B advertising platform.",
       "quickSummary": {
-        "label": "Executive Summary",
+        "label": "Work Summary",
         "what": "Platform modernization and performance architecture for an enterprise B2B AI ad generation platform, migrating large-scale agency workspaces to Google Cloud SQL and replacing client-side PDF rendering with headless Puppeteer.",
         "role": "Associate Software Engineer on the platform engineering team; owned custom query-builder ORM, multi-tenant RBAC permissions, read-path schema restructuring, and server-side Puppeteer PDF rendering.",
         "metrics": [
@@ -754,7 +755,7 @@
       "summary": "Turning a notification platform into an agent-accessible communication layer with an Agent Toolkit and MCP server reducing setup effort by ~75%.",
       "headline": "Making Siren AI-native: agent-accessible communication rails and MCP server reducing developer setup effort by ~75%.",
       "quickSummary": {
-        "label": "Executive Summary",
+        "label": "Work Summary",
         "what": "AI-native developer tooling initiative transforming a multi-channel developer notification platform into an intent-driven communication layer via a cross-framework Agent Toolkit and standalone Model Context Protocol (MCP) server.",
         "role": "Associate Software Engineer in a 4-person engineering group with a technical lead; owned tool schema conversion, OpenAI/LangChain/CrewAI adapters, MCP server implementation, and public documentation.",
         "metrics": [

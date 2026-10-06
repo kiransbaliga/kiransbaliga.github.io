@@ -1103,10 +1103,7 @@ const CaseStudyPage = ({
         {quickSummary && (
           <div className="case-study-quick-summary" data-reveal>
             <div className="quick-summary-header">
-              <span className="quick-summary-badge">
-                {quickSummary.label || "Executive Summary"}
-              </span>
-              <span className="quick-summary-kicker">At a Glance · 5-Point Summary</span>
+              <h3 className="quick-summary-title">Work Summary</h3>
             </div>
 
             <div className="quick-summary-content">
