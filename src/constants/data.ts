@@ -48,8 +48,8 @@ export const data: Experience[] = [
 **Siren — Communication Rails for AI Agents**
 
 * Built **core communication modules** enabling efficient multi-agent orchestration and workflows.
-* Cut AI feature development time by **~80%** by shipping JavaScript & Python **SDKs**, an **MCP server**, and integrations for OpenAI and CrewAI — standardising AI development across teams.
-* Published SDKs to **NPM and PyPI** (160+ peak downloads) with automated multi-environment **CI/CD**.
+* Cut developer setup effort by **~75%** (MCP server setup vs. manual SDK integration) by shipping JavaScript & Python **SDKs**, an **MCP server**, and integrations for OpenAI, LangChain, and CrewAI.
+* Published packages to **NPM and PyPI** (~100 peak downloads) enabling rapid external integration across agent workflows.
 
 **Other Client Projects**
 

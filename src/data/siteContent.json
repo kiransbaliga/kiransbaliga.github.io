@@ -38,7 +38,7 @@
   },
   "skills": {
     "languages": "TypeScript / JavaScript, Python, Ruby, SQL",
-    "technologies": "Node.js, Ruby on Rails, React, Docker, PostgreSQL, Kubernetes, MongoDB, GraphQL, AWS, MCP"
+    "technologies": "FastAPI, Django, Node.js, Ruby on Rails, MCP, LangChain, CrewAI, Kotlin Multiplatform, PostgreSQL, Docker, AWS, GraphQL"
   },
   "services": [
     {
@@ -375,10 +375,10 @@
         }
       ],
       "bullets": [
-        "Revamped dynamic upsell system for subscription extensions (Powerplugs); evaluated biometric cohorts (heart rate, sleep scores) nightly across distributed daily batch queues (5M+ users), driving 8k+ conversions in 2 months.",
         "Architected and owned the end-to-end LLM health-reporting pipeline for Ultrahuman's performance lab, ingesting multi-modal diagnostics across 10+ stations (DEXA, VO₂ max, APIs, PDFs) to synthesize 15-page clinical plans for doctor review.",
         "Ported SpO₂ algorithm to Kotlin Multiplatform for on-device execution, achieving 99%+ numerical parity on ring wearer data; pre-release benchmarks by engineering leads projected an ~80% latency reduction.",
-        "Enhanced modular LLM translation pipeline for CJK languages via trademark glossaries and context injection, boosting quality from 86% to 91% and cutting token costs by ~67% through prompt caching and request batching."
+        "Enhanced modular LLM translation pipeline for CJK languages via trademark glossaries and context injection, boosting quality from 86% to 91% and cutting token costs by ~67% through prompt caching and request batching.",
+        "Revamped dynamic upsell system for subscription extensions (Powerplugs); evaluated biometric cohorts (heart rate, sleep scores) nightly across distributed daily batch queues (5M+ users), driving 8k+ conversions in 2 months."
       ],
       "isCaseStudy": true,
       "metrics": [
@@ -734,11 +734,11 @@
           "label": "Protocol Server"
         },
         {
-          "value": "~100",
-          "label": "Peak Downloads"
+          "value": "2",
+          "label": "SDK Ecosystems"
         }
       ],
-      "metricSummary": "~75% Less Setup Effort · OpenAI / LangChain / CrewAI · MCP · ~100 Peak Downloads",
+      "metricSummary": "~75% Less Setup Effort · OpenAI / LangChain / CrewAI · MCP · Dual TS & Py SDKs",
       "toolingLinks": [
         {
           "label": "@trysiren/agent-toolkit ↗",
@@ -1002,8 +1002,8 @@
       ],
       "bullets": [
         "Designed and built core communication rails and message protocols powering multi-agent orchestration between autonomous AI agents.",
-        "Built the Siren Agent Toolkit adhering to OpenAI tool specs for LangChain/CrewAI, and engineered a standalone Model Context Protocol (MCP) server that reduced developer setup effort by ~75% (zero-install MCP setup vs. manual SDK integration).",
-        "Published open-source packages to npm (@trysiren/agent-toolkit, @trysiren/mcp) and PyPI (siren-agent-toolkit), achieving ~100 peak registry downloads across ecosystems.",
+        "Built the Siren Agent Toolkit adhering to OpenAI tool specs for LangChain/CrewAI, and engineered a standalone Model Context Protocol (MCP) server that reduced developer setup effort by ~75% (MCP server setup vs. manual SDK integration).",
+        "Published packages to npm (@trysiren/agent-toolkit, @trysiren/mcp) and PyPI (siren-agent-toolkit), achieving ~100 peak registry downloads across ecosystems.",
         "Co-authored official public documentation, code examples, and technical article on transitioning products to AI-native."
       ]
     },
@@ -1019,7 +1019,7 @@
       "banner": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
       "accent": "#1a1b26",
       "isCaseStudy": false,
-      "metricSummary": "+12% API Latency \u00b7 FastAPI LLM Parsers \u00b7 E-Commerce Architectures",
+      "metricSummary": "12% Faster APIs \u00b7 FastAPI LLM Parsers \u00b7 E-Commerce Architectures",
       "toolingLinks": [
         {
           "label": "keyvalue.systems \u2197",
@@ -1311,7 +1311,7 @@
     ],
     [
       "What technologies do you build with?",
-      "I work mostly with Node.js, TypeScript, Python, Ruby on Rails, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+      "I work mostly with FastAPI, Django, Node.js, Ruby on Rails, TypeScript, Python, MCP, LangChain, CrewAI, Kotlin Multiplatform, PostgreSQL, Docker, and AWS. I choose the tools around the problem rather than forcing every product into one stack."
     ],
     [
       "Can you build an online store or e-commerce site?",
@@ -1362,7 +1362,6 @@
       "items": [
         "Client SDKs on NPM and PyPI",
         "RESTful & GraphQL API Architecture",
-        "CI/CD Release Automation (GitHub Actions)",
         "Metadata-Driven Multi-Tenant Schemas",
         "Server-Side Headless Document Rendering",
         "High-Coverage Test Harnesses"
@@ -1371,12 +1370,10 @@
     {
       "title": "Performance & Systems Craft",
       "items": [
-        "Kotlin Multiplatform (100% Offline Edge Sync)",
-        "Pre-Release On-Device Latency Benchmarks (~80% Cut)",
-        "Native Client Engineering & App Sandbox Architecture",
-        "Memory & Concurrency Profiling",
-        "Batch Database Migrations & Planned Downtime Coordination",
-        "Privacy-Preserving Edge ML (Federated Learning)"
+        "Kotlin Multiplatform (On-Device Execution & Offline Sync)",
+        "Biometric Cohort Processing & Nightly Batch Queues",
+        "Privacy-Preserving Edge ML (Federated Learning)",
+        "Database Access Optimization & Caching"
       ]
     }
   ],
@@ -1397,8 +1394,8 @@
           "label": "Agent Frameworks"
         },
         {
-          "value": "~100",
-          "label": "Peak Downloads"
+          "value": "2",
+          "label": "SDK Ecosystems"
         },
         {
           "value": "MCP",
@@ -1418,8 +1415,7 @@
         "MCP",
         "FastAPI",
         "OpenAI",
-        "CrewAI",
-        "CI/CD"
+        "CrewAI"
       ],
       "links": [
         {
@@ -1662,7 +1658,7 @@
       ],
       [
         "What technologies do you build with?",
-        "I work mostly with Node.js, TypeScript, Python, Ruby on Rails, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+        "I work mostly with FastAPI, Django, Node.js, Ruby on Rails, TypeScript, Python, MCP, LangChain, CrewAI, Kotlin Multiplatform, PostgreSQL, Docker, and AWS. I choose the tools around the problem rather than forcing every product into one stack."
       ],
       [
         "Can you build an online store or e-commerce site?",

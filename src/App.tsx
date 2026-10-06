@@ -759,7 +759,7 @@ const Info = () => {
               <h3>APJ Abdul Kalam Technological University</h3>
               <span>B.Tech in Computer Science & Engineering (Minor ECE) · GPA 8.43</span>
             </div>
-            <time>2023</time>
+            <time>2019 – 2023</time>
           </article>
         </div>
         <div className="info-overview-contact">
