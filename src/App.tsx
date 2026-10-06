@@ -723,7 +723,18 @@ const Info = () => {
       </section>
       <section className="info-overview">
         <div className="info-overview-services">
-          <h2>Engineering Capabilities</h2>
+          <h2>Core Technical Skills</h2>
+          <div className="skills-overview-block">
+            <div className="skills-group">
+              <span className="skills-group-label">Languages</span>
+              <p className="skills-group-items">{content.skills.languages}</p>
+            </div>
+            <div className="skills-group">
+              <span className="skills-group-label">Technologies</span>
+              <p className="skills-group-items">{content.skills.technologies}</p>
+            </div>
+          </div>
+          <h2 style={{ marginTop: "44px" }}>Engineering Capabilities</h2>
           <div className="capabilities-grid">
             {content.engineeringCapabilities.map((cap) => (
               <div key={cap.title} className="capability-box">
@@ -962,6 +973,18 @@ type CaseStudyChapter = {
   }[];
 };
 
+type CaseStudyQuickSummary = {
+  label?: string;
+  what: string;
+  role: string;
+  metrics: {
+    value: string;
+    label: string;
+    detail: string;
+  }[];
+  lesson: string;
+};
+
 type CaseStudyProps = {
   title: string;
   kicker: string;
@@ -975,6 +998,7 @@ type CaseStudyProps = {
   chapters: CaseStudyChapter[];
   metrics?: { value: string; label: string }[];
   toolingLinks?: { label: string; url: string }[];
+  quickSummary?: CaseStudyQuickSummary;
 };
 
 const CaseStudyPage = ({
@@ -989,7 +1013,8 @@ const CaseStudyPage = ({
   gallery,
   chapters,
   metrics,
-  toolingLinks
+  toolingLinks,
+  quickSummary
 }: CaseStudyProps) => {
   useReveal();
   const domain = link.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
@@ -1074,6 +1099,52 @@ const CaseStudyPage = ({
             </a>
           </h2>
         </div>
+
+        {quickSummary && (
+          <div className="case-study-quick-summary" data-reveal>
+            <div className="quick-summary-header">
+              <span className="quick-summary-badge">
+                {quickSummary.label || "Executive Summary"}
+              </span>
+              <span className="quick-summary-kicker">At a Glance · 5-Point Summary</span>
+            </div>
+
+            <div className="quick-summary-content">
+              <div className="quick-summary-row">
+                <span className="quick-summary-label">01 / Project Scope</span>
+                <p className="quick-summary-text">{quickSummary.what}</p>
+              </div>
+
+              <div className="quick-summary-row">
+                <span className="quick-summary-label">02 / Role & Team</span>
+                <p className="quick-summary-text">{quickSummary.role}</p>
+              </div>
+
+              <div className="quick-summary-row quick-summary-metrics-row">
+                <span className="quick-summary-label">03 / Key Numbers (With Baselines)</span>
+                <div className="quick-summary-metrics-list">
+                  {quickSummary.metrics.map((m, idx) => (
+                    <div key={idx} className="quick-summary-metric-item">
+                      <div className="metric-item-headline">
+                        <strong className="metric-item-value">{m.value}</strong>
+                        <span className="metric-item-name">{m.label}</span>
+                      </div>
+                      <p className="metric-item-detail">{m.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="quick-summary-row quick-summary-lesson-row">
+                <span className="quick-summary-label">04 / Core Engineering Lesson</span>
+                <p className="quick-summary-text quick-summary-lesson-text">
+                  {quickSummary.lesson}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="story-chapters">
           {chapters.map((chapter, idx) => (
             <article className="story-chapter" data-reveal key={chapter.title}>
@@ -1260,6 +1331,7 @@ const ExperiencePage = ({ job }: { job: Experience }) => {
   const metrics = "metrics" in job ? (job.metrics as { value: string; label: string }[]) : undefined;
   const toolingLinks = "toolingLinks" in job ? (job.toolingLinks as { label: string; url: string }[]) : undefined;
   const subCompany = "subCompany" in job ? (job.subCompany as string | undefined) : undefined;
+  const quickSummary = "quickSummary" in job ? (job.quickSummary as CaseStudyQuickSummary | undefined) : undefined;
 
   return (
     <CaseStudyPage
@@ -1275,6 +1347,7 @@ const ExperiencePage = ({ job }: { job: Experience }) => {
       chapters={job.chapters}
       metrics={metrics}
       toolingLinks={toolingLinks}
+      quickSummary={quickSummary}
     />
   );
 };
@@ -1287,12 +1360,15 @@ export default function App() {
   const path = location.pathname.replace(/\/+$/, "") || "/";
   const pathSegments = path.split("/").filter(Boolean);
 
-  // Match experience: /work/experience/:slug or /experience/:slug
+  // Match experience: /work/experience/:slug or /experience/:slug or direct /:slug
   const experienceSlug =
     (pathSegments[0] === "work" &&
       pathSegments[1] === "experience" &&
       pathSegments[2]) ||
     (pathSegments[0] === "experience" && pathSegments[1]) ||
+    (pathSegments.length === 1 &&
+      content.experience.some((e) => e.slug === pathSegments[0]) &&
+      pathSegments[0]) ||
     null;
   const experience = experienceSlug
     ? content.experience.find((item) => item.slug === experienceSlug)

@@ -3,8 +3,8 @@
     "name": "Kiran S Baliga",
     "shortName": "KIRAN",
     "role": "Backend & AI Engineer",
-    "location": "Bangalore, India (Open to relocate)",
-    "availability": "Open to Full-Time / Remote \u00b7 Relocation OK",
+    "location": "Kerala (Open to relocate)",
+    "availability": "Available immediately · Open to full-time / remote · Relocation OK",
     "email": "kiransbaliga@gmail.com",
     "phone": "+91 9544737577",
     "website": "https://baliga.dev",
@@ -13,7 +13,7 @@
     "github": "https://github.com/kiransbaliga",
     "twitter": "https://twitter.com/kiransbaliga",
     "portrait": "/portfolio/subject.png",
-    "copyright": "\u00a9 Kiran S Baliga 2026",
+    "copyright": "© Kiran S Baliga 2026",
     "resume": "/resume.pdf",
     "npm": "https://www.npmjs.com/search?q=trysiren",
     "pypi": "https://pypi.org/search/?q=trysiren"
@@ -21,24 +21,24 @@
   "home": {
     "headline": "I build systems that power products at scale.",
     "outlineWord": "systems",
-    "intro": "I'm Kiran \u2014 a backend and AI engineer specializing in high-throughput distributed systems, LLM orchestration pipelines, and Model Context Protocol (MCP) tooling. Previously engineered systems serving 5M+ users at Ultrahuman, B2B AI ad infrastructure at Pencil, and developer SDKs at KeyValue.",
+    "intro": "I'm Kiran — a backend and AI engineer specializing in high-throughput distributed systems, LLM orchestration pipelines, and Model Context Protocol (MCP) tooling. Previously engineered systems on Ultrahuman's 5M+ user platform, B2B AI ad infrastructure at Pencil, and developer SDKs at KeyValue.",
     "primaryAction": "Download Resume",
     "secondaryAction": "About & Background",
-    "statusLine": "Backend & AI Engineer \u00b7 Open to full-time / remote \u00b7 Relocation OK"
+    "statusLine": "Backend & AI Engineer · Available immediately · Open to full-time / remote · Relocation OK"
   },
   "about": {
     "label": "About",
     "headline": "Backend & AI Engineer building scalable systems and agentic infrastructure",
     "subline": "Focused on distributed architectures, Model Context Protocol (MCP) servers, event-driven pipelines, and developer tooling.",
     "paragraphs": [
-      "I'm Kiran \u2014 a backend and AI engineer based in Bangalore, India (open to relocate and remote). I engineer the systems that sit quietly underneath products, handling scale, concurrency, and reliability.",
-      "Having built AI-powered health platforms serving 5M+ users at Ultrahuman, multi-tenant B2B architectures at Pencil, and developer tooling at KeyValue, I focus on the seam of scale, performance, and craft.",
-      "My work centers on Model Context Protocol (MCP) servers, autonomous agent workflows, event-driven microservices, high-throughput database schemas, and developer SDKs. I'm actively seeking full-time and remote backend / AI engineering opportunities."
+      "I'm Kiran — a backend and AI engineer based in Kerala (open to relocate and remote). I engineer the systems that sit quietly underneath products, handling scale, concurrency, and reliability.",
+      "Having built AI-powered clinical reporting pipelines and behavioral recommendation systems on Ultrahuman's 5M+ user platform, multi-tenant B2B architectures at Pencil, and developer tooling at KeyValue, I focus on the seam of scale, performance, and craft.",
+      "My work centers on Model Context Protocol (MCP) servers, autonomous agent workflows, event-driven microservices, high-throughput database schemas, and developer SDKs. Available immediately for full-time and remote backend / AI engineering opportunities."
     ]
   },
   "skills": {
-    "languages": "TypeScript, Python, Ruby, Go, SQL, Dart, C++",
-    "technologies": "Ruby on Rails, Node.js, FastAPI, PostgreSQL, Redis, Docker, Kubernetes, AWS, Model Context Protocol (MCP), LLM Orchestration, GraphQL"
+    "languages": "TypeScript / JavaScript, Python, Ruby, SQL",
+    "technologies": "Node.js, Ruby on Rails, React, Docker, PostgreSQL, Kubernetes, MongoDB, GraphQL, AWS, MCP"
   },
   "services": [
     {
@@ -107,32 +107,55 @@
         {
           "type": "image",
           "src": "/portfolio/w_1920.png",
-          "caption": "Ultrahuman Ring AIR \u2014 Offline-first health & sleep computation engine built with Kotlin Multiplatform"
+          "caption": "Ultrahuman Ring AIR — On-device SpO₂ vital computation engine ported to Kotlin Multiplatform"
         },
         {
           "type": "video",
           "src": "/portfolio/vision-browser.webm",
           "fallback": "/portfolio/vision-browser.mp4",
-          "caption": "Blood Vision & Performance Lab \u2014 AI-powered biomarker reporting platform serving 5M+ users"
+          "caption": "Blood Vision & Performance Lab — Multi-station clinical reporting pipeline synthesizing 15-page doctor-reviewed health plans"
         },
         {
           "type": "image",
           "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-          "caption": "Behavioral Recommendation Engine \u2014 Automated LLM localization and growth workflows driving 8k+ conversions"
+          "caption": "Behavioral Recommendation Engine — Dynamic cohort processing on core app (5M+ platform users) driving 8k+ conversions"
         }
       ],
-      "summary": "AI health reporting pipeline, on-device Kotlin Multiplatform vital computation, global app & website localization, and personalized recommendation systems serving 5M+ users.",
-      "headline": "Architecting asynchronous AI health report generation, on-device KMP execution, and platform-wide app/website localization for 5M+ users.",
+      "summary": "AI clinical reporting pipeline across 10+ lab stations, on-device KMP vital computation (~80% estimated latency cut), and modular CJK localization boosting quality to 91%.",
+      "headline": "Architecting asynchronous AI health report generation across 10+ lab stations, on-device KMP execution, and platform-wide CJK localization.",
+      "quickSummary": {
+        "label": "Executive Summary",
+        "what": "AI-powered clinical health reporting pipeline synthesizing asynchronous multi-station lab diagnostics into 15-page doctor-reviewed health plans, paired with on-device vital computation and global platform localization.",
+        "role": "Backend Engineer in a 3-person health reporting group (lead + 2 engineers) on a 16-person team; owned the report-generation pipeline, Kotlin Multiplatform SpO₂ port, and platform-wide CJK translation workflows.",
+        "metrics": [
+          {
+            "value": "86% → 91%",
+            "label": "CJK Translation Quality",
+            "detail": "86% to 91% quality improvement with ~67% token cost cut via prompt caching and request batching (baseline: 86% without trademark glossaries & context injection)."
+          },
+          {
+            "value": "~80%",
+            "label": "Vital Latency (Est., Pre-release)",
+            "detail": "Estimated ~80% latency reduction projected by engineering lead pre-release benchmarks with 99%+ numerical parity on SpO₂ wearer data (baseline: multi-second backend Ruby batch queue jobs)."
+          },
+          {
+            "value": "8,000+",
+            "label": "Cohort Conversions",
+            "detail": "8,000+ cross-product conversions in 60 days via behavioral segmentation (baseline: static promotional banner broadcasts across 5M+ platform users)."
+          }
+        ],
+        "lesson": "High-stakes clinical AI cannot rely on pure autonomy; production reliability requires structured ingestion DAGs, deterministic medical rules, and doctor-in-the-loop section regeneration over unconstrained LLM generation."
+      },
       "chapters": [
         {
           "title": "Case",
           "kicker": "01 / Context & Role",
           "summary": "Backend Engineer on a 16-person engineering team; 3-person health reporting group owning the report generation pipeline.",
-          "body": "Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person team, I worked in a 3-person health reporting group (a lead and two engineers) owning the AI report-generation pipeline, alongside contributing to on-device Kotlin Multiplatform vital computation, a separate platform-wide app and website localization system, and behavioral cross-product recommendations.",
+          "body": "Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person core engineering team, I worked in a 3-person health reporting group (a lead and two engineers) owning the AI report-generation pipeline for performance lab clients, alongside contributing to on-device Kotlin Multiplatform vital computation, a separate platform-wide app and website localization system, and behavioral cross-product recommendations.",
           "points": [
             "Team & Scope: 16-person core engineering team; 3-person health reporting group (lead + 2 engineers) owning the end-to-end report generation pipeline.",
-            "Scale: Backend and on-device systems serving a global platform of 5M+ active users.",
-            "Core Systems: AI health report-generation pipeline, on-device KMP vital computation, separate platform-wide app & website localization system, and cross-product recommendation engine."
+            "Scale: Core platform serving 5M+ active users; clinical reporting pipeline processing multi-station diagnostics for performance lab clients.",
+            "Core Systems: AI health report-generation pipeline across 10+ stations, on-device KMP vital computation, separate platform-wide app & website localization system, and cross-product recommendation engine."
           ]
         },
         {
@@ -145,15 +168,15 @@
               "title": "Fragmented Asynchronous Diagnostics & Doctor-in-the-Loop Validation",
               "body": "Health assessments span 10–15 disparate testing stations (DEXA, VO₂ max, blood biomarkers, gut microbiome). Results arrive asynchronously via APIs, PDFs, or delayed lab feeds arriving days later. Autonomous LLMs cannot be treated as final medical authority without qualified clinician review and granular section-level regeneration.",
               "points": [
-                "Heterogeneous inputs: REST APIs, PDF extracts, and asynchronous external laboratory feeds arriving days apart.",
+                "Heterogeneous inputs: REST APIs, PDF extracts, and asynchronous external laboratory feeds arriving days apart across 10+ stations.",
                 "Clinical accuracy & safety: LLM recommendations require doctor review and validation before reaching users.",
-                "Regeneration cost: Editing a single recommendation previously required manually re-running the entire 15–20 page document."
+                "Regeneration cost: Editing a single recommendation previously required manually re-running the entire 15-page document."
               ]
             },
             {
               "tag": "Problem 02 · Edge Vital Computation",
               "title": "Cloud Batch Queue Latency & Network Dependency for Vital Scores",
-              "body": "Core sleep, recovery, and vital sign calculations were processed centrally on backend Ruby servers in scheduled batch jobs across users, introducing multi-second delays and failing when wearers lacked internet access.",
+              "body": "Ruby backend batch processing through job queues caused delayed vital calculations for ring wearers, introducing multi-second delays and failing when wearers lacked internet access.",
               "points": [
                 "High latency: Ring wearers woke up to delayed scores waiting for backend queue execution.",
                 "Network vulnerability: 0% offline execution; vitals could not be computed without cloud roundtrips.",
@@ -180,7 +203,7 @@
             {
               "tag": "Goal 01 · Reporting",
               "title": "Dynamic Asynchronous Pipeline & Granular Clinician Regeneration",
-              "body": "Build an asynchronous pipeline that dynamically triggers as prerequisite lab results arrive, producing 15–20 page reports with a doctor review loop allowing single-section regeneration.",
+              "body": "Build an asynchronous pipeline that dynamically triggers as prerequisite lab results arrive, producing 15-page reports with a doctor review loop allowing single-section regeneration.",
               "points": [
                 "Dynamic station DAG: Handle asynchronous data arrival without blocking or stalling reporting flows.",
                 "Human-in-the-loop: Generate → Review → Comment → Regenerate → Approve workflow for doctors.",
@@ -189,22 +212,22 @@
             },
             {
               "tag": "Goal 02 · Computation",
-              "title": "100% On-Device Vital Computation with Strict Parity",
-              "body": "Port sleep and recovery algorithms to Kotlin Multiplatform (KMP) running locally on-device, cutting latency by ~80% while proving 99–100% parity against server baselines.",
+              "title": "On-Device SpO₂ Computation with Strict Parity & ~80% Latency Cut",
+              "body": "Port the SpO₂ algorithm to Kotlin Multiplatform (KMP) for on-device execution, targeting an estimated ~80% latency reduction while achieving 99%+ numerical parity on wearer data.",
               "points": [
                 "Immediate local computation: Remove cloud batch processing dependency entirely.",
                 "100% offline execution: Enable users to compute recovery and vitals anywhere without connectivity.",
-                "Empirical validation: Prove parity across diverse device architectures with real ring wearer datasets."
+                "Empirical validation: Prove 99%+ numerical parity across diverse device architectures with real ring wearer datasets."
               ]
             },
             {
               "tag": "Goal 03 · Localization",
               "title": "High-Fidelity CJK App & Website Localization with Prompt Caching",
-              "body": "Upgrade the platform-wide translation pipeline for CJK languages using curated domain glossaries, split contextual passes, and prompt caching to exceed 90% quality.",
+              "body": "Upgrade the platform-wide translation pipeline for CJK languages using curated domain glossaries, context injection, and prompt caching to boost quality from 86% to 91% and cut token costs by ~67%.",
               "points": [
                 "Glossary enforcement: Maintain exact trademark transliterations and medical terminology.",
-                "Split-translation architecture: Contextual analysis followed by nuanced script generation.",
-                "Prompt caching: Minimize latency and token cost on recurring app and website translation prompts."
+                "Context injection: Contextual analysis followed by nuanced script generation.",
+                "Prompt caching: Cut token costs by ~67% on recurring app and website translation prompts."
               ]
             }
           ]
@@ -214,14 +237,14 @@
           "kicker": "04 / Architecture & Implementation",
           "summary": "Three dedicated architectural implementations addressing reporting, on-device execution, and global platform localization.",
           "workflow": [
-            "10-15 Lab Stations",
+            "10+ Lab Stations",
             "Extraction & Normalization",
             "LLM Analysis",
             "Health Insights",
             "Structured Report",
             "Doctor Review & Edit",
             "Targeted Regeneration",
-            "Final 15-20p PDF"
+            "Final 15p PDF"
           ],
           "workflowComparison": {
             "beforeTitle": "Track 02 · Before (Server Batch Processing)",
@@ -235,19 +258,19 @@
               "title": "Dynamic Report Generation Pipeline & Clinician-in-the-Loop Loop",
               "body": "Owned the end-to-end report generation pipeline within the 3-person reporting group. Built dynamic DAG compilation that triggers as prerequisite stations arrive, coupled with a clinician feedback loop that regenerates specific sections based on doctor comments without re-running the full document.",
               "points": [
-                "Dynamic Ingestion DAG: Reconciles REST APIs and extracted lab PDFs into a unified biomarker schema.",
+                "Dynamic Ingestion DAG: Reconciles REST APIs and extracted lab PDFs across 10+ stations into a unified biomarker schema.",
                 "Predefined Guidance Rules: Bound LLM reasoning to research-backed clinical rules and prompt constraints.",
-                "Targeted Section Regeneration: Doctors annotate specific blocks, triggering focused prompt regeneration that leaves the rest of the 15–20 page report intact."
+                "Targeted Section Regeneration: Doctors annotate specific blocks, triggering focused prompt regeneration that leaves the rest of the 15-page report intact."
               ]
             },
             {
               "tag": "Track 02 · Edge & Systems",
               "title": "Kotlin Multiplatform (KMP) On-Device Computation Port",
-              "body": "Contributed to shifting health computation from server background queues to on-device execution. Ported vital algorithms from Ruby to Kotlin Multiplatform and validated parity against real ring wearers.",
+              "body": "Contributed to shifting health computation from server background queues to on-device execution. Ported the SpO₂ algorithm from Ruby to Kotlin Multiplatform and validated numerical parity against real ring wearers.",
               "points": [
                 "Ruby to KMP Migration: Rewrote computation pipelines in shared Kotlin Multiplatform running natively on device.",
-                "Parity Test Suite: Built validation harness comparing server and device outputs against real ring wearer biometrics, proving 99–100% mathematical parity.",
-                "Latency Elimination: Reduced computation latency by ~80% and unlocked instant offline vital computation."
+                "Parity Test Suite: Built validation harness comparing server and device outputs against real ring wearer biometrics, proving 99%+ numerical parity.",
+                "Latency Benchmarks: Pre-release benchmarks by engineering leads projected an ~80% latency reduction by eliminating backend queues."
               ]
             },
             {
@@ -256,8 +279,8 @@
               "body": "Independent of health reporting, engineered a dedicated LLM translation flow powering user-facing localization across the entire Ultrahuman mobile applications and marketing web platform.",
               "points": [
                 "Curated Glossary Injection: Injected strict domain glossaries and trademark preservation rules for CJK scripts.",
-                "Split-Translation Passes: Divided translation into context analysis and localized generation for nuanced grammar.",
-                "Prompt Caching: Cached repetitive system instructions and contextual glossaries, dramatically slashing latency and token costs."
+                "Context Injection: Enhanced translation quality from 86% to 91% for nuanced grammar and terminology.",
+                "Prompt Caching: Cached repetitive system instructions and contextual glossaries, slashing token costs by ~67%."
               ]
             },
             {
@@ -274,35 +297,35 @@
         {
           "title": "Outcome",
           "kicker": "05 / Quantified Impact",
-          "summary": "80% latency reduction, 99–100% parity, 8,000+ conversions in 60 days, and 93% Chinese translation quality across 5M+ users.",
+          "summary": "~80% estimated vital latency reduction, 99%+ parity, 8,000+ conversions in 60 days, and 86% → 91% CJK translation quality.",
           "table": [
             {
               "area": "Health computation latency",
-              "impact": "~80% reduction (instant on-device execution)"
+              "impact": "~80% reduction (estimated, pre-release benchmarks vs. server batch queue)"
             },
             {
-              "area": "On-device computation parity",
-              "impact": "99–100% parity validated with real ring wearers"
+              "area": "On-device SpO₂ algorithm parity",
+              "impact": "99%+ numerical parity validated on wearer telemetry"
             },
             {
               "area": "Personalized health reports",
-              "impact": "15–20 page structured, doctor-approved documents"
+              "impact": "15-page structured, doctor-approved documents across 10+ lab stations"
             },
             {
               "area": "Product recommendations",
-              "impact": "8,000+ conversions within 2 months"
+              "impact": "8,000+ conversions within 2 months (vs. static banners)"
             },
             {
-              "area": "App & website Chinese localization",
-              "impact": "93% agency-reviewed quality score"
+              "area": "App & website CJK localization quality",
+              "impact": "86% → 91% quality improvement via glossaries & context injection"
             },
             {
-              "area": "App & website overall CJK localization",
-              "impact": "82% → 87% overall quality improvement across platform"
+              "area": "Translation token cost",
+              "impact": "~67% reduction through prompt caching & request batching"
             },
             {
-              "area": "Production platform scale",
-              "impact": "Backend & edge systems serving 5M+ users"
+              "area": "Platform scale",
+              "impact": "Core platform serving 5M+ users; reporting pipeline serving performance lab clients"
             }
           ]
         },
@@ -331,31 +354,31 @@
         }
       ],
       "bullets": [
-        "Engineered asynchronous AI health report-generation pipeline producing 15–20 page personalized biomarker reports with doctor-in-the-loop section regeneration.",
-        "Reduced vital computation latency by ~80% with 99–100% parity by migrating core health computations from Ruby to Kotlin Multiplatform (KMP).",
-        "Engineered a separate platform-wide LLM translation pipeline for the entire mobile app and web platform, elevating agency-reviewed CJK quality to 87% overall and 93% for Chinese via glossary injection and prompt caching.",
-        "Built a behavioral cohort recommendation engine that drove 8,000+ cross-product conversions in 60 days."
+        "Architected and owned the end-to-end LLM health-reporting pipeline for Ultrahuman's performance lab, ingesting multi-modal diagnostics across 10+ stations (DEXA, VO₂ max, APIs, PDFs) to synthesize 15-page clinical plans for doctor review.",
+        "Ported SpO₂ algorithm to Kotlin Multiplatform for on-device execution, achieving 99%+ numerical parity on ring wearer data; pre-release benchmarks by engineering leads projected an ~80% latency reduction.",
+        "Enhanced modular LLM translation pipeline for CJK languages via trademark glossaries and context injection, boosting quality from 86% to 91% and cutting token costs by ~67% through prompt caching and request batching.",
+        "Developed dynamic cross-product recommendation engine using behavioral segmentation on core app (5M+ users), driving 8k+ conversions within two months."
       ],
       "isCaseStudy": true,
       "metrics": [
         {
           "value": "~80%",
-          "label": "Vital Latency"
+          "label": "Vital Latency (Est.)"
         },
         {
-          "value": "99–100%",
-          "label": "Server Parity"
+          "value": "99%+",
+          "label": "SpO₂ Parity"
+        },
+        {
+          "value": "86% → 91%",
+          "label": "CJK Translation"
         },
         {
           "value": "8,000+",
           "label": "Conversions"
-        },
-        {
-          "value": "5M+",
-          "label": "Active Users"
         }
       ],
-      "metricSummary": "~80% Vital Latency · 99-100% KMP Parity · 15-20p Reports · 8k+ Conversions",
+      "metricSummary": "~80% Latency (Est.) · 99%+ SpO₂ Parity · 86% → 91% CJK · 8k+ Conversions",
       "toolingLinks": [
         {
           "label": "Ultrahuman Ring ↗",
@@ -421,6 +444,29 @@
       ],
       "summary": "Modernizing database access, multi-tenant infrastructure, and document rendering for a growing B2B advertising platform.",
       "headline": "Scaling Pencil's platform for large-scale advertising workflows: modernizing database access, multi-tenant infrastructure and document rendering for a growing B2B advertising platform.",
+      "quickSummary": {
+        "label": "Executive Summary",
+        "what": "Platform modernization and performance architecture for an enterprise B2B AI ad generation platform, migrating large-scale agency workspaces to Google Cloud SQL and replacing client-side PDF rendering with headless Puppeteer.",
+        "role": "Associate Software Engineer on the platform engineering team; owned custom query-builder ORM, multi-tenant RBAC permissions, read-path schema restructuring, and server-side Puppeteer PDF rendering.",
+        "metrics": [
+          {
+            "value": "30%",
+            "label": "Faster API Response Times",
+            "detail": "30% improvement in API response times across core campaign endpoints via Google Cloud SQL migration, custom ORM, and schema restructuring (baseline: unindexed multi-table joins on TypeORM)."
+          },
+          {
+            "value": "65%",
+            "label": "Faster PDF Processing",
+            "detail": "65% faster PDF rendering processing and ~1.5s total user download speed (baseline: client-side react-to-pdf with dynamic brand font network fetches and browser layout drift)."
+          },
+          {
+            "value": "30–40%",
+            "label": "Pipeline Latency Reduction",
+            "detail": "30–40% reduction in total document export pipeline latency from click to file delivery (baseline: legacy client-side export workflow)."
+          }
+        ],
+        "lesson": "Optimize data architecture for real-world read access patterns rather than textbook relational normalization, and embed critical platform guardrails (tenant boundaries, soft deletes) directly within the ORM layer."
+      },
       "chapters": [
         {
           "title": "Case",
@@ -430,7 +476,7 @@
           "points": [
             "Team & Structure: Platform engineering team executing across development sprints, with engineers owning distinct functional domains.",
             "My Primary Ownership: Custom ORM development, query-builder and data-access layer, schema/read optimizations, tenant metadata infrastructure, RBAC/permissions, and server-side Puppeteer PDF rendering.",
-            "Collaborative Delivery: Database migrations and planned downtime windows were coordinated by the lead engineer; changes were rolled out in controlled batches using feature flags.",
+            "Collaborative Delivery: Database migrations and planned downtime windows were coordinated with the lead engineer; changes were rolled out in controlled batches using feature flags.",
             "Core Platform Objective: Evolve the architecture for data scale and throughput—replacing legacy patterns with Google Cloud SQL, custom ORM abstractions, multi-tenant metadata, and server-side rendering."
           ]
         },
@@ -498,12 +544,12 @@
             },
             {
               "tag": "Goal 03 · Document Performance",
-              "title": "Headless Server-Side PDF Pipeline with 100% Layout Parity",
-              "body": "Replace client-side rendering with a server-side headless Puppeteer pipeline. Centralize font loading and layout calculation on the backend to achieve exact visual parity with the copywriting editor and bring user-facing export times down to ~1.5 seconds.",
+              "title": "Headless Server-Side PDF Pipeline with Visual Consistency",
+              "body": "Replace client-side rendering with a server-side headless Puppeteer pipeline. Centralize font loading and layout calculation on the backend to achieve visual consistency with the copywriting editor and bring user-facing export times down to ~1.5 seconds.",
               "points": [
-                "Pixel-perfect parity: Eliminate font popping and layout mismatches by rendering in controlled server containers.",
+                "Consistent rendering: Resolve dynamic brand font injection and cross-device margin drift by rendering in controlled server containers.",
                 "Server-side font caching: Preload and cache agency brand fonts to strip font-download latency from exports.",
-                "Sub-2s download speed: Target ~65% faster rendering time and ~1.5s total user-facing download speed."
+                "Sub-2s download speed: Target 65% faster rendering processing and ~1.5s total user-facing download speed."
               ]
             }
           ]
@@ -543,21 +589,21 @@
             {
               "tag": "Track 02 · Multi-Tenancy & Schema",
               "title": "Metadata-Driven Custom Fields, RBAC & Read Optimization",
-              "body": "Engineered the platform-side metadata engine allowing agencies to define custom fields and attributes dynamically. Overhauled relational schemas to store frequently accessed campaign and creative metadata together—deliberately trading strict normalization for significant join reduction on high-traffic read paths. Implemented fine-grained RBAC across tenant operations.",
+              "body": "Engineered the platform-side metadata engine allowing agencies to define custom fields and attributes dynamically. Overhauled relational schemas to store frequently accessed campaign and creative metadata together—deliberately trading strict normalization for significant join reduction on high-traffic read paths. Implemented fine-grained multi-tenant RBAC with group/role hierarchy and composable boolean (AND/OR) permission checks across API endpoints.",
               "points": [
                 "Metadata-driven fields: Agencies configure custom fields without modifying underlying relational schemas.",
-                "Read-optimized schema: Reduced multi-table joins on hot queries, delivering ~30% faster API responses.",
+                "Read-optimized schema: Reduced multi-table joins on hot queries, contributing to 30% faster API responses.",
                 "Enterprise RBAC: Unified permissions and access control directly into the data-access layer."
               ]
             },
             {
               "tag": "Track 03 · Server-Side Rendering",
               "title": "Puppeteer-Based Server-Side PDF Rendering Pipeline",
-              "body": "Replaced browser-side react-to-pdf with headless Chromium via Puppeteer running on the server. Managed font lifecycles explicitly: preloading and caching custom agency brand fonts, standardizing CSS print media rules, and isolating document formatting in sandboxed workers. Delivered pixel-perfect fidelity with the editor while accelerating exports by 65%.",
+              "body": "Replaced browser-side react-to-pdf with headless Chromium via Puppeteer running on the server. Managed font lifecycles explicitly: preloading and caching custom agency brand fonts, standardizing CSS print media rules, and isolating document formatting in sandboxed workers. Delivered visual consistency with the editor while accelerating exports by 65%.",
               "points": [
-                "Deterministic output: Achieved 100% fidelity with the copywriting editor, resolving font discrepancies.",
+                "Consistent output: Resolved dynamic brand font injection and cross-device margin drift between editor and PDFs.",
                 "Server-side font lifecycle: Eliminated client font loading delays through server caching.",
-                "Blazing download speeds: Slashed export latency by 30–40% and reached ~1.5s end-user download times."
+                "Fast export speeds: Slashed export latency by 30–40% and reached ~1.5s end-user download times."
               ]
             },
             {
@@ -566,7 +612,7 @@
               "body": "Modernized legacy Python-based API gateway patterns into a high-performance Node.js / Fastify service architecture. Collaborated across development sprints on schema migrations, coordinating planned downtime windows with the lead engineer and rolling out database and rendering changes progressively using tenant-level feature flags.",
               "points": [
                 "Service modernization: Shifted legacy gateway components to Node.js/Fastify microservices.",
-                "Zero unexpected downtime: Participated in coordinated database migrations with batch rollouts.",
+                "Planned downtime coordination: Participated in coordinated database migrations with batch rollouts.",
                 "Controlled feature flags: Progressively enabled new ORM and rendering paths per agency cohort."
               ]
             }
@@ -575,23 +621,23 @@
         {
           "title": "Outcome",
           "kicker": "05 / Quantified Impact",
-          "summary": "~30% faster API responses, ~65% faster PDF rendering, ~1.5s exports, and scalable multi-tenant infrastructure.",
+          "summary": "30% faster API responses, 65% faster PDF rendering, ~1.5s exports, and scalable multi-tenant infrastructure.",
           "table": [
             {
-              "area": "API performance",
-              "impact": "~30% improvement in response times across core endpoints"
+              "area": "API response times",
+              "impact": "30% improvement via Google Cloud SQL migration, custom ORM & schema changes"
             },
             {
-              "area": "PDF rendering speed",
-              "impact": "~65% reduction in rendering processing time"
+              "area": "PDF rendering processing speed",
+              "impact": "65% reduction in rendering processing time via headless Puppeteer"
             },
             {
-              "area": "User-facing PDF export",
-              "impact": "~1.5s download time from click to file completion"
+              "area": "User-facing PDF download time",
+              "impact": "~1.5s download time from click to file completion (30–40% latency reduction)"
             },
             {
-              "area": "Document export latency",
-              "impact": "30–40% reduction in overall pipeline latency"
+              "area": "Document visual consistency",
+              "impact": "Resolved dynamic brand font injection & cross-device margin drift"
             },
             {
               "area": "Database architecture",
@@ -607,7 +653,7 @@
             },
             {
               "area": "Service modernization",
-              "impact": "Phased migration from legacy gateway to Node.js / Fastify"
+              "impact": "Phased migration from legacy gateway to Node.js / Fastify with feature flags"
             }
           ]
         },
@@ -636,17 +682,16 @@
         }
       ],
       "bullets": [
-        "Architected custom query-builder and ORM abstraction with built-in tenant isolation and soft deletes, improving API response times by ~30%.",
-        "Engineered metadata-driven multi-tenant architecture allowing enterprise agencies to configure bespoke fields and workflows without schema alterations.",
-        "Replaced client-side rendering with server-side Puppeteer pipeline, reducing PDF rendering time by ~65% and delivering ~1.5s user-facing exports.",
-        "Collaborated on phased Google Cloud SQL migration and Fastify service evolution, leveraging tenant feature flags for zero-risk rollouts."
+        "Contributed to migrating large-scale workspaces from PostgreSQL to Google Cloud SQL, implementing schema changes and a custom ORM that improved API response times by 30%.",
+        "Engineered fine-grained multi-tenant RBAC and tenant isolation, implementing group/role hierarchy and composable boolean (AND/OR) permission checks across API endpoints.",
+        "Migrated document exports from client React rendering to server-side headless Puppeteer. Resolved dynamic brand font injection and cross-device margin drift, making output consistent and 65% faster (export download time ~1.5s, 30–40% latency reduction)."
       ]
     },
     {
       "slug": "siren",
       "company": "Siren",
       "subCompany": "KeyValue Software Systems",
-      "role": "Backend Engineer",
+      "role": "Associate Software Engineer",
       "location": "Kerala",
       "period": "Sep 2023 – Feb 2026",
       "link": "https://www.trysiren.io",
@@ -657,7 +702,7 @@
       "metrics": [
         {
           "value": "~75%",
-          "label": "Dev Effort"
+          "label": "Setup Effort Cut"
         },
         {
           "value": "3+",
@@ -668,11 +713,11 @@
           "label": "Protocol Server"
         },
         {
-          "value": "npm + PyPI",
-          "label": "Dual Registries"
+          "value": "~100",
+          "label": "Peak Downloads"
         }
       ],
-      "metricSummary": "~75% Less Dev Effort · OpenAI / LangChain / CrewAI · MCP · npm + PyPI",
+      "metricSummary": "~75% Less Setup Effort · OpenAI / LangChain / CrewAI · MCP · ~100 Peak Downloads",
       "toolingLinks": [
         {
           "label": "@trysiren/agent-toolkit ↗",
@@ -706,13 +751,36 @@
           "caption": "Siren — Communication rails, JS/Python Agent Toolkit, and Model Context Protocol (MCP) server for autonomous AI agents"
         }
       ],
-      "summary": "Turning a notification platform into an agent-accessible communication layer with an Agent Toolkit and MCP server.",
-      "headline": "Making Siren AI-native: agent-accessible communication rails and MCP server reducing developer integration effort by ~75%.",
+      "summary": "Turning a notification platform into an agent-accessible communication layer with an Agent Toolkit and MCP server reducing setup effort by ~75%.",
+      "headline": "Making Siren AI-native: agent-accessible communication rails and MCP server reducing developer setup effort by ~75%.",
+      "quickSummary": {
+        "label": "Executive Summary",
+        "what": "AI-native developer tooling initiative transforming a multi-channel developer notification platform into an intent-driven communication layer via a cross-framework Agent Toolkit and standalone Model Context Protocol (MCP) server.",
+        "role": "Associate Software Engineer in a 4-person engineering group with a technical lead; owned tool schema conversion, OpenAI/LangChain/CrewAI adapters, MCP server implementation, and public documentation.",
+        "metrics": [
+          {
+            "value": "~75%",
+            "label": "Setup Effort Reduction",
+            "detail": "~75% reduction in developer setup effort (baseline: manual SDK wiring and API plumbing per notification channel vs. zero-install MCP server setup to send notifications and emails)."
+          },
+          {
+            "value": "3+",
+            "label": "Agent Frameworks",
+            "detail": "Native support across OpenAI Function Calling, LangChain StructuredTools, and CrewAI in dual TypeScript and Python ecosystems (baseline: zero agent tooling)."
+          },
+          {
+            "value": "~100",
+            "label": "Peak Registry Downloads",
+            "detail": "~100 peak registry downloads across npm (@trysiren/agent-toolkit, @trysiren/mcp) and PyPI (siren-agent-toolkit) during launch (baseline: 0 public packages)."
+          }
+        ],
+        "lesson": "Making an existing product AI-native doesn't mean rebuilding core backend infrastructure; it requires designing explicit, descriptive tool schemas and decoupled adapter boundaries that insulate apps from upstream protocol churn."
+      },
       "chapters": [
         {
           "title": "Case",
           "kicker": "01 / Context & Role",
-          "summary": "Backend Engineer in a 4-person engineering team with a technical lead at KeyValue Software Systems building Siren's AI-native layer.",
+          "summary": "Associate Software Engineer in a 4-person engineering team with a technical lead at KeyValue Software Systems building Siren's AI-native layer.",
           "body": "Siren is a developer communication platform that helps engineering teams design and deliver notifications across email, SMS, push notifications, and chat. Working as part of a four-person engineering group with a technical lead, my focus was making Siren AI-native by exposing its communication capabilities to AI agents through a reusable Agent Toolkit and a standardized Model Context Protocol (MCP) server.",
           "points": [
             "Team & Scope: 4-person engineering group with a technical lead owning the AI-agent integration layer.",
@@ -770,7 +838,7 @@
               "points": [
                 "Intent resolution: Enable agents to trigger complex notifications from simple prompt instructions.",
                 "Preserve developer control: Allow explicit templates, content overrides, and parameter constraints when needed.",
-                "Effort reduction: Cut developer integration overhead by ~75% for AI-driven communication workflows."
+                "Effort reduction: Cut developer integration effort by ~75% (zero-install MCP server setup vs. manual SDK integration to wire notifications and emails)."
               ]
             },
             {
@@ -859,11 +927,11 @@
         {
           "title": "Outcome",
           "kicker": "05 / Quantified Impact",
-          "summary": "~75% reduction in integration effort, native support for major agent frameworks, and public distribution on npm and PyPI.",
+          "summary": "~75% reduction in developer setup effort, native support for major agent frameworks, and public distribution on npm and PyPI.",
           "table": [
             {
-              "area": "Developer integration effort",
-              "impact": "~75% reduction for relevant AI-driven notification use cases"
+              "area": "Developer setup effort",
+              "impact": "~75% reduction (zero-install MCP setup vs. manual SDK integration to wire notifications and emails)"
             },
             {
               "area": "Agent framework compatibility",
@@ -883,7 +951,7 @@
             },
             {
               "area": "Community adoption",
-              "impact": "Low hundreds peak downloads with continued registry usage"
+              "impact": "~100 peak registry downloads across npm and PyPI"
             },
             {
               "area": "Developer interaction model",
@@ -912,9 +980,9 @@
         }
       ],
       "bullets": [
-        "Architected reusable Agent Toolkit and Model Context Protocol (MCP) server for Siren, reducing AI notification integration effort by ~75%.",
-        "Engineered framework-compatible tool implementations across OpenAI Function Calling, LangChain, and CrewAI in TypeScript and Python.",
-        "Published @trysiren/agent-toolkit, siren-agent-toolkit, and @trysiren/mcp packages to npm and PyPI with continued community usage.",
+        "Designed and built core communication rails and message protocols powering multi-agent orchestration between autonomous AI agents.",
+        "Built the Siren Agent Toolkit adhering to OpenAI tool specs for LangChain/CrewAI, and engineered a standalone Model Context Protocol (MCP) server that reduced developer setup effort by ~75% (zero-install MCP setup vs. manual SDK integration).",
+        "Published open-source packages to npm (@trysiren/agent-toolkit, @trysiren/mcp) and PyPI (siren-agent-toolkit), achieving ~100 peak registry downloads across ecosystems.",
         "Co-authored official public documentation, code examples, and technical article on transitioning products to AI-native."
       ]
     },
@@ -1218,11 +1286,11 @@
     ],
     [
       "Where are you based, and do you work remotely?",
-      "I'm based in Bangalore, India (open to relocate and remote) and work with teams across the world."
+      "I'm based in Kerala, India (open to relocate and remote) and work with teams across the world."
     ],
     [
       "What technologies do you build with?",
-      "I work mostly with Ruby on Rails, TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+      "I work mostly with Node.js, TypeScript, Python, Ruby on Rails, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
     ],
     [
       "Can you build an online store or e-commerce site?",
@@ -1250,10 +1318,10 @@
       "title": "Distributed Systems & Backends",
       "items": [
         "Node.js, TypeScript & Python (FastAPI)",
-        "Ruby on Rails & Go",
+        "Ruby on Rails",
         "PostgreSQL (Partitioning, Index Tuning, JSONB)",
-        "Redis (Distributed Caching & Queues)",
-        "Event-Driven Microservices & Sidekiq",
+        "Database Access Optimization & Caching",
+        "Event-Driven Microservices & Async Job Queues",
         "Docker, Kubernetes & AWS Infrastructure"
       ]
     },
@@ -1263,9 +1331,9 @@
         "Model Context Protocol (MCP) Servers",
         "Autonomous Multi-Agent Workflows (CrewAI)",
         "LLM Orchestration & Prompt Pipelines (OpenAI, Anthropic)",
-        "Automated LLM Evaluation, QA & Error Recovery",
+        "Automated LLM Evaluation, QA & Prompt Caching",
         "Dynamic Cohort Recommendation Engines",
-        "Vector Search & Schema Extraction"
+        "Unstructured Data Ingestion & Schema Extraction"
       ]
     },
     {
@@ -1283,10 +1351,10 @@
       "title": "Performance & Systems Craft",
       "items": [
         "Kotlin Multiplatform (100% Offline Edge Sync)",
-        "Sub-Second Latency Optimization (-80%)",
-        "Native macOS Engineering (Metal, Swift)",
+        "Pre-Release On-Device Latency Benchmarks (~80% Cut)",
+        "Native Client Engineering & App Sandbox Architecture",
         "Memory & Concurrency Profiling",
-        "Zero-Downtime Database Migrations",
+        "Batch Database Migrations & Planned Downtime Coordination",
         "Privacy-Preserving Edge ML (Federated Learning)"
       ]
     }
@@ -1296,32 +1364,32 @@
       "id": "siren",
       "badge": "AI INFRASTRUCTURE",
       "title": "Siren",
-      "role": "Lead Systems Engineer",
+      "role": "Associate Software Engineer",
       "subtitle": "Communication Rails & MCP Server for AI Agents",
       "metrics": [
         {
-          "value": "-80%",
-          "label": "Dev Time Reduction"
+          "value": "~75%",
+          "label": "Setup Effort Cut"
         },
         {
-          "value": "< 1ms",
-          "label": "Protocol Latency"
+          "value": "3+",
+          "label": "Agent Frameworks"
         },
         {
-          "value": "160+",
-          "label": "Registry Downloads"
+          "value": "~100",
+          "label": "Peak Downloads"
         },
         {
           "value": "MCP",
           "label": "Protocol Server"
         }
       ],
-      "summary": "Core communication rails, official TypeScript and Python client SDKs, and a Model Context Protocol (MCP) server for autonomous multi-agent workflows with native OpenAI and CrewAI connectors.",
+      "summary": "Core communication rails, official TypeScript and Python client SDKs, and a Model Context Protocol (MCP) server reducing developer setup effort by ~75% with ~100 peak registry downloads.",
       "highlights": [
-        "Architected low-latency communication layer bridging Python ML runtimes, TypeScript services, and MCP.",
-        "Published idiomatic TypeScript and Python client SDKs directly to NPM and PyPI.",
-        "Engineered production Model Context Protocol (MCP) server enabling Claude and external agents to query tools.",
-        "Standardized integration wrappers for OpenAI Function Calling and CrewAI agent swarms."
+        "Designed and built core communication rails and message protocols powering multi-agent orchestration.",
+        "Published idiomatic client SDKs directly to npm (@trysiren/agent-toolkit) and PyPI (siren-agent-toolkit).",
+        "Engineered production Model Context Protocol (MCP) server reducing developer setup effort by ~75%.",
+        "Standardized integration wrappers for OpenAI Function Calling, LangChain, and CrewAI agent swarms."
       ],
       "stack": [
         "TypeScript",
@@ -1349,42 +1417,42 @@
           "type": "github"
         },
         {
-          "label": "trysiren.io \u2197",
+          "label": "trysiren.io ↗",
           "url": "https://www.trysiren.io",
           "type": "external"
         }
       ],
-      "caseStudyPath": "/work/experience/keyvalue"
+      "caseStudyPath": "/work/experience/siren"
     },
     {
       "id": "ultrahuman",
-      "badge": "HEALTH PLATFORM \u00b7 5M+ USERS",
+      "badge": "HEALTH PLATFORM · 5M+ CORE USERS",
       "title": "Ultrahuman",
       "role": "Backend Engineer",
       "subtitle": "AI Health Reporting & Offline Computation Engine",
       "metrics": [
         {
-          "value": "5M+",
-          "label": "Daily Active Users"
+          "value": "~80%",
+          "label": "Vital Latency (Est.)"
         },
         {
-          "value": "-80%",
-          "label": "Vital Latency Cut"
+          "value": "99%+",
+          "label": "SpO₂ Parity"
         },
         {
-          "value": "100%",
-          "label": "Offline KMP Execution"
+          "value": "86% → 91%",
+          "label": "CJK Translation"
         },
         {
           "value": "8k+",
           "label": "Cohort Conversions"
         }
       ],
-      "summary": "High-scale backend architecture for wearable telemetry streams, offline-first Kotlin Multiplatform vital computation engine, and automated LLM health insights with 67% fewer localization errors.",
+      "summary": "AI health reporting pipeline for performance lab clients across 10+ stations, on-device Kotlin Multiplatform vital computation with ~80% estimated latency cut, and modular CJK localization boosting quality to 91%.",
       "highlights": [
-        "Scaled background ingestion pipelines with Ruby on Rails and Redis processing telemetry for 5M+ global users.",
-        "Migrated core sleep and vital calculation pipelines to Kotlin Multiplatform (KMP), unlocking 100% offline edge execution.",
-        "Built asynchronous LLM summarization pipeline with automated QA checks, cutting translation failures by ~67%.",
+        "Maintained ingestion pipelines for wearers on a 5M+ user platform, and built multi-modal reporting for performance lab clients across 10+ stations.",
+        "Ported SpO₂ algorithm to Kotlin Multiplatform for on-device execution, achieving 99%+ numerical parity and an ~80% pre-release estimated latency reduction.",
+        "Enhanced modular LLM translation pipeline for CJK languages via glossaries and prompt caching, boosting quality from 86% to 91% and cutting token costs by ~67%.",
         "Architected dynamic cohort behavioral engine that generated 8,000+ conversions within 60 days."
       ],
       "stack": [
@@ -1392,17 +1460,17 @@
         "PostgreSQL",
         "Kotlin Multiplatform",
         "LLM Workflows",
-        "Redis",
+        "Prompt Caching",
         "AWS"
       ],
       "links": [
         {
-          "label": "Ultrahuman Ring \u2197",
+          "label": "Ultrahuman Ring ↗",
           "url": "https://www.ultrahuman.com/ring/",
           "type": "external"
         },
         {
-          "label": "Blood Vision \u2197",
+          "label": "Blood Vision ↗",
           "url": "https://www.ultrahuman.com/blood-vision/",
           "type": "external"
         },
@@ -1412,7 +1480,7 @@
           "type": "github"
         },
         {
-          "label": "Read Deep-Dive \u2192",
+          "label": "Read Deep-Dive →",
           "url": "/work/experience/ultrahuman",
           "type": "internal"
         }
@@ -1423,44 +1491,44 @@
       "id": "pencil",
       "badge": "B2B AD PLATFORM",
       "title": "Pencil",
-      "role": "Backend & Systems Engineer",
+      "role": "Associate Software Engineer",
       "subtitle": "Event-Driven Microservices & Multi-Tenant Ad Engine",
       "metrics": [
         {
-          "value": "+65%",
-          "label": "PDF Export Speed"
+          "value": "30%",
+          "label": "Faster APIs"
         },
         {
-          "value": "-35%",
-          "label": "Export Load Times"
+          "value": "65%",
+          "label": "Faster PDF Processing"
         },
         {
-          "value": "14.2k",
-          "label": "Peak req/s"
+          "value": "~1.5s",
+          "label": "PDF Download Speed"
         },
         {
-          "value": "Dynamic",
-          "label": "Multi-Tenant Schema"
+          "value": "Multi-Tenant",
+          "label": "Custom Metadata"
         }
       ],
-      "summary": "Platform overhaul transitioning to event-driven microservices, metadata-driven multi-tenant schemas supporting dynamic customer fields, and server-side headless vector rendering for enterprise brands.",
+      "summary": "Migrated large-scale workspaces to Google Cloud SQL with custom ORM and schema restructuring improving API response times by 30%, and replaced client PDF rendering with server-side Puppeteer.",
       "highlights": [
-        "Refactored monolithic microservices into event-driven architecture using Node.js, Redis, and message queues.",
-        "Built metadata-driven multi-tenant database layer that allows enterprises to define custom typed fields dynamically.",
-        "Migrated document and creative rendering to headless server workers, speeding up PDF generation by 65%.",
-        "Designed high-concurrency caching layers achieving 14.2k requests/second peak throughput."
+        "Contributed to migrating large-scale workspaces from PostgreSQL to Google Cloud SQL with custom ORM and schema restructuring.",
+        "Built metadata-driven multi-tenant database layer and fine-grained RBAC with group/role hierarchy.",
+        "Migrated document exports to server-side headless Puppeteer, resolving font injection and margin drift while making exports 65% faster.",
+        "Collaborated on phased database migrations coordinating planned downtime windows with tenant feature flags."
       ],
       "stack": [
         "Node.js",
-        "PostgreSQL",
-        "Microservices",
-        "Docker",
-        "Redis",
-        "RabbitMQ"
+        "Python",
+        "Google Cloud SQL",
+        "Custom ORM",
+        "Puppeteer",
+        "Docker"
       ],
       "links": [
         {
-          "label": "trypencil.com \u2197",
+          "label": "trypencil.com ↗",
           "url": "https://www.trypencil.com",
           "type": "external"
         },
@@ -1470,12 +1538,12 @@
           "type": "github"
         },
         {
-          "label": "Read Deep-Dive \u2192",
-          "url": "/work/experience/keyvalue",
+          "label": "Read Deep-Dive →",
+          "url": "/work/experience/pencil",
           "type": "internal"
         }
       ],
-      "caseStudyPath": "/work/experience/keyvalue"
+      "caseStudyPath": "/work/experience/pencil"
     }
   ],
   "packageLinks": [
@@ -1569,11 +1637,11 @@
       ],
       [
         "Where are you based, and do you work remotely?",
-        "I'm based in Bangalore, India (open to relocate and remote) and work with teams across the world."
+        "I'm based in Kerala, India (open to relocate and remote) and work with teams across the world."
       ],
       [
         "What technologies do you build with?",
-        "I work mostly with Ruby on Rails, TypeScript, Node.js, Python, FastAPI, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
+        "I work mostly with Node.js, TypeScript, Python, Ruby on Rails, React, PostgreSQL, Docker, AWS, and MCP. I choose the tools around the problem rather than forcing every product into one stack."
       ],
       [
         "Can you build an online store or e-commerce site?",

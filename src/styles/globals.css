@@ -3112,3 +3112,148 @@ button {
   color: #222220;
   margin: 0;
 }
+
+/* Core Technical Skills Block on Info Page */
+.skills-overview-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+.skills-group {
+  background: #ffffff;
+  border: 1px solid rgba(21, 21, 20, 0.12);
+  border-radius: 6px;
+  padding: 18px 22px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+.skills-group-label {
+  display: block;
+  font: 600 11px/1 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.skills-group-items {
+  font: 500 15px/1.6 "Space Grotesk", sans-serif;
+  color: var(--text);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .skills-overview-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Case Study Executive Quick Summary (5-Point Summary Box) */
+.case-study-quick-summary {
+  background: #ffffff;
+  border: 1px solid rgba(21, 21, 20, 0.14);
+  border-left: 4px solid #151514;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin: 28px 0 44px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+.quick-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(21, 21, 20, 0.1);
+  margin-bottom: 22px;
+}
+.quick-summary-badge {
+  font: 700 10.5px/1 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  background: #151514;
+  color: #ffffff;
+  border-radius: 4px;
+}
+.quick-summary-kicker {
+  font: 500 11.5px/1 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.quick-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.quick-summary-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.quick-summary-label {
+  font: 600 11px/1.2 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5a5955;
+}
+.quick-summary-text {
+  font: 400 15px/1.65 "Space Grotesk", sans-serif;
+  color: #151514;
+  margin: 0;
+}
+.quick-summary-metrics-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 4px;
+}
+.quick-summary-metric-item {
+  background: rgba(21, 21, 20, 0.03);
+  border: 1px solid rgba(21, 21, 20, 0.08);
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.metric-item-headline {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.metric-item-value {
+  font: 700 18px/1 "Space Grotesk", sans-serif;
+  color: #151514;
+  letter-spacing: -0.02em;
+}
+.metric-item-name {
+  font: 600 11px/1.2 "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4a4945;
+}
+.metric-item-detail {
+  font: 400 13px/1.55 "Space Grotesk", sans-serif;
+  color: #2b2a27;
+  margin: 0;
+}
+.quick-summary-lesson-text {
+  background: rgba(21, 21, 20, 0.03);
+  border: 1px solid rgba(21, 21, 20, 0.08);
+  border-radius: 6px;
+  padding: 14px 18px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .quick-summary-metrics-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .case-study-quick-summary {
+    padding: 20px 18px;
+  }
+}
