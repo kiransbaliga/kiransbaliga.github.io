@@ -160,8 +160,8 @@
         },
         {
           "title": "Problem",
-          "kicker": "02 / Three Core Problem Statements",
-          "summary": "Three distinct architectural bottlenecks spanning clinical reporting, cloud vital latency, and global app/website localization.",
+          "kicker": "02 / Four Core Problem Statements",
+          "summary": "Four distinct architectural bottlenecks spanning clinical reporting, edge vital latency, global app/website localization, and dynamic subscription upsells.",
           "subsections": [
             {
               "tag": "Problem 01 · Clinical Health Reporting",
@@ -192,13 +192,23 @@
                 "Brand integrity: Lack of glossary constraints caused inconsistent transliteration of proprietary terms.",
                 "Repetitive overhead: Lack of prompt caching resulted in high token costs and latency on recurring system context."
               ]
+            },
+            {
+              "tag": "Problem 04 · Dynamic Upsell & Monetization",
+              "title": "Static Broadcast Promos & Resource-Intensive Platform-Wide Cohorting",
+              "body": "Paid monthly subscription extensions ('Powerplugs' — e.g. cardio adaptability, deep health integrations) were previously recommended through static, one-size-fits-all in-app banners. Users received no contextual recommendations aligned with their dynamic physiological state (such as low sleep recovery or elevated resting heart rate). Concurrently, computing biomarker cohorts across millions of active platform users simultaneously risked severe database spikes and background queue starvation.",
+              "points": [
+                "Low relevance & conversion: Static promotional broadcast banners failed to convert because recommendations were detached from user-specific biometric signals.",
+                "Platform-wide queue saturation: Evaluating cohort rules across 5M+ platform users in unthrottled bursts threatened core database and API latency.",
+                "Lack of temporal distribution: The architecture lacked a distributed batch evaluation pipeline to spread cohort assessments smoothly across 24-hour cycles."
+              ]
             }
           ]
         },
         {
           "title": "Goal",
-          "kicker": "03 / Three Mapped Objectives",
-          "summary": "Target engineering objectives mapped directly to each of the three problem statements.",
+          "kicker": "03 / Four Mapped Objectives",
+          "summary": "Target engineering objectives mapped directly to each of the four problem statements.",
           "subsections": [
             {
               "tag": "Goal 01 · Reporting",
@@ -229,13 +239,23 @@
                 "Context injection: Contextual analysis followed by nuanced script generation.",
                 "Prompt caching: Cut token costs by ~67% on recurring app and website translation prompts."
               ]
+            },
+            {
+              "tag": "Goal 04 · Subscription Upsells",
+              "title": "Nightly Biometric Cohort Evaluation & Distributed Daily Batch Queues",
+              "body": "Revamp the dynamic upsell engine to evaluate users nightly against physiological conditions (heart rate variability, sleep scores, cardio recovery), queuing tailored Powerplug extension recommendations across distributed worker queues throughout the day in throttled batches to eliminate load spikes across 5M+ platform users.",
+              "points": [
+                "Biometric cohort grouping: Automatically match users with relevant Powerplugs based on nightly physiological biomarkers and health scores.",
+                "Distributed worker queues: Spread cohort evaluation tasks across daily worker queues, executing in throttled batches to protect database performance.",
+                "Scalable conversion velocity: Deliver personalized, timely recommendations driving measurable subscription uptake without impacting core app APIs."
+              ]
             }
           ]
         },
         {
           "title": "Approach",
           "kicker": "04 / Architecture & Implementation",
-          "summary": "Three dedicated architectural implementations addressing reporting, on-device execution, and global platform localization.",
+          "summary": "Four dedicated architectural implementations addressing reporting, on-device execution, global platform localization, and subscription upsells.",
           "workflow": [
             "10+ Lab Stations",
             "Extraction & Normalization",
