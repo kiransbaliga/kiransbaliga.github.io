@@ -450,7 +450,7 @@ const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => {
     >
       <div className="gallery-meta">
         <div>
-          {isCaseStudy && <span className="case-study-badge-tag">Case Study</span>}
+          {isCaseStudy && <span className="case-study-badge-tag">// Case Study</span>}
           <div className="card-title-group">
             <h3>{job.company}</h3>
             {subCompany && <span className="card-subcompany">({subCompany})</span>}
@@ -477,9 +477,9 @@ const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => {
       {job.metrics && job.metrics.length > 0 ? (
         <div className="work-card-metrics-rail">
           {job.metrics.map((m) => (
-            <span key={m.label} className="work-card-metric-pill">
-              <strong className="metric-pill-val">{m.value}</strong>
-              <span className="metric-pill-lbl">{m.label}</span>
+            <span key={m.label} className="work-card-metric-stat">
+              <strong className="metric-stat-val">{m.value}</strong>
+              <span className="metric-stat-lbl">{m.label}</span>
             </span>
           ))}
         </div>
@@ -490,17 +490,18 @@ const ExperienceCard = ({ job, index }: { job: Experience; index: number }) => {
       ) : null}
       <p className="card-summary">{job.summary}</p>
       {toolingLinks && toolingLinks.length > 0 && (
-        <div className="card-tooling-pills" onClick={(e) => e.stopPropagation()}>
+        <div className="card-tooling-links" onClick={(e) => e.stopPropagation()}>
+          <span className="card-tooling-label">Tools:</span>
           {toolingLinks.map((tl) => (
             <a
               key={tl.label}
               href={tl.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="tooling-pill"
+              className="card-tooling-link"
               onClick={(e) => e.stopPropagation()}
             >
-              {tl.label}
+              {tl.label.replace(/\s*↗$/, "")} ↗
             </a>
           ))}
         </div>
@@ -1008,7 +1009,6 @@ const CaseStudyPage = ({
   summary,
   headline,
   accent,
-  banner,
   link,
   gallery,
   chapters,
@@ -1025,12 +1025,9 @@ const CaseStudyPage = ({
         className="project-hero"
         style={{ "--accent": accent } as React.CSSProperties}
       >
-        <div className="project-hero-banner" aria-hidden="true">
-          <img src={banner} alt="" />
-        </div>
         <div className="project-kicker">
           <Link to="/work">← All work</Link>
-          <span>{kicker}</span>
+          <span className="project-kicker-meta">{kicker}</span>
         </div>
         <h1>
           <a
@@ -1042,35 +1039,37 @@ const CaseStudyPage = ({
             {title} <span className="hero-title-arrow">↗</span>
           </a>
         </h1>
-        <p>{summary}</p>
+        <p className="project-hero-summary">{summary}</p>
 
         {metrics && metrics.length > 0 && (
-          <div className="case-study-hero-metrics" data-reveal>
-            {metrics.map((m, idx) => (
-              <div key={idx} className="metric-box">
-                <span className="metric-value">{m.value}</span>
-                <span className="metric-label">{m.label}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {toolingLinks && toolingLinks.length > 0 && (
-          <div className="case-study-hero-tooling" data-reveal>
-            <span className="tooling-heading">Tools & Registries:</span>
-            <div className="tooling-links-wrap">
-              {toolingLinks.map((tl) => (
-                <a
-                  key={tl.label}
-                  href={tl.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="tooling-pill"
-                >
-                  {tl.label}
-                </a>
+          <div className="case-study-hero-strip" data-reveal>
+            <div className="hero-strip-metrics">
+              {metrics.map((m, idx) => (
+                <div key={idx} className="hero-strip-metric">
+                  <span className="metric-value">{m.value}</span>
+                  <span className="metric-label">{m.label}</span>
+                </div>
               ))}
             </div>
+
+            {toolingLinks && toolingLinks.length > 0 && (
+              <div className="hero-strip-tooling">
+                <span className="strip-tooling-label">Tools & Registries:</span>
+                <div className="strip-tooling-links">
+                  {toolingLinks.map((tl) => (
+                    <a
+                      key={tl.label}
+                      href={tl.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="strip-tooling-link"
+                    >
+                      {tl.label.replace(/\s*↗$/, "")} <span className="link-arrow">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </section>
@@ -1101,42 +1100,47 @@ const CaseStudyPage = ({
         </div>
 
         {quickSummary && (
-          <div className="case-study-quick-summary" data-reveal>
-            <div className="quick-summary-header">
-              <h3 className="quick-summary-title">Work Summary</h3>
+          <div className="case-study-briefing" data-reveal>
+            <div className="briefing-header">
+              <span className="briefing-eyebrow">00 / EXECUTIVE BRIEF</span>
+              <h3 className="briefing-title">Work Summary</h3>
             </div>
 
-            <div className="quick-summary-content">
-              <div className="quick-summary-row">
-                <span className="quick-summary-label">01 / Project Scope</span>
-                <p className="quick-summary-text">{quickSummary.what}</p>
-              </div>
+            <div className="briefing-grid">
+              <div className="briefing-col-left">
+                <div className="briefing-block">
+                  <span className="briefing-label">01 / Scope & Challenge</span>
+                  <p className="briefing-text">{quickSummary.what}</p>
+                </div>
 
-              <div className="quick-summary-row">
-                <span className="quick-summary-label">02 / Role & Team</span>
-                <p className="quick-summary-text">{quickSummary.role}</p>
-              </div>
-
-              <div className="quick-summary-row quick-summary-metrics-row">
-                <span className="quick-summary-label">03 / Key Numbers (With Baselines)</span>
-                <div className="quick-summary-metrics-list">
-                  {quickSummary.metrics.map((m, idx) => (
-                    <div key={idx} className="quick-summary-metric-item">
-                      <div className="metric-item-headline">
-                        <strong className="metric-item-value">{m.value}</strong>
-                        <span className="metric-item-name">{m.label}</span>
-                      </div>
-                      <p className="metric-item-detail">{m.detail}</p>
-                    </div>
-                  ))}
+                <div className="briefing-block">
+                  <span className="briefing-label">02 / Role & Team</span>
+                  <p className="briefing-text">{quickSummary.role}</p>
                 </div>
               </div>
 
-              <div className="quick-summary-row quick-summary-lesson-row">
-                <span className="quick-summary-label">04 / Core Engineering Lesson</span>
-                <p className="quick-summary-text quick-summary-lesson-text">
-                  {quickSummary.lesson}
-                </p>
+              <div className="briefing-col-right">
+                <div className="briefing-block">
+                  <span className="briefing-label">03 / Key Numbers (With Baselines)</span>
+                  <div className="briefing-metrics-list">
+                    {quickSummary.metrics.map((m, idx) => (
+                      <div key={idx} className="briefing-metric-item">
+                        <div className="briefing-metric-head">
+                          <strong className="briefing-metric-val">{m.value}</strong>
+                          <span className="briefing-metric-tag">{m.label}</span>
+                        </div>
+                        <p className="briefing-metric-detail">{m.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="briefing-block briefing-lesson-block">
+                  <span className="briefing-label">04 / Core Engineering Lesson</span>
+                  <p className="briefing-lesson-quote">
+                    {quickSummary.lesson}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
