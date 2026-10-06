@@ -1416,7 +1416,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 130px 0 5vw;
+  padding: 130px 3.8vw 5vw;
   background: var(--bg);
 }
 .project-hero-banner {
@@ -1836,16 +1836,14 @@ button {
     font-size: 13px;
   }
   .project-hero {
-    min-height: 72vh;
-  }
-  .project-hero-banner {
-    opacity: 0.55;
+    min-height: auto;
+    padding: 100px 5vw 8vw;
   }
   .project-hero h1 {
-    font-size: 20vw;
+    font-size: clamp(48px, 16vw, 90px);
   }
-  .project-hero > p {
-    margin: 24px 0 0;
+  .project-hero-summary {
+    margin: 20px 0 0;
     max-width: 100%;
   }
   .project-visual {
@@ -1853,7 +1851,8 @@ button {
     aspect-ratio: 0.86;
   }
   .project-story {
-    margin-top: 25vw;
+    margin-top: 18vw;
+    padding: 0 5vw;
   }
   .project-story h2 {
     font-size: 47px;
