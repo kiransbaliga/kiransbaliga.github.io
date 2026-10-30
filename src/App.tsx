@@ -548,10 +548,21 @@ const Home = () => {
     <main className="home-page">
       <section className="hero">
         <div className="hero-copy">
-          <div className="hero-status-pill" data-reveal>
-            <span className="hero-status-beacon" aria-hidden="true" />
-            <span>{content.home.statusLine}</span>
-          </div>
+          <header className="hero-masthead" data-reveal>
+            <div className="masthead-col masthead-col-index">
+              <span className="masthead-tag">[ 01 // AVAILABILITY ]</span>
+            </div>
+            <div className="masthead-col masthead-col-main">
+              <span className="masthead-role">{content.site.role}</span>
+              <span className="masthead-sep" aria-hidden="true">/</span>
+              <span className="masthead-avail">AVAILABLE IMMEDIATELY</span>
+            </div>
+            <div className="masthead-col masthead-col-terms">
+              <span>OPEN TO FULL-TIME &amp; REMOTE</span>
+              <span className="masthead-sep" aria-hidden="true">·</span>
+              <span className="masthead-reloc">RELOCATION OK</span>
+            </div>
+          </header>
           <h1>
             I build <span className="hero-word-systems">{content.home.outlineWord}</span> that power products at scale.
           </h1>
