@@ -1,31 +1,27 @@
 import { html } from "satori-html";
 import { siteConfig } from "@/site.config";
 
-// OG image markup, use https://og-playground.vercel.app/ to design your own.
+// OG image markup for blog posts
 export const ogMarkup = (title: string, pubDate: string) =>
-	html`<div tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]">
-		<div tw="flex flex-col flex-1 w-full p-10 justify-center">
-			<p tw="text-2xl mb-6">${pubDate}</p>
-			<h1 tw="text-6xl font-bold leading-snug text-white">${title}</h1>
-		</div>
-		<div tw="flex items-center justify-between w-full p-10 border-t border-[#2bbc89] text-xl">
-			<div tw="flex items-center">
-				<svg height="60" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 480">
-					<path
-						fill="#cdffb8"
-						d="M181.334 93.333v-40L226.667 80v40zM136.001 53.333 90.667 26.667v426.666L136.001 480zM45.333 220 0 193.334v140L45.333 360z"
-					/>
-					<path
-						fill="#d482ab"
-						d="M90.667 26.667 136.001 0l45.333 26.667-45.333 26.666zM181.334 53.33l45.333-26.72L272 53.33 226.667 80zM136 240l-45.333-26.67v53.34zM0 193.33l45.333-26.72 45.334 26.72L45.333 220zM181.334 93.277 226.667 120l-45.333 26.67z"
-					/>
-					<path
-						fill="#2abc89"
-						d="m136 53.333 45.333-26.666v120L226.667 120V80L272 53.333V160l-90.667 53.333v240L136 480V306.667L45.334 360V220l45.333-26.667v73.334L136 240z"
-					/>
-				</svg>
-				<p tw="ml-3 font-semibold">${siteConfig.title}</p>
+	html`<div style="display: flex; flex-direction: column; width: 100%; height: 100%; background-color: #fefdfc; color: #262625; padding: 64px; justify-content: space-between; border: 8px solid #f4f3ef;">
+		<div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+			<div style="display: flex; align-items: center;">
+				<div style="display: flex; width: 44px; height: 44px; border-radius: 10px; background-color: #262625; align-items: center; justify-content: center; margin-right: 14px;">
+					<div style="display: flex; width: 14px; height: 14px; border-radius: 7px; background-color: #16a34a;"></div>
+				</div>
+				<span style="font-size: 26px; font-weight: 700; color: #262625; letter-spacing: -0.02em;">${siteConfig.title}</span>
 			</div>
-			<p>by ${siteConfig.author}</p>
+			<div style="display: flex; align-items: center; padding: 6px 16px; border-radius: 9999px; border: 1px solid #deded8; font-size: 16px; color: #797974;">
+				<span>Writing</span>
+			</div>
+		</div>
+
+		<div style="display: flex; flex-direction: column; width: 100%; margin: auto 0; padding: 32px 0;">
+			<span style="font-size: 46px; font-weight: 700; line-height: 1.25; color: #262625; letter-spacing: -0.02em;">${title}</span>
+		</div>
+
+		<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding-top: 24px; border-top: 1px solid #deded8; font-size: 18px; color: #797974;">
+			<span style="color: #444441;">${pubDate}</span>
+			<span style="font-family: Roboto Mono; color: #16a34a; font-weight: 700;">baliga.dev</span>
 		</div>
 	</div>`;

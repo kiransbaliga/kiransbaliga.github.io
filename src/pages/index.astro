@@ -9,7 +9,7 @@ const blogPosts = allPosts
 	.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 ---
 
-<PageLayout meta={{ title: "Kiran S Baliga — Backend & AI Engineer" }}>
+<PageLayout meta={{ title: "Kiran S Baliga — Backend & AI Engineer", description: "Backend & AI Engineer. I build systems that power products at scale — distributed backends, clinical LLM pipelines, on-device vitals, and developer tooling across Ultrahuman, Pencil, and KeyValue." }}>
 	{/* A Personal Introduction */}
 	<section class="pt-2 pb-6 sm:pt-4 sm:pb-8 relative">
 		<span class="block font-sans text-xs text-[#797974] mb-2">
@@ -25,21 +25,31 @@ const blogPosts = allPosts
 				I build systems that power products at scale. Usually, that means making complicated things work quietly in the background.
 			</p>
 			<p>
-				I’ve worked on Ultrahuman’s 5M+ user platform, B2B AI ad infrastructure at Pencil, and developer SDKs at KeyValue. My work sits somewhere between distributed systems, LLM orchestration, MCP servers and developer tooling.
+				I’ve worked on consumer health tech at <a href="/work/ultrahuman/" class="text-[#262625] underline underline-offset-[3px] decoration-[#b0afaa] hover:text-accent hover:decoration-[#16a34a] transition-colors duration-150">Ultrahuman</a>, B2B AI advertising infrastructure at <a href="/work/pencil/" class="text-[#262625] underline underline-offset-[3px] decoration-[#b0afaa] hover:text-accent hover:decoration-[#16a34a] transition-colors duration-150">Pencil</a>, and developer SDKs at <a href="https://www.keyvalue.systems/" target="_blank" rel="noopener noreferrer" class="text-[#262625] underline underline-offset-[3px] decoration-[#b0afaa] hover:text-accent hover:decoration-[#16a34a] transition-colors duration-150">KeyValue</a>. My work sits somewhere between distributed systems, LLM orchestration, MCP servers, and developer tooling.
 			</p>
 			<p>
 				Outside that, I make small tools for the way I live, and write about the questions they leave me with.
 			</p>
 		</div>
 
-		{/* Availability & Links with marginalia on the LEFT */}
-		<div class="flex flex-wrap items-center gap-x-4 gap-y-2.5 mb-3">
-			<span class="font-handwriting text-lg text-[#262625] rotate-[-3deg] select-none shrink-0">
-				for the right next thing &rarr;
-			</span>
+		{/* Availability & Links with marginalia OUTSIDE normal text bounds */}
+		<div class="relative flex flex-wrap items-center gap-x-5 gap-y-3 mb-3">
+			{/* Mobile note: sits above the row on narrow screens */}
+			<div class="md:hidden w-full select-none -mb-1">
+				<span class="font-handwriting text-base text-[#262625] rotate-[-2deg] inline-block">
+					for the right next thing &rarr;
+				</span>
+			</div>
 
-			{/* Circled invitation with authentic ink loop */}
+			{/* Circled invitation with authentic ink loop at standard text bounds */}
 			<div class="relative inline-flex items-center px-3 py-1 select-none">
+				{/* Desktop marginalia outside normal text bounds in left gutter */}
+				<span
+					class="hidden md:inline-flex items-center gap-1.5 absolute right-full mr-3 top-1/2 -translate-y-1/2 select-none whitespace-nowrap font-handwriting text-[18px] text-[#262625] rotate-[-2deg] pointer-events-none"
+				>
+					for the right next thing &rarr;
+				</span>
+
 				<span class="font-sans text-[13.5px] text-[#262625] relative z-10">
 					Available immediately
 				</span>

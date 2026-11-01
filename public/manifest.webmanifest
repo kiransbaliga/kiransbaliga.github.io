@@ -1,7 +1,7 @@
 {
-	"name": "All Things Narix",
-	"short_name": "Narix",
-	"description": "A blog about all things Narix",
+	"name": "Kiran S Baliga",
+	"short_name": "Kiran",
+	"description": "Backend & AI Engineer — Distributed systems, LLM orchestration, and developer tooling.",
 	"icons": [
 		{
 			"src": "/192x192.png",
@@ -15,7 +15,7 @@
 		}
 	],
 	"start_url": "/",
-	"background_color": "#1d1f21",
-	"theme_color": "#2bbc8a",
+	"background_color": "#fefdfc",
+	"theme_color": "#16a34a",
 	"display": "standalone"
 }
