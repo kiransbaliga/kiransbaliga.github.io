@@ -2,36 +2,39 @@
 import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { menuLinks, siteConfig } from "@/site.config";
+
+const isHome = Astro.url.pathname === "/";
 ---
 
-<header class="group mb-12 flex items-center justify-between border-b border-line pb-5 pt-2 sm:mb-16" id="main-header">
+<header
+	class="group border-line mb-8 flex items-center justify-between border-b pt-1 pb-4 sm:mb-10"
+	id="main-header"
+>
 	<div class="flex items-center gap-6">
 		<a
-			aria-current={Astro.url.pathname === "/" ? "page" : false}
-			class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-global-text transition-opacity hover:opacity-75"
+			aria-current={isHome ? "page" : false}
+			class="text-global-text inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-75"
 			href="/"
 		>
 			<span class="bg-accent h-2 w-2 rounded-full"></span>
-			<span>{siteConfig.author}</span>
-			<span class="text-muted font-normal">/</span>
-			<span class="text-muted font-normal">Notes</span>
+			<span>{isHome ? "baliga.dev" : siteConfig.author}</span>
 		</a>
 
 		<nav
 			aria-label="Main menu"
-			class="bg-global-bg absolute -inset-x-4 top-16 z-50 hidden flex-col divide-y divide-line border-b border-line px-6 py-4 font-mono text-xs uppercase tracking-wider group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-row sm:items-center sm:gap-5 sm:divide-y-0 sm:border-0 sm:bg-transparent sm:p-0"
+			class="bg-global-bg divide-line border-line absolute -inset-x-4 top-14 z-50 hidden flex-col divide-y border-b px-6 py-4 font-mono text-xs tracking-wider uppercase group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-row sm:items-center sm:gap-5 sm:divide-y-0 sm:border-0 sm:bg-transparent sm:p-0"
 			id="navigation-menu"
 		>
 			{
 				menuLinks.map((link) => {
-					const isCurrent = Astro.url.pathname === link.path || (link.path !== "/" && Astro.url.pathname.startsWith(link.path));
+					const isCurrent =
+						Astro.url.pathname === link.path ||
+						(link.path !== "/" && Astro.url.pathname.startsWith(link.path));
 					return (
 						<a
 							aria-current={isCurrent ? "page" : false}
-							class={`py-3 sm:py-0 transition-colors duration-200 ${
-								isCurrent
-									? "text-accent font-semibold"
-									: "text-muted hover:text-global-text"
+							class={`py-3 transition-colors duration-200 sm:py-0 ${
+								isCurrent ? "text-accent font-semibold" : "text-muted hover:text-global-text"
 							}`}
 							href={link.path}
 							target={link.external ? "_blank" : undefined}
@@ -58,8 +61,8 @@ import { menuLinks, siteConfig } from "@/site.config";
 			>
 				<span class="sr-only">Open main menu</span>
 				<div class="flex flex-col gap-1">
-					<span class="bg-current h-0.5 w-4 transition-transform"></span>
-					<span class="bg-current h-0.5 w-4 transition-transform"></span>
+					<span class="h-0.5 w-4 bg-current transition-transform"></span>
+					<span class="h-0.5 w-4 bg-current transition-transform"></span>
 				</div>
 			</button>
 		</mobile-button>
