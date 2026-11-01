@@ -1,0 +1,27 @@
+{
+  "name": "Kiran S Baliga",
+  "icons": [
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "short_name": "Kiran",
+  "description": "Kiran S Baliga — Backend & AI Engineer. Systems, LLM orchestration, and developer tooling.",
+  "lang": "en-GB",
+  "start_url": "/",
+  "theme_color": "#16a34a",
+  "background_color": "#fefdfc",
+  "display": "standalone"
+}

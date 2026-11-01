@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://baliga.dev/sitemap-index.xml
