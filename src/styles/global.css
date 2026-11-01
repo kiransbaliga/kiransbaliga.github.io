@@ -4,56 +4,7 @@
 /* config for tailwindcss-typography plugin */
 @config "../../tailwind.config.ts";
 
-/* use a selector-based strategy for dark mode */
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
-
-/* register custom colour properties */
-@property --color-global-bg {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #fefdfc;
-}
-@property --color-global-text {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #262625;
-}
-@property --color-muted {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #797974;
-}
-@property --color-link {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #262625;
-}
-@property --color-accent {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #d64c1b;
-}
-@property --color-accent-2 {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #262625;
-}
-@property --color-quote {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #d64c1b;
-}
-@property --color-line {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #deded8;
-}
-@property --color-card {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: #ffffff;
-}
-
+/* Light mode enforced - dark mode disabled */
 @theme {
 	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 	--font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -65,43 +16,32 @@
 	--color-global-text: #262625;
 	--color-muted: #797974;
 	--color-link: #262625;
-	--color-accent: #d64c1b;
+	--color-accent: #EE2796;
 	--color-accent-2: #262625;
-	--color-quote: #d64c1b;
+	--color-quote: #262625;
 	--color-line: #deded8;
 	--color-card: #ffffff;
 }
 
 @layer base {
 	html {
-		color-scheme: light dark;
+		color-scheme: light;
 		accent-color: var(--color-accent);
 		scrollbar-gutter: stable;
+		background-color: #fefdfc;
+		color: #262625;
 
-		&[data-theme="light"] {
+		&[data-theme="light"], &[data-theme="dark"] {
 			color-scheme: light;
-			--color-global-bg: #f6f6f3;
-			--color-global-text: #151514;
-			--color-muted: #55544f;
-			--color-link: #d64c1b;
-			--color-accent: #d64c1b;
-			--color-accent-2: #151514;
-			--color-quote: #d64c1b;
-			--color-line: rgba(21, 21, 20, 0.15);
+			--color-global-bg: #fefdfc;
+			--color-global-text: #262625;
+			--color-muted: #797974;
+			--color-link: #262625;
+			--color-accent: #EE2796;
+			--color-accent-2: #262625;
+			--color-quote: #262625;
+			--color-line: #deded8;
 			--color-card: #ffffff;
-		}
-
-		&[data-theme="dark"] {
-			color-scheme: dark;
-			--color-global-bg: #151514;
-			--color-global-text: #f5f4f1;
-			--color-muted: #999894;
-			--color-link: #ff6534;
-			--color-accent: #ff6534;
-			--color-accent-2: #ffffff;
-			--color-quote: #ff6534;
-			--color-line: rgba(245, 244, 241, 0.15);
-			--color-card: #1c1c1a;
 		}
 
 		--color-mode-transition-duration: 300ms;

@@ -11,16 +11,16 @@ const blogPosts = allPosts
 
 <PageLayout meta={{ title: "Kiran S Baliga — Backend & AI Engineer" }}>
 	{/* A Personal Introduction */}
-	<section class="pt-6 pb-14 sm:pt-8 sm:pb-16 relative">
-		<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
+	<section class="pt-2 pb-6 sm:pt-4 sm:pb-8 relative">
+		<span class="block font-sans text-xs text-[#797974] mb-2">
 			Backend & AI Engineer
 		</span>
 
-		<h1 class="font-sans text-[34px] leading-[1.3] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+		<h1 class="font-sans text-[26px] sm:text-[28px] leading-[1.25] font-normal text-[#262625] mb-3">
 			Hi, I’m Kiran.
 		</h1>
 
-		<div class="space-y-4 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl mb-8">
+		<div class="space-y-2.5 font-sans text-[14.5px] leading-[1.55] text-[#444441] max-w-2xl mb-5">
 			<p>
 				I build systems that power products at scale. Usually, that means making complicated things work quietly in the background.
 			</p>
@@ -33,28 +33,28 @@ const blogPosts = allPosts
 		</div>
 
 		{/* Availability & Links with marginalia on the LEFT */}
-		<div class="relative flex flex-wrap items-center gap-x-6 gap-y-4 mb-6">
-			{/* Left margin note on desktop / tablet */}
-			<div class="hidden md:block absolute -left-28 lg:-left-36 top-1/2 -translate-y-1/2 select-none text-right pointer-events-none">
-				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-400 leading-[1.1] rotate-[-5deg] block">
+		<div class="relative flex flex-wrap items-center gap-x-5 gap-y-3 mb-3">
+			{/* Left margin note on desktop */}
+			<div class="hidden lg:block absolute -left-28 top-1/2 -translate-y-1/2 select-none text-right pointer-events-none">
+				<span class="font-handwriting text-xl text-[#262625] leading-[1.05] rotate-[-5deg] block">
 					for the<br />right next<br />thing
 				</span>
 			</div>
 
 			{/* Left inline note on mobile */}
-			<div class="md:hidden w-full select-none -mb-2">
-				<span class="font-handwriting text-xl text-[#262625] dark:text-neutral-400 rotate-[-3deg] inline-block">
+			<div class="lg:hidden w-full select-none -mb-1">
+				<span class="font-handwriting text-base text-[#262625] rotate-[-3deg] inline-block">
 					for the right next thing &rarr;
 				</span>
 			</div>
 
 			{/* Circled invitation with authentic ink loop */}
-			<div class="relative inline-flex items-center px-4 py-2 select-none">
-				<span class="font-sans text-base text-[#262625] dark:text-[#f5f4f1] relative z-10">
+			<div class="relative inline-flex items-center px-3 py-1 select-none">
+				<span class="font-sans text-[13.5px] text-[#262625] relative z-10">
 					Available immediately
 				</span>
 				<svg
-					class="pointer-events-none absolute -inset-x-2 -inset-y-1.5 w-[calc(100%+16px)] h-[calc(100%+12px)] overflow-visible"
+					class="pointer-events-none absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)] overflow-visible"
 					viewBox="0 0 209 48"
 					fill="none"
 					preserveAspectRatio="none"
@@ -75,14 +75,14 @@ const blogPosts = allPosts
 			</div>
 
 			<a
-				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
 				href="/work-together/"
 			>
 				Work together &rarr;
 			</a>
 
 			<a
-				class="font-sans text-sm text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				class="font-sans text-[12.5px] text-[#797974] hover:text-accent transition-colors duration-200"
 				href="/resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -91,95 +91,95 @@ const blogPosts = allPosts
 			</a>
 		</div>
 
-		<p class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+		<p class="font-sans text-[12px] text-[#797974]">
 			Based in Kerala, India &middot; Open to full-time, remote &amp; relocation
 		</p>
 	</section>
 
 	{/* Selected Professional Work */}
-	<section id="work" class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
-		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-1">
+	<section id="work" class="border-t border-[#deded8] pt-5 pb-7">
+		<h2 class="font-sans text-[16px] font-medium text-[#262625] mb-0.5">
 			Selected work
 		</h2>
-		<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mb-8">
+		<p class="font-sans text-[12.5px] text-[#797974] mb-5">
 			A few systems I&rsquo;ve helped make more useful, reliable and easier to build on.
 		</p>
 
-		<div class="space-y-10">
+		<div class="space-y-6">
 			{/* Case Study 1: Ultrahuman */}
-			<article class="space-y-2">
+			<article class="space-y-1.5">
 				<div class="flex items-baseline justify-between gap-4">
-					<h3 class="font-sans text-[17px] font-normal">
+					<h3 class="font-sans text-[14.5px] font-medium">
 						<a
-							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
 							href="/work/ultrahuman/"
 						>
 							Ultrahuman &rarr;
 						</a>
 					</h3>
-					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+					<span class="font-sans text-[12px] text-[#797974] tabular-nums">
 						Mar&ndash;Jun 2026
 					</span>
 				</div>
-				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+				<p class="font-sans text-[12px] text-[#797974]">
 					Backend Engineer
 				</p>
-				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				<p class="font-sans text-[13.5px] leading-[1.5] text-[#444441]">
 					Clinical reporting across 10+ lab stations: asynchronous ingestion and normalization, LLM analysis, clinician review and targeted regeneration of 15-page health plans.
 				</p>
-				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+				<p class="font-sans text-[12.5px] text-[#262625]">
 					Also: CJK localization quality 86% &rarr; 91%, with ~67% lower translation token costs.
 				</p>
 			</article>
 
 			{/* Case Study 2: Pencil */}
-			<article class="space-y-2">
+			<article class="space-y-1.5">
 				<div class="flex items-baseline justify-between gap-4">
-					<h3 class="font-sans text-[17px] font-normal">
+					<h3 class="font-sans text-[14.5px] font-medium">
 						<a
-							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
 							href="/work/pencil/"
 						>
 							Pencil &rarr;
 						</a>
 					</h3>
-					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+					<span class="font-sans text-[12px] text-[#797974] tabular-nums">
 						Sep 2023&ndash;Feb 2026
 					</span>
 				</div>
-				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+				<p class="font-sans text-[12px] text-[#797974]">
 					Client engagement &middot; via KeyValue Software Systems
 				</p>
-				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				<p class="font-sans text-[13.5px] leading-[1.5] text-[#444441]">
 					Reworking the data layer and PDF pipeline behind a multi-tenant AI ad platform. Tenant boundaries belong in the infrastructure.
 				</p>
-				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+				<p class="font-sans text-[12.5px] text-[#262625]">
 					30% faster API responses &middot; 65% less PDF rendering processing time
 				</p>
 			</article>
 
 			{/* Case Study 3: Siren */}
-			<article class="space-y-2">
+			<article class="space-y-1.5">
 				<div class="flex items-baseline justify-between gap-4">
-					<h3 class="font-sans text-[17px] font-normal">
+					<h3 class="font-sans text-[14.5px] font-medium">
 						<a
-							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
 							href="/work/siren/"
 						>
 							Siren &rarr;
 						</a>
 					</h3>
-					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+					<span class="font-sans text-[12px] text-[#797974] tabular-nums">
 						Sep 2023&ndash;Feb 2026
 					</span>
 				</div>
-				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+				<p class="font-sans text-[12px] text-[#797974]">
 					Client engagement &middot; via KeyValue Software Systems
 				</p>
-				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				<p class="font-sans text-[13.5px] leading-[1.5] text-[#444441]">
 					Shared tool schemas, TypeScript and Python agent toolkits, and a standalone MCP server for AI-native communications.
 				</p>
-				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+				<p class="font-sans text-[12.5px] text-[#262625]">
 					~75% less setup effort with zero-install MCP vs. manual SDK wiring
 				</p>
 			</article>
@@ -187,25 +187,25 @@ const blogPosts = allPosts
 	</section>
 
 	{/* Writing (Moved UP as requested) */}
-	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
-		<div class="flex items-baseline justify-between mb-8">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
+	<section class="border-t border-[#deded8] pt-5 pb-7">
+		<div class="flex items-baseline justify-between mb-3">
+			<h2 class="font-sans text-[13px] font-medium text-[#797974]">
 				Writing
 			</h2>
 			<a
-				class="font-sans text-sm text-[#797974] hover:text-accent transition-colors duration-200 dark:text-neutral-400"
+				class="font-sans text-[12px] text-[#797974] hover:text-accent transition-colors duration-200"
 				href="/posts/"
 			>
 				All posts &nearr;
 			</a>
 		</div>
 
-		<div class="grid grid-cols-[50px_1fr] sm:grid-cols-[64px_1fr] gap-4 items-start">
-			<span class="font-mono text-[13px] text-[#797974] dark:text-neutral-400 select-none pt-0.5">
+		<div class="grid grid-cols-[44px_1fr] sm:grid-cols-[56px_1fr] gap-3 items-start">
+			<span class="font-mono text-[12px] text-[#797974] select-none pt-0.5">
 				2026
 			</span>
 
-			<ul class="space-y-3" role="list">
+			<ul class="space-y-2" role="list">
 				{
 					blogPosts.slice(0, 4).map((post) => {
 						const dateFormatted = new Intl.DateTimeFormat("en-GB", {
@@ -216,16 +216,16 @@ const blogPosts = allPosts
 						const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
 
 						return (
-							<li class="flex items-baseline justify-between gap-6 group">
+							<li class="flex items-baseline justify-between gap-4 py-0.5 group">
 								<a
-									class="font-sans text-[16px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+									class="font-sans text-[13.5px] text-[#262625] hover:text-accent transition-colors duration-200"
 									href={postUrl}
 									target={post.data.externalUrl ? "_blank" : undefined}
 									rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
 								>
 									{post.data.title}
 								</a>
-								<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 whitespace-nowrap tabular-nums">
+								<span class="font-sans text-[12px] text-[#797974] whitespace-nowrap tabular-nums">
 									{dateFormatted}
 								</span>
 							</li>
@@ -236,88 +236,13 @@ const blogPosts = allPosts
 		</div>
 	</section>
 
-	{/* Things I Make (Moved DOWN as requested) */}
-	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
-		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
-			Things I make
-		</h2>
-
-		<div class="space-y-6">
-			<div>
-				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-					href="https://github.com/kiransbaliga"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Valkyrie &nearr;
-				</a>
-				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
-					A native macOS wallpaper companion. Folder-based gallery, Metal rendering.
-				</p>
-			</div>
-
-			<div>
-				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-					href="https://github.com/kiransbaliga"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Lyrix &nearr;
-				</a>
-				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
-					Floating lyrics for macOS, driven by Now Playing. No audio recording.
-				</p>
-			</div>
-
-			<div>
-				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-					href="/posts/poor-decisions/"
-				>
-					Poor Decisions &nearr;
-				</a>
-				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
-					Five-second expense logging with iOS Shortcuts and Google Sheets.
-				</p>
-			</div>
-
-			<div>
-				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-					href="/posts/readfaster/"
-				>
-					Read Faster &nearr;
-				</a>
-				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
-					An RSVP speed reader built around the optimal recognition point.
-				</p>
-			</div>
-
-			<div>
-				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-					href="https://github.com/kiransbaliga"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Multi-Task Federated Learning &nearr;
-				</a>
-				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
-					Collaborative multi-task training; raw data stays local.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	{/* A Little More About Me (Gap issue resolved) */}
-	<section class="border-t border-[#deded8] pt-10 pb-6 dark:border-neutral-800">
-		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-5">
+	{/* A Little More About Me */}
+	<section class="border-t border-[#deded8] pt-5 pb-4">
+		<h2 class="font-sans text-[16px] font-medium text-[#262625] mb-2.5">
 			A little more about me
 		</h2>
 
-		<div class="space-y-4 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl mb-8">
+		<div class="space-y-2 font-sans text-[13.5px] leading-[1.55] text-[#444441] max-w-2xl mb-4">
 			<p>
 				My path has taken me from Flutter apps at airPMO and a mental-health platform at TGH Tech to backend and AI infrastructure at KeyValue and Ultrahuman.
 			</p>
@@ -327,11 +252,11 @@ const blogPosts = allPosts
 		</div>
 
 		{/* Clean gap layout avoiding collision between links and marginalia */}
-		<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-2 mb-2">
-			<div class="space-y-3">
+		<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1 mb-2">
+			<div class="space-y-1.5">
 				<div>
 					<a
-						class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+						class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
 						href="/work-together/"
 					>
 						More about me &amp; working together &rarr;
@@ -340,7 +265,7 @@ const blogPosts = allPosts
 
 				<div>
 					<a
-						class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+						class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
 						href="mailto:kiransbaliga@gmail.com"
 					>
 						kiransbaliga@gmail.com &nearr;
@@ -349,12 +274,12 @@ const blogPosts = allPosts
 			</div>
 
 			{/* Handwritten marginalia cleanly spaced */}
-			<div class="flex items-center gap-3 select-none self-start sm:self-end pt-2 sm:pt-0">
-				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-300 leading-tight rotate-[-3deg] whitespace-nowrap">
+			<div class="flex items-center gap-2.5 select-none self-start sm:self-end pt-1 sm:pt-0">
+				<span class="font-handwriting text-xl text-[#262625] leading-tight rotate-[-3deg] whitespace-nowrap">
 					let’s build<br />something useful
 				</span>
 				<svg
-					class="w-[60px] h-[30px] text-[#262625] dark:text-neutral-300 shrink-0"
+					class="w-[50px] h-[25px] text-[#262625] shrink-0"
 					viewBox="0 0 123 55"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

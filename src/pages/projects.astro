@@ -1,0 +1,117 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Projects — Kiran S Baliga" }}>
+	<div class="pt-2 pb-8 sm:pt-4 sm:pb-12">
+		<header class="mb-6">
+			<span class="block font-sans text-xs text-[#797974] mb-2">
+				Side projects &amp; tools
+			</span>
+			<h1 class="font-sans text-[26px] sm:text-[28px] leading-[1.25] font-normal text-[#262625] mb-2">
+				Things I make.
+			</h1>
+			<p class="font-sans text-[14px] leading-[1.55] text-[#444441] max-w-xl">
+				Small native utilities, experiments, and tools built for the way I live, work, and read.
+			</p>
+		</header>
+
+		<div class="border-t border-[#deded8] pt-5 space-y-6">
+			{/* Valkyrie */}
+			<article class="space-y-1">
+				<div class="flex items-baseline justify-between gap-4">
+					<h2 class="font-sans text-[14.5px] font-medium">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
+							href="https://github.com/kiransbaliga"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Valkyrie &nearr;
+						</a>
+					</h2>
+					<span class="font-mono text-[12px] text-[#797974]">macOS &middot; Swift &middot; Metal</span>
+				</div>
+				<p class="font-sans text-[13px] leading-[1.5] text-[#444441]">
+					A native macOS wallpaper companion. Folder-based gallery, Metal rendering engine, multi-display support, and zero background idle battery drain.
+				</p>
+			</article>
+
+			{/* Lyrix */}
+			<article class="space-y-1">
+				<div class="flex items-baseline justify-between gap-4">
+					<h2 class="font-sans text-[14.5px] font-medium">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
+							href="https://github.com/kiransbaliga"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Lyrix &nearr;
+						</a>
+					</h2>
+					<span class="font-mono text-[12px] text-[#797974]">macOS &middot; Swift &middot; AppKit</span>
+				</div>
+				<p class="font-sans text-[13px] leading-[1.5] text-[#444441]">
+					Floating, synchronised lyrics for macOS driven by Apple Media Remote and Now Playing sessions. No audio recording or microphone permissions required.
+				</p>
+			</article>
+
+			{/* Poor Decisions */}
+			<article class="space-y-1">
+				<div class="flex items-baseline justify-between gap-4">
+					<h2 class="font-sans text-[14.5px] font-medium">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
+							href="/posts/poor-decisions/"
+						>
+							Poor Decisions™ &nearr;
+						</a>
+					</h2>
+					<span class="font-mono text-[12px] text-[#797974]">iOS Shortcuts &middot; Sheets API</span>
+				</div>
+				<p class="font-sans text-[13px] leading-[1.5] text-[#444441]">
+					Five-second expense logging system with iOS Shortcuts and Google Sheets. Removes manual app friction to log daily micro-expenses instantly.
+				</p>
+			</article>
+
+			{/* Read Faster */}
+			<article class="space-y-1">
+				<div class="flex items-baseline justify-between gap-4">
+					<h2 class="font-sans text-[14.5px] font-medium">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
+							href="/posts/readfaster/"
+						>
+							Read Faster &nearr;
+						</a>
+					</h2>
+					<span class="font-mono text-[12px] text-[#797974]">Web &middot; RSVP Engine</span>
+				</div>
+				<p class="font-sans text-[13px] leading-[1.5] text-[#444441]">
+					An RSVP (Rapid Serial Visual Presentation) speed reader anchored to the optimal recognition point (ORP), allowing fatigue-free reading at 800+ WPM.
+				</p>
+			</article>
+
+			{/* Multi-Task Federated Learning */}
+			<article class="space-y-1">
+				<div class="flex items-baseline justify-between gap-4">
+					<h2 class="font-sans text-[14.5px] font-medium">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200"
+							href="https://github.com/kiransbaliga"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Multi-Task Federated Learning &nearr;
+						</a>
+					</h2>
+					<span class="font-mono text-[12px] text-[#797974]">Python &middot; PyTorch &middot; FL</span>
+				</div>
+				<p class="font-sans text-[13px] leading-[1.5] text-[#444441]">
+					Collaborative multi-task model training where raw edge data never leaves client devices. Benchmarked against non-IID partitioned datasets.
+				</p>
+			</article>
+		</div>
+	</div>
+</PageLayout>
