@@ -1,0 +1,143 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { GetStaticPaths, Page } from "astro";
+import { Icon } from "astro-icon/components";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import Pagination from "@/components/Paginator.astro";
+import { getAllPosts, getUniqueTags, groupPostsByYear } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+import { collectionDateSort } from "@/utils/date";
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const MAX_POSTS_PER_PAGE = 10;
+	const MAX_TAGS = 7;
+	const MAX_PINNED_POSTS = 3;
+	const allPosts = await getAllPosts();
+	const allPostsByDate = allPosts.sort(collectionDateSort);
+	const uniqueTags = getUniqueTags(allPosts).slice(0, MAX_TAGS);
+	const pinnedPosts = allPostsByDate
+		.values()
+		.filter((p) => p.data.pinned)
+		.take(MAX_PINNED_POSTS)
+		.toArray();
+	return paginate(allPostsByDate, {
+		pageSize: MAX_POSTS_PER_PAGE,
+		props: { uniqueTags, pinnedPosts },
+	});
+}) satisfies GetStaticPaths;
+
+interface Props {
+	page: Page<CollectionEntry<"post">>;
+	uniqueTags: string[];
+	pinnedPosts: CollectionEntry<"post">[];
+}
+
+const { page, uniqueTags, pinnedPosts } = Astro.props;
+
+const meta = {
+	description: "Read my collection of posts and the things that interest me",
+	title: "Posts",
+};
+
+const paginationProps = {
+	...(page.url.prev && {
+		prevUrl: {
+			text: "← Previous Page",
+			url: page.url.prev,
+		},
+	}),
+	...(page.url.next && {
+		nextUrl: {
+			text: "Next Page →",
+			url: page.url.next,
+		},
+	}),
+};
+
+const groupedByYear = groupPostsByYear(page.data);
+const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
+---
+
+<PageLayout meta={meta}>
+	<div class="mb-10 flex items-center justify-between border-b border-line pb-4">
+		<div class="flex items-center gap-3">
+			<h1 class="font-display text-4xl font-bold uppercase tracking-tight text-accent-2 sm:text-6xl">Posts</h1>
+			<a class="text-muted hover:text-accent transition-colors" href="/rss.xml" target="_blank">
+				<span class="sr-only">RSS feed</span>
+				<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name="mdi:rss" />
+			</a>
+		</div>
+		<span class="font-mono text-xs uppercase tracking-wider text-muted">
+			Page {page.currentPage} of {page.lastPage}
+		</span>
+	</div>
+	<div class="grid sm:grid-cols-[3fr_1fr] sm:gap-x-10 sm:gap-y-16">
+		<div>
+			{
+				pinnedPosts.length > 0 && (
+					<section class="mb-14">
+						<div class="flex items-baseline justify-between border-b border-line pb-2 mb-6">
+							<h2 class="font-display text-xl font-bold uppercase tracking-tight text-accent-2">Pinned</h2>
+							<span class="font-mono text-xs uppercase tracking-wider text-muted">Featured</span>
+						</div>
+						<ul class="space-y-4" role="list">
+							{pinnedPosts.map((p) => (
+								<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+									<PostPreview post={p} />
+								</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
+			{
+				descYearKeys.map((yearKey) => (
+					<section class="mb-14">
+						<div class="flex items-center gap-3 mb-6">
+							<h2 id={`year-${yearKey}`} class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
+								<span class="sr-only">Posts in </span>
+								{yearKey}
+							</h2>
+							<div class="h-px grow bg-line"></div>
+						</div>
+						<ul class="space-y-4 text-start">
+							{groupedByYear[yearKey]?.map((p) => (
+								<li class="grid gap-1 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+									<PostPreview post={p} />
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+			<Pagination {...paginationProps} />
+		</div>
+		{
+			!!uniqueTags.length && (
+				<aside>
+					<div class="border-b border-line pb-2 mb-4">
+						<h2 class="font-display text-xl font-bold uppercase tracking-tight text-accent-2">
+							Tags
+						</h2>
+					</div>
+					<ul class="flex flex-wrap gap-2">
+						{uniqueTags.map((tag) => (
+							<li>
+								<a class="pill" href={`/tags/${tag}/`}>
+									<span aria-hidden="true">#</span>
+									<span class="sr-only">View all posts with the tag</span>
+									{tag}
+								</a>
+							</li>
+						))}
+					</ul>
+					<span class="mt-4 block font-mono text-xs uppercase tracking-wider text-muted">
+						<a class="hover:text-accent-2 transition-colors inline-flex items-center gap-1" href="/tags/">
+							View all tags &rarr;
+						</a>
+					</span>
+				</aside>
+			)
+		}
+	</div>
+</PageLayout>

@@ -1,0 +1,41 @@
+---
+import { getAllPosts, getUniqueTagsWithCount } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+
+const allPosts = await getAllPosts();
+const allTags = getUniqueTagsWithCount(allPosts);
+
+const meta = {
+	description: "A list of all the topics I've written about in my posts",
+	title: "All Tags",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="mb-10 border-b border-line pb-4">
+		<h1 class="font-display text-4xl font-bold uppercase tracking-tight text-accent-2 sm:text-6xl">
+			All Tags
+		</h1>
+		<p class="text-muted mt-2 text-sm">
+			Topics and categories across all published essays and field logs.
+		</p>
+	</div>
+	<ul class="flex flex-wrap gap-2.5">
+		{
+			allTags.map(([tag, val]) => (
+				<li>
+					<a
+						class="pill-btn inline-flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2"
+						href={`/tags/${tag}/`}
+						title={`View posts with the tag: ${tag}`}
+					>
+						<span>#{tag}</span>
+						<span class="rounded-full border border-line px-1.5 py-0.5 text-[10px] text-muted">
+							{val}
+						</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</PageLayout>

@@ -1,0 +1,88 @@
+---
+import Search from "@/components/Search.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { menuLinks, siteConfig } from "@/site.config";
+---
+
+<header class="group mb-12 flex items-center justify-between border-b border-line pb-5 pt-2 sm:mb-16" id="main-header">
+	<div class="flex items-center gap-6">
+		<a
+			aria-current={Astro.url.pathname === "/" ? "page" : false}
+			class="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-global-text transition-opacity hover:opacity-75"
+			href="/"
+		>
+			<span class="bg-accent h-2 w-2 rounded-full"></span>
+			<span>{siteConfig.author}</span>
+			<span class="text-muted font-normal">/</span>
+			<span class="text-muted font-normal">Notes</span>
+		</a>
+
+		<nav
+			aria-label="Main menu"
+			class="bg-global-bg absolute -inset-x-4 top-16 z-50 hidden flex-col divide-y divide-line border-b border-line px-6 py-4 font-mono text-xs uppercase tracking-wider group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-row sm:items-center sm:gap-5 sm:divide-y-0 sm:border-0 sm:bg-transparent sm:p-0"
+			id="navigation-menu"
+		>
+			{
+				menuLinks.map((link) => {
+					const isCurrent = Astro.url.pathname === link.path || (link.path !== "/" && Astro.url.pathname.startsWith(link.path));
+					return (
+						<a
+							aria-current={isCurrent ? "page" : false}
+							class={`py-3 sm:py-0 transition-colors duration-200 ${
+								isCurrent
+									? "text-accent font-semibold"
+									: "text-muted hover:text-global-text"
+							}`}
+							href={link.path}
+							target={link.external ? "_blank" : undefined}
+							rel={link.external ? "noreferrer noopener" : undefined}
+						>
+							{link.title}
+						</a>
+					);
+				})
+			}
+		</nav>
+	</div>
+
+	<div class="flex items-center gap-1 sm:gap-2">
+		<Search />
+		<ThemeToggle />
+		<mobile-button class="sm:hidden">
+			<button
+				aria-expanded="false"
+				aria-haspopup="menu"
+				class="border-line text-muted hover:border-accent-2 hover:text-accent-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border transition-all duration-200"
+				id="toggle-navigation-menu"
+				type="button"
+			>
+				<span class="sr-only">Open main menu</span>
+				<div class="flex flex-col gap-1">
+					<span class="bg-current h-0.5 w-4 transition-transform"></span>
+					<span class="bg-current h-0.5 w-4 transition-transform"></span>
+				</div>
+			</button>
+		</mobile-button>
+	</div>
+</header>
+
+<script>
+	import { toggleClass } from "@/utils/domElement";
+
+	class MobileNavBtn extends HTMLElement {
+		#menuOpen: boolean = false;
+
+		connectedCallback() {
+			const headerEl = document.getElementById("main-header")!;
+			const mobileButtonEl = this.querySelector<HTMLButtonElement>("button");
+
+			mobileButtonEl?.addEventListener("click", () => {
+				if (headerEl) toggleClass(headerEl, "menu-open");
+				this.#menuOpen = !this.#menuOpen;
+				mobileButtonEl.setAttribute("aria-expanded", this.#menuOpen.toString());
+			});
+		}
+	}
+
+	customElements.define("mobile-button", MobileNavBtn);
+</script>

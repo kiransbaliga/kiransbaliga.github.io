@@ -1,0 +1,120 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import Note from "@/components/note/Note.astro";
+import SocialList from "@/components/SocialList.astro";
+import { getAllPosts } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+import { collectionDateSort } from "@/utils/date";
+
+// Posts
+const MAX_POSTS = 10;
+const allPosts = await getAllPosts();
+const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
+const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
+
+// Pinned Posts, set to a max of 3;
+const MAX_PINNED_POSTS = 3;
+const pinnedPosts = allPostsByDate
+	.values()
+	.filter((p) => p.data.pinned)
+	.take(MAX_PINNED_POSTS)
+	.toArray();
+
+// Notes, set to a max of 5
+const MAX_NOTES = 5;
+const allNotes = await getCollection("note");
+const latestNotes = allNotes
+	.sort(collectionDateSort)
+	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section class="mb-16">
+		<span class="eyebrow block mb-3">Kiran S Baliga &middot; Writing &amp; Systems</span>
+		<h1 class="font-display text-5xl font-bold uppercase tracking-tight text-accent-2 sm:text-7xl leading-[0.88] mb-6">
+			All Things <span class="text-accent">Narix.</span>
+		</h1>
+		<p class="text-muted text-base leading-relaxed max-w-2xl mb-6">
+			Hey, I'm Kiran &mdash; a software developer and technical consultant who writes about architecture,
+			AI agent workflows, engineering craft, and the ideas I'm exploring.
+		</p>
+		<div class="flex flex-wrap items-center gap-3 mb-8">
+			<a
+				class="rounded-full bg-accent-2 text-global-bg px-5 py-2 font-mono text-xs uppercase tracking-wider font-semibold border border-accent-2 hover:bg-transparent hover:text-accent-2 transition-all duration-200"
+				href="/posts/"
+			>
+				Browse All Posts &rarr;
+			</a>
+			<a
+				class="rounded-full border border-line px-5 py-2 font-mono text-xs uppercase tracking-wider text-muted hover:border-accent-2 hover:text-accent-2 transition-all duration-200"
+				href="https://baliga.dev"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				Portfolio &nearr;
+			</a>
+		</div>
+		<SocialList />
+	</section>
+
+	{
+		pinnedPosts.length > 0 && (
+			<section class="mt-16">
+				<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
+					<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
+						Pinned Posts
+					</h2>
+					<span class="font-mono text-xs uppercase tracking-wider text-muted">Featured</span>
+				</div>
+				<ul class="space-y-5" role="list">
+					{pinnedPosts.map((p) => (
+						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+							<PostPreview post={p} />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+
+	<section class="mt-16">
+		<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
+			<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
+				<a href="/posts/" class="hover:text-accent transition-colors">Recent Posts</a>
+			</h2>
+			<a href="/posts/" class="font-mono text-xs uppercase tracking-wider text-muted hover:text-accent-2 transition-colors">
+				View all ({allPostsByDate.length}) &rarr;
+			</a>
+		</div>
+		<ul class="space-y-5" role="list">
+			{
+				latestPosts.map((p) => (
+					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	{
+		latestNotes.length > 0 && (
+			<section class="mt-16">
+				<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
+					<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
+						<a href="/notes/" class="hover:text-accent transition-colors">Notes &amp; Field Logs</a>
+					</h2>
+					<span class="font-mono text-xs uppercase tracking-wider text-muted">Shortform</span>
+				</div>
+				<ul class="space-y-6" role="list">
+					{latestNotes.map((note) => (
+						<li>
+							<Note note={note} as="h3" isPreview />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+</PageLayout>

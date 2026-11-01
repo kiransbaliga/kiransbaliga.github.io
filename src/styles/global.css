@@ -1,0 +1,190 @@
+@import "tailwindcss";
+/* tailwind to ignore satori generated og-image */
+@source not "../pages/og-image";
+/* config for tailwindcss-typography plugin */
+@config "../../tailwind.config.ts";
+
+/* use a selector-based strategy for dark mode */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* register custom colour properties */
+@property --color-global-bg {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #f6f6f3;
+}
+@property --color-global-text {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #151514;
+}
+@property --color-muted {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #55544f;
+}
+@property --color-link {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #d64c1b;
+}
+@property --color-accent {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #d64c1b;
+}
+@property --color-accent-2 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #151514;
+}
+@property --color-quote {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #d64c1b;
+}
+@property --color-line {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: rgba(21, 21, 20, 0.15);
+}
+@property --color-card {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #ffffff;
+}
+
+@theme {
+	--font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "DM Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+	--font-display: "Barlow Condensed", sans-serif;
+	--font-code: "JetBrains Mono", ui-monospace, monospace;
+
+	--color-global-bg: #f6f6f3;
+	--color-global-text: #151514;
+	--color-muted: #55544f;
+	--color-link: #d64c1b;
+	--color-accent: #d64c1b;
+	--color-accent-2: #151514;
+	--color-quote: #d64c1b;
+	--color-line: rgba(21, 21, 20, 0.15);
+	--color-card: #ffffff;
+}
+
+@layer base {
+	html {
+		color-scheme: light dark;
+		accent-color: var(--color-accent);
+		scrollbar-gutter: stable;
+
+		&[data-theme="light"] {
+			color-scheme: light;
+			--color-global-bg: #f6f6f3;
+			--color-global-text: #151514;
+			--color-muted: #55544f;
+			--color-link: #d64c1b;
+			--color-accent: #d64c1b;
+			--color-accent-2: #151514;
+			--color-quote: #d64c1b;
+			--color-line: rgba(21, 21, 20, 0.15);
+			--color-card: #ffffff;
+		}
+
+		&[data-theme="dark"] {
+			color-scheme: dark;
+			--color-global-bg: #151514;
+			--color-global-text: #f5f4f1;
+			--color-muted: #999894;
+			--color-link: #ff6534;
+			--color-accent: #ff6534;
+			--color-accent-2: #ffffff;
+			--color-quote: #ff6534;
+			--color-line: rgba(245, 244, 241, 0.15);
+			--color-card: #1c1c1a;
+		}
+
+		--color-mode-transition-duration: 300ms;
+		--color-mode-transition-easing: ease-in-out;
+
+		transition:
+			--color-global-bg var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-global-text var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-muted var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-link var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-accent var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-accent-2 var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-quote var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-line var(--color-mode-transition-duration) var(--color-mode-transition-easing),
+			--color-card var(--color-mode-transition-duration) var(--color-mode-transition-easing);
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		pointer-events: none;
+		opacity: 0.035;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+	}
+
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	@view-transition {
+		navigation: auto;
+	}
+
+	/* Astro image responsive styles */
+	:where([data-astro-image]) {
+		object-fit: var(--fit);
+		object-position: var(--pos);
+	}
+	[data-astro-image="full-width"] {
+		width: 100%;
+	}
+	[data-astro-image="constrained"] {
+		max-width: 100%;
+	}
+}
+
+@layer components {
+	@import "./components/admonition.css";
+	@import "./components/github-card.css";
+
+	.cactus-link {
+		@apply hover:text-accent decoration-accent/40 hover:decoration-accent underline underline-offset-4 hover:decoration-2 transition-colors duration-200;
+	}
+
+	.title {
+		@apply text-accent-2 text-2xl font-semibold tracking-tight;
+	}
+
+	.display-heading {
+		font-family: var(--font-display);
+		@apply uppercase font-bold tracking-tight text-accent-2;
+	}
+
+	.eyebrow {
+		font-family: var(--font-mono);
+		@apply text-[11px] font-medium tracking-[0.08em] uppercase text-muted;
+	}
+
+	.pill {
+		font-family: var(--font-mono);
+		@apply inline-flex items-center gap-1 rounded-full border border-line px-2.5 py-0.5 text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2;
+	}
+}
+
+@utility prose {
+	--tw-prose-body: var(--color-global-text);
+	--tw-prose-bold: var(--color-global-text);
+	--tw-prose-bullets: var(--color-muted);
+	--tw-prose-code: var(--color-global-text);
+	--tw-prose-headings: var(--color-accent-2);
+	--tw-prose-hr: var(--color-line);
+	--tw-prose-links: var(--color-link);
+	--tw-prose-quotes: var(--color-quote);
+	--tw-prose-th-borders: var(--color-line);
+}

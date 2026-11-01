@@ -1,0 +1,82 @@
+---
+import { siteConfig } from "@/site.config";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-line pt-12 pb-6">
+	<div class="mb-8 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+		<div>
+			<p class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2 sm:text-3xl">
+				Let's build <span class="text-accent">something useful.</span>
+			</p>
+			<p class="text-muted mt-2 text-sm max-w-md">
+				Personal writing on software architecture, AI agent systems, product engineering, and life.
+			</p>
+		</div>
+		<div class="flex items-center gap-3">
+			<a
+				class="pill-btn inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2"
+				href="https://baliga.dev"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				Portfolio ↗
+			</a>
+			<a
+				class="pill-btn inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2"
+				href="mailto:kiransbaliga@gmail.com"
+			>
+				Email ↗
+			</a>
+		</div>
+	</div>
+
+	<div class="flex flex-col items-center justify-between gap-4 border-t border-line/60 pt-6 font-mono text-[11px] uppercase tracking-wider text-muted sm:flex-row">
+		<div>
+			&copy; {siteConfig.author} {year}. All rights reserved.
+		</div>
+
+		<nav aria-label="Social and feed links" class="flex flex-wrap items-center gap-4">
+			<a
+				class="hover:text-accent-2 transition-colors"
+				href="https://baliga.dev"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				Portfolio
+			</a>
+			<span class="text-line">/</span>
+			<a
+				class="hover:text-accent-2 transition-colors"
+				href="https://github.com/kiransbaliga"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				GitHub
+			</a>
+			<span class="text-line">/</span>
+			<a
+				class="hover:text-accent-2 transition-colors"
+				href="https://linkedin.com/in/kiransbaliga"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				LinkedIn
+			</a>
+			<span class="text-line">/</span>
+			<a
+				class="hover:text-accent-2 transition-colors"
+				href="https://twitter.com/kiransbaliga"
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				Twitter/X
+			</a>
+			<span class="text-line">/</span>
+			<a class="hover:text-accent-2 transition-colors" href="/rss.xml" target="_blank">
+				RSS
+			</a>
+		</nav>
+	</div>
+</footer>

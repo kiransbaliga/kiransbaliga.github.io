@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+interface Props {
+	content: CollectionEntry<"post">;
+	readingTime: string;
+}
+
+const {
+	content: { data },
+	readingTime,
+} = Astro.props;
+
+const dateTimeOptions: Intl.DateTimeFormatOptions = {
+	month: "short",
+	day: "numeric",
+	year: "numeric",
+};
+---
+
+{
+	data.coverImage && (
+		<div class="mb-8 aspect-video overflow-hidden rounded-xl border border-line bg-card">
+			<Image
+				alt={data.coverImage.alt}
+				layout="constrained"
+				width={748}
+				height={420}
+				priority
+				class="h-full w-full object-cover"
+				src={data.coverImage.src}
+			/>
+		</div>
+	)
+}
+
+{data.draft ? <span class="border-red-500/30 text-red-500 mb-2 inline-block rounded-full border px-2.5 py-0.5 font-mono text-xs uppercase">Draft</span> : null}
+
+<h1 class="text-accent-2 mb-4 font-sans text-3xl font-bold tracking-tight sm:text-5xl leading-[1.08]">
+	{data.title}
+</h1>
+
+<div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-wider text-muted">
+	<p>
+		<FormattedDate date={data.publishDate} dateTimeOptions={dateTimeOptions} />
+		<span class="mx-1.5 text-line">/</span>
+		<span>{readingTime}</span>
+	</p>
+	{
+		data.updatedDate && (
+			<span class="rounded-full border border-line px-2 py-0.5">
+				Updated:
+				<FormattedDate class="ms-1" date={data.updatedDate} dateTimeOptions={dateTimeOptions} />
+			</span>
+		)
+	}
+</div>
+
+{
+	!!data.tags?.length && (
+		<div class="mt-4 flex flex-wrap items-center gap-1.5">
+			{data.tags.map((tag) => (
+				<a class="pill" data-pagefind-filter={`tag:${tag}`} href={`/tags/${tag}/`}>
+					<span aria-hidden="true">#</span>
+					<span class="sr-only">View more blogs with the tag&nbsp;</span>
+					{tag}
+				</a>
+			))}
+		</div>
+	)
+}
