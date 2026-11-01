@@ -1,83 +1,38 @@
 ---
-const initialTime = new Intl.DateTimeFormat("en-US", {
-	hour: "numeric",
-	minute: "2-digit",
-	hour12: true,
-	timeZone: "Asia/Kolkata",
-})
-	.format(new Date())
-	.toLowerCase();
 ---
 
-<footer class="border-line/60 mt-auto border-t pt-5 pb-3 sm:pt-6 sm:pb-4">
-	<div
-		class="text-muted flex flex-col justify-between gap-3 font-mono text-xs sm:flex-row sm:items-center"
-	>
-		<div class="flex items-center gap-1.5">
-			<span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/80"></span>
-			<span
-				><span id="kerala-time" class="text-global-text/80 font-medium tabular-nums"
-					>{initialTime}</span
-				> in Kerala, India</span
-			>
+<footer class="mt-16 pt-10 pb-12">
+	<div class="border-t border-[#deded8] pt-6 dark:border-neutral-800">
+		<div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+			<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+				Kerala, India
+			</span>
+			<div class="flex items-center gap-5 font-sans text-sm text-[#262625] dark:text-neutral-200">
+				<a
+					class="hover:text-accent transition-colors duration-200"
+					href="https://github.com/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub ↗
+				</a>
+				<a
+					class="hover:text-accent transition-colors duration-200"
+					href="https://linkedin.com/in/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					LinkedIn ↗
+				</a>
+				<a
+					class="hover:text-accent transition-colors duration-200"
+					href="https://twitter.com/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Twitter ↗
+				</a>
+			</div>
 		</div>
-
-		<nav
-			aria-label="Quick links"
-			class="flex flex-wrap items-center gap-x-3.5 gap-y-1 text-[11px] tracking-wider uppercase sm:gap-x-4"
-		>
-			<a
-				class="hover:text-accent transition-colors"
-				href="/resume.pdf"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				R&eacute;sum&eacute; &nearr;
-			</a>
-			<span class="text-line select-none" aria-hidden="true">/</span>
-			<a
-				class="hover:text-accent transition-colors"
-				href="https://github.com/kiransbaliga"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				GitHub &nearr;
-			</a>
-			<span class="text-line select-none" aria-hidden="true">/</span>
-			<a
-				class="hover:text-accent transition-colors"
-				href="https://linkedin.com/in/kiransbaliga"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				LinkedIn &nearr;
-			</a>
-			<span class="text-line select-none" aria-hidden="true">/</span>
-			<a class="hover:text-accent transition-colors" href="mailto:kiransbaliga@gmail.com">
-				Email &nearr;
-			</a>
-		</nav>
 	</div>
 </footer>
-
-<script>
-	function updateKeralaTime() {
-		const el = document.getElementById("kerala-time");
-		if (!el) return;
-		try {
-			const formatted = new Intl.DateTimeFormat("en-US", {
-				hour: "numeric",
-				minute: "2-digit",
-				hour12: true,
-				timeZone: "Asia/Kolkata",
-			})
-				.format(new Date())
-				.toLowerCase();
-			el.textContent = formatted;
-		} catch {
-			// fallback silently
-		}
-	}
-	updateKeralaTime();
-	setInterval(updateKeralaTime, 10000);
-</script>

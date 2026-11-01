@@ -1,141 +1,355 @@
 ---
-import { type CollectionEntry } from "astro:content";
-import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
-import { collectionDateSort } from "@/utils/date";
+import { getAllPosts } from "@/data/post";
 
-const MAX_POSTS = 4;
 const allPosts = await getAllPosts();
-const latestPosts = allPosts
+// Filter out draft posts and sort descending by date
+const blogPosts = allPosts
 	.filter((p) => !p.data.draft)
-	.sort(collectionDateSort)
-	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
+	.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 ---
 
-<PageLayout meta={{ title: "Home" }}>
-	<!-- Header / Identity -->
-	<header class="mb-5 sm:mb-6">
-		<div class="flex flex-wrap items-baseline justify-between gap-3">
-			<div>
-				<h1 class="text-accent-2 font-sans text-2xl font-semibold tracking-tight sm:text-3xl">
-					Kiran S Baliga
-				</h1>
-				<p class="text-muted mt-1 font-mono text-xs tracking-wider uppercase">
-					Backend &amp; AI Engineer
-				</p>
-			</div>
-			<a
-				href="mailto:kiransbaliga@gmail.com"
-				class="group border-line text-muted hover:border-accent hover:text-accent inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs tracking-wider uppercase transition-all duration-200"
-			>
-				<span class="group-hover:bg-accent h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"
-				></span>
-				<span>Available immediately</span>
-				<span class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-					>&nearr;</span
-				>
-			</a>
-		</div>
-	</header>
+<PageLayout meta={{ title: "Kiran S Baliga — Backend & AI Engineer" }}>
+	{/* A Personal Introduction */}
+	<section class="pt-6 pb-14 sm:pt-8 sm:pb-16">
+		<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
+			Backend & AI Engineer
+		</span>
 
-	<!-- Bio -->
-	<section
-		class="text-global-text/90 mb-7 space-y-3 text-[15px] leading-relaxed sm:mb-8 sm:space-y-3.5 sm:text-base"
-	>
-		<p>
-			Hi, I’m Kiran. I build systems that power products at scale. Usually, that means making
-			complicated things work quietly in the background.
-		</p>
-		<p>
-			Previously built clinical LLM reporting pipelines at <a
-				href="/posts/ultrahuman-systems/"
-				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
-				>Ultrahuman &nearr;</a
-			>, multi-tenant ad data infrastructure at <a
-				href="/posts/pencil-infrastructure/"
-				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
-				>Pencil &nearr;</a
-			>, and agent toolkits / MCP servers at <a
-				href="/posts/siren-mcp-tooling/"
-				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
-				>Siren &nearr;</a
-			>. My work sits somewhere between distributed systems, LLM orchestration, and developer
-			tooling.
-		</p>
-		<p>
-			Outside that, I make small tools for the way I live&mdash;like <a
-				href="https://github.com/kiransbaliga"
+		<h1 class="font-sans text-[34px] leading-[1.3] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+			Hi, I’m Kiran.
+		</h1>
+
+		<div class="space-y-4 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl mb-8">
+			<p>
+				I build systems that power products at scale. Usually, that means making complicated things work quietly in the background.
+			</p>
+			<p>
+				I’ve worked on Ultrahuman’s 5M+ user platform, B2B AI ad infrastructure at Pencil, and developer SDKs at KeyValue. My work sits somewhere between distributed systems, LLM orchestration, MCP servers and developer tooling.
+			</p>
+			<p>
+				Outside that, I make small tools for the way I live, and write about the questions they leave me with.
+			</p>
+		</div>
+
+		{/* Availability & Links */}
+		<div class="flex flex-wrap items-center gap-x-6 gap-y-4 mb-6">
+			{/* Circled invitation with authentic ink loop */}
+			<div class="relative inline-flex items-center px-4 py-2 select-none">
+				<span class="font-sans text-base text-[#262625] dark:text-[#f5f4f1] relative z-10">
+					Available immediately
+				</span>
+				<svg
+					class="pointer-events-none absolute -inset-x-2 -inset-y-1.5 w-[calc(100%+16px)] h-[calc(100%+12px)] overflow-visible"
+					viewBox="0 0 209 48"
+					fill="none"
+					preserveAspectRatio="none"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<path
+						d="M162.029 2.92454C84.1186 -3.19881 1.99694 4.14921 0.944102 26.1933C-3.26726 49.462 138.866 53.1361 205.195 37.2153C220.988 16.3959 171.504 -3.19881 103.07 2.92454"
+						stroke-width="1.7"
+						stroke="#EE2796"
+					/>
+					<path
+						d="M20 38C83.6775 49 166.414 41 186.594 25"
+						stroke-width="1.3"
+						stroke="#EE2796"
+					/>
+				</svg>
+			</div>
+
+			<a
+				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				href="/work-together/"
+			>
+				Work together &rarr;
+			</a>
+
+			<a
+				class="font-sans text-sm text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				href="/resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
-				>Valkyrie &nearr;</a
-			> and <a
-				href="https://github.com/kiransbaliga"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
-				>Lyrix &nearr;</a
-			>&mdash;and write about the questions they leave me with.
+			>
+				R&eacute;sum&eacute; &nearr;
+			</a>
+
+			<span class="font-handwriting text-2xl text-[#797974] dark:text-neutral-400 rotate-[-4deg] select-none">
+				for the right next thing
+			</span>
+		</div>
+
+		<p class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+			Based in Kerala, India &middot; Open to full-time, remote &amp; relocation
 		</p>
 	</section>
 
-	<!-- Writing & Case Studies Section -->
-	<section class="border-line mb-6 border-y py-4 sm:mb-8 sm:py-5">
-		<div class="mb-4 flex items-baseline justify-between">
-			<h2 class="text-accent-2 font-sans text-base font-medium tracking-tight sm:text-lg">
+	{/* Selected Professional Work */}
+	<section id="work" class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
+		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-1">
+			Selected work
+		</h2>
+		<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mb-8">
+			A few systems I&rsquo;ve helped make more useful, reliable and easier to build on.
+		</p>
+
+		<div class="space-y-10">
+			{/* Case Study 1: Ultrahuman */}
+			<article class="space-y-2">
+				<div class="flex items-baseline justify-between gap-4">
+					<h3 class="font-sans text-[17px] font-normal">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							href="/work-together/#ultrahuman"
+						>
+							Ultrahuman &rarr;
+						</a>
+					</h3>
+					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+						Mar&ndash;Jun 2026
+					</span>
+				</div>
+				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+					Backend Engineer
+				</p>
+				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+					Clinical reporting across 10+ lab stations: asynchronous ingestion and normalization, LLM analysis, clinician review and targeted regeneration of 15-page health plans.
+				</p>
+				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+					Also: CJK localization quality 86% &rarr; 91%, with ~67% lower translation token costs.
+				</p>
+			</article>
+
+			{/* Case Study 2: Pencil */}
+			<article class="space-y-2">
+				<div class="flex items-baseline justify-between gap-4">
+					<h3 class="font-sans text-[17px] font-normal">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							href="/work/pencil/"
+						>
+							Pencil &rarr;
+						</a>
+					</h3>
+					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+						Sep 2023&ndash;Feb 2026
+					</span>
+				</div>
+				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+					Client engagement &middot; via KeyValue Software Systems
+				</p>
+				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+					Reworking the data layer and PDF pipeline behind a multi-tenant AI ad platform. Tenant boundaries belong in the infrastructure.
+				</p>
+				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+					30% faster API responses &middot; 65% less PDF rendering processing time
+				</p>
+			</article>
+
+			{/* Case Study 3: Siren */}
+			<article class="space-y-2">
+				<div class="flex items-baseline justify-between gap-4">
+					<h3 class="font-sans text-[17px] font-normal">
+						<a
+							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							href="/work-together/#siren"
+						>
+							Siren &rarr;
+						</a>
+					</h3>
+					<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 tabular-nums">
+						Sep 2023&ndash;Feb 2026
+					</span>
+				</div>
+				<p class="font-sans text-[13px] text-[#797974] dark:text-neutral-400">
+					Client engagement &middot; via KeyValue Software Systems
+				</p>
+				<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+					Shared tool schemas, TypeScript and Python agent toolkits, and a standalone MCP server for AI-native communications.
+				</p>
+				<p class="font-sans text-sm text-[#262625] dark:text-[#f5f4f1]">
+					~75% less setup effort with zero-install MCP vs. manual SDK wiring
+				</p>
+			</article>
+		</div>
+	</section>
+
+	{/* Things I Make */}
+	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
+		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+			Things I make
+		</h2>
+
+		<div class="space-y-6">
+			<div>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="https://github.com/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Valkyrie &nearr;
+				</a>
+				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
+					A native macOS wallpaper companion. Folder-based gallery, Metal rendering.
+				</p>
+			</div>
+
+			<div>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="https://github.com/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Lyrix &nearr;
+				</a>
+				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
+					Floating lyrics for macOS, driven by Now Playing. No audio recording.
+				</p>
+			</div>
+
+			<div>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="/posts/poor-decisions/"
+				>
+					Poor Decisions &nearr;
+				</a>
+				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
+					Five-second expense logging with iOS Shortcuts and Google Sheets.
+				</p>
+			</div>
+
+			<div>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="/posts/readfaster/"
+				>
+					Read Faster &nearr;
+				</a>
+				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
+					An RSVP speed reader built around the optimal recognition point.
+				</p>
+			</div>
+
+			<div>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="https://github.com/kiransbaliga"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Multi-Task Federated Learning &nearr;
+				</a>
+				<p class="font-sans text-sm text-[#797974] dark:text-neutral-400 mt-1">
+					Collaborative multi-task training; raw data stays local.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	{/* Writing */}
+	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
+		<div class="flex items-baseline justify-between mb-8">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
 				Writing
 			</h2>
 			<a
+				class="font-sans text-sm text-[#262625] underline underline-offset-4 hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
 				href="/posts/"
-				class="text-muted decoration-line hover:decoration-accent hover:text-accent font-sans text-xs underline underline-offset-4 transition-colors duration-200 sm:text-sm"
 			>
 				All posts &nearr;
 			</a>
 		</div>
 
-		<ul class="space-y-3 sm:space-y-3.5" role="list">
-			{
-				latestPosts.map((post, index) => {
-					const year = post.data.publishDate.getFullYear();
-					const prevYear = index > 0 ? latestPosts[index - 1].data.publishDate.getFullYear() : null;
-					const showYear = year !== prevYear;
-					const isCaseStudy = post.data.tags?.includes("case-study") || Boolean(post.data.pinned);
-					const formattedDate = new Intl.DateTimeFormat("en-GB", {
-						day: "numeric",
-						month: "short",
-					}).format(post.data.publishDate);
-					const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
-					const isExternal = Boolean(post.data.externalUrl);
+		<div class="grid grid-cols-[50px_1fr] sm:grid-cols-[64px_1fr] gap-4 items-start">
+			<span class="font-mono text-[13px] text-[#797974] dark:text-neutral-400 select-none pt-0.5">
+				2026
+			</span>
 
-					return (
-						<li class="group grid grid-cols-[48px_1fr_auto] items-baseline gap-3 sm:grid-cols-[60px_1fr_auto] sm:gap-4">
-							<span class="text-muted font-mono text-xs select-none sm:text-sm">
-								{showYear ? year : ""}
-							</span>
+			<ul class="space-y-4" role="list">
+				{
+					blogPosts.slice(0, 4).map((post) => {
+						const dateFormatted = new Intl.DateTimeFormat("en-GB", {
+							day: "numeric",
+							month: "short",
+						}).format(post.data.publishDate);
 
-							<div class="flex min-w-0 items-baseline gap-2">
+						const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
+
+						return (
+							<li class="flex items-baseline justify-between gap-6 group">
 								<a
+									class="font-sans text-[16px] text-[#262625] underline underline-offset-4 hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
 									href={postUrl}
-									target={isExternal ? "_blank" : undefined}
-									rel={isExternal ? "noopener noreferrer" : undefined}
-									class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent truncate font-sans text-[15px] underline underline-offset-4 transition-colors duration-200 sm:text-base"
+									target={post.data.externalUrl ? "_blank" : undefined}
+									rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
 								>
 									{post.data.title}
 								</a>
-								{isCaseStudy && (
-									<span class="bg-accent/10 text-accent inline-flex shrink-0 items-center rounded-full px-2 py-0.5 font-mono text-[10px] font-medium tracking-wider uppercase">
-										Case Study
-									</span>
-								)}
-							</div>
+								<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 whitespace-nowrap tabular-nums">
+									{dateFormatted}
+								</span>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</div>
+	</section>
 
-							<span class="text-muted text-right font-mono text-xs whitespace-nowrap tabular-nums sm:text-sm">
-								{formattedDate}
-							</span>
-						</li>
-					);
-				})
-			}
-		</ul>
+	{/* A Little More About Me */}
+	<section class="border-t border-[#deded8] pt-10 pb-6 dark:border-neutral-800">
+		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-5">
+			A little more about me
+		</h2>
+
+		<div class="space-y-4 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl mb-8">
+			<p>
+				My path has taken me from Flutter apps at airPMO and a mental-health platform at TGH Tech to backend and AI infrastructure at KeyValue and Ultrahuman. I studied Computer Science &amp; Engineering at APJ Abdul Kalam Technological University.
+			</p>
+			<p>
+				I’m looking for my next full-time backend / AI engineering role. I also work with founders and agencies on focused consulting and freelance projects &mdash; from an early scope to a system people can actually use.
+			</p>
+		</div>
+
+		<div class="relative flex flex-wrap items-center gap-6 mb-4">
+			<a
+				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				href="/work-together/"
+			>
+				More about me &amp; working together &rarr;
+			</a>
+
+			<a
+				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+				href="mailto:kiransbaliga@gmail.com"
+			>
+				kiransbaliga@gmail.com &nearr;
+			</a>
+
+			{/* Handwritten marginalia with authentic hand-drawn arrow */}
+			<div class="hidden md:flex items-center gap-3 absolute -right-4 -top-8 select-none">
+				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-300 leading-tight rotate-[-3deg]">
+					let’s build<br />something useful
+				</span>
+				<svg
+					class="w-[72px] h-[36px] text-[#262625] dark:text-neutral-300"
+					viewBox="0 0 123 55"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<path
+						d="M121.625 0.099375C127.884 40.8034 64.039 43.0647 1.44597 48.718M21.4757 54.3714L1.44597 48.718L16.4683 37.4114"
+						stroke-width="1.8"
+						stroke="currentColor"
+					/>
+				</svg>
+			</div>
+		</div>
 	</section>
 </PageLayout>

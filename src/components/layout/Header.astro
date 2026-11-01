@@ -1,91 +1,85 @@
 ---
 import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
-import { menuLinks, siteConfig } from "@/site.config";
 
 const isHome = Astro.url.pathname === "/";
 ---
 
 <header
-	class="group border-line mb-8 flex items-center justify-between border-b pt-1 pb-4 sm:mb-10"
+	class="mb-10 flex items-center justify-between pt-8 pb-4 text-[#262625] dark:text-[#f5f4f1]"
 	id="main-header"
 >
-	<div class="flex items-center gap-6">
+	<div class="flex items-center gap-8">
 		<a
 			aria-current={isHome ? "page" : false}
-			class="text-global-text inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-75"
+			class="font-sans text-[15px] font-semibold tracking-tight transition-opacity hover:opacity-75"
 			href="/"
 		>
-			<span class="bg-accent h-2 w-2 rounded-full"></span>
-			<span>{isHome ? "baliga.dev" : siteConfig.author}</span>
+			Kiran S Baliga
 		</a>
 
 		<nav
 			aria-label="Main menu"
-			class="bg-global-bg divide-line border-line absolute -inset-x-4 top-14 z-50 hidden flex-col divide-y border-b px-6 py-4 font-mono text-xs tracking-wider uppercase group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-row sm:items-center sm:gap-5 sm:divide-y-0 sm:border-0 sm:bg-transparent sm:p-0"
+			class="hidden items-center gap-6 font-sans text-sm text-[#262625] sm:flex dark:text-[#f5f4f1]"
 			id="navigation-menu"
 		>
-			{
-				menuLinks.map((link) => {
-					const isCurrent =
-						Astro.url.pathname === link.path ||
-						(link.path !== "/" && Astro.url.pathname.startsWith(link.path));
-					return (
-						<a
-							aria-current={isCurrent ? "page" : false}
-							class={`py-3 transition-colors duration-200 sm:py-0 ${
-								isCurrent ? "text-accent font-semibold" : "text-muted hover:text-global-text"
-							}`}
-							href={link.path}
-							target={link.external ? "_blank" : undefined}
-							rel={link.external ? "noreferrer noopener" : undefined}
-						>
-							{link.title}
-						</a>
-					);
-				})
-			}
+			<a
+				class="hover:text-accent transition-colors duration-200"
+				href={isHome ? "#work" : "/#work"}
+			>
+				Work
+			</a>
+			<a
+				class="hover:text-accent transition-colors duration-200"
+				href="/posts/"
+			>
+				Writing ↗
+			</a>
+			<a
+				class="hover:text-accent transition-colors duration-200"
+				href="/work-together/"
+			>
+				Work together
+			</a>
 		</nav>
 	</div>
 
-	<div class="flex items-center gap-1 sm:gap-2">
+	<div class="flex items-center gap-3">
 		<Search />
 		<ThemeToggle />
 		<mobile-button class="sm:hidden">
 			<button
 				aria-expanded="false"
 				aria-haspopup="menu"
-				class="border-line text-muted hover:border-accent-2 hover:text-accent-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border transition-all duration-200"
+				class="border-line text-muted hover:border-accent hover:text-accent flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition-all duration-200"
 				id="toggle-navigation-menu"
 				type="button"
 			>
 				<span class="sr-only">Open main menu</span>
 				<div class="flex flex-col gap-1">
-					<span class="h-0.5 w-4 bg-current transition-transform"></span>
-					<span class="h-0.5 w-4 bg-current transition-transform"></span>
+					<span class="h-0.5 w-3.5 bg-current transition-transform"></span>
+					<span class="h-0.5 w-3.5 bg-current transition-transform"></span>
 				</div>
 			</button>
 		</mobile-button>
 	</div>
 </header>
 
+<div
+	class="bg-global-bg/95 border-line mb-6 hidden flex-col gap-3 border-b pb-4 font-sans text-sm sm:hidden"
+	id="mobile-menu"
+>
+	<a class="py-1 hover:text-accent" href={isHome ? "#work" : "/#work"}>Work</a>
+	<a class="py-1 hover:text-accent" href="/posts/">Writing ↗</a>
+	<a class="py-1 hover:text-accent" href="/work-together/">Work together</a>
+</div>
+
 <script>
-	import { toggleClass } from "@/utils/domElement";
-
-	class MobileNavBtn extends HTMLElement {
-		#menuOpen: boolean = false;
-
-		connectedCallback() {
-			const headerEl = document.getElementById("main-header")!;
-			const mobileButtonEl = this.querySelector<HTMLButtonElement>("button");
-
-			mobileButtonEl?.addEventListener("click", () => {
-				if (headerEl) toggleClass(headerEl, "menu-open");
-				this.#menuOpen = !this.#menuOpen;
-				mobileButtonEl.setAttribute("aria-expanded", this.#menuOpen.toString());
-			});
-		}
-	}
-
-	customElements.define("mobile-button", MobileNavBtn);
+	const btn = document.getElementById("toggle-navigation-menu");
+	const menu = document.getElementById("mobile-menu");
+	btn?.addEventListener("click", () => {
+		menu?.classList.toggle("hidden");
+		const expanded = btn.getAttribute("aria-expanded") === "true";
+		btn.setAttribute("aria-expanded", (!expanded).toString());
+	});
 </script>

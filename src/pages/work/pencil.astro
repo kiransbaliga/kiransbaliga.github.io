@@ -1,0 +1,212 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Pencil: AI Ad Infrastructure & Data Layer — Kiran S Baliga" }}>
+	<article class="pt-6 pb-16 sm:pt-8 sm:pb-20">
+		<a
+			class="inline-flex items-center gap-1 font-sans text-sm text-[#797974] hover:text-accent transition-colors duration-200 mb-8 dark:text-neutral-400"
+			href="/#work"
+		>
+			&larr; Back to selected work
+		</a>
+
+		{/* Article Header */}
+		<header class="mb-10">
+			<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
+				Pencil &middot; Engineering case study
+			</span>
+
+			<h1 class="font-sans text-[34px] leading-[1.3] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+				A more dependable foundation for AI-powered advertising.
+			</h1>
+
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl">
+				At Pencil, I worked on the infrastructure behind the creative workflow: how tenant data is accessed, how permissions compose, and how an ad report becomes a PDF.
+			</p>
+
+			{/* Role & Context Box */}
+			<div class="border-y border-[#deded8] my-8 py-5 dark:border-neutral-800">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+					<div>
+						<span class="block font-sans text-sm font-medium text-[#262625] dark:text-[#f5f4f1]">
+							Associate Software Engineer
+						</span>
+						<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+							KeyValue Software Systems &middot; Client engagement: Pencil
+						</span>
+					</div>
+					<div class="sm:text-right">
+						<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 tabular-nums">
+							Sep 2023&ndash;Feb 2026
+						</span>
+						<a
+							class="font-sans text-sm text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							href="https://trypencil.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							trypencil.com &nearr;
+						</a>
+					</div>
+				</div>
+				<p class="font-mono text-xs text-[#797974] dark:text-neutral-400">
+					Node.js &middot; Python &middot; Google Cloud SQL &middot; Custom ORM &middot; Puppeteer &middot; Docker
+				</p>
+			</div>
+		</header>
+
+		{/* Context */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				The context
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Pencil is a B2B AI ad platform for agencies working across Google, Meta, TikTok and LinkedIn. Underneath those workflows, data access and document exports had to remain predictable as tenant-specific requirements grew.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				The work wasn’t a wholesale rewrite. It was a series of changes to make the existing platform faster and safer to evolve: fewer expensive joins, consistent tenant boundaries, flexible custom fields and a rendering pipeline we could control.
+			</p>
+		</section>
+
+		{/* Tenant Boundaries */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				Put tenant boundaries in the data layer
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				I built a custom ORM / data-access layer across Node.js and Python, with automatic tenant scoping and soft-delete enforcement. These rules became infrastructure, rather than conditions every caller had to remember.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				We reduced costly joins around real read workloads. Metadata-driven custom fields allowed the model to vary by tenant, while fine-grained RBAC supported composable AND / OR permissions instead of a growing set of one-off checks.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Cloud SQL migrations were rolled out incrementally. I coordinated the migration and downtime with the lead, using tenant-level feature flags to control the transition rather than switching every customer at once.
+			</p>
+
+			<div class="border-l-2 border-[#262625] dark:border-[#f5f4f1] pl-5 py-2 my-6">
+				<p class="font-sans text-[17px] leading-[1.65] text-[#262625] dark:text-[#f5f4f1]">
+					The result: a 30% improvement in API response times. The lesson was to optimize for the queries the product actually makes, not an idealized model.
+				</p>
+			</div>
+		</section>
+
+		{/* Document Rendering */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				Move document rendering out of the browser
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Exporting an ad report was originally tied to the client session: React rendered the page, a client-side library walked the DOM, and the browser generated a PDF on the fly. That worked for a single user looking at a simple table. It didn’t work for high-resolution proofs, large datasets, or scheduled batch exports.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				I rebuilt the export pipeline as a standalone service running headless Puppeteer in a containerized worker pool. Templates were isolated from the web app, and assets were pre-warmed so exports could scale independently of the interactive UI.
+			</p>
+
+			{/* Pipeline Comparison Card */}
+			<div class="relative bg-[#f8f7f4] dark:bg-neutral-900 border border-[#deded8] dark:border-neutral-800 rounded p-6 sm:p-7 my-6">
+				<div class="space-y-5">
+					<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+						<span class="font-mono text-xs text-[#797974] dark:text-neutral-400 w-16 uppercase">BEFORE</span>
+						<span class="font-sans text-[15px] text-[#444441] dark:text-neutral-300">
+							Browser UI &rarr; react-to-pdf &rarr; Download
+						</span>
+					</div>
+					<div class="border-t border-[#deded8] dark:border-neutral-800"></div>
+					<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+						<span class="font-mono text-xs text-[#797974] dark:text-neutral-400 w-16 uppercase">AFTER</span>
+						<div>
+							<span class="font-sans text-[15px] font-medium text-[#262625] dark:text-[#f5f4f1] block">
+								Export request &rarr; Sandboxed Puppeteer worker &rarr; PDF
+							</span>
+							<span class="font-sans text-xs text-[#797974] dark:text-neutral-400">
+								Preloaded fonts + cache + print CSS
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="hidden sm:block absolute -right-3 -top-6 select-none">
+					<span class="font-handwriting text-2xl text-[#EE2796] rotate-[-4deg] block">
+						control the<br />whole render
+					</span>
+				</div>
+			</div>
+
+			<p class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+				Different boundaries, different measurements: rendering time is only one part of the complete export journey.
+			</p>
+		</section>
+
+		{/* What Changed / Metrics */}
+		<section class="space-y-6 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
+				What changed
+			</h2>
+
+			<div class="space-y-5">
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						65%
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						Reduction in PDF rendering processing time.
+					</p>
+				</div>
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						~1.5 sec
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						Click-to-PDF download time.
+					</p>
+				</div>
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						30&ndash;40%
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						Reduction in end-to-end export pipeline latency &mdash; a separate measure from rendering processing time.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		{/* What I'd carry into the next system */}
+		<section class="space-y-4 mb-14">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				What I’d carry into the next system
+			</h2>
+			<ul class="space-y-3 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 list-disc pl-5">
+				<li>
+					<strong class="text-[#262625] dark:text-[#f5f4f1] font-medium">Design around real reads.</strong> A cleaner abstraction is only useful if it serves the workloads people depend on.
+				</li>
+				<li>
+					<strong class="text-[#262625] dark:text-[#f5f4f1] font-medium">Make the safe path the default.</strong> Tenant scoping and deletion rules should be embedded in the infrastructure, not scattered across application code.
+				</li>
+				<li>
+					<strong class="text-[#262625] dark:text-[#f5f4f1] font-medium">Own the rendering environment.</strong> A document is an output with its own requirements; it shouldn’t be an accidental screenshot of the UI.
+				</li>
+				<li>
+					<strong class="text-[#262625] dark:text-[#f5f4f1] font-medium">Modernize incrementally.</strong> Migrations and tenant-level flags let us improve the system without treating every change as a big-bang replacement.
+				</li>
+			</ul>
+		</section>
+
+		{/* Next Case Study */}
+		<div class="border-t border-[#deded8] pt-8 dark:border-neutral-800">
+			<div class="flex items-baseline justify-between mb-2">
+				<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">Next case study</span>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="/#work"
+				>
+					Siren &mdash; agent tools &amp; MCP &rarr;
+				</a>
+			</div>
+			<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300 mt-4">
+				Working through a similar engineering problem? <a class="underline hover:text-accent" href="mailto:kiransbaliga@gmail.com">Let’s talk about it.</a>
+			</p>
+		</div>
+	</article>
+</PageLayout>
