@@ -1,0 +1,55 @@
+.scrollable {
+  width: 100%;
+  flex: 1;
+  color: var(--ink-300);
+  transition: color var(--dur) var(--ease-out);
+  overflow-y: hidden;
+  height: 100vh;
+  position: relative;
+  /* imperative scrollTop writes must be instant, not smooth-animated */
+  scroll-behavior: auto;
+  border-right: 1px solid var(--ink-700);
+  /* Hide scrollbar across engines */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollable:last-child {
+  border-right: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable:hover,
+.scrollable:focus-within {
+  color: var(--ink-100);
+}
+
+.scrollable-contents {
+  padding-top: var(--space-2);
+}
+
+/* On touch / no-hover devices there is no hover state — keep text readable. */
+@media (hover: none), (pointer: coarse) {
+  .scrollable {
+    color: var(--ink-200);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scrollable {
+    width: 100%;
+    color: var(--ink-200);
+    overflow: visible;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--ink-700);
+  }
+
+  .scrollable-contents {
+    padding: var(--space-4);
+  }
+}

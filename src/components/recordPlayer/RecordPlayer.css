@@ -1,0 +1,43 @@
+.RecordPlayer {
+  height: clamp(205px, 18vw, 280px);
+  width: clamp(205px, 18vw, 280px);
+  /* stack items on top of each other */
+  position: relative;
+  z-index: 101;
+  cursor: pointer;
+  /* rest at the old hover size; shrink further on hover */
+  transform: scale(0.9);
+  transition: transform 0.35s var(--ease-out);
+}
+
+.RecordPlayer:hover {
+  transform: scale(0.8);
+}
+
+.RecordPlayer:active {
+  transform: scale(0.76);
+}
+
+.RecordImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  /* disc is intentionally smaller than the orbiting text ring */
+  height: 80%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  z-index: 101;
+  /* rotation is driven by requestAnimationFrame in RecordPlayer.tsx so the
+     spin speed can ease smoothly between idle and playing */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
