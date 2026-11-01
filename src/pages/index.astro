@@ -1,120 +1,141 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
-import SocialList from "@/components/SocialList.astro";
+import { type CollectionEntry } from "astro:content";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 
-// Posts
-const MAX_POSTS = 10;
+const MAX_POSTS = 4;
 const allPosts = await getAllPosts();
-const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
-const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
-
-// Pinned Posts, set to a max of 3;
-const MAX_PINNED_POSTS = 3;
-const pinnedPosts = allPostsByDate
-	.values()
-	.filter((p) => p.data.pinned)
-	.take(MAX_PINNED_POSTS)
-	.toArray();
-
-// Notes, set to a max of 5
-const MAX_NOTES = 5;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes
+const latestPosts = allPosts
+	.filter((p) => !p.data.draft)
 	.sort(collectionDateSort)
-	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section class="mb-16">
-		<span class="eyebrow block mb-3">Kiran S Baliga &middot; Writing &amp; Systems</span>
-		<h1 class="font-display text-5xl font-bold uppercase tracking-tight text-accent-2 sm:text-7xl leading-[0.88] mb-6">
-			All Things <span class="text-accent">Narix.</span>
-		</h1>
-		<p class="text-muted text-base leading-relaxed max-w-2xl mb-6">
-			Hey, I'm Kiran &mdash; a software developer and technical consultant who writes about architecture,
-			AI agent workflows, engineering craft, and the ideas I'm exploring.
-		</p>
-		<div class="flex flex-wrap items-center gap-3 mb-8">
+	<!-- Header / Identity -->
+	<header class="mb-5 sm:mb-6">
+		<div class="flex flex-wrap items-baseline justify-between gap-3">
+			<div>
+				<h1 class="text-accent-2 font-sans text-2xl font-semibold tracking-tight sm:text-3xl">
+					Kiran S Baliga
+				</h1>
+				<p class="text-muted mt-1 font-mono text-xs tracking-wider uppercase">
+					Backend &amp; AI Engineer
+				</p>
+			</div>
 			<a
-				class="rounded-full bg-accent-2 text-global-bg px-5 py-2 font-mono text-xs uppercase tracking-wider font-semibold border border-accent-2 hover:bg-transparent hover:text-accent-2 transition-all duration-200"
-				href="/posts/"
+				href="mailto:kiransbaliga@gmail.com"
+				class="group border-line text-muted hover:border-accent hover:text-accent inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs tracking-wider uppercase transition-all duration-200"
 			>
-				Browse All Posts &rarr;
-			</a>
-			<a
-				class="rounded-full border border-line px-5 py-2 font-mono text-xs uppercase tracking-wider text-muted hover:border-accent-2 hover:text-accent-2 transition-all duration-200"
-				href="https://baliga.dev"
-				target="_blank"
-				rel="noreferrer noopener"
-			>
-				Portfolio &nearr;
+				<span class="group-hover:bg-accent h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"
+				></span>
+				<span>Available immediately</span>
+				<span class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+					>&nearr;</span
+				>
 			</a>
 		</div>
-		<SocialList />
+	</header>
+
+	<!-- Bio -->
+	<section
+		class="text-global-text/90 mb-7 space-y-3 text-[15px] leading-relaxed sm:mb-8 sm:space-y-3.5 sm:text-base"
+	>
+		<p>
+			Hi, I’m Kiran. I build systems that power products at scale. Usually, that means making
+			complicated things work quietly in the background.
+		</p>
+		<p>
+			Previously built clinical LLM reporting pipelines at <a
+				href="/posts/ultrahuman-systems/"
+				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
+				>Ultrahuman &nearr;</a
+			>, multi-tenant ad data infrastructure at <a
+				href="/posts/pencil-infrastructure/"
+				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
+				>Pencil &nearr;</a
+			>, and agent toolkits / MCP servers at <a
+				href="/posts/siren-mcp-tooling/"
+				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
+				>Siren &nearr;</a
+			>. My work sits somewhere between distributed systems, LLM orchestration, and developer
+			tooling.
+		</p>
+		<p>
+			Outside that, I make small tools for the way I live&mdash;like <a
+				href="https://github.com/kiransbaliga"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
+				>Valkyrie &nearr;</a
+			> and <a
+				href="https://github.com/kiransbaliga"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent font-medium underline underline-offset-4 transition-colors duration-200"
+				>Lyrix &nearr;</a
+			>&mdash;and write about the questions they leave me with.
+		</p>
 	</section>
 
-	{
-		pinnedPosts.length > 0 && (
-			<section class="mt-16">
-				<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
-					<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
-						Pinned Posts
-					</h2>
-					<span class="font-mono text-xs uppercase tracking-wider text-muted">Featured</span>
-				</div>
-				<ul class="space-y-5" role="list">
-					{pinnedPosts.map((p) => (
-						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-							<PostPreview post={p} />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
-
-	<section class="mt-16">
-		<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
-			<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
-				<a href="/posts/" class="hover:text-accent transition-colors">Recent Posts</a>
+	<!-- Writing & Case Studies Section -->
+	<section class="border-line mb-6 border-y py-4 sm:mb-8 sm:py-5">
+		<div class="mb-4 flex items-baseline justify-between">
+			<h2 class="text-accent-2 font-sans text-base font-medium tracking-tight sm:text-lg">
+				Writing
 			</h2>
-			<a href="/posts/" class="font-mono text-xs uppercase tracking-wider text-muted hover:text-accent-2 transition-colors">
-				View all ({allPostsByDate.length}) &rarr;
+			<a
+				href="/posts/"
+				class="text-muted decoration-line hover:decoration-accent hover:text-accent font-sans text-xs underline underline-offset-4 transition-colors duration-200 sm:text-sm"
+			>
+				All posts &nearr;
 			</a>
 		</div>
-		<ul class="space-y-5" role="list">
+
+		<ul class="space-y-3 sm:space-y-3.5" role="list">
 			{
-				latestPosts.map((p) => (
-					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
-					</li>
-				))
+				latestPosts.map((post, index) => {
+					const year = post.data.publishDate.getFullYear();
+					const prevYear = index > 0 ? latestPosts[index - 1].data.publishDate.getFullYear() : null;
+					const showYear = year !== prevYear;
+					const isCaseStudy = post.data.tags?.includes("case-study") || Boolean(post.data.pinned);
+					const formattedDate = new Intl.DateTimeFormat("en-GB", {
+						day: "numeric",
+						month: "short",
+					}).format(post.data.publishDate);
+					const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
+					const isExternal = Boolean(post.data.externalUrl);
+
+					return (
+						<li class="group grid grid-cols-[48px_1fr_auto] items-baseline gap-3 sm:grid-cols-[60px_1fr_auto] sm:gap-4">
+							<span class="text-muted font-mono text-xs select-none sm:text-sm">
+								{showYear ? year : ""}
+							</span>
+
+							<div class="flex min-w-0 items-baseline gap-2">
+								<a
+									href={postUrl}
+									target={isExternal ? "_blank" : undefined}
+									rel={isExternal ? "noopener noreferrer" : undefined}
+									class="text-accent-2 decoration-line hover:decoration-accent hover:text-accent truncate font-sans text-[15px] underline underline-offset-4 transition-colors duration-200 sm:text-base"
+								>
+									{post.data.title}
+								</a>
+								{isCaseStudy && (
+									<span class="bg-accent/10 text-accent inline-flex shrink-0 items-center rounded-full px-2 py-0.5 font-mono text-[10px] font-medium tracking-wider uppercase">
+										Case Study
+									</span>
+								)}
+							</div>
+
+							<span class="text-muted text-right font-mono text-xs whitespace-nowrap tabular-nums sm:text-sm">
+								{formattedDate}
+							</span>
+						</li>
+					);
+				})
 			}
 		</ul>
 	</section>
-
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-16">
-				<div class="flex items-baseline justify-between border-b border-line pb-3 mb-6">
-					<h2 class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
-						<a href="/notes/" class="hover:text-accent transition-colors">Notes &amp; Field Logs</a>
-					</h2>
-					<span class="font-mono text-xs uppercase tracking-wider text-muted">Shortform</span>
-				</div>
-				<ul class="space-y-6" role="list">
-					{latestNotes.map((note) => (
-						<li>
-							<Note note={note} as="h3" isPreview />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
 </PageLayout>

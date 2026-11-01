@@ -1,82 +1,83 @@
 ---
-import { siteConfig } from "@/site.config";
-
-const year = new Date().getFullYear();
+const initialTime = new Intl.DateTimeFormat("en-US", {
+	hour: "numeric",
+	minute: "2-digit",
+	hour12: true,
+	timeZone: "Asia/Kolkata",
+})
+	.format(new Date())
+	.toLowerCase();
 ---
 
-<footer class="mt-auto border-t border-line pt-12 pb-6">
-	<div class="mb-8 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-		<div>
-			<p class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2 sm:text-3xl">
-				Let's build <span class="text-accent">something useful.</span>
-			</p>
-			<p class="text-muted mt-2 text-sm max-w-md">
-				Personal writing on software architecture, AI agent systems, product engineering, and life.
-			</p>
-		</div>
-		<div class="flex items-center gap-3">
-			<a
-				class="pill-btn inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2"
-				href="https://baliga.dev"
-				target="_blank"
-				rel="noreferrer noopener"
+<footer class="border-line/60 mt-auto border-t pt-5 pb-3 sm:pt-6 sm:pb-4">
+	<div
+		class="text-muted flex flex-col justify-between gap-3 font-mono text-xs sm:flex-row sm:items-center"
+	>
+		<div class="flex items-center gap-1.5">
+			<span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/80"></span>
+			<span
+				><span id="kerala-time" class="text-global-text/80 font-medium tabular-nums"
+					>{initialTime}</span
+				> in Kerala, India</span
 			>
-				Portfolio ↗
-			</a>
-			<a
-				class="pill-btn inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs uppercase tracking-wider text-muted transition-all duration-200 hover:border-accent-2 hover:text-accent-2"
-				href="mailto:kiransbaliga@gmail.com"
-			>
-				Email ↗
-			</a>
-		</div>
-	</div>
-
-	<div class="flex flex-col items-center justify-between gap-4 border-t border-line/60 pt-6 font-mono text-[11px] uppercase tracking-wider text-muted sm:flex-row">
-		<div>
-			&copy; {siteConfig.author} {year}. All rights reserved.
 		</div>
 
-		<nav aria-label="Social and feed links" class="flex flex-wrap items-center gap-4">
+		<nav
+			aria-label="Quick links"
+			class="flex flex-wrap items-center gap-x-3.5 gap-y-1 text-[11px] tracking-wider uppercase sm:gap-x-4"
+		>
 			<a
-				class="hover:text-accent-2 transition-colors"
-				href="https://baliga.dev"
+				class="hover:text-accent transition-colors"
+				href="/resume.pdf"
 				target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener noreferrer"
 			>
-				Portfolio
+				R&eacute;sum&eacute; &nearr;
 			</a>
-			<span class="text-line">/</span>
+			<span class="text-line select-none" aria-hidden="true">/</span>
 			<a
-				class="hover:text-accent-2 transition-colors"
+				class="hover:text-accent transition-colors"
 				href="https://github.com/kiransbaliga"
 				target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener noreferrer"
 			>
-				GitHub
+				GitHub &nearr;
 			</a>
-			<span class="text-line">/</span>
+			<span class="text-line select-none" aria-hidden="true">/</span>
 			<a
-				class="hover:text-accent-2 transition-colors"
+				class="hover:text-accent transition-colors"
 				href="https://linkedin.com/in/kiransbaliga"
 				target="_blank"
-				rel="noreferrer noopener"
+				rel="noopener noreferrer"
 			>
-				LinkedIn
+				LinkedIn &nearr;
 			</a>
-			<span class="text-line">/</span>
-			<a
-				class="hover:text-accent-2 transition-colors"
-				href="https://twitter.com/kiransbaliga"
-				target="_blank"
-				rel="noreferrer noopener"
-			>
-				Twitter/X
-			</a>
-			<span class="text-line">/</span>
-			<a class="hover:text-accent-2 transition-colors" href="/rss.xml" target="_blank">
-				RSS
+			<span class="text-line select-none" aria-hidden="true">/</span>
+			<a class="hover:text-accent transition-colors" href="mailto:kiransbaliga@gmail.com">
+				Email &nearr;
 			</a>
 		</nav>
 	</div>
 </footer>
+
+<script>
+	function updateKeralaTime() {
+		const el = document.getElementById("kerala-time");
+		if (!el) return;
+		try {
+			const formatted = new Intl.DateTimeFormat("en-US", {
+				hour: "numeric",
+				minute: "2-digit",
+				hour12: true,
+				timeZone: "Asia/Kolkata",
+			})
+				.format(new Date())
+				.toLowerCase();
+			el.textContent = formatted;
+		} catch {
+			// fallback silently
+		}
+	}
+	updateKeralaTime();
+	setInterval(updateKeralaTime, 10000);
+</script>
