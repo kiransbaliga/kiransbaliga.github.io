@@ -11,7 +11,7 @@ const blogPosts = allPosts
 
 <PageLayout meta={{ title: "Kiran S Baliga — Backend & AI Engineer" }}>
 	{/* A Personal Introduction */}
-	<section class="pt-6 pb-14 sm:pt-8 sm:pb-16">
+	<section class="pt-6 pb-14 sm:pt-8 sm:pb-16 relative">
 		<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
 			Backend & AI Engineer
 		</span>
@@ -32,8 +32,22 @@ const blogPosts = allPosts
 			</p>
 		</div>
 
-		{/* Availability & Links */}
-		<div class="flex flex-wrap items-center gap-x-6 gap-y-4 mb-6">
+		{/* Availability & Links with marginalia on the LEFT */}
+		<div class="relative flex flex-wrap items-center gap-x-6 gap-y-4 mb-6">
+			{/* Left margin note on desktop / tablet */}
+			<div class="hidden md:block absolute -left-28 lg:-left-36 top-1/2 -translate-y-1/2 select-none text-right pointer-events-none">
+				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-400 leading-[1.1] rotate-[-5deg] block">
+					for the<br />right next<br />thing
+				</span>
+			</div>
+
+			{/* Left inline note on mobile */}
+			<div class="md:hidden w-full select-none -mb-2">
+				<span class="font-handwriting text-xl text-[#262625] dark:text-neutral-400 rotate-[-3deg] inline-block">
+					for the right next thing &rarr;
+				</span>
+			</div>
+
 			{/* Circled invitation with authentic ink loop */}
 			<div class="relative inline-flex items-center px-4 py-2 select-none">
 				<span class="font-sans text-base text-[#262625] dark:text-[#f5f4f1] relative z-10">
@@ -75,10 +89,6 @@ const blogPosts = allPosts
 			>
 				R&eacute;sum&eacute; &nearr;
 			</a>
-
-			<span class="font-handwriting text-2xl text-[#797974] dark:text-neutral-400 rotate-[-4deg] select-none">
-				for the right next thing
-			</span>
 		</div>
 
 		<p class="font-sans text-sm text-[#797974] dark:text-neutral-400">
@@ -102,7 +112,7 @@ const blogPosts = allPosts
 					<h3 class="font-sans text-[17px] font-normal">
 						<a
 							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-							href="/work-together/#ultrahuman"
+							href="/work/ultrahuman/"
 						>
 							Ultrahuman &rarr;
 						</a>
@@ -154,7 +164,7 @@ const blogPosts = allPosts
 					<h3 class="font-sans text-[17px] font-normal">
 						<a
 							class="text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-							href="/work-together/#siren"
+							href="/work/siren/"
 						>
 							Siren &rarr;
 						</a>
@@ -176,7 +186,57 @@ const blogPosts = allPosts
 		</div>
 	</section>
 
-	{/* Things I Make */}
+	{/* Writing (Moved UP as requested) */}
+	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
+		<div class="flex items-baseline justify-between mb-8">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
+				Writing
+			</h2>
+			<a
+				class="font-sans text-sm text-[#797974] hover:text-accent transition-colors duration-200 dark:text-neutral-400"
+				href="/posts/"
+			>
+				All posts &nearr;
+			</a>
+		</div>
+
+		<div class="grid grid-cols-[50px_1fr] sm:grid-cols-[64px_1fr] gap-4 items-start">
+			<span class="font-mono text-[13px] text-[#797974] dark:text-neutral-400 select-none pt-0.5">
+				2026
+			</span>
+
+			<ul class="space-y-3" role="list">
+				{
+					blogPosts.slice(0, 4).map((post) => {
+						const dateFormatted = new Intl.DateTimeFormat("en-GB", {
+							day: "numeric",
+							month: "short",
+						}).format(post.data.publishDate);
+
+						const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
+
+						return (
+							<li class="flex items-baseline justify-between gap-6 group">
+								<a
+									class="font-sans text-[16px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+									href={postUrl}
+									target={post.data.externalUrl ? "_blank" : undefined}
+									rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
+								>
+									{post.data.title}
+								</a>
+								<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 whitespace-nowrap tabular-nums">
+									{dateFormatted}
+								</span>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</div>
+	</section>
+
+	{/* Things I Make (Moved DOWN as requested) */}
 	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
 		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
 			Things I make
@@ -251,57 +311,7 @@ const blogPosts = allPosts
 		</div>
 	</section>
 
-	{/* Writing */}
-	<section class="border-t border-[#deded8] pt-10 pb-14 dark:border-neutral-800">
-		<div class="flex items-baseline justify-between mb-8">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
-				Writing
-			</h2>
-			<a
-				class="font-sans text-sm text-[#262625] underline underline-offset-4 hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-				href="/posts/"
-			>
-				All posts &nearr;
-			</a>
-		</div>
-
-		<div class="grid grid-cols-[50px_1fr] sm:grid-cols-[64px_1fr] gap-4 items-start">
-			<span class="font-mono text-[13px] text-[#797974] dark:text-neutral-400 select-none pt-0.5">
-				2026
-			</span>
-
-			<ul class="space-y-4" role="list">
-				{
-					blogPosts.slice(0, 4).map((post) => {
-						const dateFormatted = new Intl.DateTimeFormat("en-GB", {
-							day: "numeric",
-							month: "short",
-						}).format(post.data.publishDate);
-
-						const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
-
-						return (
-							<li class="flex items-baseline justify-between gap-6 group">
-								<a
-									class="font-sans text-[16px] text-[#262625] underline underline-offset-4 hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-									href={postUrl}
-									target={post.data.externalUrl ? "_blank" : undefined}
-									rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
-								>
-									{post.data.title}
-								</a>
-								<span class="font-sans text-[13px] text-[#797974] dark:text-neutral-400 whitespace-nowrap tabular-nums">
-									{dateFormatted}
-								</span>
-							</li>
-						);
-					})
-				}
-			</ul>
-		</div>
-	</section>
-
-	{/* A Little More About Me */}
+	{/* A Little More About Me (Gap issue resolved) */}
 	<section class="border-t border-[#deded8] pt-10 pb-6 dark:border-neutral-800">
 		<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-5">
 			A little more about me
@@ -309,35 +319,42 @@ const blogPosts = allPosts
 
 		<div class="space-y-4 font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl mb-8">
 			<p>
-				My path has taken me from Flutter apps at airPMO and a mental-health platform at TGH Tech to backend and AI infrastructure at KeyValue and Ultrahuman. I studied Computer Science &amp; Engineering at APJ Abdul Kalam Technological University.
+				My path has taken me from Flutter apps at airPMO and a mental-health platform at TGH Tech to backend and AI infrastructure at KeyValue and Ultrahuman.
 			</p>
 			<p>
 				I’m looking for my next full-time backend / AI engineering role. I also work with founders and agencies on focused consulting and freelance projects &mdash; from an early scope to a system people can actually use.
 			</p>
 		</div>
 
-		<div class="relative flex flex-wrap items-center gap-6 mb-4">
-			<a
-				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-				href="/work-together/"
-			>
-				More about me &amp; working together &rarr;
-			</a>
+		{/* Clean gap layout avoiding collision between links and marginalia */}
+		<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-2 mb-2">
+			<div class="space-y-3">
+				<div>
+					<a
+						class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+						href="/work-together/"
+					>
+						More about me &amp; working together &rarr;
+					</a>
+				</div>
 
-			<a
-				class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
-				href="mailto:kiransbaliga@gmail.com"
-			>
-				kiransbaliga@gmail.com &nearr;
-			</a>
+				<div>
+					<a
+						class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+						href="mailto:kiransbaliga@gmail.com"
+					>
+						kiransbaliga@gmail.com &nearr;
+					</a>
+				</div>
+			</div>
 
-			{/* Handwritten marginalia with authentic hand-drawn arrow */}
-			<div class="hidden md:flex items-center gap-3 absolute -right-4 -top-8 select-none">
-				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-300 leading-tight rotate-[-3deg]">
+			{/* Handwritten marginalia cleanly spaced */}
+			<div class="flex items-center gap-3 select-none self-start sm:self-end pt-2 sm:pt-0">
+				<span class="font-handwriting text-2xl text-[#262625] dark:text-neutral-300 leading-tight rotate-[-3deg] whitespace-nowrap">
 					let’s build<br />something useful
 				</span>
 				<svg
-					class="w-[72px] h-[36px] text-[#262625] dark:text-neutral-300"
+					class="w-[60px] h-[30px] text-[#262625] dark:text-neutral-300 shrink-0"
 					viewBox="0 0 123 55"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

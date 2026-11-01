@@ -1,0 +1,154 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Ultrahuman: Clinical LLM Pipelines — Kiran S Baliga" }}>
+	<article class="pt-6 pb-16 sm:pt-8 sm:pb-20">
+		<a
+			class="inline-flex items-center gap-1 font-sans text-sm text-[#797974] hover:text-accent transition-colors duration-200 mb-8 dark:text-neutral-400"
+			href="/#work"
+		>
+			&larr; Back to selected work
+		</a>
+
+		{/* Article Header */}
+		<header class="mb-10">
+			<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
+				Ultrahuman &middot; Engineering case study
+			</span>
+
+			<h1 class="font-sans text-[34px] leading-[1.3] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+				Architecting clinical LLM pipelines across 10+ lab stations.
+			</h1>
+
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl">
+				At Ultrahuman, I worked in a 3-person health reporting group on the AI clinical reporting pipeline: synthesizing asynchronous multi-station lab diagnostics into 15-page doctor-reviewed health plans, paired with on-device vital computation and global platform localization.
+			</p>
+
+			{/* Role & Context Box */}
+			<div class="border-y border-[#deded8] my-8 py-5 dark:border-neutral-800">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+					<div>
+						<span class="block font-sans text-sm font-medium text-[#262625] dark:text-[#f5f4f1]">
+							Backend Engineer
+						</span>
+						<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+							Ultrahuman &middot; Health Reporting Group
+						</span>
+					</div>
+					<div class="sm:text-right">
+						<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 tabular-nums">
+							Mar&ndash;Jun 2026
+						</span>
+						<a
+							class="font-sans text-sm text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							href="https://www.ultrahuman.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							ultrahuman.com &nearr;
+						</a>
+					</div>
+				</div>
+				<p class="font-mono text-xs text-[#797974] dark:text-neutral-400">
+					Ruby on Rails &middot; PostgreSQL &middot; Kotlin Multiplatform &middot; AWS &middot; LLM Orchestration &middot; Prompt Caching
+				</p>
+			</div>
+		</header>
+
+		{/* Context */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				The context
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Ultrahuman builds metabolic and longevity hardware (including the Ring AIR and Blood Vision) trusted by over 5M+ users worldwide. Within a 16-person core engineering team, I worked in a 3-person health reporting group owning the AI report-generation pipeline for performance lab clients.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Diagnostic blood work, metabolic panels, and physiological markers arrive asynchronously from 10+ independent lab stations over multiple days. Synthesizing these into personalized, doctor-vetted longevity protocols required strict clinical guardrails, idempotent stage processing, and seamless clinician overrides.
+			</p>
+		</section>
+
+		{/* Ingestion & Clinician Review */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				Asynchronous ingestion DAG &amp; doctor-in-the-loop review
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				I built asynchronous background ingestion pipelines that normalize disparate diagnostic data streams into a unified patient graph. Once lab results stabilize, a multi-stage LLM workflow generates personalized recommendations grounded in clinical reference ranges.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Crucially, high-stakes medical summaries cannot be an unconstrained black box. We implemented a granular section-diffing mechanism: clinicians can reject or modify specific paragraphs, prompting targeted LLM regenerations in under 3 seconds without having to recompute or alter verified sections of the 15-page document.
+			</p>
+
+			<div class="border-l-2 border-[#262625] dark:border-[#f5f4f1] pl-5 py-2 my-6">
+				<p class="font-sans text-[17px] leading-[1.65] text-[#262625] dark:text-[#f5f4f1]">
+					Production reliability in healthcare requires structured ingestion DAGs and surgical section-level regeneration over broad end-to-end prompting.
+				</p>
+			</div>
+		</section>
+
+		{/* On-device KMP Execution & CJK Localization */}
+		<section class="space-y-4 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+				On-device vital computation &amp; modular CJK localization
+			</h2>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				Beyond reporting, I ported vital signal processing and SpO&#8322; computation routines from backend Ruby worker queues to Kotlin Multiplatform (KMP). This allowed raw sensor streams to be processed on-device across iOS and Android with 99%+ numerical parity, cutting vital latency by an estimated ~80%.
+			</p>
+			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+				To support global expansion, I architected a modular CJK (Chinese, Japanese, Korean) localization system. By injecting verified medical glossaries and leveraging API prompt caching on repetitive context blocks, we reduced translation token costs by ~67% while lifting translation quality evaluation scores from 86% to 91%.
+			</p>
+		</section>
+
+		{/* What Changed / Metrics */}
+		<section class="space-y-6 mb-12">
+			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
+				What changed
+			</h2>
+
+			<div class="space-y-5">
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						86% &rarr; 91%
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						CJK translation quality score improvement with ~67% lower translation token costs via prompt caching.
+					</p>
+				</div>
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						~80%
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						Estimated vital calculation latency cut by porting SpO&#8322; algorithms to on-device Kotlin Multiplatform.
+					</p>
+				</div>
+				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
+					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+						8,000+
+					</span>
+					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+						Powerplug subscription conversions in 60 days via nightly biometric cohort evaluation queues.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		{/* Next Case Study */}
+		<div class="border-t border-[#deded8] pt-8 dark:border-neutral-800">
+			<div class="flex items-baseline justify-between mb-2">
+				<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">Next case study</span>
+				<a
+					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					href="/work/pencil/"
+				>
+					Pencil &mdash; AI ad platform infrastructure &rarr;
+				</a>
+			</div>
+			<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300 mt-4">
+				Working through a clinical AI or distributed pipeline challenge? <a class="underline hover:text-accent" href="mailto:kiransbaliga@gmail.com">Let’s talk about it.</a>
+			</p>
+		</div>
+	</article>
+</PageLayout>
