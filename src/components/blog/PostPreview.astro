@@ -1,32 +1,59 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { HTMLTag, Polymorphic } from "astro/types";
-import FormattedDate from "@/components/FormattedDate.astro";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
+	isLatest?: boolean;
 };
 
-const { as: Tag = "div", post, withDesc = false } = Astro.props;
+const { as: Tag = "div", post, withDesc = false, isLatest = false } = Astro.props;
+
+const dateFormatted = new Intl.DateTimeFormat("en-GB", {
+	day: "numeric",
+	month: "short",
+}).format(post.data.publishDate);
+
+const postUrl = post.data.externalUrl ?? `/posts/${post.id}/`;
 ---
 
-<FormattedDate class="font-mono text-xs uppercase tracking-wider text-muted min-w-28 pt-0.5" date={post.data.publishDate} />
-<div class="flex flex-col">
-	<Tag class="font-sans font-medium text-base">
-		{post.data.draft && <span class="border-red-500/30 text-red-500 me-2 rounded-full border px-2 py-0.5 font-mono text-xs uppercase">Draft</span>}
+<div class="flex items-baseline justify-between gap-4 py-1 group w-full">
+	<div class="flex items-baseline gap-2 min-w-0">
+		<a
+			class="font-sans text-[13.5px] sm:text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
+			href={postUrl}
+			target={post.data.externalUrl ? "_blank" : undefined}
+			rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
+		>
+			{post.data.title}
+		</a>
 		{
-			post.data.externalUrl ? (
-				<a class="hover:text-accent inline-flex items-center gap-1 transition-colors duration-200" href={post.data.externalUrl} target="_blank" rel="noopener noreferrer">
-					<span>{post.data.title}</span>
-					<span class="text-muted font-mono text-xs">↗</span>
-				</a>
-			) : (
-				<a class="hover:text-accent transition-colors duration-200" href={`/posts/${post.id}/`}>
-					{post.data.title}
-				</a>
+			post.data.externalUrl && (
+				<span class="text-[#797974] font-mono text-xs">&nearr;</span>
 			)
 		}
-	</Tag>
-	{withDesc && post.data.description && <p class="text-muted mt-1 text-sm leading-relaxed line-clamp-2">{post.data.description}</p>}
+		{
+			isLatest && (
+				<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-sans font-medium text-[#16a34a] border border-[#16a34a]/30 rounded-full select-none shrink-0">
+					New
+				</span>
+			)
+		}
+		{
+			post.data.draft && (
+				<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-mono text-red-600 border border-red-300 rounded-full select-none shrink-0">
+					Draft
+				</span>
+			)
+		}
+	</div>
+	<span class="font-sans text-[12px] text-[#797974] whitespace-nowrap tabular-nums shrink-0">
+		{dateFormatted}
+	</span>
 </div>
+{withDesc && post.data.description && (
+	<p class="text-[#797974] text-xs leading-relaxed line-clamp-2 -mt-0.5 mb-2 pl-0.5">
+		{post.data.description}
+	</p>
+)}

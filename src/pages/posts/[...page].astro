@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { GetStaticPaths, Page } from "astro";
-import { Icon } from "astro-icon/components";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import Pagination from "@/components/Paginator.astro";
 import { getAllPosts, getUniqueTags, groupPostsByYear } from "@/data/post";
@@ -9,8 +8,8 @@ import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const MAX_POSTS_PER_PAGE = 10;
-	const MAX_TAGS = 7;
+	const MAX_POSTS_PER_PAGE = 15;
+	const MAX_TAGS = 8;
 	const MAX_PINNED_POSTS = 3;
 	const allPosts = await getAllPosts();
 	const allPostsByDate = allPosts.sort(collectionDateSort);
@@ -35,8 +34,8 @@ interface Props {
 const { page, uniqueTags, pinnedPosts } = Astro.props;
 
 const meta = {
-	description: "Read my collection of posts and the things that interest me",
-	title: "Posts",
+	description: "Notes, experiments, and essays on systems, backend infrastructure, and software.",
+	title: "Writing — Kiran S Baliga",
 };
 
 const paginationProps = {
@@ -56,87 +55,99 @@ const paginationProps = {
 
 const groupedByYear = groupPostsByYear(page.data);
 const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
+
+// Identify newest post for the "New" badge
+const newestPostId = page.data[0]?.id;
 ---
 
 <PageLayout meta={meta}>
-	<div class="mb-10 flex items-center justify-between border-b border-line pb-4">
-		<div class="flex items-center gap-3">
-			<h1 class="font-display text-4xl font-bold uppercase tracking-tight text-accent-2 sm:text-6xl">Posts</h1>
-			<a class="text-muted hover:text-accent transition-colors" href="/rss.xml" target="_blank">
-				<span class="sr-only">RSS feed</span>
-				<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name="mdi:rss" />
-			</a>
-		</div>
-		<span class="font-mono text-xs uppercase tracking-wider text-muted">
-			Page {page.currentPage} of {page.lastPage}
-		</span>
-	</div>
-	<div class="grid sm:grid-cols-[3fr_1fr] sm:gap-x-10 sm:gap-y-16">
-		<div>
-			{
-				pinnedPosts.length > 0 && (
-					<section class="mb-14">
-						<div class="flex items-baseline justify-between border-b border-line pb-2 mb-6">
-							<h2 class="font-display text-xl font-bold uppercase tracking-tight text-accent-2">Pinned</h2>
-							<span class="font-mono text-xs uppercase tracking-wider text-muted">Featured</span>
-						</div>
-						<ul class="space-y-4" role="list">
-							{pinnedPosts.map((p) => (
-								<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-									<PostPreview post={p} />
-								</li>
-							))}
-						</ul>
-					</section>
-				)
-			}
-			{
-				descYearKeys.map((yearKey) => (
-					<section class="mb-14">
-						<div class="flex items-center gap-3 mb-6">
-							<h2 id={`year-${yearKey}`} class="font-display text-2xl font-bold uppercase tracking-tight text-accent-2">
-								<span class="sr-only">Posts in </span>
-								{yearKey}
-							</h2>
-							<div class="h-px grow bg-line"></div>
-						</div>
-						<ul class="space-y-4 text-start">
-							{groupedByYear[yearKey]?.map((p) => (
-								<li class="grid gap-1 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-									<PostPreview post={p} />
-								</li>
-							))}
-						</ul>
-					</section>
-				))
-			}
-			<Pagination {...paginationProps} />
-		</div>
+	<div class="pt-2 pb-10 sm:pt-4 sm:pb-14">
+		{/* Minimal Header consistent with entire site */}
+		<header class="mb-8">
+			<span class="block font-sans text-xs text-[#797974] mb-2">
+				Writing &middot; {page.data.length} posts
+			</span>
+
+			<h1 class="font-sans text-[26px] sm:text-[28px] leading-[1.25] font-normal text-[#262625] mb-2">
+				Writing
+			</h1>
+
+			<p class="font-sans text-[14px] leading-[1.55] text-[#444441] max-w-2xl">
+				Notes, experiments, and essays on systems, backend architecture, and developer tools.
+			</p>
+		</header>
+
+		{/* Pinned Posts (if any) */}
 		{
-			!!uniqueTags.length && (
-				<aside>
-					<div class="border-b border-line pb-2 mb-4">
-						<h2 class="font-display text-xl font-bold uppercase tracking-tight text-accent-2">
-							Tags
-						</h2>
-					</div>
-					<ul class="flex flex-wrap gap-2">
-						{uniqueTags.map((tag) => (
+			pinnedPosts.length > 0 && page.currentPage === 1 && (
+				<section class="border-t border-[#deded8] pt-5 pb-6">
+					<h2 class="font-sans text-[13px] font-medium text-[#797974] mb-3 uppercase tracking-wider">
+						Featured
+					</h2>
+					<ul class="space-y-1" role="list">
+						{pinnedPosts.map((p) => (
 							<li>
-								<a class="pill" href={`/tags/${tag}/`}>
-									<span aria-hidden="true">#</span>
-									<span class="sr-only">View all posts with the tag</span>
-									{tag}
-								</a>
+								<PostPreview post={p} isLatest={p.id === newestPostId} withDesc={false} />
 							</li>
 						))}
 					</ul>
-					<span class="mt-4 block font-mono text-xs uppercase tracking-wider text-muted">
-						<a class="hover:text-accent-2 transition-colors inline-flex items-center gap-1" href="/tags/">
-							View all tags &rarr;
+				</section>
+			)
+		}
+
+		{/* Grouped by Year list */}
+		<div class="space-y-7">
+			{
+				descYearKeys.map((yearKey) => (
+					<section class="border-t border-[#deded8] pt-5">
+						<div class="grid grid-cols-[44px_1fr] sm:grid-cols-[56px_1fr] gap-3 items-start">
+							<span class="font-mono text-[12px] text-[#797974] select-none pt-1">
+								{yearKey}
+							</span>
+
+							<ul class="space-y-1.5" role="list">
+								{groupedByYear[yearKey]?.map((p) => (
+									<li>
+										<PostPreview post={p} isLatest={p.id === newestPostId} withDesc={false} />
+									</li>
+								))}
+							</ul>
+						</div>
+					</section>
+				))
+			}
+		</div>
+
+		<div class="mt-8">
+			<Pagination {...paginationProps} />
+		</div>
+
+		{/* Tags Filter */}
+		{
+			!!uniqueTags.length && (
+				<section class="border-t border-[#deded8] pt-6 mt-10">
+					<div class="flex items-center justify-between mb-3">
+						<h2 class="font-sans text-[13px] font-medium text-[#797974]">
+							Tags
+						</h2>
+						<a
+							class="font-sans text-[12px] text-[#797974] hover:text-accent transition-colors duration-200"
+							href="/tags/"
+						>
+							All tags &nearr;
 						</a>
-					</span>
-				</aside>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						{uniqueTags.map((tag) => (
+							<a
+								class="font-mono text-xs px-2.5 py-1 rounded bg-[#f4f3ef] text-[#444441] hover:text-accent hover:bg-[#eae8e2] transition-colors duration-150"
+								href={`/tags/${tag}/`}
+							>
+								#{tag}
+							</a>
+						))}
+					</div>
+				</section>
 			)
 		}
 	</div>

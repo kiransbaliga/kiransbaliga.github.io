@@ -3,45 +3,45 @@ import PageLayout from "@/layouts/Base.astro";
 ---
 
 <PageLayout meta={{ title: "Siren: AI Communications & MCP Tooling — Kiran S Baliga" }}>
-	<article class="pt-6 pb-16 sm:pt-8 sm:pb-20">
+	<article class="pt-2 pb-10 sm:pt-4 sm:pb-14">
 		<a
-			class="inline-flex items-center gap-1 font-sans text-sm text-[#797974] hover:text-accent transition-colors duration-200 mb-8 dark:text-neutral-400"
+			class="inline-flex items-center gap-1 font-sans text-xs text-[#797974] hover:text-accent transition-colors duration-200 mb-6"
 			href="/#work"
 		>
 			&larr; Back to selected work
 		</a>
 
 		{/* Article Header */}
-		<header class="mb-10">
-			<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 mb-3">
+		<header class="mb-8">
+			<span class="block font-sans text-xs text-[#797974] mb-2">
 				Siren &middot; Engineering case study
 			</span>
 
-			<h1 class="font-sans text-[34px] leading-[1.3] font-normal text-[#262625] dark:text-[#f5f4f1] mb-6">
+			<h1 class="font-sans text-[26px] sm:text-[28px] leading-[1.25] font-normal text-[#262625] mb-3">
 				Communication rails and MCP tooling for autonomous AI agents.
 			</h1>
 
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300 max-w-2xl">
+			<p class="font-sans text-[14.5px] leading-[1.55] text-[#444441] max-w-2xl mb-6">
 				At Siren, I engineered the developer infrastructure enabling AI agents to communicate: shared tool schemas, TypeScript and Python agent toolkits, and a standalone Model Context Protocol (MCP) server.
 			</p>
 
 			{/* Role & Context Box */}
-			<div class="border-y border-[#deded8] my-8 py-5 dark:border-neutral-800">
-				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+			<div class="border-y border-[#deded8] py-4">
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2.5">
 					<div>
-						<span class="block font-sans text-sm font-medium text-[#262625] dark:text-[#f5f4f1]">
+						<span class="block font-sans text-[13.5px] font-medium text-[#262625]">
 							Associate Software Engineer
 						</span>
-						<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">
+						<span class="font-sans text-[12.5px] text-[#797974]">
 							KeyValue Software Systems &middot; Client engagement: Siren
 						</span>
 					</div>
 					<div class="sm:text-right">
-						<span class="block font-sans text-sm text-[#797974] dark:text-neutral-400 tabular-nums">
+						<span class="block font-sans text-[12.5px] text-[#797974] tabular-nums">
 							Sep 2023&ndash;Feb 2026
 						</span>
 						<a
-							class="font-sans text-sm text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+							class="font-sans text-[13px] text-[#262625] hover:text-accent transition-colors duration-200"
 							href="https://trysiren.com"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -50,104 +50,114 @@ import PageLayout from "@/layouts/Base.astro";
 						</a>
 					</div>
 				</div>
-				<p class="font-mono text-xs text-[#797974] dark:text-neutral-400">
+				<p class="font-mono text-[11.5px] text-[#797974] leading-relaxed">
 					Model Context Protocol (MCP) &middot; TypeScript &middot; Python &middot; OpenAI Functions &middot; LangChain &middot; CrewAI
 				</p>
 			</div>
 		</header>
 
 		{/* Context */}
-		<section class="space-y-4 mb-12">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+		<section class="space-y-3 mb-8">
+			<h2 class="font-sans text-[16px] font-medium text-[#262625]">
 				The context
 			</h2>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
 				Siren provides omni-channel messaging and notification infrastructure. As autonomous agent workflows (OpenAI Function Calling, LangChain, CrewAI) began executing user-facing tasks, agents needed safe, deterministic ways to trigger notifications, verify recipients, and inspect delivery status without manual API integration.
 			</p>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
 				The core architectural goal was to turn imperative REST API endpoints into clean, agent-readable semantic tool schemas with strict parameter boundaries and deterministic execution safeguards.
 			</p>
 		</section>
 
 		{/* Zero-Install MCP Server */}
-		<section class="space-y-4 mb-12">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+		<section class="border-t border-[#deded8] pt-6 mb-8 space-y-3.5">
+			<span class="font-mono text-xs text-[#797974] uppercase tracking-wider block">
+				Architecture 01
+			</span>
+
+			<h2 class="font-sans text-[18px] sm:text-[20px] font-medium text-[#262625]">
 				Zero-install Model Context Protocol (MCP) server
 			</h2>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
-				I built and distributed <code class="font-mono text-sm bg-[#f8f7f4] dark:bg-neutral-900 px-1.5 py-0.5 rounded">@trysiren/mcp</code>, a standalone server implementing Anthropic’s Model Context Protocol. Supporting both stdio and Server-Sent Events (SSE) transports, it allowed AI coding assistants (Claude Desktop, Cursor, Antigravity) to send notifications directly from developer environments.
+
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
+				I built and distributed <code class="font-mono text-xs bg-[#f4f3ef] px-1.5 py-0.5 rounded text-[#262625]">@trysiren/mcp</code>, a standalone server implementing Anthropic’s Model Context Protocol. Supporting both stdio and Server-Sent Events (SSE) transports, it allowed AI coding assistants (Claude Desktop, Cursor, Antigravity) to send notifications directly from developer environments.
 			</p>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
-				This eliminated ~75% of developer setup overhead: rather than installing libraries, importing HTTP clients, and managing secret rotation in application code, developers execute the server with zero installation via <code class="font-mono text-sm bg-[#f8f7f4] dark:bg-neutral-900 px-1.5 py-0.5 rounded">npx @trysiren/mcp</code>.
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
+				This eliminated ~75% of developer setup overhead: rather than installing libraries, importing HTTP clients, and managing secret rotation in application code, developers execute the server with zero installation via <code class="font-mono text-xs bg-[#f4f3ef] px-1.5 py-0.5 rounded text-[#262625]">npx @trysiren/mcp</code>.
 			</p>
 
-			<div class="border-l-2 border-[#262625] dark:border-[#f5f4f1] pl-5 py-2 my-6">
-				<p class="font-sans text-[17px] leading-[1.65] text-[#262625] dark:text-[#f5f4f1]">
+			<div class="border-l-2 border-[#16a34a] pl-4 py-1.5 my-3">
+				<p class="font-sans text-[13.5px] font-medium text-[#262625]">
 					Making existing products AI-native doesn’t require rebuilding the backend. It requires building an intuitive, deterministic discovery and execution layer for models.
 				</p>
 			</div>
 		</section>
 
 		{/* Dual-Stack SDKs & Idempotency */}
-		<section class="space-y-4 mb-12">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1] mb-3">
+		<section class="border-t border-[#deded8] pt-6 mb-8 space-y-3.5">
+			<span class="font-mono text-xs text-[#797974] uppercase tracking-wider block">
+				Architecture 02
+			</span>
+
+			<h2 class="font-sans text-[18px] sm:text-[20px] font-medium text-[#262625]">
 				Dual-stack agent toolkits with idempotency guards
 			</h2>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
-				For programmatic multi-agent swarms, I authored and published <code class="font-mono text-sm bg-[#f8f7f4] dark:bg-neutral-900 px-1.5 py-0.5 rounded">@trysiren/agent-toolkit</code> on npm and <code class="font-mono text-sm bg-[#f8f7f4] dark:bg-neutral-900 px-1.5 py-0.5 rounded">siren-agent-toolkit</code> on PyPI. Both feature automatic conversion adapters for LangChain Tools and CrewAI Actions.
+
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
+				For programmatic multi-agent swarms, I authored and published <code class="font-mono text-xs bg-[#f4f3ef] px-1.5 py-0.5 rounded text-[#262625]">@trysiren/agent-toolkit</code> on npm and <code class="font-mono text-xs bg-[#f4f3ef] px-1.5 py-0.5 rounded text-[#262625]">siren-agent-toolkit</code> on PyPI. Both feature automatic conversion adapters for LangChain Tools and CrewAI Actions.
 			</p>
-			<p class="font-sans text-[17px] leading-[1.65] text-[#444441] dark:text-neutral-300">
+			<p class="font-sans text-[13.5px] sm:text-[14px] leading-[1.55] text-[#444441]">
 				Because LLM tool-calling can trigger stochastic retry loops, we embedded deterministic idempotency key derivation directly into the toolkits. Multiple identical intents from an agent resolve to the same underlying dispatch, preventing accidental notification spam.
 			</p>
 		</section>
 
-		{/* What Changed / Metrics */}
-		<section class="space-y-6 mb-12">
-			<h2 class="font-sans text-[23px] font-normal text-[#262625] dark:text-[#f5f4f1]">
+		{/* Quantified Impact */}
+		<section class="border-t border-[#deded8] pt-6 mb-8">
+			<h2 class="font-sans text-[16px] font-medium text-[#262625] mb-4">
 				What changed
 			</h2>
 
-			<div class="space-y-5">
-				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
-					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+			<div class="space-y-3.5">
+				<div class="flex items-baseline gap-4 border-b border-[#deded8] pb-3">
+					<span class="font-sans text-[18px] sm:text-[20px] font-medium text-[#16a34a] w-32 shrink-0">
 						~75%
 					</span>
-					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+					<p class="font-sans text-[13.5px] text-[#444441]">
 						Reduction in developer setup effort with zero-install MCP vs. manual SDK integration.
 					</p>
 				</div>
-				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
-					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+				<div class="flex items-baseline gap-4 border-b border-[#deded8] pb-3">
+					<span class="font-sans text-[18px] sm:text-[20px] font-medium text-[#262625] w-32 shrink-0">
 						100+
 					</span>
-					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+					<p class="font-sans text-[13.5px] text-[#444441]">
 						Peak registry downloads across npm and PyPI ecosystem distributions.
 					</p>
 				</div>
-				<div class="flex items-baseline gap-6 border-b border-[#deded8] pb-4 dark:border-neutral-800">
-					<span class="font-sans text-2xl font-medium text-[#262625] dark:text-[#f5f4f1] w-28 shrink-0">
+				<div class="flex items-baseline gap-4 border-b border-[#deded8] pb-3">
+					<span class="font-sans text-[18px] sm:text-[20px] font-medium text-[#262625] w-32 shrink-0">
 						&lt;1ms
 					</span>
-					<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300">
+					<p class="font-sans text-[13.5px] text-[#444441]">
 						Serialization overhead across schema parsing and parameter validation pipelines.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		{/* Next Case Study */}
-		<div class="border-t border-[#deded8] pt-8 dark:border-neutral-800">
+		{/* Navigation Footer */}
+		<div class="border-t border-[#deded8] pt-6">
 			<div class="flex items-baseline justify-between mb-2">
-				<span class="font-sans text-sm text-[#797974] dark:text-neutral-400">Next case study</span>
+				<span class="font-sans text-xs text-[#797974]">Next case study</span>
 				<a
-					class="font-sans text-[17px] text-[#262625] hover:text-accent transition-colors duration-200 dark:text-[#f5f4f1]"
+					class="font-sans text-[13.5px] text-[#262625] hover:text-accent transition-colors duration-200"
 					href="/work/ultrahuman/"
 				>
 					Ultrahuman &mdash; clinical LLM pipelines &rarr;
 				</a>
 			</div>
-			<p class="font-sans text-[17px] text-[#444441] dark:text-neutral-300 mt-4">
-				Building agent tooling or Model Context Protocol integrations? <a class="underline hover:text-accent" href="mailto:kiransbaliga@gmail.com">Let’s talk about it.</a>
+			<p class="font-sans text-[13px] text-[#797974] mt-3">
+				Building agent tooling or Model Context Protocol integrations? <a class="underline hover:text-accent text-[#262625]" href="mailto:kiransbaliga@gmail.com">Let’s talk about it.</a>
 			</p>
 		</div>
 	</article>

@@ -33,20 +33,10 @@ const blogPosts = allPosts
 		</div>
 
 		{/* Availability & Links with marginalia on the LEFT */}
-		<div class="relative flex flex-wrap items-center gap-x-5 gap-y-3 mb-3">
-			{/* Left margin note on desktop */}
-			<div class="hidden lg:block absolute -left-28 top-1/2 -translate-y-1/2 select-none text-right pointer-events-none">
-				<span class="font-handwriting text-xl text-[#262625] leading-[1.05] rotate-[-5deg] block">
-					for the<br />right next<br />thing
-				</span>
-			</div>
-
-			{/* Left inline note on mobile */}
-			<div class="lg:hidden w-full select-none -mb-1">
-				<span class="font-handwriting text-base text-[#262625] rotate-[-3deg] inline-block">
-					for the right next thing &rarr;
-				</span>
-			</div>
+		<div class="flex flex-wrap items-center gap-x-4 gap-y-2.5 mb-3">
+			<span class="font-handwriting text-lg text-[#262625] rotate-[-3deg] select-none shrink-0">
+				for the right next thing &rarr;
+			</span>
 
 			{/* Circled invitation with authentic ink loop */}
 			<div class="relative inline-flex items-center px-3 py-1 select-none">
@@ -122,10 +112,10 @@ const blogPosts = allPosts
 					Backend Engineer
 				</p>
 				<p class="font-sans text-[13.5px] leading-[1.5] text-[#444441]">
-					Clinical reporting across 10+ lab stations: asynchronous ingestion and normalization, LLM analysis, clinician review and targeted regeneration of 15-page health plans.
+					Clinical reporting across 10+ lab stations, on-device vital computation in KMP, and a dynamic biometric upsell pipeline evaluating cohorts across 5M+ platform users.
 				</p>
 				<p class="font-sans text-[12.5px] text-[#262625]">
-					Also: CJK localization quality 86% &rarr; 91%, with ~67% lower translation token costs.
+					8,000+ Powerplug conversions &middot; ~80% vital latency cut &middot; 86% &rarr; 91% CJK localization
 				</p>
 			</article>
 
@@ -177,7 +167,7 @@ const blogPosts = allPosts
 		</div>
 	</section>
 
-	{/* Writing (Moved UP as requested) */}
+	{/* Writing */}
 	<section class="border-t border-[#deded8] pt-5 pb-7">
 		<div class="flex items-baseline justify-between mb-3">
 			<h2 class="font-sans text-[13px] font-medium text-[#797974]">
@@ -198,7 +188,7 @@ const blogPosts = allPosts
 
 			<ul class="space-y-2" role="list">
 				{
-					blogPosts.slice(0, 4).map((post) => {
+					blogPosts.slice(0, 4).map((post, idx) => {
 						const dateFormatted = new Intl.DateTimeFormat("en-GB", {
 							day: "numeric",
 							month: "short",
@@ -208,15 +198,22 @@ const blogPosts = allPosts
 
 						return (
 							<li class="flex items-baseline justify-between gap-4 py-0.5 group">
-								<a
-									class="font-sans text-[13.5px] text-[#262625] hover:text-accent transition-colors duration-200"
-									href={postUrl}
-									target={post.data.externalUrl ? "_blank" : undefined}
-									rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
-								>
-									{post.data.title}
-								</a>
-								<span class="font-sans text-[12px] text-[#797974] whitespace-nowrap tabular-nums">
+								<div class="flex items-baseline gap-2 min-w-0">
+									<a
+										class="font-sans text-[13.5px] text-[#262625] hover:text-accent transition-colors duration-200 truncate"
+										href={postUrl}
+										target={post.data.externalUrl ? "_blank" : undefined}
+										rel={post.data.externalUrl ? "noopener noreferrer" : undefined}
+									>
+										{post.data.title}
+									</a>
+									{idx === 0 && (
+										<span class="inline-flex items-center px-1.5 py-0.2 text-[10px] font-sans font-medium text-[#16a34a] border border-[#16a34a]/30 rounded-full select-none shrink-0">
+											New
+										</span>
+									)}
+								</div>
+								<span class="font-sans text-[12px] text-[#797974] whitespace-nowrap tabular-nums shrink-0">
 									{dateFormatted}
 								</span>
 							</li>
@@ -243,34 +240,29 @@ const blogPosts = allPosts
 		</div>
 
 		{/* Clean gap layout avoiding collision between links and marginalia */}
-		<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1 mb-2">
-			<div class="space-y-1.5">
-				<div>
-					<a
-						class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
-						href="/work-together/"
-					>
-						More about me &amp; working together &rarr;
-					</a>
-				</div>
+		<div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+			<div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+				<a
+					class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
+					href="/work-together/"
+				>
+					More about me &amp; working together &rarr;
+				</a>
 
-				<div>
-					<a
-						class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
-						href="mailto:kiransbaliga@gmail.com"
-					>
-						kiransbaliga@gmail.com &nearr;
-					</a>
-				</div>
+				<a
+					class="font-sans text-[14px] text-[#262625] hover:text-accent transition-colors duration-200"
+					href="mailto:kiransbaliga@gmail.com"
+				>
+					kiransbaliga@gmail.com &nearr;
+				</a>
 			</div>
 
-			{/* Handwritten marginalia cleanly spaced */}
-			<div class="flex items-center gap-2.5 select-none self-start sm:self-end pt-1 sm:pt-0">
-				<span class="font-handwriting text-xl text-[#262625] leading-tight rotate-[-3deg] whitespace-nowrap">
-					let’s build<br />something useful
+			<div class="flex items-center gap-2 select-none self-start sm:self-auto shrink-0">
+				<span class="font-handwriting text-lg text-[#262625] rotate-[-2deg] whitespace-nowrap">
+					let’s build something useful
 				</span>
 				<svg
-					class="w-[50px] h-[25px] text-[#262625] shrink-0"
+					class="w-7 h-3.5 text-[#262625] shrink-0"
 					viewBox="0 0 123 55"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +270,7 @@ const blogPosts = allPosts
 				>
 					<path
 						d="M121.625 0.099375C127.884 40.8034 64.039 43.0647 1.44597 48.718M21.4757 54.3714L1.44597 48.718L16.4683 37.4114"
-						stroke-width="1.8"
+						stroke-width="2"
 						stroke="currentColor"
 					/>
 				</svg>
